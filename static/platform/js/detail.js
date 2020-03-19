@@ -2484,3 +2484,88 @@ var vmdetails = new Vue({
         },
     },
 })
+
+
+var vmdetailsBtn = new Vue({
+    el: "#detailBtn",
+    mixins: [vmminxShopData, vmminxdetails],
+    data: {
+        dataTime: {  //倒计时
+            itemType: 0, //0 正常单子 1快抢 2快抢中 3预告单
+            endtime: '',
+            hours: '00',
+            Minutes: '00',
+            Seconds: '00',
+            oClearInterval: '',
+            countBoll: true,
+        },
+        oHistory: {  //历史数据接口
+            salesRecord: '', //历史跑单记录
+        },
+        oEchartToday: { //日销量Tab块 走势图
+            check_hour: '',
+            sale: [],
+            saletime: [],
+            tabShow: 0,
+            historyprice: [],
+            historyMinprice: '',  //历史最低价
+            historytime: []
+        },
+    },
+    created: function () {
+        // this.ajaxInfo();
+    },
+    mounted: function () {
+
+    },
+    filters: {
+    },
+    methods: {
+
+    }
+})
+
+var vmdetailsComment = new Vue({
+    el: "#detailComment",
+    mixins: [vmminxShopData, vmminxdetails],
+    data: {
+        dataTime: {  //倒计时
+            itemType: 0, //0 正常单子 1快抢 2快抢中 3预告单
+            endtime: '',
+            hours: '00',
+            Minutes: '00',
+            Seconds: '00',
+            oClearInterval: '',
+            countBoll: true,
+        },
+        oHistory: {  //历史数据接口
+            salesRecord: '', //历史跑单记录
+        },
+        oEchartToday: { //日销量Tab块 走势图
+            check_hour: '',
+            sale: [],
+            saletime: [],
+            tabShow: 0,
+            historyprice: [],
+            historyMinprice: '',  //历史最低价
+            historytime: []
+        },
+    },
+    created: function () {
+        this.ajaxInfo();
+    },
+    mounted: function () {
+
+    },
+    filters: {
+    },
+    methods: {
+        ajaxInfo: function () {
+            var self = this;
+            self.$nextTick(function () {
+                self.oItemData.wholeShow = true;
+                self.ajaxComment(true);
+            });
+        },
+    }
+})

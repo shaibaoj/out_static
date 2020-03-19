@@ -551,14 +551,6 @@ function Config(){
     this.ajax_urls = new AjaxUrls();
 }
 
-$(window).scroll(function() {
-    if ($(window).scrollTop() > 30) {
-        $("#top-header").addClass("fixedNav hui-fadeinT");
-    } else {
-        $("#top-header").removeClass("fixedNav hui-fadeinT");
-    }
-});
-
 if ($('#kw').length > 0) {
     //关键词搜索
     $(document).on("click", '#js-eb-search-btn', function() {
