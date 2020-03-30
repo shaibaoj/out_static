@@ -1501,7 +1501,7 @@ var vmToolPic = new Vue({
 			}).then(function() {
 				var c = d.getElementsByTagName("canvas")[0],
 				b = c.toDataURL("image/png");
-				b = b.substring(22);
+				// b = b.substring(22);
 				// var f = Math.round(1E3 * Math.random()) + ".jpg";
 				// f = btoa(f);
 
