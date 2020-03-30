@@ -1447,28 +1447,30 @@ var vmToolPic = new Vue({
 				skin: "mylayer-border-radius",
 				time: !1
 			});
-			a.Token.toeknBoolean ? a.unitePic() : $.ajax({
-				type: "GET",
-				url: "https://www.haodanku.com/indexapi/get_qiniu_token",
-				data: {},
-				dataType: "json",
-				timeout: 1E4,
-				success: function(b) {
-					"200" == b.status ? (a.Token.isToken = b.qiniu_token, a.Token.toeknBoolean = !0, a.unitePic(), clearTimeout(a.Token.toeknTime), a.setIntervalFun()) : (layer.msg("图片合成失败，请重新试", {
-						icon: 2
-					}), clearTimeout(a.Token.toeknTime), a.Token.isToken = "")
-				},
-				error: function() {
-					layer.msg("网络错误，请检查网络", {
-						icon: 2
-					});
-					clearTimeout(a.Token.toeknTime);
-					a.Token.isToken = ""
-				},
-				xhrFields: {
-					withCredentials: !0
-				}
-			})
+			a.unitePic();
+
+			// a.Token.toeknBoolean ? a.unitePic() : $.ajax({
+			// 	type: "GET",
+			// 	url: "https://www.haodanku.com/indexapi/get_qiniu_token",
+			// 	data: {},
+			// 	dataType: "json",
+			// 	timeout: 1E4,
+			// 	success: function(b) {
+			// 		"200" == b.status ? (a.Token.isToken = b.qiniu_token, a.Token.toeknBoolean = !0, a.unitePic(), clearTimeout(a.Token.toeknTime), a.setIntervalFun()) : (layer.msg("图片合成失败，请重新试", {
+			// 			icon: 2
+			// 		}), clearTimeout(a.Token.toeknTime), a.Token.isToken = "")
+			// 	},
+			// 	error: function() {
+			// 		layer.msg("网络错误，请检查网络", {
+			// 			icon: 2
+			// 		});
+			// 		clearTimeout(a.Token.toeknTime);
+			// 		a.Token.isToken = ""
+			// 	},
+			// 	xhrFields: {
+			// 		withCredentials: !0
+			// 	}
+			// })
 		},
 		setIntervalFun: function() {
 			var a = this;
@@ -1498,31 +1500,31 @@ var vmToolPic = new Vue({
 				d.appendChild(a)
 			}).then(function() {
 				var c = d.getElementsByTagName("canvas")[0],
-					b = c.toDataURL("image/png");
-				if (a.Token.isToken) {
-					b = b.substring(22);
-					var f = Math.round(1E3 * Math.random()) + ".jpg";
-					f = (new Base64).encode(f);
-					f = isHTTPurl + "://upload.qiniup.com/putb64/-1/key" + f;
-					var h = new XMLHttpRequest;
-					h.onreadystatechange = function() {
-						if (4 == h.readyState) {
-							var b = JSON.parse(h.responseText).key;
-							c.parentNode.removeChild(c);
-							a.imgMakeUrl = b;
-							layer.msg("合成图片成功", {
-								icon: 1,
-								time: 1500
-							})
-						}
-					};
-					h.open("POST", f, !0);
-					h.setRequestHeader("Content-Type", "application/octet-stream");
-					h.setRequestHeader("Authorization", "UpToken " + a.Token.isToken);
-					h.send(b)
-				} else $("#unitePic canvas").remove(), layer.alert("合成失败,token缺失,请重新刷新页面重试！", {
-					icon: 5
-				})
+				b = c.toDataURL("image/png");
+				b = b.substring(22);
+				// var f = Math.round(1E3 * Math.random()) + ".jpg";
+				// f = btoa(f);
+
+				$.post(URLPrefix.api_url+'/api/common/upload/upload',{
+					base64:b,
+					times:URLPrefix.times,
+					url_sign:URLPrefix.url_sign,
+					member_token:URLPrefix.token,
+				},function(data){
+					if(data.info.status == 1){
+						var b = data.item.img;
+						c.parentNode.removeChild(c);
+						a.imgMakeUrl = b;
+						layer.msg("合成图片成功", {
+							icon: 1,
+							time: 1500
+						})
+					}else{
+						layer.msg('合成失败,请重新刷新页面重试', {icon: 2,time: 2000},function(){
+							
+						});
+					}
+				},"json");
 			})
 		},
 		addRoundTips: function(a, b, d) {
@@ -1619,7 +1621,7 @@ var vmToolPic = new Vue({
 						if ("" != b.picList) {
 							a.goodsImg.mainImgs = [];
 							for (var e = 0; e < b.picList.length; e++){
-								a.goodsImg.mainImgs[e] = b[e] ;
+								a.goodsImg.mainImgs[e] = b.picList[e] ;
 							} 
 						} else {
 							a.goodsImg.mainImgs = ["", "", ""];
@@ -1936,7 +1938,7 @@ $(function () {
 
         if (pidnumin != '0' && pidnumin != '' && pidnumin != null) {
             $.ajax({
-                url: '/api/user/tools/tools/transform',
+                url: URLPrefix.api_url+'/api/user/tools/tools/transform',
                 type: 'POST',
                 data: {
                     ajax: 1,
@@ -1983,7 +1985,7 @@ $(function () {
         $("#pidnumin").html('');
         $("tbody",$('.table-pid')).html('');
         $.ajax({
-            url: '/api/user/user/pid/list',
+            url: URLPrefix.api_url+'/api/user/user/pid/list',
             type: 'POST',
             data: {
                 times:URLPrefix.times,
@@ -2053,7 +2055,7 @@ $(function () {
 
         if (taoken != '0' && taoken != '' && taoken != null) {
             $.ajax({
-                url: '/api/user/tools/tools/token',
+                url: URLPrefix.api_url+'/api/user/tools/tools/token',
                 type: 'POST',
                 data: {
                     content: taoken,
@@ -2100,7 +2102,7 @@ $(function () {
 
         if (pid_pid != '0' && pid_pid != '' && pid_pid != null) {
             $.ajax({
-                url: '/api/user/user/pid/update',
+                url: URLPrefix.api_url+'/api/user/user/pid/update',
                 type: 'POST',
                 data: {
                     name: pid_name,
@@ -2143,7 +2145,7 @@ $(function () {
             var user_pid_id = $target.data("id");
             if (user_pid_id != '0' && user_pid_id != '' && user_pid_id != null) {
                 $.ajax({
-                    url: '/api/user/user/pid/delete',
+                    url: URLPrefix.api_url+'/api/user/user/pid/delete',
                     type: 'POST',
                     data: {
                         id: user_pid_id,
