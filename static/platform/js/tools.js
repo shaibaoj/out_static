@@ -1505,7 +1505,7 @@ var vmToolPic = new Vue({
 				// var f = Math.round(1E3 * Math.random()) + ".jpg";
 				// f = btoa(f);
 
-				$.post(URLPrefix.api_url+'/api/common/upload/upload',{
+				$.post(URLPrefix.api_url+'/api/common/upload/uploadImg',{
 					base64:b,
 					times:URLPrefix.times,
 					url_sign:URLPrefix.url_sign,
