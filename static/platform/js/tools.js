@@ -1507,12 +1507,13 @@ var vmToolPic = new Vue({
 
 				$.post(URLPrefix.api_url+'/api/common/upload/uploadImg',{
 					base64:b,
+					suffix:'png',
 					times:URLPrefix.times,
 					url_sign:URLPrefix.url_sign,
 					member_token:URLPrefix.token,
 				},function(data){
 					if(data.info.status == 0){
-						var b = data.item.img;
+						var b = data.data.item.img;
 						c.parentNode.removeChild(c);
 						a.imgMakeUrl = b;
 						layer.msg("合成图片成功", {
