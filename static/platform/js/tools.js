@@ -1511,7 +1511,7 @@ var vmToolPic = new Vue({
 					url_sign:URLPrefix.url_sign,
 					member_token:URLPrefix.token,
 				},function(data){
-					if(data.info.status == 1){
+					if(data.info.status == 0){
 						var b = data.item.img;
 						c.parentNode.removeChild(c);
 						a.imgMakeUrl = b;
