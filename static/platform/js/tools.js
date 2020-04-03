@@ -1448,29 +1448,6 @@ var vmToolPic = new Vue({
 				time: !1
 			});
 			a.unitePic();
-
-			// a.Token.toeknBoolean ? a.unitePic() : $.ajax({
-			// 	type: "GET",
-			// 	url: "https://www.haodanku.com/indexapi/get_qiniu_token",
-			// 	data: {},
-			// 	dataType: "json",
-			// 	timeout: 1E4,
-			// 	success: function(b) {
-			// 		"200" == b.status ? (a.Token.isToken = b.qiniu_token, a.Token.toeknBoolean = !0, a.unitePic(), clearTimeout(a.Token.toeknTime), a.setIntervalFun()) : (layer.msg("图片合成失败，请重新试", {
-			// 			icon: 2
-			// 		}), clearTimeout(a.Token.toeknTime), a.Token.isToken = "")
-			// 	},
-			// 	error: function() {
-			// 		layer.msg("网络错误，请检查网络", {
-			// 			icon: 2
-			// 		});
-			// 		clearTimeout(a.Token.toeknTime);
-			// 		a.Token.isToken = ""
-			// 	},
-			// 	xhrFields: {
-			// 		withCredentials: !0
-			// 	}
-			// })
 		},
 		setIntervalFun: function() {
 			var a = this;
@@ -1493,17 +1470,20 @@ var vmToolPic = new Vue({
 				}
 				b.oblong && (f = c.getElementsByClassName("tipsInuse-oblong")[0], f.style.top = b.oblong.top, f.style.left = b.oblong.left)
 			}
-			html2canvas(c, {
-				useCORS: !0,
-				allowTaint: !1
+			html2canvas(
+				document.getElementById("imgGroupBig")
+				// document.body
+			, {
+				allowTaint: false,
+    			useCORS: true,
 			}).then(function(a) {
+				// console.log(a.toDataURL('image/png'))
 				d.appendChild(a)
 			}).then(function() {
 				var c = d.getElementsByTagName("canvas")[0],
 				b = c.toDataURL("image/png");
+				// console.log(b)
 				b = b.substring(22);
-				// var f = Math.round(1E3 * Math.random()) + ".jpg";
-				// f = btoa(f);
 
 				$.post(URLPrefix.api_url+'/api/common/upload/uploadImg',{
 					base64:b,
@@ -1514,13 +1494,14 @@ var vmToolPic = new Vue({
 				},function(data){
 					if(data.info.status == 0){
 						var b = data.data.item.img;
-						c.parentNode.removeChild(c);
+						// c.parentNode.removeChild(c);
 						a.imgMakeUrl = b;
 						layer.msg("合成图片成功", {
 							icon: 1,
 							time: 1500
 						})
 					}else{
+						$("#unitePic canvas").remove()
 						layer.msg('合成失败,请重新刷新页面重试', {icon: 2,time: 2000},function(){
 							
 						});

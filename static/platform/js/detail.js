@@ -995,7 +995,6 @@ var vmminxdetails = {  //公共方法
             descRecommend: '', //文案
             // salesRecord: '', //历史跑单记录
 
-
             shorttitleRecommend: "",  //更多短标题
             shorttitleShow: false, //更多短标题布尔值
             descRecommend: "", //更多推荐语
@@ -2563,7 +2562,7 @@ var vmdetailsComment = new Vue({
         ajaxInfo: function () {
             var self = this;
             self.$nextTick(function () {
-                self.oItemData.wholeShow = true;
+                // self.oItemData.wholeShow = true;
                 self.ajaxComment(true);
             });
         },
