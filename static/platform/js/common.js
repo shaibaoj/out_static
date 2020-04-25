@@ -1044,7 +1044,6 @@ var vmminxShopData = {  //公共方法
             hideEchartCheck: false, //成交量
             // hideFeedback: false //建议
         },
-
         oToken: {
             token: '',
             toeknTime: '',
@@ -1090,33 +1089,6 @@ var vmminxShopData = {  //公共方法
 
     },
     methods: {
-        getonFun: function (data) { //上榜
-            var self = this;
-            var JsonData = []; //需要传过去的
-            var commodityData = {};
-            var dataArr = [];
-            for (i = 0, len = data.length; i < len; i++) {
-                commodityData = {
-                    id: data[i].id,
-                    cid: data[i].fqcat
-                };
-                dataArr.push(commodityData);
-            }
-            JsonData = JSON.stringify(dataArr);
-            vmAjaxPost("/indexapi/get_top_list", {
-                request_json: JsonData
-            }, function (data) {
-                if (data.status == '200') {
-                    var objData = {};
-                    for (var j in data.request_array) {
-                        objData[data.request_array[j].id] = data.request_array[j];
-                    }
-                    self.oGetTop.getTopData = objData;
-                }
-            }, function () {
-
-            })
-        },
         producLink: function (id) { //跳到淘宝去
             vmTestInput.vmPageAll("https://detail.tmall.com/item.htm?id=" + id);
         },
@@ -1293,7 +1265,7 @@ var vmminxShopData = {  //公共方法
                 type: 1,
                 shift: 0,
                 title: false,
-                closeBtn: 0,
+                closeBtn: 1,
                 shade: 0.4,
                 content: $(className)
             });

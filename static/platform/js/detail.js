@@ -291,13 +291,6 @@ $(document).on('click', '.echarts-clickable', function () {
     });
 });
 
-
-
-
-
-
-
-
 //处理更多图文的折线图时间档处理
 function get_show_time(check_hour) {
     for (var i = 6; i >= 1; i--) {
@@ -313,7 +306,6 @@ function get_show_time(check_hour) {
         }
     }
 }
-
 
 // 在线转链
 function onLineLinFun(itemid) {
@@ -536,7 +528,6 @@ function getLocation() {
     return arr.slice(1).join('.');
 }
 
-
 // 复制方法
 function copy_fun(even_btn) {
     var clipboard = new ClipboardJS('.' + even_btn, {
@@ -561,7 +552,6 @@ function copy_fun(even_btn) {
         $('#all-copywriting').html("");
     });
 }
-
 
 // 在线转链弹窗
 function online_modal_chian() {
@@ -950,7 +940,6 @@ var vmminxdetails = {  //公共方法
     data: {
         oCommon: {
             id: URLPrefix.item_id,
-            comloginState: false,
             tianmao: 'https://detail.tmall.com/item.htm',
             adminPidlink: '/user/info/pid',
             adminLoginlink: '/public/login',
@@ -979,7 +968,6 @@ var vmminxdetails = {  //公共方法
             material_id:0,
             material_info:[]
         },
-        sellerInfo: '',  //用户数据接口
         oRecommend: "", // 好单推荐的接口数据
 
         taobaoComment: { //淘宝评论图接口
@@ -1307,7 +1295,6 @@ var vmminxdetails = {  //公共方法
                     layer.closeAll('loading');
                     if (data.tags.tagClouds) {
                         self.taobaoComment.taobaoLabel = data.tags.tagClouds;
-
                     } else {
 
                     }
@@ -1316,7 +1303,8 @@ var vmminxdetails = {  //公共方法
                 function () {
                     self.publicPopup('.jspopup-taobao');
                     layer.closeAll('loading');
-                })
+                }
+            )
         },
         swiperContent: function () {    //主图实拍图轮播
             var self = this;
@@ -1423,7 +1411,6 @@ var vmminxdetails = {  //公共方法
                 }
             }
         },
-
         ajaxset: function () {   //微信QQ文案模板接口
             var self = this;
             vmAjaxPost("/api/common/stat/get_setting_info", {}, function (res) {
@@ -1535,7 +1522,7 @@ var vmminxdetails = {  //公共方法
         },
         popupwxqqBtn: function (number) {  ////微信QQ弹窗模板-切换按钮  
             if (number == 1 || number == 2) {
-                if (!this.oCommon.comloginState) {
+                if (URLPrefix.token=='') {
                     this.loginFun();
                 } else {
                     this.oSetTemplate.wxqqIndex = number;
@@ -1676,7 +1663,7 @@ var vmminxdetails = {  //公共方法
         },
         taobaoTokenBtn: function (number) { //淘口令和转二合一
             var self = this;
-            if (!this.oCommon.comloginState) {
+            if (URLPrefix.token=='') {
                 self.loginFun();
                 return;
             }
@@ -1752,19 +1739,6 @@ var vmminxdetails = {  //公共方法
         },
         friendsBtn: function (number) {  //朋友圈文案--分页
             this.oItemData.friendsIndex += number;
-        },
-        ajaxSignin: function () { //登录
-            var self = this;
-            vmAjaxPost("/api/common/stat/loginfo", {}, function (data) {
-                if (data.data.loginState == 1) {
-                    self.oCommon.comloginState = true;
-                } else {
-                    self.oCommon.comloginState = false;
-                }
-
-            }, function () {
-
-            })
         },
         swiperrecommend: function () {  //好单推荐 --swiper
             var swiper1 = new Swiper('.recommend-swiper', {
@@ -1847,7 +1821,6 @@ var vmminxdetails = {  //公共方法
         },
     }
 };
-
 
 //详情页面视频举报弹窗
 Vue.component('component-detailsjb', {
@@ -2202,6 +2175,7 @@ var vmdetails = new Vue({
             historyMinprice: '',  //历史最低价
             historytime: []
         },
+        activity11:false
     },
     created: function () {
         this.ajaxInfo();
@@ -2252,21 +2226,11 @@ var vmdetails = new Vue({
                     }
                     self.$nextTick(function () {
                         self.oItemData.wholeShow = true;
-                        // self.ajaxUser();
                         self.ajaxComment(true);
                         self.ajaxhistory();
                         self.ajaxTodaySales();
-                        self.ajaxSignin();
-                        self.ajaxRecommend();
                         self.ajaxset();  //微信QQ文案模板接口
                         self.ajaxVideo();
-                        var Arr = [
-                            {
-                                id: self.oCommon.id,
-                                fqcat: self.oItemData.itemInfo.fqcat
-                            }
-                        ];
-                        // self.getonFun(Arr);
                     });
 
                 } else {
@@ -2274,18 +2238,6 @@ var vmdetails = new Vue({
                         shade: 0.4,
                         shadeClose: true,
                     });
-                }
-            }, function () {
-
-            })
-        },
-        ajaxUser: function () { //用户信息
-            var self = this;
-            vmAjaxPost("/detail/seller_info", {
-                id: self.oItemData.sellerId
-            }, function (data) {
-                if (data.status == '1') {
-                    self.sellerInfo = data.data;
                 }
             }, function () {
 
@@ -2405,26 +2357,6 @@ var vmdetails = new Vue({
 
             })
         },
-        ajaxRecommend: function () { //好单推荐
-            var self = this;
-            vmAjaxPost("/api/common/goods/get_recommend_items", {
-                num_iid: self.oItemData.itemId,
-                son_category: self.oItemData.itemInfo.son_category
-            }, function (data) {
-                if (data.data.content.status == '1') {
-                    self.oRecommend = data.data.content.data;
-
-                    self.$nextTick(function () {
-                        setTimeout(function () {
-                            self.swiperrecommend();
-                            self.echoImg();
-                        }, 30)
-                    })
-                }
-            }, function () {
-
-            })
-        },
         countDown: function (endtime) { //倒计时方法
             var self = this;
             var formatNumber = function (n) {
@@ -2484,87 +2416,3 @@ var vmdetails = new Vue({
     },
 })
 
-
-var vmdetailsBtn = new Vue({
-    el: "#detailBtn",
-    mixins: [vmminxShopData, vmminxdetails],
-    data: {
-        dataTime: {  //倒计时
-            itemType: 0, //0 正常单子 1快抢 2快抢中 3预告单
-            endtime: '',
-            hours: '00',
-            Minutes: '00',
-            Seconds: '00',
-            oClearInterval: '',
-            countBoll: true,
-        },
-        oHistory: {  //历史数据接口
-            salesRecord: '', //历史跑单记录
-        },
-        oEchartToday: { //日销量Tab块 走势图
-            check_hour: '',
-            sale: [],
-            saletime: [],
-            tabShow: 0,
-            historyprice: [],
-            historyMinprice: '',  //历史最低价
-            historytime: []
-        },
-    },
-    created: function () {
-        // this.ajaxInfo();
-    },
-    mounted: function () {
-
-    },
-    filters: {
-    },
-    methods: {
-
-    }
-})
-
-var vmdetailsComment = new Vue({
-    el: "#detailComment",
-    mixins: [vmminxShopData, vmminxdetails],
-    data: {
-        dataTime: {  //倒计时
-            itemType: 0, //0 正常单子 1快抢 2快抢中 3预告单
-            endtime: '',
-            hours: '00',
-            Minutes: '00',
-            Seconds: '00',
-            oClearInterval: '',
-            countBoll: true,
-        },
-        oHistory: {  //历史数据接口
-            salesRecord: '', //历史跑单记录
-        },
-        oEchartToday: { //日销量Tab块 走势图
-            check_hour: '',
-            sale: [],
-            saletime: [],
-            tabShow: 0,
-            historyprice: [],
-            historyMinprice: '',  //历史最低价
-            historytime: []
-        },
-    },
-    created: function () {
-        this.ajaxInfo();
-    },
-    mounted: function () {
-
-    },
-    filters: {
-    },
-    methods: {
-        ajaxInfo: function () {
-            var self = this;
-            self.$nextTick(function () {
-                // self.oItemData.wholeShow = true;
-                self.ajaxComment(true);
-            });
-        },
-    }
-})
