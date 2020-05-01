@@ -2081,7 +2081,7 @@ var vmdetails = new Vue({
                 closeBtn: 0,
                 area: '300px',
                 shadeClose: true,
-                content: '<div><img src="' + url + '"></div>'
+                content: '<div><img class="viewPic" src="' + url + '"></div>'
             });
         },
         videoPlayBtn: function (index) {  //视频 - 播放
