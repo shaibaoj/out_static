@@ -1,0 +1,1 @@
+"use strict";define(function(require){var app=require("app");app.factory("getServerConfig",["utils","http","config",function(utils,http,config){return{init:function(){var url=config.getAPI("configure");return http(url)["catch"](function(reason){reason.error&&utils.error(reason.error.message)})}}}])});

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html class="jp-pc w1200">
+    <head>
+       	<title>{$SEOTITLE}</title>
+        <meta content="{$seokeywords}" name="keywords">
+        <meta content="{$seodescription}" name="description">
+        <meta name="mobile-agent" content="format=html5;url={$m_url}"/>        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+        <link rel="canonical" href="{$url}" />
+        <link type="text/css" rel="stylesheet" href="http://cdn1.yun.huopinjie.com/templets/dy/css/style.css" />
+        <link type="text/css" rel="stylesheet" href="http://cdn1.yun.huopinjie.com/templets/dy/css/index.css" />
+    </head>
+    <body>
+    <!-- 广告弹出框 -->
+    <div id="tan_chuang_div"></div>
+    <!-- 页头 -->
+    <div class="full_column" style="display:none"></div>
+	<div id="toolbar">
+	    <div class="bar-con">
+	        <div class="right-show fr">
+	            <div class="union-login"> <a href="" rel="nofollow">QQ登录</a><a href="" rel="nofollow">微博登录</a>&#12288;| </div>
+	            <div class="login-show"><a href="" rel="nofollow">登录</a><a href="" rel="nofollow">免费注册</a>&#12288;|<a href="" rel="nofollow" target="_blank">我的订单</a>&#12288;|</div>
+	            <div class="other-show"><a href="" rel="nofollow">联系客服</a><a href="">卖家报名</a></div>
+	        </div>
+	    </div>
+	</div>
+	<div class="header clear">
+	    <div class="area">
+	        <a class="juan-logo fl" href="http://{$SITE_URL}" title="{$website_name}">
+	        <div class="logo logo1">
+	            <div class="fl"><span class="juan-txt fl"></span></div>
+	        </div>
+	        </a>
+	        <div class="protection">
+	            <a title="每天10点开抢" class="update" href="#" target="_blank" rel="#"></a>
+	            <a title="职业买手砍价" class="lowest" href="#" target="_blank" rel="nofollow"></a>
+	            <a title="商品验货质检" class="check1" href="#" target="_blank" rel="nofollow"></a>
+	        </div>
+	        <div class="search">
+	            <span class="search-area fl">
+	                <input type="text" name="keywords" id="keywords" class="txt" value="" title="" />
+	            </span>
+	            <input type="submit" value="" class="smt fr" />
+	            <input type="hidden" id="search_action" name="search_action" value="">
+	            <input type="hidden" id="search_from"   name="search_from" value="1">
+	        </div>
+	    </div>
+	    <div class="mainNav">
+	        <div class="nav">
+	            <ul class="navigation fl">
+	                <li class="current first">
+	                    <a style="" href="http://{$SITE_URL}">首页</a>
+	                </li>
+	            </ul>
+	            <div class="state-show fr">
+	                <a href="javascript:;" class="normal-a dosign">
+	                    <em class="icon-normal icon-nosign"></em>
+	                    <em class="text">签到领积分</em>
+	                </a>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+    <!-- /页头 -->
+    <!-- 主体 -->
+        
+	<div class="top_bar">
+		<div style="text-align:center;margin:155px 0;" class="ad-loading"><img src="/templets/jp/images/loading.gif"/></div>
+	    <ul id="banner_list" class="banner" style="display:none"></ul>
+	</div>
+	<div class="top_wrap">
+	    <div class="top_box">
+	        
+	        <div class="banner_l">
+	            <dl>
+	                {section loop=$items_category name=a}
+	                <dd>
+	                    <a href="{$items_category[a].url}">
+	                        <i class="ct-icon ct-icon-nanzhuang"></i> {$items_category[a].name}
+	                    </a>
+	                </dd>
+	                {/section}
+	            </dl>
+	        </div>
+	        
+	        <div class="banner_r" style="background:#f7f7f7;box-shadow:none">
+	            <div style="text-align:center;padding:135px 0;" class="ad-loading-right"><img src="/templets/jp/images/loading.gif"/></div>
+	        </div>
+	        
+	        <div class="round">
+	            <div class="adType">
+	            </div>
+	        </div>
+	        <div style="display:none;" class="banner_arrow" data-banner="arrow">
+	            <a href="javascript:;" class="arrow_prev" data-arrow="prev"><i></i></a>
+	            <a href="javascript:;" class="arrow_next" data-arrow="next"><i></i></a>
+	        </div>
+	    </div>
+	</div>
+
+            <div class="new-users clear">
+	            <div class="update-time fl" >
+	                <div class="today">
+	                    <i class="brand_new"></i>今日品牌
+	                </div>
+	            </div>
+	        </div>
+        <div class="brand_index clear">
+        <div class="brand_list">
+            <ul class="brand_data clear">
+                     <li>
+                        <div class="brand-status">
+                            <a href="#" class="link-box" target="_blank">
+                                <div class="brand-pic"><img src="/templets/jp/images/index/1.jpg">
+                                    <div class="brand_time" style="display:none">
+                                        <p><span class="icon_time"></span><span class="brand-days"><em>00</em><i>天</i></span><span class="brand-hours"><em>00</em><i>时</i></span><span class="brand-minutes"><em>00</em><i>分</i></span><span class="brand-seconds"><em>00</em><i>秒</i></span></p>
+                                        <div class="brand_time_bg"></div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                     <img class="brand-logo" src="/templets/jp/images/index/4.png">
+                                     <span class="discount discount1">
+                                             <span>马上抢</span>
+                                         </span>                                    
+                                    <span class="title" >1.6折起</span>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="brand-status">
+                            <a href="#" class="link-box" target="_blank">
+                                <div class="brand-pic"><img src="/templets/jp/images/index/2.jpg">
+                                    <div class="brand_time" style="display:none">
+                                        <p><span class="icon_time"></span><span class="brand-days"><em>00</em><i>天</i></span><span class="brand-hours"><em>00</em><i>时</i></span><span class="brand-minutes"><em>00</em><i>分</i></span><span class="brand-seconds"><em>00</em><i>秒</i></span></p>
+                                        <div class="brand_time_bg"></div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                     <img class="brand-logo" src="/templets/jp/images/index/5.png">
+                                     <span class="discount discount1">
+                                             <span>马上抢</span>
+                                         </span>                                    
+                                    <span class="title" >2.4折起</span>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="brand-status">
+                            <a href="#" class="link-box" target="_blank">
+                                <div class="brand-pic"><img src="/templets/jp/images/index/3.jpg">
+                                    <div class="brand_time" style="display:none">
+                                        <p><span class="icon_time"></span><span class="brand-days"><em>00</em><i>天</i></span><span class="brand-hours"><em>00</em><i>时</i></span><span class="brand-minutes"><em>00</em><i>分</i></span><span class="brand-seconds"><em>00</em><i>秒</i></span></p>
+                                        <div class="brand_time_bg"></div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                     <img class="brand-logo" src="/templets/jp/images/index/6.png">
+                                     <span class="discount discount1">
+                                             <span>马上抢</span>
+                                         </span>                                    
+                                    <span class="title" >1.7折起</span>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul class="brand_logo clear">
+                    <li class="first">更多特卖：</li>
+               		{section loop=$links name=a}<li><a href="{$links[a].ename}" target="_blank" title="{$links[a].title}">{$links[a].title}</a></li>{/section}
+                </ul>
+         </div>
+    </div>
+
+	<div class="new-users clear">
+	    <div class="update-time fl" >
+	        <div class="today">
+	            <i class="icon_new"></i>今日新品<span>每天10点上新</span>
+	        </div>
+	    </div>
+	</div>    
+    <div class="main pr mt25 clear" data-ugctag="C2" style="display:;">
+        <input type="hidden" name="favken" value="">
+        <div class="line-cate-nav-location hidden">
+            <div class="line-cate-nav-wrapper">
+                <ul class="line-cate-nav">
+                    <li class="first"><a class="active" href="#">今日上新</a></li>
+                    <li><a class="" href="#">女装</a></li>
+                    <li><a class="" href="#">男装</a></li>
+                    <li><a class="" href="#">鞋子</a></li>
+                    <li><a class="" href="#">箱包</a></li>
+                    <li><a class="" href="#">母婴</a></li>
+                    <li><a class="" href="#">美妆</a></li>
+                    <li><a class="" href="#">居家</a></li>
+                    <li><a class="" href="#">家纺</a></li>
+                    <li><a class="" href="#">文体</a></li>
+                    <li><a class="" href="#">美食</a></li>
+                    <li><a class="" href="#">数码</a></li>
+                    <li><a class="" href="#">电器</a></li>
+                    <li><a class="" href="#">内衣</a></li>
+                    <li><a class="" href="#">配饰</a></li>
+                    <li class="last"><a target="_blank" href="#">[明日预告]</a></li>
+                </ul>
+            </div>
+        </div>
+        <ul class="goods-list clear">
+          {section loop=$items name=l}
+           <li>
+            <div class="list-good buy">
+                <div class="good-pic">
+                    {if $item_boolean}<a href="{$items[l].seo_url}" class="pic-img" target="_blank">{/if}
+                    <img alt="{$items[l].title|strip_tags}" src="{$items[l].seopic}" class="lazy" />                                       
+                    {if $item_boolean}</a>{/if}
+                </div>
+                <h3 class="good-title">
+                    {if $item_boolean}<a href="{$items[l].seo_url}" target="_blank">{/if}{$items[l].title|strip_tags}{if $item_boolean}</a>{/if}
+                </h3>
+                <div class="good-price">
+                    <span class="price-current" ><em>￥</em>{$items[l].imgsize}</span>
+                    <div class="btn buy t-buy">
+                        文件格式：{$items[l].imgtype}
+                    </div>
+                </div>
+				<div class="box-hd" style="display:block"></div>
+            </div>
+            </li>
+            {/section}
+            </ul>
+    </div>
+
+        <!-- /主体 -->
+        <!-- 页脚 -->
+        <div class="foot">
+		    <div class="white_bg">
+			    <div class="foot-con">
+			        <div class="con-box-n clear">
+			            <div class="app-side-box fl">
+			                <p class="app-show"></p>
+			                <p class="app-txt" style="text-align:center;font-size: 14px">随时逛 及时抢</p>
+			            </div>
+			            <div class="con-left-info fl">
+			                <dl class="update">
+			                    <dt>获取更新</dt>
+			                    <dd><a href="#" target="_blank" rel="nofollow"><i></i>iPhone/Android</a></dd>
+			                    <dd><a href="#" target="_blank" rel="nofollow"><i></i>{$short_name}QQ空间</a></dd>
+			                    <dd><a href="#" target="_blank" rel="nofollow"><i></i>{$short_name}新浪微博</a></dd>
+			                    <dd><a href="#" target="_blank" rel="nofollow"><i></i>开放API</a></dd>
+			                </dl>
+			                <dl class="cooperation">
+			                    <dt>商务合作</dt>
+			                    <dd><a href="#" target="_blank"><i></i>卖家免费报名</a></dd>
+			                    <dd><a href="#" target="_blank" rel="nofollow"><i></i>商务合作</a></dd>
+			                </dl>
+			                <dl class="cor-info">
+			                    <dt>公司信息</dt>
+			                    <dd><a href="#" target="_blank" rel="nofollow"><i></i>关于{$short_name}</a></dd>
+			                    <dd><a href="#" target="_blank" rel="nofollow"><i></i>媒体报道</a></dd>
+			                    <dd class="school"><a href="#" target="_blank" rel="nofollow"><i></i>诚聘英才</a>
+			                    <a href="#" target="_blank"><em></em></a></dd>
+			                    <dd><a href="#" target="_blank" rel="nofollow"><i></i>校园大使招募</a></dd>
+			                </dl>
+			                <dl class="help-info">
+			                    <dt>帮助中心</dt>
+			                    <dd><a href="#" target="_blank" rel="nofollow"><i></i>新手上路</a></dd>
+			                    <dd><a href="#" target="_blank" rel="nofollow"><i></i>积分攻略</a></dd>
+			                    <dd><a href="#" target="_blank"><i></i>网站地图</a></dd>
+			                </dl>
+			            </div>
+			            <div class="con-menu fr">
+			                <a href="#" class="service-add fl" target="_blank" rel="nofollow"></a>
+			            <span class="service-time fl">
+			                <p>周一至周日</p>
+			                <p>9:00-21:00 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+			            </span>
+			            </div>
+			        </div>
+                    <div class="links">
+						<span>友情链接：</span>
+						<div class="links_list_box">
+					    	<ul class="links_list">
+					            <li>
+					                   {section loop=$w_links name=a}<a target="_blank" title="{$w_links[a].title}" href="{$w_links[a].ename}">{$w_links[a].title}</a>{/section}
+					           </li>
+					        </ul>
+						</div>
+					</div>
+	                <p class="ft-company">
+	                 {$website_name} 8&#12288;&#12288;Copyright &copy; 
+	                 2010 -2016 {$SITE_URL} All Rights Reserved
+	                </p>
+	            </div>
+		    </div>
+		</div>
+
+      {$tongji}
+    </body>
+</html>

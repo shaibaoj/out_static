@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{$SEOTITLE} -- 【{$tkey}】</title>
+<link rel="shortcut icon"  href="http://cdn.lib.shaibaoj.com/favicon.ico" type="image/x-icon" >
+<link rel="Bookmark" href="http://cdn.lib.shaibaoj.com/favicon.ico"> 
+<link rel="apple-touch-icon-precomposed" href="http://cdn.lib.shaibaoj.com/images/logo/applogo.png"/>
+<link rel="stylesheet" type="text/css" href="http://cdn.lib.shaibaoj.com/css/common.css?20140703"/>
+<link rel="stylesheet" type="text/css" href="http://cdn.lib.shaibaoj.com/css/fuli_view.css?20140703"/>
+<link rel="stylesheet" type="text/css" href="http://cdn.lib.shaibaoj.com/css/att.css?20140703"/>
+<script type="text/javascript" src="http://cdn.lib.shaibaoj.com/js/lib/jquery.js?20140703"></script>
+<script type="text/javascript" src="http://cdn.lib.shaibaoj.com/js/util/tp.js?20140703"></script>
+<script type="text/javascript">var keyStr='{$tkey}'; var to_url='{$tourl}'; var clickType='{$clickType}';var goods_url='{$goods_url}';</script>	
+</head>
+<body>{$tongji}
+
+
+<div class="MIB_bloga">
+	<div class="MIB_blogb">
+		<!-- 2級のナビゲーション -->
+
+<div id="header">		
+<!--{start: header -->
+	<div class="gm-master">
+		<div class="gm-master-inner">
+			<div class="fl">
+				<div class="">{$tkey}</div>
+			</div>
+			<div class="fr">
+				<div class="search" id="search">
+					<form action="http://www.shaibaoj.com/search/" method="get">
+						<input id="search_keyName" type="text" autocomplete="off" name="keyName" emptyhintel="emptyhint-10000" value="" x-webkit-speech x-webkit-grammar="builtin:translate"/>
+						<button type="submit">検索</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="global-header">
+		<div class="global-header-inner" id="global-header-inner"> 
+			<div class="fl">
+				<div class="leho-category" id="left-navbar">
+					<span class="category-hd">発見<i class="ico-down-dot1"></i></span>
+					<div id="menu_category" class="category-bd fold"></div>
+				</div>
+				<ul class="cate-nav">
+					<li class="cate-nav-item first"><a href="" class="cate-nav-txt cate-nav-home  ">{$tkey}</a><i class="ico-line"></i></li>
+					{section loop=$abouts name=a max=10}{if $a.ename neq ""}{/if}<li class="cate-nav-item "><a href="{$a.ename}" class="cate-nav-txt ">{$a.title}</a><i class="ico-line"></i></li>{/section}
+				</ul>
+			</div>
+			<div class="fr">
+					<ul class="login-nav cls">
+						<li class="login-first-party hover-shim">
+							<div class="btn-login-first">
+								<a target="_blank" class="__hrefAddRef">登録</a>
+							</div>
+						</li>
+					</ul>
+			</div>
+		</div>
+	</div>
+<!--}end: header -->
+</div>
+
+
+		<!--本文-->
+		<div class="MIB_blogbody">
+			<div class="MIB_mblogbgr ">
+				<div class="MIB_mblogbgl">
+					<div id="bd" class="huodong">
+						
+				        <div class="nav">
+					        <a href="" class="pt">{$tkey}</a> &gt; 
+							<a href="" class="pt">{$SEOTITLE}</a> &gt; 
+							<a href="" class="pt">{$date}{$tkey}ランキング</a>
+						</div>
+				        <div class="huodong-container cls" style="margin-bottom: 20px;">
+				        	<div class="huodong-main">
+				                <div class="text-module">
+				                <!--{start: 文字内容 -->
+				                    <div class="module-title cls">
+				                          <h2 style="text-align:center;">{$SEOTITLE}</h2>
+				                    </div>
+				                    <hr size="1" class="hrxu">
+				                    <div style="font-size:12px;line-height:16px;text-align:center; padding:0px 10px; margin-bottom:10px; color:#999999">
+				                    	{$dateTime}&nbsp;  &nbsp; {$tkey}
+									</div>
+				                    <div id="contentBox" class="text-module-content">
+				                    {if $goods neq null}
+					                    	{$goods.price}
+					                    	<img src="http://cdn.img.shaibaoj.com/pic-/{$goods.seopic}"/>
+					                    	{foreach from=$goods_jsonData key=myId item=l}
+					                    	<dl><dt>{$l.name}</dt><dd>{$l.value}</dd></dl>
+					                    	{/foreach}
+				                    	{/if}
+				                    	{if $article neq null}
+					                    	{$article.title}
+					                    	<img src="http://cdn.img.shaibaoj.com/pic-/{$goods.seopic}"/>
+											{$dataContent.data.content}
+				                    	{/if}
+				                    	<ul>
+											{foreach from=$items key=myId item=l}
+												<li class="topgoods_kang">
+													<div class="topgoods_topid">TOP{$myId+1}</div>
+													<div class="topgoods_imgkang">{if $configData.queryGoods eq "1"}<a href="{$urlall}?goodsId={$l.goodsId}" target="_blank">{/if}<img src="http://cdn.img.shaibaoj.com/pic-/{$l.seopic}" class="topgoods_img">{if $configData.queryGoods eq "1"}</a>{/if}</div>
+													<div class="topgoods_spkang">
+													  <div class="topgoods_spnamediv">{if $configData.queryGoods eq "1"}<a href="{$urlall}?goodsId={$l.goodsId}" class="topgoods_spname" target="_blank">{/if}{$l.title|strip_tags}{if $configData.queryGoods eq "1"}</a>{/if}</div>
+													  <div class="topgoods_sppricediv">{$date}平均価格：<span class="topgoods_spprice">{$l.price}</span></div>
+													  <div class="topgoods_commentdiv">最近は30日発売{$l.volume+120}（件）
+													   </div>
+													</div>
+												</li>
+											{/foreach}
+											{foreach from=$items_article key=myId item=l}
+												<li class="topgoods_kang">
+													<div class="topgoods_topid">TOP{$myId+1}</div>
+													<div class="topgoods_imgkang">{if $configData.queryArticle eq "1"}<a href="{$urlall}?articleId={$l.articleId}" target="_blank">{/if}<img src="http://cdn.img.shaibaoj.com/pic-/{$l.seopic}" class="topgoods_img">{if $configData.queryArticle eq "1"}</a>{/if}</div>
+													<div class="topgoods_spkang">
+													  <div class="topgoods_spnamediv">{if $configData.queryArticle eq "1"}<a href="{$urlall}?articleId={$l.articleId}" class="topgoods_spname" target="_blank">{/if}{$l.title|strip_tags}{if $configData.queryArticle eq "1"}</a>{/if}</div>
+													   </div>
+													</div>
+												</li>
+											{/foreach}
+				                    		{foreach from=$items_pic key=myId item=l}
+												<li class="topgoods_kang">
+													<div class="topgoods_topid">TOP{$myId+1}</div>
+													<div class="topgoods_imgkang"><a href="" target="_blank"><img src="http://cdn.img.shaibaoj.com/pic-/{$l.seopic}" class="topgoods_img"></a></div>
+													<div class="topgoods_spkang">
+													  <div class="topgoods_spnamediv"><a href="" class="topgoods_spname" target="_blank">{$l.title}</a></div>
+													  <div class="topgoods_sppricediv">{$date}平均価格：<span class="topgoods_spprice">{$l.size}</span></div>
+													  <div class="topgoods_commentdiv">最近は30日発売（件）
+													   </div>
+													</div>
+												</li>
+											{/foreach}
+				                    	</ul>
+				                    </div>
+				                <!--}end: 文字内容 -->
+				                </div>
+				            </div>
+				            <div class="huodong-aside">
+				                
+				                <div class="huodong-module">
+				                    <div class="module-title full cls">
+				                        <h2 class="gray">最新情報</h2>
+				                    </div>
+				                    <div id="past-act" class="marquee-container">
+				                        <ul class="huodong marquee-list">
+				                        	{section loop=$top_links name=a}
+				                            <li class="cls">
+				                               <a href="{$a.ename}" target="_blank">{$a.title}</a>
+				                            </li>
+				                            {/section}
+										</ul>
+				                    </div>
+				                </div>
+				                
+				                
+				                <div class="huodong-module">
+				                    <div class="module-title full cls ">
+				                        <h2 class="gray">ランキング</h2>
+				                    </div>
+				                    <div id="past-act" class="marquee-container">
+				                        <ul class="huodong marquee-list ">
+				                        	{section loop=$links name=a}
+				                            <li class="cls font_14">
+				                               <a href="{$a.ename}" target="_blank">{$a.title}</a>
+				                            </li>
+				                             {/section}
+										</ul>
+				                    </div>
+				                </div>
+				                
+				                 <div class="huodong-module">
+				                    <div class="module-title full cls ">
+				                        <h2 class="gray">人気がある</h2>
+				                    </div>
+				                    <div id="past-act" class="marquee-container">
+				                        <ul class="huodong marquee-list ">
+				                        	{section loop=$hot_links name=a}
+				                            <li class="cls font_14">
+				                               <a href="{$a.ename}" target="_blank">{$a.title}</a>
+				                            </li>
+				                             {/section}
+										</ul>
+				                    </div>
+				                </div>
+				                
+				            </div>
+				        </div>
+					</div>		
+				</div>
+				<div class="clearit"></div>
+			</div>
+		</div>
+		<!--/本文-->
+		
+
+<div class="clearit"></div>
+<div id="footer">
+<!--{start: footer -->
+	
+<div class="copyright">
+	<div class="copyright-inner">
+		<p class="copyright-url">
+			{section loop=$friend_links name=a}<li><a href="{$a.ename}">{$a.title}</a></li>{/section}
+		</p>
+		<div class="copyright-info">
+			<p><span>Copyright © 2011-2015</span><span> 版権所有</span></p>
+			<p><span>{$tkey}オンライン©</span></p>
+		</div>
+	</div>
+</div>
+<!--}end: footer -->
+</div>
+<!--/底部-->
+	  
+	</div>
+</div>
+{if $keywordsType neq null}{$keywordsType.tongji}{/if}
+{$tongji}
+</body>
+</html>

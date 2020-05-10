@@ -1,0 +1,1 @@
+"use strict";define(function(require){var app=require("app");app.controller("tabMainUICtrl",["$rootScope","$state","$scope","$window",function($rootScope,$state,$scope,$window){$scope.vm}])});

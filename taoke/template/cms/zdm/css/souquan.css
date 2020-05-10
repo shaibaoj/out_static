@@ -1,0 +1,398 @@
+@charset 'utf-8';
+/*
+ * @author lk
+ * 搜券通
+*/
+body{
+    background-color:#f5f5f5;
+    min-width:1120px;
+}
+/* 分类 */
+.sq_fixed{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:100;
+    background-color:#fff;
+}
+.sq_fixed ul{
+    width:1120px;
+    margin:0  auto;
+}
+.sq_fixed .souquan_type{
+    float:none;
+    border-bottom:1px solid #e7e6eb;
+}
+.sq_fixed .goods_selector{
+    border-top:1px solid #e7e6eb;
+}
+#selector_fixed.sq_fixed{
+    box-shadow:0 1px 2px rgba(0,0,0,.2);
+    top:0;
+}
+#souquan_items_box.sq_fixed{
+    top:32px;
+}
+.souquan_top{
+    height:52px;
+}
+.selector_box{
+    margin-top:10px;
+   /*  height:36px; */
+    background:#fff;
+    overflow: hidden;
+}
+.souquan_type_box{
+    font-size:14px;
+	background-color:#fff;
+}
+.souquan_type_box{
+    color:#46454d;
+}
+.souquan_type_box ul li{
+    float:left;
+    margin-right:30px;
+    cursor:pointer;
+}
+.grid_auto{
+	width:1120px;
+}
+.goods_list{
+    margin-top:10px;
+}
+.goods_list li:hover .combtn_red{
+    display:block;
+}
+.goods_list li:hover .quan_mall{
+    display:none;
+}
+.goods_list ul{
+    margin-left:-2px;
+    width:1145px;
+    overflow:hidden;
+}
+.souquan_type{
+    float:left;
+    line-height:52px;
+}
+.souquan_type_box li:hover,.container .active,.goods_selector li:hover{
+    color:#f54e54;
+}
+.souquan_items{
+    display:none;
+    line-height:41px;
+    border-top:1px solid #e7e6eb;
+}
+.souquan_number{
+    margin:5px 5px 0 0;
+    position:relative;
+    padding:0 12px 0 8px;
+    line-height:26px;
+    background-color:#fff4f2;
+    color:#ff666b;
+    font-size:12px;
+}
+.souquan_number:before{
+    position:absolute;
+    left: -13px;
+    top: 0;
+    content:'';
+    height:0;
+    border-right: 13px solid #fff4f2;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+}
+.souquan_circle{
+    display:inline-block;
+    margin-right:4px;
+    width:2px;
+    height:2px;
+    vertical-align:middle;
+    background-color:#ff666b;
+    border-radius:50%;
+}
+/* 列表 */
+.search_result{
+    margin:16px 0 16px;
+    color:#757380;
+    line-height:20px;
+}
+.search_result i{
+    display:inline-block;
+    vertical-align:1px;
+}
+.search_result .search_info{
+    margin:0 8px;
+    color:#333;
+}
+.goods_list li{
+    height:376px;
+    position:relative;
+    float:left;
+    width:265px;
+    margin-right:16px;
+    margin-bottom:15px;
+    background-color:#fff;
+    -webkit-transition:border .6s;
+    -ms-transition:border .6s;
+    -o-transition:border .6s;
+    transition:border .6s;
+    border:2px solid #f5f5f5;
+}
+.goods_list li:hover{
+    border:2px solid #f54e54;
+}
+.goods_selector{
+    padding-left:30px;
+    margin-right:55px;
+    line-height:36px;
+    color:#46454d;
+    font-size:14px;
+}
+.goods_selector li{
+    float:left;
+    margin-right:55px;
+    cursor:pointer;
+}
+.quan_mall{
+    margin-top:8px;
+}
+.quan_mall i,.quan_mall span{
+    display:inline-block;
+    vertical-align:middle;
+}
+.quan_mall i{
+    width:15px;
+    height:15px;
+    margin-right:4px;
+    background-image:url("https://i.huim.com/content_new/images/souquan_ico.png");
+    background-repeat:no-repeat;
+}
+.mall_tb{
+    color:#ff4400;
+}
+.mall_tm{
+    color:#c40000;
+}
+.goods_list .mall_tm i{
+    background-position:-69px 0;
+}
+.quan_item_img{
+    position:relative;
+}
+.quan_item_img .top_icon{
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:block;
+    width:40px;
+    height:24px;
+    line-height:24px;
+    text-align:center;
+    color:#fff;
+    background-color:#f51848;
+    border-bottom-right-radius:5px; 
+}
+.quan_item_img .new_icon{
+    background-color:#ffbc09;    
+}
+.quan_item_img .sta_icon{
+    position:absolute;
+    top:50%;
+    left:50%;
+    display:block;
+    width:112px;
+    height:112px;
+    margin:-56px 0 0 -56px; 
+    background-image:url("https://i.huim.com/content_new/images/miaoquan_ico.png?v=2");
+    background-repeat:no-repeat;
+}
+.quan_item_img .yqw_icon{
+    background-position:0 -122px;
+}
+.quan_item_img img{
+    width:100%;
+    height:265px;
+    vertical-align:middle;
+}
+.quan_item_con{
+    padding:0 10px 11px 10px;    
+}
+.quan_item_con .quan_item_tit{
+    padding:5px 0 2px 0;
+    font-size:14px;
+    overflow: hidden;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.quan_item_con .quan_item_tit a{
+    color:#333;
+}
+.quan_item_con .quan_item_tit a:hover{
+    color:#3366cc;
+}
+.quan_item_con .quan_item_price{
+    color:#f24f60;
+    height:30px;
+}
+.quan_item_con .quan_item_price .pir{
+    font-size:12px;
+}
+.quan_item_con .quan_item_price .num{
+    margin-left:3px;
+    line-height:30px;
+    font-size:26px;
+    font-family:arial;
+    position:relative;
+    top:1px;
+}
+.quan_item_con .quan_item_price .pri_font{
+    padding:0 12px 0 3px;
+}
+.quan_item_con .quan_item_price .list{
+    margin-top:10px; 
+    color:#a6a4b2;  
+}
+.quan_item_price .pri_font{
+    color:#a6a4b2;
+}
+.item_btn_box{
+    padding-top:10px;
+}
+.item_btn_box .combtn_red{
+    display:none;
+    width:80px;
+    line-height:32px;
+    height:32px;
+    font-size:14px;
+}
+.item_btn_box .item_coupon{
+    float:left;
+    width:119px;
+    height:30px;
+    line-height:30px;
+    width:95px;
+    border:1px dotted #FF0059;
+    color:#fd214f;
+    text-align:center;    
+}
+.item_coupon:hover{
+    background-color:#fff2f3;
+}
+.item_btn_box .item_coupon .quan{
+    float:left;
+    display:inline-block;
+    width:30px;
+    text-align:center;
+    border-right:1px dotted #FF0059;
+}
+.item_btn_box .item_btn{
+    float:right;
+    width:110px;
+    height:32px;
+    line-height:32px;
+    background-color:#f95c68;
+    text-align:center;
+    color:#fff;
+    font-size:14px;
+}
+.item_btn_box .item_btn .arr_right{
+    position:relative;
+    top:-4px;
+    width:0;
+    height:0;
+    border-width:4px;
+    border-style:dashed dashed dashed solid;
+    border-color:transparent transparent transparent #fff;
+    font-size:0;
+    line-height:0;
+}
+.item_btn_box .quan_number{
+    height:18px;
+    margin-top:7px;
+    color:#f54e54;
+    border:1px solid #f54e54;
+    border-radius:2px;
+    line-height:18px;
+}
+.quan_number .quan_tip{
+    display:inline-block;
+    width:20px;
+    text-align:center;
+    background-color:#f54e54;
+    color:#fff;
+}
+.quan_number .quan_price{
+    padding:0 5px;
+}
+
+.miaoquan_foot{
+    padding:50px 0 100px 0;
+    text-align:center; 
+}
+.miaoquan_foot .foot_t1{
+    font-size:30px;
+    font-weight:700;
+    color:#757380;
+}
+.miaoquan_foot .foot_t2{
+    padding-bottom:30px;
+    font-size:16px;
+    color:#a6a4b2
+}
+.miaoquan_foot .qquan_btn{
+    display:block;
+    margin:0 auto;
+    width:165px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    color:#fff;
+    font-size:14px;
+    background-color:#5599ff;
+    border-radius:4px;
+}
+.miaoquan_foot .qquan_btn .qq_ico{
+    display:inline-block;
+    width:16px;
+    height:16px;
+    margin-right:3px;
+    background-image:url("https://i.huim.com/content_new/images/miaoquan_ico.png?v=2");
+    background-repeat:no-repeat;
+    background-position:0 -245px;
+    vertical-align:-3px !important;
+    _vertical-align:0px;
+}
+.no_list{
+    margin:117px;
+    text-align:center;
+    font-size:16px;
+    color:#333;
+}
+.no_data{
+    display:none;
+    text-align:center;
+    color:#b0afb3;
+    font-size:14px;
+    line-height:80px;
+}
+.souquan #site_loading2{
+    padding-bottom:250px;
+}
+/* 帮助说明 */
+.sq_help_box{
+    background-color:#fff;
+    padding-bottom:250px;
+}
+.sq_help_box img{
+    margin:0 auto;
+}
+.sq_help_box .help_img5{
+    margin:78px 0 0 148px;
+}
+.sq_search{
+    margin:6px 0 0 310px;
+}
+

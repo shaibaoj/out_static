@@ -1,0 +1,1 @@
+"use strict";define(function(require){var app=require("app");app.directive("breadcrumb",["navconfig",function(navconfig){return{restrict:"EA",scope:{configdata:"="},replace:!0,templateUrl:"common/directives/breadcrumb.html",link:function(scope){console.log("初始化面包屑数据:",scope.configdata)}}}])});

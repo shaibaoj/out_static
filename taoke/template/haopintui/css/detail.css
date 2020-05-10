@@ -1,0 +1,351 @@
+
+.detail{
+    background-color: #fff;
+    padding: 15px;
+    min-height: 500px;
+    box-shadow: 1px 4px 15px #ddd;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+
+
+.detail .badge{
+    background-color: #fa8c90;
+
+}
+
+.detail .badge:hover{
+    background-color: #f95c68;
+
+}
+
+.detail .badge a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+.detail .intro{
+    /*IE6-8*/
+    width: 65%\9;
+    float:left\9;
+    padding-left: 15px\9;
+}
+
+.detail .image{
+    padding-top: 5px;
+    padding-bottom: 20px;
+    /*IE6-8*/
+    width: 30%\9;
+    float: left\9;
+}
+
+
+.detail .intro .margin{
+    margin-bottom: 15px;
+}
+
+.detail img{
+    width: 100%;
+}
+
+.detail .title{
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.detail .mall-ico{
+    width: 18px;
+    height: 18px;
+    vertical-align: -3px;
+    background-size: cover;
+}
+
+.detail .mall-ico.tmall{
+    background-position: 0 -28px;
+}
+
+
+.detail .desc{
+    margin-bottom: 15px;
+}
+
+
+.detail .price{
+    margin-bottom: 15px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+
+    padding-left: 10px;
+    background-color: #f3f3f3;
+/*
+    background-color: #0ca9ff;
+    color: #fff;
+    padding-left: 10px;
+    */
+
+
+}
+
+.detail .price-discount span{
+    font-size: 20px;
+}
+
+
+
+.detail .price .some-btn{
+    float: right;
+}
+
+
+.detail .price .go{
+    display: block;
+    background-color: #fa8c90;
+    color: #fff;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+}
+
+.detail .price .add-zhushou{
+    display: block;
+    background-color: #5cb85c;
+    color: #fff;
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.detail .price .add-fav{
+    display: block;
+    background-color: #ddd;
+    color: #aaa;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.detail .price .add-jiucuo{
+    display: block;
+    background-color: #eee;
+    color: #aaa;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.detail .price .add-fav:hover,
+.detail .price .add-zhushou:hover,
+.detail .price .add-jiucuo:hover,
+.detail .price .go:hover{
+    background-color: #f95c68;
+    color: #fff;
+}
+
+.detail .coupon{
+    margin-bottom: 15px;
+}
+
+.detail .tk{
+
+    margin-bottom: 15px;
+}
+
+.detail .tk .rate{
+    font-size: 20px;
+}
+
+.detail .tk .campaign-name{
+    margin-left: 15px;
+}
+
+
+.detail .plugin-bar-content{
+    margin-bottom: 15px;
+}
+
+.detail .copywriting{
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #f3f3f3;
+    margin-top: 25px;
+}
+
+.detail .copywriting img{
+    width: 50px;
+    height: 50px;
+    margin: 2px 0 5px 0;
+}
+
+.detail .copywriting .content{
+    margin: 10px 0 20px 0;
+    border: 1px dashed #aaa;
+    padding: 5px 5px 20px 5px;
+    word-break: break-all;
+    word-wrap: break-word;
+	background-color: #fff;
+}
+
+.detail .copywriting #text-url{
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.detail .copywriting .button {
+    display: inline-block;
+    white-space: nowrap;
+    background-color: #0ca9ff;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right:15px;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.detail .copywriting .button.disabled ,
+.detail .copywriting .button.disabled:hover{
+    background-color: gray;
+}
+
+
+.detail .copywriting .button:hover{
+    background-color: #1fc7ff;
+}
+
+.detail .copywriting .button.click-pid-btn{
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+.detail .copywriting .config-pid{
+    float: right;
+}
+
+.detail .copywriting .click-pid-btn:hover{
+    color: #0ca9ff;
+    cursor: pointer;
+}
+
+.detail .copywriting .tkl-surplus{
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.detail .mobile-select-copy-tips{
+    position: relative;
+    top:-30px;
+    text-align: center;
+}
+
+.detail .mobile-select-copy-tips span{
+    background-color: #f3f3f3;
+    padding: 0 10px;
+    color: #000;
+
+}
+
+.detail .tkl-surplus div,
+.detail .help div{
+    margin-bottom: 15px;
+}
+
+
+.detail .help{
+    margin-bottom: 15px;
+    margin-top: 30px;
+    border: 1px dashed #aaa;
+    padding: 10px 10px 0 10px;
+    color: #aaa;
+}
+
+#promotion-box{
+    padding: 10px 15px;
+
+}
+
+
+#promotion-box .title{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#promotion-box .chooses{
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    padding: 10px 10px;
+}
+
+#promotion-box .promotion-media-choose{
+    padding: 5px 10px;
+    margin: 5px 5px 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    float: left;
+}
+
+#promotion-box .promotion-media-choose.active,
+#promotion-box .promotion-media-choose:hover{
+    border: 1px solid #f95c68;
+    background-color: #f95c68;
+    color: #fff;
+}
+
+#promotion-box .current-pid{
+    color: #aaa;
+    margin: 10px 0;
+}
+
+
+#promotion-box .pid-error{
+    color: red;
+    margin-top: 20px;
+}
+
+#promotion-box .manage-pid-btn{
+    font-size: 16px;
+}
+
+
+/*小屏幕隐藏一些参数*/
+@media screen and (max-width:767px) {
+    .detail .copywriting .config-pid{
+        float: none;
+
+    }
+
+    .detail .copywriting .button{
+        float: none;
+        margin-bottom: 10px;
+    }
+
+    .detail{
+        padding: 2px;
+    }
+
+    .detail .copywriting{
+        padding: 5px;
+        border-left: 0px;
+    }
+}

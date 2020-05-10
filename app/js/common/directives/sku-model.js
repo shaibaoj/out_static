@@ -1,0 +1,1 @@
+"use strict";define(function(require){var app=require("app");require("ecshop/directives/sku_ctrl"),app.directive("skuModel",function(){return{restrict:"EA",scope:{skumodel:"="},controller:"SkuModelCtrl",templateUrl:"common/directives/sku-model.html",replace:!0}})});

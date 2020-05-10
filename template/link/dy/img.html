@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+    <!-- <link rel="alternate" media="only screen and (max-width: 640px)" href="http://m.toutiao.com/a6263282535762116865/" > -->
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    {literal}
+    <script type="text/javascript">
+        try{document.execCommand("BackgroundImageCache", false, true);}catch(e){};
+        if(!('console' in window)) {window.console = {log: function(msg) {}};}
+    </script>
+      {/literal}
+    <link type="text/css" rel="stylesheet" href="//s0.pstatp.com/resource/toutiao_web/static/style/base_627e6bf.css">
+    <title>{$SEOTITLE}</title>
+    <meta name="keywords" content="{$seokeywords}">
+    <link type="text/css" rel="stylesheet" href="//s2.pstatp.com/resource/toutiao_web/static/style/detail/detail_46f41ec.css">
+	<meta name="description" content="{$seodescription}">
+    <link rel="stylesheet" type="text/css" href="//s2.pstatp.com/resource/toutiao_web/static/pkg/core_a8db835.css">
+	<link rel="stylesheet" type="text/css" href="//s2.pstatp.com/resource/toutiao_web/static/pkg/detail_a789cc0.css">
+    <script type="text/javascript" charset="utf-8" src="//s2.pstatp.com/resource/toutiao_web/static/pkg/lib_538033e.js"></script>
+	<script type="text/javascript" data-single="true" src="//s2.pstatp.com/resource/toutiao_web/static/pkg/asyncmap_f68d3dc.js"></script>
+</head>
+<body class="">    
+    <div id="wrapper">
+    <div id="pagelet-nav" data-test="toutiao.com">
+    <div class="nav-inner clearfix">
+        <div class="nav-logo">
+            <a href="{$urlall}" class="logo-box">
+                <img src="" class="logo">
+            </a>
+        </div>
+        <div class="nav-title">
+            <ul class="clearfix">
+                <li>
+                    <a data-node="home" class="btn" href="{$urlall}">
+                        <span>首页</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+    <div id="container" class="bg-white clearfix">
+        <div class="container-main">
+           <div class="article-detail">
+               <div class="title">
+                   <h1>{$SEOTITLE}</h1>
+                   {if $starid neq null}
+               	   <div class="subtitle clearfix">
+                        <span class="profile_avatar">
+                            <a href="{$urlall}?starId={$starid}">
+                                {$starname}
+                            </a>
+                        </span>
+                        <span class="time"> </span>
+                   </div>
+                   {/if}
+               </div>
+               <div class="article-content"><img src="{$pic}" title="{$SEOTITLE|strip_tags}" alt="{$SEOTITLE|strip_tags}" /></div>
+           </div>  
+        </div>
+    </div>
+    </div>
+
+    <div class="company" id="toutiaoCompanyWrapper">
+        <p>
+        	{section loop=$links name=a}
+            <a href="{$links[a].ename}" target="_blank">{$links[a].title}</a>
+            {/section}
+        <p>
+            违法和不良信息举报电话：010-88888888
+        </p>
+    </div>
+    <div class="company" id="secondaryCompanyWrapper" style="display:none;">
+        <p>
+        	{section loop=$hot_links name=a}
+            <a href="{$hot_links[a].ename}" target="_blank">{$hot_links[a].title}</a>
+            {/section}
+            <a href="http://www.miibeian.gov.cn/" target="_blank"></a>
+        <p>
+        	{section loop=$w_links name=a}
+            <a href="{$w_links[a].ename}" class="icp" target="_blank">{$w_links[a].title}</a>
+            {/section}
+            违法和不良信息举报电话：010-88888888
+        </p>
+    </div>
+    <script type="text/javascript" src="//s2.pstatp.com/resource/toutiao_web/static/pkg/core_ee363af.js"></script>
+<script type="text/javascript" src="//s2.pstatp.com/resource/toutiao_web/static/pkg/detail_d9a48a7.js"></script>
+<div style="display:none;">
+{$tongji}{if $keywordsType neq null}{$keywordsType.tongji}{/if}
+{$phpHtml}
+</div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+@charset 'utf-8';
+/*
+ * @author lk
+ * 清单
+ */
+body{
+    background-color: #f5f5f5;
+}
+/* 分类 */
+.list_title{
+    padding-top:15px;
+    height:40px;
+    margin-bottom:8px;
+    border-bottom:3px solid #e6e6e6;
+}
+.list_title h4{
+    float:left;
+    font-size:22px;
+    color:#f24f60;
+    font-weight:500;
+}
+.list_title .tit_update{
+    float:right;
+    font-size:14px;
+    color:#666;
+    line-height:38px;
+}
+.list_title .tit_update .update_num{
+    padding:0 4px;
+    position:relative;
+    top:2px; 
+    font-size:20px;
+    color:#f24f60;
+}
+.list_type{
+    height:24px;
+    margin-bottom:15px;
+}
+
+.list_type li{
+    float:left;
+    margin-right:20px;
+}
+.list_type li a{
+    display:inline-block;
+    padding-bottom:1px;
+    font-size:14px;
+    color:#666;
+}
+.list_type .current a,.list_type li a:hover{
+    color:#f24f60;
+    -webkit-transition: color .2s linear;
+    -moz-transition: color .2s linear;
+    -o-transition: color .2s linear;
+    -ms-transition: color .2s linear;
+    transition: color .2s linear;
+}
+.list_type .current{
+    border-bottom:2px solid #ff737e;
+}
+/* 清单列表 */
+.box_good_list{
+    margin-bottom:30px;
+}
+.good_list{
+    width:1050px;
+}
+.good_list>li{
+    float:left;
+    width:458px;
+    padding:19px 18px 13px;
+    margin:0 8px 8px 0;
+    background-color:#fff;
+    -moz-transition:box-shadow .5s;
+    -webkit-transition:box-shadow .5s;
+    -o-transition:box-shadow .5s;
+}
+.good_list>li:hover{
+    box-shadow: 0 0 15px #aaa;
+}
+.good_title a{
+    display:inline-block;
+    vertical-align:middle;
+    margin-left:3px;
+    width:276px;
+    font-size:16px;
+    font-weight:700;
+    color:#333;
+}
+.good_title a:hover{
+	color:#f24f60;
+}
+.good_desc{
+    margin-top:10px;
+   width:318px;
+   font-size:13px;
+   color:#707070;
+}
+.good_more{
+    padding:0 10px;
+    margin-top:10px;
+    line-height:22px;
+    background-color:#9c3fe3;
+    color:#fff;
+    border-radius:10px;
+}
+.good_more:hover{
+    color:#fff;
+    opacity:0.88;
+}
+.list_box{
+    margin:14px 0 23px;
+}
+.list_box li{
+    float:left;
+    margin-right:13px;
+}
+.list_box a{
+    display:block;
+}  
+.list_box li:last-child{
+    margin-right:0;
+}
+.list_box img{
+    width:144px;
+    height:144px;
+    margin-bottom:3px;
+}
+.list_box img:hover{
+	opacity:0.88;
+}
+.list_box p{
+    font-size:13px;
+    color:#fb1957;
+    text-align:center;
+    font-weight:700;
+}
+.arr_right {
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+    top: -2px;
+    width: 4px;
+    height: 6px;
+    font-size: 14px;
+    background: url(http://i.huim.com/zhuanti/20161111/pc_ico.png) 0 -237px;
+}
+.good_info{
+    color:#999;
+}
+.good_info span{
+	margin-right:6px;
+}

@@ -1,0 +1,1 @@
+"use strict";define(function(require){var app=require("app");app.factory("notice",["http","config",function(http,config){return{hasNewNotice:function(){var url=config.getAPI("listennotice");return http(url)}}}])});

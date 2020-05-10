@@ -1,0 +1,1198 @@
+﻿body {
+    background-color:#f5f5f5;
+}
+/* = 轮播图
+--------------------------------------------------------------------*/
+body{background:#f5f5f5;}
+.slider{
+    width:100%;
+    height:265px;
+}
+.slider .banner{
+    z-index:0;
+    position:relative;
+    width:100%;
+    height:265px;
+    overflow:hidden;
+}
+
+.slider .banner li {
+    display:block !important;
+    width:100%;
+    position:absolute;
+    top:0;
+    z-index:0;
+    opacity:0;
+    filter:alpha(opacity=0);
+}
+.slider .banner_pic{
+    display:block;
+    height:265px;
+    width:1120px;
+    margin:0 auto;
+}
+.banner_layer{
+    position:relative;
+    height:0;
+}
+.banner_layer .sign_in{
+    position:absolute;
+    top:-233px;
+    right:0;
+    width:280px;
+    height:200px;
+    background:#fff;
+}
+.sign_btn,.rank_angle,.sign_success{
+    background-image:url(https://i.huim.com/content_new/images/sign_in.png);
+    background-repeat:no-repeat;  
+}
+.sign_in .sign_btn{
+    display:block;
+    width:170px;
+    height:42px;
+    line-height:42px;
+    margin:40px auto 0 auto;
+    background-position:0 0;
+    cursor:pointer; 
+}
+.sign_in .oksign_box{
+    display:-none;
+}
+.sign_in .sign_success{
+    display:block;
+    width:170px;
+    height:42px;
+    line-height:42px;
+    margin:40px auto 0 auto;
+    background-position:0 -43px; 
+}
+.sign_in .sign_success .sign_txt{
+    padding-left:5px;
+    font-size:12px;
+}
+.sign_success .daren_sign{
+    display:inline-block;
+    padding-right:25px;
+    color:#fff;
+}
+.sign_in .sign_date{
+    display:inline-block;
+    width:34px;
+    height:38px;
+    margin-left:14px;
+    padding-top:4px;
+    vertical-align:middle;
+    text-align:center;
+    line-height:38px;
+    color:#000;
+    font-size:18px;
+    font-family:Arial;
+}
+.sign_in .sign_txt{
+    display:inline-block;
+    padding-left:10px;
+    line-height:42px;
+    font-size:14px;
+    color:#fff;    
+}
+.sign_in .start_sign{
+    width:190px;
+    margin:0 auto;
+    padding-top:8px;
+    text-align:center;
+    color:#999;
+}
+.sign_in .sign_rank{
+    display:none;
+    position:absolute;
+    left:50%;
+    top:80px;
+    width:168px;
+    height:220px;
+    padding:8px 15px 0 15px;
+    margin-left:-100px;
+    border:1px solid #e3c998;
+    background:#fffbf4;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    -ms-border-radius:5px;
+    -o-border-radius:5px;
+    border-radius: 5px;
+    z-index:2;
+}
+.sign_in .rank_angle{
+    position:absolute;
+    top:-8px;
+    left:134px;
+    display:inline-block;
+    width:16px;
+    height:9px;
+    background-position:0 -86px;
+}
+.sign_in .rank_tit{
+    padding-bottom:10px;
+    text-align:center;
+    font-size:14px;
+    font-weight:700;
+    color:#f95c68;
+}
+.sign_in .nosign_box .start_sign{
+    position:relative;
+    cursor:default;
+    color:#8a4545;
+}
+.nosign_box .start_sign font{
+    font-family:SimSun;    
+}
+.nosign_box .start_sign .qrcode_box{
+    position:absolute;
+    top:-50px;
+    left:2px;
+    display:none;
+    width:188px;
+    height:188px;
+    background:url(https://i.huim.com/content_new/images/sign_qrcode.png) no-repeat;
+}
+.rank_table .col_img{
+    width:16px;
+    height:16px;
+}
+.rank_table{
+    display:block;
+    width:100%;
+    height:179px;
+    overflow:hidden;
+}
+.rank_table tr{
+    width:100%;
+    height:30px;
+    vertical-align:middle;
+    border-bottom:1px dashed #f2dfc2;
+    color:#808080;
+}
+.rank_table .sign_day{
+    display:inline-block;
+    padding:0 4px;
+    font-family:Arial;
+    font-size:14px;
+    font-weight:700;
+    font-style:italic;
+    color:#ea544a;
+}
+.rank_table .col_td{
+    width:110px;
+}
+.rank_table .col_name{
+    padding-left:4px;
+    color:#8a4545;
+}
+.sign_in .sign_foot{
+    padding-top:30px;
+    text-align:center;
+}
+.sign_in .sign_foot a{
+    display:inline-block;
+    width:78px;
+    height:23px;
+    text-align:center;
+    line-height:23px;
+    border:1px solid #999;
+    -webkit-border-radius:2px;
+    -moz-border-radius:2px;
+    -ms-border-radius:2px;
+    -o-border-radius:2px;
+    border-radius:2px;
+}
+.sign_in .sign_foot .publish_btn{
+    margin-right:10px;
+}
+
+/* 控制元素
+--------------------*/
+.banner_layer .adtype{
+    position:absolute;
+    right:50%;
+    top: -25px;
+    width:200px;
+    margin-right:40px;
+    text-align:center;
+}
+.banner_layer .adtype a {
+    display:inline-block;
+    width:10px;
+    height:10px;
+    margin-right:10px;
+    overflow:hidden;
+    cursor:pointer;  
+    background:#e2e2e2;
+    -webkit-border-radius:100%;
+    -moz-border-radius:100%;
+    -ms-border-radius:100%;
+    -o-border-radius:100%;
+    border-radius:100%;
+}
+.banner_layer .adtype a.current {
+    background:#f95c68;
+}
+.banner_arrow .arrow_prev, .banner_arrow .arrow_next {
+    display:block;
+    position:absolute;
+    top:-155px;
+    width:29px;
+    height:45px;
+    line-height:45px;
+    overflow:hidden;
+    z-index:12;
+    color:#fff;
+    background-color:rgba(0, 0, 0, 0.2);
+    *background-color:#333;
+}
+.banner_arrow{
+    display:none;
+ } 
+.banner_arrow .arrow_prev{left:0;}
+.banner_arrow .arrow_next{right:280px;}
+.banner_arrow .arrow_prev i,.banner_arrow .arrow_next i {
+    background:url(https://i.huim.com/content_new/images/arrow.png) no-repeat;
+    cursor: pointer;
+    display: block;
+    height: 21px;
+    margin: 12px 0 0 9px;
+    overflow: hidden;
+    width: 13px;
+}
+.banner_arrow .arrow_prev i{background-position:top left;}
+.banner_arrow .arrow_next i{background-position:top right;}
+.banner_arrow .arrow_prev:hover, .banner_arrow .arrow_next:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.grid_auto{
+    width:1120px;
+}
+.container{
+    font-family:"Microsoft YaHei",Arial,SimSun,sans-serif;
+}
+.miaoquan_title{
+    padding-top:18px;
+    height:40px;
+    margin-bottom:8px;
+    border-bottom:2px solid #e6e6e6;
+}
+.miaoquan_title h4{
+    float:left;
+    font-size:20px;
+    color:#3c3c3c;
+    font-weight:500;
+}
+.miaoquan_title .mq_tip{
+    margin-left:6px;
+    display:inline-block;
+    vertical-align:middle;
+    width:135px;
+    height:17px;
+    background:url("https://i.huim.com/content_new/images/miaoquan_ico.png?v=2") no-repeat 0 -627px;
+}
+.miaoquan_title .tit_update{
+    float:right;
+    font-size:16px;
+    color:#3c3c3c;
+    line-height:38px;
+}
+.miaoquan_title .tit_update .update_num{
+    padding:0 4px;
+    font-size:16px;
+    color:#f24f60;
+}
+.miaoquan_leimu{
+    height:24px;
+    margin-bottom:14px;
+}
+
+.miaoquan_leimu li{
+    float:left;
+    margin-right:23px;
+}
+.miaoquan_leimu li a{
+    display:inline-block;
+    padding-bottom:1px;
+    font-size:14px;
+    color:#46454d;
+    line-height:34px;
+}
+.miaoquan_leimu .current a,.miaoquan_leimu li a:hover{
+    /* padding-bottom:6px; */
+    color:#f54e54;
+    -webkit-transition: color .2s linear,background-color .3s linear;
+    -moz-transition: color .2s linear,background-color .3s linear;
+    -o-transition: color .2s linear,background-color .3s linear;
+    -ms-transition: color .2s linear,background-color .3s linear;
+    transition: color .2s linear,background-color .3s linear;
+}
+.miaoquan_leimu .current{
+    border-bottom:2px solid #f54e54;
+}
+.miaoquan_leimu .s_line{
+    display:inline-block;
+    width:1px;
+    height:16px;
+    background:#ccc;
+    position:relative;
+    top:6px;    
+}
+.miaoquan_leimu .selc_quan{
+    margin-left:20px;
+}
+.miaoquan_leimu .selc_quan_icon{
+    position:relative;
+    top:2px;
+    *top:-1px;
+    display:inline-block;
+    width:17px;
+    height:17px;
+    background:url("https://i.huim.com/content_new/images/miaoquan_ico.png?v=2") no-repeat 0 -651px;
+}
+.miaoquan_leimu .selc_quan .selc_quan_nav{
+    font-size:15px;
+    color: #46454d;
+    line-height:34px;
+}
+.miaoquan_leimu a.selc_quan:hover,.miaoquan_leimu .selc_current .selc_quan_nav{
+    color:#f24f60;
+    -webkit-transition: color .2s linear,background-color .3s linear;
+    -moz-transition: color .2s linear,background-color .3s linear;
+    -o-transition: color .2s linear,background-color .3s linear;
+    -ms-transition: color .2s linear,background-color .3s linear;
+    transition: color .2s linear,background-color .3s linear;
+}
+.miaoquan_leimu .selc_current .selc_quan_icon{
+    background-position:-28px -651px;
+}
+.miaoquan_items ul{
+    margin-left:-2px;
+    width:1145px;
+}
+.miaoquan_items li{
+    position:relative;
+    float:left;
+    width:265px;
+    margin-right:17px;
+    margin-bottom:15px;
+    background-color:#fff;
+    -webkit-transition:border .6s;
+    -ms-transition:border .6s;
+    -o-transition:border .6s;
+    transition:border .6s;
+    border:2px solid #f5f5f5;
+}
+.miaoquan_items li:hover{
+    border:2px solid #f54e54;
+}
+#miaoquan_hit{
+    padding-bottom:3px;
+}
+#miaoquan_hit .g_price{
+    font-size:12px;
+    font-weight:normal;
+}
+#tj_hit{
+    display:none;
+}
+.mq_fixed{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:90px;
+    z-index:2;
+    background:#fff;
+    line-height:50px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.mq_fixed .mq_types_box{
+    margin: 0 auto;
+    width: 1120px;
+}
+.mq_fixed .current{
+    border:none;
+}
+.mq_fixed .s_line{
+    margin-top:15px;
+}
+.login_show{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:100;
+}
+.login_show .quan_txt{
+    padding:80px 0 40px 0;
+    position:relative;
+    z-index:100;
+    text-align:center;
+    font-size:20px;
+    color:#46454d;
+    font-weight:700;    
+}
+.login_show .quan_login_btn{
+    position:relative;
+    z-index:100;
+    display:block;
+    margin:0 auto;
+    text-align:center;
+    font-size:14px;
+    color:#fff;
+    height:40px;
+    width:116px;
+    line-height:40px;
+    text-align:center;
+    background-color:#f95c68;
+    border-radius:4px;
+}
+.login_show .quan_login_btn:hover{
+    background-color:#ff737e;
+}
+.login_show .show_bg{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    opacity:0.94;
+    filter:opacity(94);
+    background-color:#fff;
+}
+.quan_item_img{
+    position:relative;
+}
+.quan_item_img .top_icon{
+    position:absolute;
+    top:0px;
+    left:0px;
+    display:block;
+    width:40px;
+    height:24px;
+    line-height:24px;
+    text-align:center;
+    color:#fff;
+    background-color:#f51848;
+    border-bottom-right-radius:5px; 
+}
+.quan_item_img .new_icon{
+    background-color:#ffbc09;    
+}
+.quan_item_img .sta_icon{
+    position:absolute;
+    top:50%;
+    left:50%;
+    display:block;
+    width:112px;
+    height:112px;
+    margin:-56px 0 0 -56px; 
+    background-image:url("https://i.huim.com/content_new/images/miaoquan_ico.png?v=2");
+    background-repeat:no-repeat;
+}
+.quan_item_img .yqw_icon{
+    background-position:0 -122px;
+}
+.quan_item_img img{
+    width:100%;
+    height:265px;
+    vertical-align:middle;
+}
+.quan_item_con{
+    padding:0 10px 11px 10px;    
+}
+.quan_item_con .quan_item_tit{
+    padding:5px 0 2px 0;
+    font-size:14px;
+    overflow: hidden;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.quan_item_con .quan_item_tit a{
+    color:#333;
+}
+.quan_item_con .quan_item_tit a:hover{
+    color:#3366cc;
+}
+.quan_item_con .quan_item_price{
+    color:#f24f60;
+    height:30px;
+}
+.quan_item_con .quan_item_price .pir{
+    font-size:12px;
+}
+.quan_item_con .quan_item_price .num{
+    margin-left:3px;
+    line-height:30px;
+    font-size:26px;
+    font-family:arial;
+    position:relative;
+    top:1px;
+}
+.quan_item_con .quan_item_price .pri_font{
+    padding:0 12px 0 3px;
+}
+.quan_item_con .quan_item_price .list{
+    margin-top:10px; 
+    color:#a6a4b2;  
+}
+.quan_item_price .pri_font{
+    color:#a6a4b2;
+}
+.item_btn_box{
+    padding-top:10px;
+}
+.item_btn_box .combtn_red{
+    width:80px;
+    line-height:32px;
+    height:32px;
+    font-size:14px;
+}
+.item_btn_box .item_coupon{
+    float:left;
+    width:119px;
+    height:30px;
+    line-height:30px;
+    width:95px;
+    border:1px dotted #FF0059;
+    color:#fd214f;
+    text-align:center;    
+}
+.item_coupon:hover{
+    background-color:#fff2f3;
+}
+.item_btn_box .item_coupon .quan{
+    float:left;
+    display:inline-block;
+    width:30px;
+    text-align:center;
+    border-right:1px dotted #FF0059;
+}
+.item_btn_box .item_btn{
+    float:right;
+    width:110px;
+    height:32px;
+    line-height:32px;
+    background-color:#f95c68;
+    text-align:center;
+    color:#fff;
+    font-size:14px;
+}
+.item_btn_box .item_btn .arr_right{
+    position:relative;
+    top:-4px;
+    width:0;
+    height:0;
+    border-width:4px;
+    border-style:dashed dashed dashed solid;
+    border-color:transparent transparent transparent #fff;
+    font-size:0;
+    line-height:0;
+}
+.item_btn_box .quan_number{
+    margin-top:5px;
+    padding:1px 5px;
+    color:#808080;
+    border:1px solid #ccc;
+    border-radius:2px;
+}
+
+.miaoquan_foot{
+    padding:50px 0 100px 0;
+    text-align:center; 
+}
+.miaoquan_foot .foot_t1{
+    font-size:30px;
+    font-weight:700;
+    color:#757380;
+}
+.miaoquan_foot .foot_t2{
+    padding-bottom:30px;
+    font-size:16px;
+    color:#a6a4b2
+}
+.miaoquan_foot .qquan_btn{
+    display:block;
+    margin:0 auto;
+    width:165px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    color:#fff;
+    font-size:14px;
+    background-color:#5599ff;
+    border-radius:4px;
+}
+.miaoquan_foot .qquan_btn .qq_ico{
+    display:inline-block;
+    width:16px;
+    height:16px;
+    margin-right:3px;
+    background-image:url("https://i.huim.com/content_new/images/miaoquan_ico.png?v=2");
+    background-repeat:no-repeat;
+    background-position:0 -245px;
+    vertical-align:-3px !important;
+    _vertical-align:0px;
+}
+.load-more{
+    display:none;
+    padding:80px 0;
+    text-align:center;
+}
+.quan_desc{
+    margin-bottom:8px;
+    line-height:1.2;
+    overflow: hidden;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* 底部下载app */
+.foot_qrcode{
+    height:166px;
+    position:fixed;
+    bottom:0;
+    width:100%;
+    z-index:11;
+}
+.foot_qrcode .qrcode_bg{
+    position:absolute;
+    z-index:10;
+    bottom:0;
+    height:120px;
+    width:100%;
+    background-color:#000;
+    opacity:0.75;
+    filter:alpha(opacity=75);    
+}
+.qrcode_cot{
+    width:1000px;
+    position:relative;
+    z-index:11;
+    height:146px;
+    background:url("http://appimg.huim.com/zhuanti/jd618/foot_appqcode.png") no-repeat top center; 
+}
+.qrcode_cot .qrcode_close{
+    position:absolute;
+    z-index:10;
+    top:46px;
+    right:0px;
+    display:inline-block;
+    width:30px;
+    height:30px;
+    background-image:url(about:blank);
+}
+.qrcode_cot .qrcode_btn{
+    position:absolute;
+    top:50px;
+    left:0px;
+    display:inline-block;
+    width:950px;
+    height:85px;
+    background-image:url(about:blank); 
+}
+/* = 换新装了
+--------------------------------------------------------------------*/
+#revision_pop{
+    display:block;
+    width:602px;
+    height:480px;
+    margin:-240px 0 0 -301px;
+    background:none;
+    _position:absolute;
+    _top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-250-this.offsetHeight-(parseInt(this.currentStyle.marginTop,0)||0)-(parseInt(this.currentStyle.marginBottom,0)||0)));
+    _bottom:auto;
+}
+#revision_pop .popbox_close{
+    background:none;
+    width:30px;
+    height:30px;
+    top:0;
+    right:0;
+}
+.revision_pop_cot{
+    height:590px;
+    background:url(https://i.huim.com/zhuanti/shengji/huim_pop.png) no-repeat;
+}
+.revision_pop_cot .open_revision{
+    display:block;
+    width:460px;
+    height:450px;
+    position:absolute;
+    top:50px;
+    left:82px;
+}
+/*扫一扫红码领红包*/
+.side_redqcode{
+    position: fixed;
+    left:50%;
+    margin-left:500px;
+    bottom:140px;
+    z-index:10;
+    width:137px;
+    height:325px; 
+}
+.side_redqcode .close_btn{
+    position:absolute;
+    top:0;
+    right:0px;
+    display:block;
+    width:35px;
+    height:35px;
+    background-image:url(about:blank); 
+}
+
+/* = 666红包
+--------------------------------------------------------------------*/
+#hb_pop{
+    display:block;
+    width:600px;
+    height:550px;
+    margin:-275px 0 0 -300px;
+    _position:absolute;
+    _top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-250-this.offsetHeight-(parseInt(this.currentStyle.marginTop,0)||0)-(parseInt(this.currentStyle.marginBottom,0)||0)));
+    _bottom:auto;
+}
+#hb_pop .popbox_close{
+    background:none;
+    width:50px;
+    height:50px;
+    top:25px;
+    right:25px;
+}
+#hb_pop .hb_enter{
+    display:block;
+    width:500px;
+    height:400px;
+    margin:140px 0 0 50px;
+    background-image:url(about:blank); 
+}
+/* = 销售榜
+--------------------------------------------------------------------*/
+.ranking_area_wrap{
+    margin-top:20px;
+}
+.ranking_area{position:relative;padding:13px 22px 16px 22px;width:1076px;background:#fff}
+.r_content{position:relative;overflow:hidden;height:248px;background:#fff;font-family:Arial,"Microsoft YaHei","微软雅黑";padding-top:15px;}
+.r_content_list{position:absolute;display:block;width:8000px;}
+.r_content_list a{display:block;cursor:pointer;}
+.r_content_list li{float:left;margin-right:19px;width:200px; position:relative; }
+.r_content_list .g_title{margin:5px 0 1px;overflow:hidden;color:#333;text-overflow:ellipsis;white-space:nowrap;font-size:14px;}
+.r_content_list li a:hover .g_title{color:#3366cc}
+.r_content_list img{display:block;width:200px;height:200px}
+.r_content_list
+.arrow_btn{position:absolute;}
+.ranking_area .arrow_next,.ranking_area .arrow_prev{cursor:pointer;position:absolute;top:155px;z-index:10000;width:22px;height:45px;line-height:45px;background-color:rgba(0, 0, 0, 0.2);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#1f000000,endColorstr=#2f000000);}
+.ranking_area .arrow_next i,.ranking_area .arrow_prev i{
+    margin: 12px 0 0 5px;
+    display:inline-block;
+    width:13px;
+    height:21px;
+    background:url(https://i.huim.com/content_new/images/arrow.png)
+}
+.ranking_area .arrow_prev i{
+    background-position: top left;
+}
+.ranking_area .arrow_next i{
+   background-position: top right;
+}
+.ranking_area .arrow_prev{left:0;background-position:0 0}
+.ranking_area .arrow_next{right:0;background-position:-30px 0}
+.ranking_area .arrow_next:hover,.ranking_area .arrow_prev:hover{background-color:rgba(0, 0, 0, 0.3);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#2f000000,endColorstr=#3f000000);}
+.r_content_list .tiem_no{
+    background:url(https://i.huim.com/content_new/images/miaoquan_ico.png?v=2) no-repeat 0 -597px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 18px;
+    text-align: center;
+    height: 24px;
+    line-height: 19px;
+    font-size: 12px;
+    color: #fff;
+}  
+.ranking{
+    position: relative;
+}
+.ranking h4{
+    padding-bottom: 10px;
+    font-size:20px;
+    color:#3c3c3c;
+    font-family:"Microsoft YaHei";
+    font-weight:500;
+}
+.r_content_list .g_price{
+    font-size:14px;
+    color:#f24f60;
+    font-weight: 700;
+}
+.ranking_price{
+    font-size:16px;
+}
+.r_content_list .g_num{
+    margin-top:3px;
+    color:#a6a4b2;
+}
+.ranking_select_box{
+    margin:9px 0 0 32px;
+}
+.ranking_select_box a{
+    position:relative;
+    padding:0 2px 10px;
+    font-size:14px;
+    color:#46454d;
+    z-index:30;
+}
+.ranking_select_box:hover a,.ranking_select_box .active{
+    color:#f54e54;
+}
+.ranking_select_box .active{
+    font-weight:700;
+    border-bottom:2px solid #f54e54;
+}
+.select_tj{
+    margin-left:18px;
+}
+.ranking_line{
+    position:absolute;
+    width:100%;
+    bottom:1px;
+    left:0;
+    height:2px;
+    background-color:#e7e6eb;
+}
+.r_content_list .quan_icons{
+    display: inline-block;
+    width: 38px;
+    height: 15px;
+    background-position: -101px -477px;
+    vertical-align: -3px;
+    background-image: url(https://i.huim.com/content_new/images/home_ico.png?v=20170428);
+    background-repeat: no-repeat;
+ }
+/* 标签 */
+.home_tip_contain{
+    background-color:#fff;
+}
+.home_tip_box{
+    padding:10px 0;
+}
+.home_tip_box i,.search_box .search_submit{
+    display:inline-block;
+    background-image:url(https://i.huim.com/content_new/images/miaoquan_ico.png?v=0502);
+    background-repeat:no-repeat;
+}
+.home_tip{
+    width:310px;
+    float:left;
+}
+.home_tip .home_tip_icon{
+    width:34px;
+    height:34px;
+    float:left;
+}
+.home_tip1 .home_tip_icon{
+    background-position:0 -675px;
+}
+.home_tip2 .home_tip_icon{
+    background-position:-43px -675px;
+}
+.home_tip3 .home_tip_icon{
+    background-position:-86px -675px;
+}
+.home_tip4 .home_tip_icon{
+    background-position:0 -718px;
+}
+.home_tip_desc{
+    float:left;
+    margin-left:10px;
+}
+.home_tip_top{
+    font-size:15px;
+    color:#46454d;
+    font-weight:700;
+    line-height:2.2;
+}
+.home_tip_bottom{
+    display:none;
+    font-size:13px;
+    color:#a6a4b2;
+}
+.home_tip_line{
+    width:31px;
+    height:32px;
+    float:right;
+    margin-right:47px;
+    background-position:-43px -718px;
+}
+.home_tip4{
+    float:right;
+    width:auto;
+}
+/* 搜索
+--------------------*/
+.search_input{
+    display:inline-block;
+    width:177px;
+}
+.search_area{
+    margin-top:3px;
+}
+.search_box{
+    position: relative;
+}
+.search_box .keywords{
+    float:left;
+    display:inline-block;        
+    width:177px;
+    height:16px;
+    padding:3px 0;
+    line-height:16px;
+    font-size:12px;
+    text-indent:8px;
+    color:#b4b4b8;
+    border:1px solid #d6d6d6;
+    border-top-left-radius:3px;
+    border-bottom-left-radius:3px;
+}
+.search_area .search_box .ftext{
+    color:#333;
+}
+.search_box .search_submit{
+    width:24px;
+    height:24px;
+    background-position:-78px -644px;
+    border:0;
+    background-color:#d6d6d6;
+    cursor:pointer;
+    border-top-right-radius:3px;
+    border-bottom-right-radius:3px;
+}
+.search_box .search_submit:hover{
+    background-color:#b9b9b9;
+}
+
+
+.i_brand_name{ height:41px; margin:0 auto 0; position:relative; z-index:2;  border-bottom:2px solid #e6e6e6;width: 1120px;}
+.i_brand_name li{ float:left; display:block; padding:0 10px 0 0; position:relative;text-align:center;}
+.i_brand_name li a{ width:250px; height:39px; line-height:39px; border:1px solid #e8e8e8; border-bottom:1px solid #e8e8e8; text-align:center; display:block; float:left; background:#f9f9f9;}
+.i_brand_name li a .name{ font-size:20px; color:#999; font-weight:bold;}
+.i_brand_name li a .word{ display:none;}
+.i_brand_name li a.active{ background-color:#fff; border-bottom:1px solid #fff;}
+.i_brand_name li a.active b{ width:252px; height:3px; background:#f36; position:absolute; top:0; left:0; overflow:hidden; }
+.i_brand_name li a.active span.name{ color:#f36;}
+.i_brand_name li a.active .word{ display:inline; font-size:14px;color:#999;}
+.i_brand_name li a.active .word em{ color:#ff7400; padding:0 5px;}
+.i_brand_name li.name a.active b{background:#df2008;}
+.i_brand_name li.name a.active span.name{ color:#df2008;}
+.i_brand_name .i_tishi{ width:327px; height:85px; position:absolute; top:0px; left:-15px; background:url(http://egouimg1.qutu.com/egou_index/imagesv1.0/i_nav_tishi.png) no-repeat left top;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true', sizingMethod='scale', src="http://egouimg1.qutu.com/egou_index/imagesv1.0/i_nav_tishi.png");opacity:0; display:none;}
+.i_brand_name .i_tishi span{ color:#fff; font-size:14px; padding:32px 0 0 66px; display:block;}
+.i_brand_name .i_tishi .yes{ width:55px; height:24px; border:1px solid #d4c7c8; text-align:center; line-height:24px; border-radius:3px;-webkit-border-radius:3px; color:#fff; position:absolute; top:42px; right:10px}
+.i_brand_name .double12{ width:200px; height:35px; position:absolute; top:0; right:0;}
+.i_brand_bg{ width:100%; background:#fff; border-top:1px solid #e8e8e8; margin-top:-1px; padding:0 0 30px;}
+.i_brand_mlnav{ height:20px; line-height:20px; padding:10px 0 0;}
+.i_brand_mlnav a{ margin:0 15px; display:inline; float:left;}
+.i_brand_mlnav a:hover,.i_brand_mlnav a.active{ color:#f36;}
+.i_brand_advert{ padding:10px 0 15px; }
+
+
+.ico_horm,.show_type a,.quan_icons,.home_icon,.ico_clock,.list_soldout,.nav_type i,.left_arrow,.zhi_tit h4,.grid_buy_btn,.ico_voice,.top_ico,.recommend .rec_list li a i,.comment_gift{
+    background-image:url(../../images/v2/home_ico.png?v=20170508);
+    background-repeat:no-repeat;  
+}
+
+/* 网格模式
+--------------------*/
+.grid_boxs{
+    margin:0 10px 11px;
+}
+.zhi_type_grid{
+    width:1140px;
+}
+.zhi_type_grid li{
+    position:relative;
+    float:left;
+    width:265px;
+    margin-right:20px;
+    margin-bottom:20px;
+    background:#fff;
+
+    -moz-transition:box-shadow .5s;
+    -webkit-transition:box-shadow .5s;
+    -o-transition:box-shadow .5s;
+
+}
+.zhi_type_grid li:hover{
+    box-shadow: 0 0 15px #aaa;
+}
+.zhi_grid .grid_pic{
+    position:relative;
+    width:265px;
+    height:265px;    
+}
+.zhi_grid .grid_pic img{
+    width:265px;
+    height:265px;
+}
+.zhi_grid .grid_pic .list_soldout{  
+    position:absolute;
+    display:inline-block;
+    z-index:6;
+    top:50%;
+    left:50%;
+    width:120px;
+    height:120px;
+    margin:-60px 0 0 -60px;
+    background-position:0 -241px;
+}
+.zhi_grid .grid_tit{
+    padding-top:10px;
+}
+.zhi_grid .grid_tit a{
+    display:block;
+    height:30px;
+    _width:214px;
+    line-height:32px;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow:hidden;
+    font-size:14px;
+    color:#333;
+    font-weight:400;
+    font-family:Arial,"Microsoft YaHei";
+}
+.zhi_grid .grid_tit a:hover{
+    color:#3366cc;
+}
+.zhi_type .top_ico{    
+    display:inline-block;
+    width:48px;
+    height:20px;
+    overflow:hidden;
+    vertical-align:middle;
+    background-position:-147px 0;
+}
+.zhi_container .top_ico{
+    margin-top:-2px; 
+}
+.zhi_grid .grid_price{
+    position:relative;
+    width:214px;  
+}
+.zhi_grid .price_current{
+    display:block;
+    width:230px;
+    height:30px;
+    overflow:hidden;
+    word-break:keep-all;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.zhi_grid .price_current a{
+    font-size:18px;
+    color:#f95c68;
+    font-family:Arial,"Microsoft YaHei"; 
+}
+.zhi_grid .pub_time{
+    display:inline-block;
+    color:#999;    
+}
+.zhi_grid .grid_buy_btn{
+    position:absolute;
+    right:-28px;
+    top:22px;
+    display:inline-block;
+    width:56px;
+    height:56px;
+    background-position:-45px -23px;
+}
+.zhi_grid .grid_buy_btn span{
+    display:block;
+    width:32px;
+    margin:10px auto;
+    line-height:18px;
+    text-align:center;
+    font-size:15px;
+    color:#fff;
+    cursor:pointer;
+    font-family: Arial,"Microsoft YaHei";
+}
+.zhi_grid a.grid_buy_btn:hover{    
+    background-position:-108px -23px;
+}
+.zhi_grid .grid_page{    
+    padding-bottom:5px;
+}
+.zhi_grid .grid_page_go{
+    display:inline-block;
+    float:left;
+    height:22px;
+    line-height:22px;
+    padding:0 10px;
+    margin-right:10px;
+    color:#b3b3b3;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 50px;
+    color: #95959a;
+    border-radius: 12px;
+    background-color: #f2f4f5;
+}
+.zhi_grid .grid_page_go:hover{
+    background-color:#e6e8e9;
+}
+.zhi_grid .grid_page .page_num{
+    float:right;
+    line-height:22px;
+    color:#999;
+}
+.zhi_grid .grid_infos{
+    margin:15px 0;
+}
+.zhi_type_grid .tab_tips{
+    display:block;
+    position:absolute;
+    top:-4px;
+    left:0;
+    height:40px;
+    z-index:10;
+}
+.zhi_type_grid .tab_tips b{
+    display:inline-block;
+    width:53px;
+    height:40px;
+    margin-right:8px;
+    background:url(../../images/v2/tab_ico.png?v=316) no-repeat;
+}
+.zhi_type_grid .tab_tips .tab_ico1{
+    background-position:0 0;
+}
+.zhi_type_grid .tab_tips .tab_ico2{
+    background-position:-60px 0;
+}
+.zhi_type_grid .tab_tips .tab_ico3{
+    background-position:-120px 0;
+}
+.zhi_type_grid .tab_tips .tab_ico4{
+    background-position:-180px 0;
+}
+.zhi_type_grid .tab_tips .tab_ico5{
+    width:63px;
+    background-position:-240px 0;
+}
+.zhi_type_grid .tab_tips .tab_ico6{
+    width:63px;
+    background-position:-310px 0;
+}
+

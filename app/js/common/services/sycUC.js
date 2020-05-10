@@ -1,0 +1,1 @@
+"use strict";define(function(require){var app=require("app");require("./server");app.factory("sycUC",["http","config",function(http,config){return{init:function(password){var url=config.getAPI("sycUC");http(url,{method:"post",data:{password:password}}).then(function(response){if(!+response.error_code){var script=response.result.script;$("head").append(script)}})}}}])});

@@ -1,0 +1,1 @@
+"use strict";define(function(require){var app=require("app");app.controller("imageSizeCtrl",["$scope","$mdDialog","modalParams","http","config","utils","$state",function($scope,$mdDialog,modalParams,http,config,utils,$state){var vm=$scope.vm={};angular.extend(vm,{init:function(){vm.imageSize=modalParams.size},close:function(){$mdDialog.cancel("cancel")}}),vm.init()}])});

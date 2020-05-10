@@ -1,0 +1,1 @@
+"use strict";define(function(require){var app=require("app");app.directive("focus",function(){return{restrict:"A",scope:{focus:"@"},link:function(scope,element,attrs,controller){scope.$watch("focus",function(value){value&&element.focus()})}}})});

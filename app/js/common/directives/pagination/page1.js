@@ -1,0 +1,1 @@
+"use strict";define(function(require){var app=require("app");require("common/directives/pager-redirect"),app.directive("pagiNation",function(){return{restrict:"EA",replace:!0,templateUrl:"common/directives/pagination/page1.html",scope:{paginations:"=",mysel:"="},link:function(scope,element,attr){console.log(scope.paginations)}}})});

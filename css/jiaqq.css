@@ -1,0 +1,38 @@
+.index711-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .3);
+}
+.index711-mask-con {
+  position: relative;
+  width: 647px;
+  height: 450px;
+  margin: 14% auto;
+}
+.index711-mask-con .index711-erweima {
+  position: absolute;
+  top: 243px;
+  left: 64px;
+  width: 126px;
+}
+.index711-mask-con span {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 33px;
+  height: 33px;
+  background: url(../images/hd/index711_delete.png) 0 0 no-repeat;
+}
+.index711-mask-con a {
+  position: absolute;
+  display: block;
+  bottom: 27px;
+  left: 65px;
+  width: 134px;
+  height: 41px;
+  background: url(../images/hd/add_qun.png) 0 0 no-repeat;
+}

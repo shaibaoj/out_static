@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$SEOTITLE}</title>
+<meta name="keywords" content="{$seokeywords}" />
+<meta name="description" content="{$seodescription}" />
+<link href="http://www.mingxing.com/css2015/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://cdn1.yun.huopinjie.com/templets/link/dy/js/jquery.js"></script>
+<script type="text/javascript" src="http://cdn1.yun.huopinjie.com/templets/link/dy/js/roll.js"></script>
+<script type="text/javascript" src="http://cdn1.yun.huopinjie.com/templets/link/dy/js/lcmbase.js"></script>
+<script type="text/javascript" src="http://cdn1.yun.huopinjie.com/templets/link/dy/js/wrf_Marquee.min.js"></script>
+<script type="text/javascript">var keyStr='{$tkey}'; var to_url='{$tourl}'; var clickType='{$clickType}';var goods_url='{$goods_url}';</script>		
+{literal}
+<script type="text/javascript">
+  $(document).ready(function(){
+	$("#gd_box02").wrf_Marquee({auto:0,img:"#gd_box02 .dl_box dl",ltbtn:"#gd_box02 .preBtn",rbbtn:"#gd_box02 .nextBtn",btn:"#gd_box02 .btn span",});
+	$("#gd_box03").wrf_Marquee({img:"#gd_box03 ul li",btn:"#gd_box03 .btn span",});
+  });
+  </script>
+  {/literal}
+</head>
+
+<body class="mxk_ind">
+<div class="sub_header_bg">
+  <div class="wrapper1220 sub_header">
+    <div class="sub_logo"><a href="{$urlall}"></a></div>
+<!--     <div class="sub_nav">
+	    <a href="{$urlall}" target="_blank">写真</a>
+	    <a href="{$urlall}" target="_blank">壁纸</a>
+	    <a href="{$urlall}" target="_blank">剧照</a>
+	    <a href="{$urlall}" target="_blank">现场</a>
+	    <a href="{$urlall}" target="_blank">八卦新闻</a>
+	    <a href="{$urlall}" target="_blank">明星库</a>
+    </div> -->
+	<div class="search_box">
+      <form id="form1" name="form1" method="get" target="_blank" action="{$urlall}">
+        <input type="text" name="keyword" id="textfield" class="search_txt" value="请输入关键词" onfocus="javascript:this.value=''">
+        <input type="submit" id="button" value="歌手" class="search_btn" title="点击搜索">
+      </form>
+    </div>
+  </div>
+</div>
+<div class="mx_header_bg" style="background-color:#0fa6a4;">
+  <div class="wrapper1220 mx_header"> <h1 class="mx_name">{$tkey}</h1>
+    <div class="txt">
+	    <h2><a href="{$urlall}?starId={$star.star_id}" target="_blank" class="current">主页</a></h2>
+<!-- 	    <h2><a href="{$urlall}?starId={$star.star_id}&type=pic" target="_blank">图片</a></h2>
+	    <h2><a href="{$urlall}?starId={$star.star_id}&type=news" target="_blank">星闻</a></h2>
+	    <h2><a href="{$urlall}?starId={$star.star_id}&type=info" target="_blank">个人资料</a></h2> -->
+   	</div>
+  </div>
+</div>
+<div class="cm_block01_bg" >
+	 <div class="wrapper1220 cm_block01" style=" background-color:#ebeae6;background-image:url(http://cdn1.yun.huopinjie.com/templets/link/dy/images/mx_img.jpg);"> 
+	 <span class="img"><img src="{$star.seopic}" alt="{$tkey}">
+	</span>
+    <h3 class="txt01">{$seo_introduce}</h3>
+	<div class="txt02">
+	{section loop=$star_json_data name=l}
+	{$star_json_data[l].name}：{$star_json_data[l].value}<br />
+	{/section}
+	</div>
+
+   <div class="txt03"><b>分享：</b>
+	   <div class="share_box">
+	   <div class="bdsharebuttonbox">
+		   <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+		   <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	   </div>
+	</div>
+	</div>
+  </div>
+</div>
+<div class="wrapper1186 cm_block02">
+<div class="bottom_bg">
+<div class="block01" id="gd_box03">
+      <div class="hd_box">
+        <ul>
+        	{section loop=$items name=l}
+		   <li>
+		   <a href="{$urlall}?starid={$star.star_id}&starname={$tkey}&pic={$items[l].seopic}&title={$items[l].title|strip_tags}" target="_blank" title="{$items[l].title|strip_tags}">
+		   <img src="{$items[l].seopic}" alt="{$items[l].title|strip_tags}" /></a>
+		   <span class="bg"></span><h3 class="txt01"><a href="{$urlall}?starid={$star.star_id}&starname={$tkey}&pic={$items[l].seopic}&title={$items[l].title|strip_tags}" target="_blank" title="{$items[l].title|strip_tags}">{$items[l].title|strip_tags}</a></h3>
+           </li>
+           {/section}
+        </ul>
+      </div>
+      <div class="hd_num btn"><span></span><span></span><span></span></div>
+  </div>
+
+  <div class="block03">
+    <div class="lm_name">
+      <h2>{$tkey}<span>.</span>最新消息</h2>
+    </div>
+    <dl>
+    {section loop=$items_news name=a max=3}
+	<dd>
+	<a href="{$urlall}?gotu={$items_news[a].base_url}" target="_blank">
+	<img src="{$items_news[a].seopic}" alt="{$items_news[a].title|strip_tags}"/></a>
+	<h3 class="txt01"><a href="{$urlall}?gotu={$items_news[a].base_url}" target="_blank">{$items_news[a].title|strip_tags}</a></h3>
+	<p class="txt02">{$items_news[a].comment}</p>
+	</dd>
+	{/section}
+    </dl>
+    <ul id="xiaoxi">
+    {section loop=$items_news name=a start=3 max=10}
+	<li ><span>{$items_news[a].datetime}</span><i>·</i><a href="{$urlall}?gotu={$items_news[a].base_url}" target="_blank">{$items_news[a].title|strip_tags}</a></li>
+	{/section}
+	 {section loop=$items_news name=a start=13 max=10}
+	<li class="hide"><span>{$items_news[a].datetime}</span><i>·</i><a href="{$urlall}?gotu={$items_news[a].base_url}" target="_blank">{$items_news[a].title|strip_tags}</a></li>
+	{/section}
+    </ul>
+	 <div class="gengduo_xiaoxi" onclick="gengduo('xiaoxi',5);"><a href="javascript:;" class="jz_btn">加载更多消息...</a></div>
+	 </div>
+  <div class="block04" id="gd_box02">
+  <div class="lm_name">
+    <h2>明星人气榜</h2>
+  </div>
+  <div class="box">
+  <div class="dl_box">
+    <dl>
+    	{section loop=$links_star name=a max=9}
+	 	<dd>
+	 	<i class="num01">{$smarty.section.a.index+1}</i><a href="{$links_star[a].ename}" target="_blank">
+	 		<img src="{$links_star[a].seopic}" title="{$links_star[a].title|strip_tags}" alt="{$links_star[a].title|strip_tags}"/>
+	 	</a>
+        <h3 class="txt01"><a href="{$links_star[a].ename}" target="_blank">{$links_star[a].title|strip_tags}</a></h3>
+        <span class="txt02">热度：{$links_star[a].count}</span><a href="{$links_star[a].ename}" target="_blank" class="btn">进入主页</a>
+        </dd>
+        {/section}
+    </dl>
+    <dl>
+		{section loop=$links_star name=a start=10 max=9}
+	 	<dd>
+	 	<i class="num01">{$smarty.section.a.index+1}</i><a href="{$links_star[a].ename}" target="_blank">
+	 		<img src="{$links_star[a].seopic}" title="{$links_star[a].title|strip_tags}" alt="{$links_star[a].title|strip_tags}"/>
+	 	</a>
+        <h3 class="txt01"><a href="{$links_star[a].ename}" target="_blank">{$links_star[a].title|strip_tags}</a></h3>
+        <span class="txt02">热度：{$links_star[a].count}</span><a href="{$links_star[a].ename}" target="_blank" class="btn">进入主页</a>
+        </dd>
+        {/section}
+    </dl>
+    <dl>
+      	{section loop=$links_star name=a start=20 max=9}
+	 	<dd>
+	 	<i class="num01">{$smarty.section.a.index+1}</i><a href="{$links_star[a].ename}" target="_blank">
+	 		<img src="{$links_star[a].seopic}" title="{$links_star[a].title|strip_tags}" alt="{$links_star[a].title|strip_tags}"/>
+	 	</a>
+        <h3 class="txt01"><a href="{$links_star[a].ename}" target="_blank">{$links_star[a].title|strip_tags}</a></h3>
+        <span class="txt02">热度：{$links_star[a].count}</span><a href="{$links_star[a].ename}" target="_blank" class="btn">进入主页</a>
+        </dd>
+        {/section}
+    </dl>
+    <dl>
+      	{section loop=$links_star name=a start=30 max=9}
+	 	<dd>
+	 	<i class="num01">{$smarty.section.a.index+1}</i><a href="{$links_star[a].ename}" target="_blank">
+	 		<img src="{$links_star[a].seopic}" title="{$links_star[a].title|strip_tags}" alt="{$links_star[a].title|strip_tags}"/>
+	 	</a>
+        <h3 class="txt01"><a href="{$links_star[a].ename}" target="_blank">{$links_star[a].title|strip_tags}</a></h3>
+        <span class="txt02">热度：{$links_star[a].count}</span><a href="{$links_star[a].ename}" target="_blank" class="btn">进入主页</a>
+        </dd>
+        {/section}
+    </dl>
+    </div>
+  </div>
+  <div class="num_box">
+  <a href="javascript:void(0);" class="preBtn">a</a><div class="btn"><span>1</span><span>2</span><span>3</span><span>4</span></div><a href="javascript:void(0);" class="nextBtn">b</a>
+  </div>
+  </div>
+  <div style="clear:both"></div>
+</div>
+</div> 
+<div style="clear:both"></div>
+<div class="wrapper1186 two_ad_box01">
+<div style="clear:both"></div>
+</div>
+
+
+
+<div class="wrapper1186 cm_block03" id="juzhaotext">
+<div class="lm_name">
+      <h2>{$tkey}<span>.</span>影视作品</h2>
+    </div>
+    <div class="box">
+    <ul id="juzhao">
+     {section loop=$show_items name=l}
+    <li ><a href="{$urlall}?showId={$show_items[l].show_id}" target="_blank">
+    <img src="{$show_items[l].seopic}" title="{$show_items[l].title|strip_tags}" alt="{$show_items[l].title|strip_tags}"/></a>
+    <h3 class="txt02"><a href="{$urlall}?showId={$show_items[l].show_id}" target="_blank">{$show_items[l].title|strip_tags}</a></h3><span class="bg"></span></li>
+    {/section}
+    </ul>
+    <div style="clear:both"></div>
+    </div>
+     <div class="gengduo_juzhao" onclick="gengduo('juzhao',6);"><a href="javascript:;" class="jz_btn">加载更多影视作品...</a></div>
+<div style="clear:both"></div>
+<div class="wrapper1186 two_ad_box04">
+<div style="clear:both"></div>
+</div>
+</div>
+
+<div class="wrapper1186 cm_block03" id="xianchangtext">
+<div class="lm_name">
+    <h2>{$tkey}<span>.</span>写真</h2>
+    </div>
+    <div class="box">
+    <ul id="xianchang">
+    {section loop=$items name=l}
+    <li >
+    <a href="{$urlall}?starid={$star.star_id}&starname={$tkey}&pic={$items[l].seopic}&title={$items[l].title|strip_tags}" target="_blank">
+    <img src="{$items[l].seopic}" title="{$items[l].title|strip_tags}" alt="{$items[l].title|strip_tags}"/>
+    </a>
+    <h3 class="txt02"><a href="{$urlall}?starid={$star.star_id}&starname={$tkey}&pic={$items[l].seopic}&title={$items[l].title|strip_tags}" target="_blank">{$items[l].title|strip_tags}</a></h3>
+    <span class="bg"></span></li>
+    {/section}
+    </ul>
+    <div style="clear:both"></div>
+    </div>
+	 <div class="gengduo_xianchang"><a href="javascript:;" class="jz_btn">加载更多写真...</a></div>
+<div style="clear:both"></div>
+<div class="wrapper1186 two_ad_box05">
+<div style="clear:both"></div>
+</div>
+</div>
+
+<div class="footer_bg">
+<div class="wrapper1220 footer">
+<div class="box01"><i></i></div>
+<div class="box02">
+<dl class="dl01">
+<dt></dt>
+{section loop=$links name=a}
+<dd><h2><a href="{$links[a].ename}" target="_blank">{$links[a].title}</a></h2></dd>
+{/section}
+</dl>
+<dl class="dl02">
+<dt></dt>
+{section loop=$hot_links name=a}
+<dd><h2><a href="{$hot_links[a].ename}" target="_blank">{$hot_links[a].title}</a></h2></dd>
+{/section}
+</dl>
+<dl class="dl03">
+<dt></dt>
+{section loop=$w_links name=a}
+<dd><h2><a href="{$w_links[a].ename}" target="_blank">{$w_links[a].title}</a></h2></dd>
+{/section}
+</dl>
+<a href="http://www.shaibaoj.com" target="_blank" class="gzwm_btn"></a>
+</div>
+<div class="box03">
+<div class="txt01">投稿 合作 广告:987939309@qq.com</div>
+<div style="clear:both"></div>
+</div>
+</div>
+<div style="display:none;">
+{$tongji}{if $keywordsType neq null}{$keywordsType.tongji}{/if}
+{$phpHtml}
+</div>
+</body>
+</html>
+

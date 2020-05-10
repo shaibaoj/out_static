@@ -1,0 +1,1 @@
+"use strict";define(function(require){var app=require("app");app.directive("emptyData",["config",function(config){return{restrict:"EA",scope:{text:"@",onlyicon:"=",isshow:"="},replace:!0,templateUrl:"common/directives/empty-data.html",link:function(scope){scope.text=scope.text||config.messageConfig.emptydata.canaddList}}}])});

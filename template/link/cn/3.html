@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{$SEOTITLE} -- 【{$tkey}】</title>
+<link rel="shortcut icon"  href="http://lib.shaibaoj.com/favicon.ico" type="image/x-icon" >
+<link rel="Bookmark" href="http://lib.shaibaoj.com/favicon.ico"> 
+<link rel="apple-touch-icon-precomposed" href="http://lib.shaibaoj.com/images/logo/applogo.png"/>
+<link rel="stylesheet" type="text/css" href="http://lib.shaibaoj.com/css/common.css?20140703"/>
+<link rel="stylesheet" type="text/css" href="http://lib.shaibaoj.com/css/fuli_view.css?20140703"/>
+<link rel="stylesheet" type="text/css" href="http://lib.shaibaoj.com/css/att.css?20140703"/>
+<script type="text/javascript" src="http://lib.shaibaoj.com/js/lib/jquery.js?20140703"></script>
+<script type="text/javascript" src="http://lib.shaibaoj.com/js/util/tp.js?20140703"></script>
+</head>
+<body>
+
+<div class="MIB_bloga">
+	<div class="MIB_blogb">
+		<!-- 二级导航 -->
+
+<div id="header">		
+
+	<div class="gm-master">
+		<div class="gm-master-inner">
+			<div class="fl">
+				<div class="">{$tkey}</div>
+			</div>
+			<div class="fr">
+				<div class="search" id="search">
+					<form action="http://www.shaibaoj.com/search/" method="get">
+						<input id="search_keyName" type="text" autocomplete="off" name="keyName" emptyhintel="emptyhint-10000" value="" x-webkit-speech x-webkit-grammar="builtin:translate"/>
+						<button type="submit">搜索</button>
+					</form>
+				</div>
+				
+				<div class="gm-third-login">
+					<a href="" target="_blank" class="gm-login-sina" rel="nofollow">微博登录</a><a href="" target="_blank" class="gm-login-qq" rel="nofollow">QQ登录</a>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+	<div class="global-header">
+		<div class="global-header-inner" id="global-header-inner"> 
+			<div class="fl">
+				<div class="leho-category" id="left-navbar">
+					<span class="category-hd">发现<i class="ico-down-dot1"></i></span>
+					<div id="menu_category" class="category-bd fold"></div>
+				</div>
+				<ul class="cate-nav">
+					<li class="cate-nav-item first"><a href="" class="cate-nav-txt cate-nav-home  ">{$tkey}</a><i class="ico-line"></i></li>
+					{section loop=$abouts name=a max=10}{if $abouts[a].ename neq ""}{/if}<li class="cate-nav-item "><a href="{$abouts[a].ename}" class="cate-nav-txt ">{$abouts[a].title}</a><i class="ico-line"></i></li>{/section}
+					[item:menu]
+				</ul>
+			</div>
+			<div class="fr">
+					<ul class="login-nav cls">
+						<li class="login-first-party hover-shim">
+							<div class="btn-login-first">
+								<a target="_blank" class="__hrefAddRef">注册</a>
+								<i class="ico-line"></i>
+								<a target="_blank">登录</a><i class="ico-arrow-down"><em>◆</em></i>
+							</div>
+						</li>
+					</ul>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+		<!--正文-->
+		<div class="MIB_blogbody">
+			<div class="MIB_mblogbgr ">
+				<div class="MIB_mblogbgl">
+					<div id="bd" class="huodong">
+						
+				        <div class="nav">
+					        <a href="" class="pt">{$tkey}</a> &gt; 
+							<a href="" class="pt">{$SEOTITLE}</a> &gt; 
+							<a href="" class="pt">{$date}{$tkey}排行榜</a>
+						</div>
+				        <div class="huodong-container cls" style="margin-bottom: 20px;">
+				        	<div class="huodong-main">
+				                <div class="text-module">
+
+				                    <div class="module-title cls">
+				                          <h2 style="text-align:center;">{$SEOTITLE}</h2>
+				                    </div>
+				                    <hr size="1" class="hrxu">
+				                    <div style="font-size:12px;line-height:16px;text-align:center; padding:0px 10px; margin-bottom:10px; color:#999999">
+				                    	{$dateTime}&nbsp;  &nbsp; {$tkey}
+									</div>
+				                    <div id="contentBox" class="text-module-content">
+				                    	{if $goods neq null}
+					                    	{$goods.price}
+					                    	<img src="http://cdn.img.shaibaoj.com/pic-/{$goods.seopic}"/>
+					                    	{$goods.content}
+					                    	{foreach from=$goods_jsonData key=myId item=l}
+					                    	<dl><dt>{$l.name}</dt><dd>{$l.value}</dd></dl>
+					                    	{/foreach}
+				                    	{/if}
+				                    	<ul>
+				                    		{section loop=$items name=l}
+												<li class="topgoods_kang">
+													<div class="topgoods_topid"></div>
+													<div class="topgoods_imgkang">{if $item_boolean}<a href="{$urlall}?goodsId={$l.goodsId}" target="_blank">{/if}<img src="{$items[l].seopic}" class="topgoods_img">{if $item_boolean}</a>{/if}</div>
+													<div class="topgoods_spkang">
+													  <div class="topgoods_spnamediv">{if $item_boolean}<a href="{$urlall}?goodsId={$l.goodsId}" class="topgoods_spname" target="_blank">{/if}{$items[l].title}{if $item_boolean}</a>{/if}</div>
+													  <div class="topgoods_sppricediv">{$date}Fold：<span class="topgoods_spprice">{$items[l].price}</span></div>
+													  <div class="topgoods_commentdiv">The last 30 days to sell (piece)
+													   </div>
+													</div>
+												</li>
+											{/section}
+											{foreach from=$items_pic key=myId item=l}
+												<li class="topgoods_kang">
+													<div class="topgoods_topid">TOP{$myId+1}</div>
+													<div class="topgoods_imgkang"><a href="" target="_blank"><img src="http://cdn.img.shaibaoj.com/pic-/{$l.seopic}" class="topgoods_img"></a></div>
+													<div class="topgoods_spkang">
+													  <div class="topgoods_spnamediv"><a href="" class="topgoods_spname" target="_blank">{$l.title}</a></div>
+													  <div class="topgoods_sppricediv">{$date}均价：<span class="topgoods_spprice">{$l.size}</span></div>
+													  <div class="topgoods_commentdiv">最近30天出售(件)
+													   </div>
+													</div>
+												</li>
+											{/foreach}
+				                    	</ul>
+				                    	<phpul></phpul>
+				                    </div>
+
+				                </div>
+				            </div>
+				            <div class="huodong-aside">
+				                <div class="huodong-module">
+				                    <div class="module-title full cls">
+				                        <h2 class="gray">The hot information</h2>
+				                    </div>
+				                    <div id="past-act" class="marquee-container">
+				                        <ul class="huodong marquee-list">
+				                        	{section loop=$hot_links name=a}
+				                            <li class="cls">
+				                               <a href="{$hot_links[a].ename}" target="_blank">{$hot_links[a].title}</a>
+				                            </li>
+				                            {/section}
+										</ul>
+				                    </div>
+				                </div>
+				                
+				                <div class="huodong-module">
+				                    <div class="module-title full cls ">
+				                        <h2 class="gray">Ranking</h2>
+				                    </div>
+				                    <div id="past-act" class="marquee-container">
+				                        <ul class="huodong marquee-list ">
+				                        	{section loop=$links name=a}
+				                            <li class="cls font_14">
+				                               <a href="{$links[a].ename}" target="_blank">{$links[a].title}</a>
+				                            </li>
+				                             {/section}
+										</ul>
+				                    </div>
+				                </div>
+				                
+				            </div>
+				        </div>
+					</div>		
+				</div>
+				<div class="clearit"></div>
+			</div>
+		</div>
+		<!--/正文-->
+		
+
+<div class="clearit"></div>
+<div id="footer">
+	
+<div class="copyright">
+	<div class="copyright-inner">
+		<p class="copyright-url">
+			{section loop=$w_links name=a}<a title="{$w_links[a].title}" href="{$w_links[a].ename}" target="_blank">{$w_links[a].title}</a>{/section}
+		</p>
+		<div class="copyright-info">
+			<p><span>Copyright © 2011-2015</span><span> 版权所有</span><span>京ICP备1111111号</span></p>
+			<p><span>{$tkey}在线©</span></p>
+		</div>
+	</div>
+</div>
+<!--}end: footer -->
+</div>
+<!--/底部-->
+<script type="text/javascript">var keyStr='{$tkey}'; var to_url='{$tourl}'; var clickType='{$clickType}';var goods_url='{$goods_url}';</script>	
+	  
+	</div>
+</div>
+{$tongji}{if $keywordsType neq null}{$keywordsType.tongji}{/if}
+{$phpHtml}
+</body>
+</html>

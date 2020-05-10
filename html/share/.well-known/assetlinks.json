@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.youdanhui.shengduoduo",
+            "sha256_cert_fingerprints": [
+                " 1D:E1:CA:D5:E7:68:3E:26:CA:23:69:A0:72:36:26:D6:76:8C:59:D5:E2:5F:82:90:A4:A3:88:C6:04:F9:F9:A1"
+            ]
+        }
+    }
+]

@@ -1,0 +1,1 @@
+"use strict";define(function(require){var app=require("app");app.directive("sPagination",function(){return{restrict:"EA",replace:!0,templateUrl:"common/directives/pagination/page4.html",scope:{pages:"="},link:function(scope,element,attr){console.log(scope.numPages)}}})});

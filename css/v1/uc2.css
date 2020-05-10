@@ -1,0 +1,707 @@
+/************************我的订单首页*************************************/
+.uc-profile{ border: 1px solid #E5E5E5; width: 1018px; float: left}
+.orderMain{ margin: 23px 39px 42px;font-family: "宋体", songti;}
+.order_Mtit{height: 42px; border-bottom: 2px solid #B2AEBE}
+.order_Mtit ul{ height: 44px;overflow: hidden; float: left}
+.order_Mtit ul li{float: left; padding: 0 20px; font-weight: bolder; height: 42px; position: relative}
+.order_Mtit ul li em{ height: 16px; border-right: 1px solid #E5E5E5; position: absolute;right: 0; top: 3px; display: inline-block; width: 0}
+.order_Mt a{ font-family: "宋体", songti;font-size: 14px;color: #443e56}
+.order_Mtit_Btn{ float: right; width: 238px;height: 24px;border: 1px solid #F7D7BE; color: #FF3355; line-height: 24px; background: #FFF8F2}
+.order_Mtit_Btn em{ display: inline-block; width: 15px;height: 13px; background: url("/v5/images/uc/tbboxicon_03.png") center no-repeat; margin: 6px 5px 0 20px; float: left}
+.order_Mtcurr{ border-bottom: 2px solid #ff3355}
+.order_Mtcurr a{color: #ff3355;}
+.order_Msearch{ overflow: hidden;margin-top: 20px}
+.order_Msearch input[type=text]{ width: 345px;height: 25px;line-height: 28px; /* float: left; */ border: 1px solid #B2AEBE; text-indent: 12px}
+.order_Msearch .order_Ms_btn{ /* float: left; */display: inline-block; width: 90px;height: 32px; line-height: 32px;text-align: center; background: #B2AEBE; color: #ffffff;margin: 0px 5px;}
+.order_Tlist{ background: #F5F5F5; color: #443e56; height: 44px;line-height: 44px; border: 1px solid #E5E5E5; border-bottom: none; margin-top: 18px}
+.order_Tlist div{ display: inline-block;float: left}
+.order_Linfo{ width: 290px; text-indent: 20px}
+.order_Lprice{ width: 85px}
+.order_Lnum{ width: 25px; text-align: center}
+.order_Lhandle{ width: 115px;margin-left: 35px}
+.order_Lprices{ width: 130px}
+.order_Lstate{ width: 110px; text-align: center}
+.order_Lmanage{ text-align: center;width: 140px}
+.order_Minfo{ color: #443E56}
+.order_Minfo .list-tit{ border: 1px solid #E5E5E5; overflow: hidden; height: 34px;line-height: 34px}
+.order_Minfo .list-tit span{ float: left; margin-left: 20px}
+.order_Minfo .list-tit span em{ color: #5069ea; font-family: tahoma}
+.order_Minfo .list-tit span i{ font-family: tahoma}
+
+.order_Minfo .list-tit2{ background: #F5F5F5; height: 41px; border-bottom: none; line-height: 41px}
+.order_Minfo .list-tit2 span{ margin-right: 60px;}
+
+.order_Minfo .list-tit3{ background: #F5F5F5; height: 40px; border-bottom: none; line-height: 40px}
+.order_Minfo .list-tit3 span cite{ color: #A9A9A9; margin-left: 35px}
+
+.order_Minfo .list-main{ border: 1px solid #E5E5E5; border-top: none; position: relative;border-bottom: none}
+.order_Minfo .list-main div{ float: left; }
+.order_Minfo .list-main .order_Linfo{ overflow: hidden; text-indent: 0; height: 110px}
+.order_Minfo .order_Mout{ border-bottom: 1px solid #E5E5E5; margin-bottom: 20px}
+.order_Linfo .list_pic{ display: inline-block; width: 90px;height: 90px; margin: 10px; float: left}
+.order_Linfo .list_pic img{ width: 90px;height: 90px}
+.order_Linfo .list_info{ overflow: hidden; float: left; width: 135px; margin-top: 20px}
+.order_Linfo .list_info a{ color: #443E56}
+.order_Linfo .list_info a:hover{ color: #ff3355}
+.order_Linfo .list_info p{ color: #b2aebe;margin-top: 13px}
+.order_Tlist .order_Lstate{ border-left: 1px solid #E5E5E5; border-right: 1px solid #E5E5E5; text-align: right; position: relative; cursor: pointer}
+.order_Tlist .order_Lstate em{ display: inline-block; width: 9px;height: 6px; margin: 20px 20px 0 10px}
+.sjTop{background: url("/shop/images/g_ico.png") center no-repeat; background-position: -3px -91px; float: right}
+.sjBot{background: url("/shop/images/g_ico.png") center no-repeat; background-position: -21px -91px; float: right}
+.order_Tlist .order_Lstate span{ position: absolute; top: 44px;left: -1px; width: 110px;border: 1px solid #E5E5E5; background: #ffffff; text-align: left; overflow: hidden;z-index: 999}
+.order_Tlist .order_Lstate span p{ display: inline-block; height: 25px;line-height: 25px; text-indent: 10px;color: #443e56; text-align: left;width: 100%; float: left;  background: #E5E5E5}
+.order_Tlist .order_Lstate span a{ display: inline-block; height: 25px;line-height: 25px; text-indent: 10px;color: #443e56; text-align: left;width: 100%; float: left}
+.order_Tlist .order_Lstate span a:hover{ background: #E5E5E5}
+.list-main .order_Lprice{ line-height: 110px; font-family: tahoma}
+.list-main .order_Lprices{ height: 100%; position: absolute; left: 545px; margin-top: 15px}
+.list-main .order_Lprices b{ margin-left: 25px; font-family: tahoma}
+.list-main .order_Lprices p{ margin-left: 25px}
+.list-main .order_Lnum{ line-height: 110px; font-family: tahoma}
+.list-main .order_Lhandle{ line-height: 110px}
+.list-main .order_Lstate{ left: 684px; position: absolute; margin-top: 15px; text-indent: 20px; text-align: left}
+.list-main .order_Lmanage{ position: absolute; left: 800px; margin-top: 10px}
+.list-main .order_Lmanage .order_detail{ overflow: hidden;width: 150px; margin-left: 16px;}
+.list-main .order_Lmanage .order_detail a{ display: inline-block; width: 80px; height: 32px; float: left; text-align: center; line-height: 32px}
+.list-main .order_Lmanage .order_detail span{ display: inline-block; width: 80px; height: 32px; float: left; text-align: center; line-height: 32px}
+.list-main .order_Lmanage .order_detail span a{ display: inline-block; width: 28px; height: 20px; float: left; text-align: center; line-height: 20px; margin-top: 5px;margin-left: 25px}
+/**
+.list-main .order_Lmanage .order_detail p{ width: 110px; float: left; height: 15px; margin-top: 10px; margin-left: -5px;zoom: 1;position: relative}
+.list-main .order_Lmanage .order_detail p a{ width: 35px; color: #5069EA;line-height: 15px; height: 15px;}
+.list-main .order_Lmanage .order_detail p em{ display: inline-block; height: 13px;width: 0; border-right: 1px solid #B2AEBE;float: left; margin-top: 2px}
+**/
+.orderCurr{ background: #ff3355; border-radius: 2px; color: #ffffff}
+.list-main .order_Lstate .order_buyer{ width: 65px;  margin-left: 20px; text-align: left; text-indent: 0; position: relative}
+.list-main .order_Lstate .order_buyer a{ width: 100%; display: inline-block; float: left; line-height: 20px;height: 20px}
+.list-main .order_Lstate .order_buyer div.log_info{
+    position: absolute;
+    z-index: 105;
+    zoom: 1;
+    left: -140px;
+    padding: 10px 15px;
+
+    width: 254px;
+    border-radius: 10px;
+    display: block;
+    border: 1px solid #b1b1b1;
+    box-shadow: 0 0 7px #D5D5D5;top: 24px;
+    background-color: #fff;
+    bottom: auto;}
+
+.list-main  div.log_info .info{text-align: left;width: 100%;}
+.list-main  div.log_info .info sup{position:absolute; z-index: 101; top:-7px; left: 160px; width: 12px; height: 7px; background: url("/v5/images/default/icart_po.png") no-repeat}
+.list-main  div.log_info .info .info-t{float: left; width: 100%; height: 30px; border-bottom: 1px dotted #ddd; line-height: 30px;}
+.list-main  div.log_info .info ul{float: left; width: 220px; margin-left: 15px; }
+.list-main  div.log_info .info li{list-style: disc;margin-top: 10px;}
+.list-main  div.log_info .info li.last{color: #ff3355}
+.list-main  div.log_info .info .info-b{width: 235px; float: left ; border-top: 1px dotted #ddd; padding-top: 5px; margin-top: 10px;padding: 8px;}
+.list-main  div.log_info .info .info-b span{float: left;}
+.list-main  div.log_info .info .info-b a:hover{color: #FF3355}
+.list-main  div.log_info .info em{float: left; margin-top: 10px; width: 100%; height: 30px; line-height: 30px; text-align: center; background-color: #eee}
+
+.list-main  .order_Lstate .on div.log_info{display: none}
+
+
+.list-Main{ float: left;border-right: 1px solid #E5E5E5; width: 550px; margin-top: -1px}
+.list-Main .list{ width: 100%; border-top: 1px solid #E5E5E5}
+
+
+
+
+
+/**弹窗**/
+.ucMask{ width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999;position: fixed; top: 0; left: 0; display: none}
+.ucPopup{ width: 400px; position: fixed; top: 50%; left: 50%; margin-top: -100px; margin-left: -200px; z-index: 10001; background: #ffffff; display: none}
+.popupMain{ position: relative; margin: 20px 20px 30px 30px; padding-top: 15px}
+.popupClose{ position: absolute; top: -10px; right: -10px; text-align: center; font-size: 14px;display: inline-block; width: 21px;height: 21px; color: #443E56; float: right; cursor: pointer}
+.popupInfo{ width: 100%; float: left}
+.popupInfo p{ margin-top: 39px; margin-left: 55px}
+.popupInfo h2{ overflow: hidden; height: 31px;line-height: 31px;font-size: 18px; color: #443E56;font-family: "microsoft yahei"; font-weight: 100}
+.popupInfo h2 em{ width: 31px;height: 31px;background: url("/v5/images/uc/notice.png") center no-repeat; display: inline-block; float: left; margin-right: 10px}
+.popupInfo h2 i{ float: left; font-size: 18px;}
+.popupInfo p a{ font-size: 16px; line-height: 16px;color: #ffffff; padding: 11px 30px;display: inline-block; border-radius: 3px; font-family: "microsoft yahei"; float: left}
+.popupYes{ background: #ff3355; margin-right: 10px}
+.popupNo{ background: #B2AEBE}
+.cancelCheck{ width: 300px; height: 32px;border: 1px solid #B2AEBE;border-radius: 3px; margin-top: 20px; margin-left: 5px; position: relative}
+.cancelCheck input[type=text]{ height: 32px; border: none;line-height: 32px; color: #443E56; font-size: 14px; text-indent: 15px; float: left; width: 260px;background: #ffffff}
+.cancelCheck a{ float: left}
+.cancelBtn{ display: inline-block; width: 35px;height: 32px;line-height: 32px; overflow: hidden; float: right; border-left: 1px solid #B2AEBE}
+.cancelBtn em{ width: 13px; height: 7px; display: inline-block;background: url("/v5/images/uc/popupSj.png") center no-repeat; margin: 11px 0 0 12px}
+.cancelBtn1 em{ background-position: 0 0}
+.cancelBtn2 em{ background-position: -13px 0}
+.cancelCheck .cancelCM{ position: absolute;top: 32px;left: -1px; border: 1px solid #B2AEBE; background: #ffffff; overflow: hidden; width: 300px; display: none}
+.cancelCheck .cancelCM a{ height: 25px; line-height: 25px;width: 100%; display: inline-block;color: #443E56;float: left; text-indent: 15px; font-size: 14px}
+.cancelCheck .cancelCM a:hover{ background: #B2AEBE }
+.popupMain .popupInfo span{ width: 100%; display: inline-block;font-size: 14px; color: #443E56; text-indent: 40px;}
+.popupMain .popupInfo span em{ color: #ff3355; padding: 0 5px}
+/**退款退货**/
+.serviceBg{ background: #F5F5F5; font-family: "宋体", songti; color: #443e56; font-size: 14px}
+.serviceMain{ width: 1160px; margin: 0 auto}
+.serMain{ background: #ffffff; border: 1px solid #E5E5E5; overflow: hidden}
+.serMain .serMain_wap{ margin: 0 0 0 39px; overflow: hidden}
+.serM_wtit{ background: #F5F5F5; height: 38px;border: 1px solid #E5E5E5;line-height: 38px;font-size: 14px;margin-top: 30px; position: relative}
+.serM_wtit span{ float: left}
+.serM_em{ font-family: "microsoft yahei"; color: #ff3355; font-size: 12px; float: left;display: inline-block; width: 4px; float: left;  margin: 2px 8px 0 20px}
+.serM_wtit b{ float: left; width: 90px}
+.serM_wtit .serM_check{ display: inline-block; width: 19px;height: 19px;background: url("/v5/images/uc/sjbk.png") center no-repeat; float: left; margin-top: 9px; cursor: pointer}
+.serM_wtit .serM_M{ position: absolute;width: 90px;border: 1px solid #B2AEBE; top: 38px; left: 100px;z-index: 9999; background: #ffffff; overflow: auto;height: auto; max-height: 150px}
+.serM_wtit .serM_M a{ display: inline-block; color:#443e56; height: 25px;line-height: 25px; text-indent: 10px; float: left; width: 100%}
+.serM_wtit .serM_M a:hover{ background: #b2aebe; color: #ffffff}
+.serMain_wap .serM_wInfo{ padding-bottom: 60px;position: relative}
+.serM_wInfo li{ overflow: hidden; margin-top:20px}
+.serM_wInfo li .serM_wtL{ float: left; margin-right: 10px}
+.serM_wInfo .serM_li1{ line-height: 32px}
+.serM_wInfo .serM_li1 div{ float: left; width: 300px;height: 32px;border: 1px solid #B2AEBE; border-radius: 3px; overflow: hidden}
+.serM_wInfo .serM_li1 div input[type=text]{ height: 32px; line-height: 32px; text-indent: 10px; border: none; width: 262px}
+.serM_wInfo .serM_li1 div em{ display: inline-block; float: right; width: 35px;height: 32px;border-left: 1px solid #B2AEBE;cursor: pointer}
+.serM_wInfo .serM_li1 div em i{ display: inline-block; width: 13px;height: 7px; background: url("/v5/images/uc/sjbot.png") center no-repeat; margin: 13px 0 0 11px}
+.serM_wInfo .serM_li1 div p{ position: absolute; top: 10px; background: 100px; height: 100px; background: red}
+.serM_wInfo .serM_li1 div .serM_M{ position: absolute;width: 264px;border: 1px solid #B2AEBE; top: 33px; left: 112px;z-index: 9999; background: #ffffff; overflow: hidden;height: auto}
+.serM_wInfo .serM_li1 div .serM_M a{ display: inline-block; color:#443e56; height: 25px;line-height: 25px; text-indent: 10px; float: left; width: 100%}
+.serM_wInfo .serM_li1 div .serM_M a:hover{ background: #b2aebe; color: #ffffff}
+.serM_wInfo .serM_li2{line-height: 34px}
+.serM_wInfo .serM_li2 div{ float: left}
+.serM_wInfo .serM_li2 div input[type=text]{height: 32px;line-height: 32px; text-indent: 10px; color: #443e56;border: 1px solid #B2AEBE;border-radius: 3px; margin-right: 10px}
+.serM_wInfo .serM_li2 .serTishi{ color: #7a7685;font-size: 12px; margin-left: 10px}
+.serM_wInfo .serM_li2 .serTishi i{ font-weight: bolder; color: #FF3355; font-family: "宋体", songti;display: inline-block; margin: 0 5px}
+.serM_wInfo .serM_li3 .serM_wtL{ line-height: 15px}
+.serM_wInfo .serM_li3 div{ float: left; display: inline-block;*display:inline;position: relative}
+.serM_wInfo .serM_li3 div span{ width: 50px; height: 20px; display: inline-block; position:absolute; right: 10px; bottom: 7px; text-align: right;color: #b2aebe}
+.serM_wInfo .serM_li3 textarea{ width: 420px;height: 48px;border: 1px solid #B2AEBE}
+.b2aebe{ color: #b2aebe}
+.serM_wInfo .serM_li4 div{ float: left; overflow: hidden}
+.serM_wInfo .serM_li4 div label{ float: left; margin-right: 10px; width: 74px;height: 74px; position: relative; cursor: pointer; overflow: hidden}
+.serM_wInfo .serM_li4 div label em{position: absolute; top: 0; left: 0; display: inline-block; width: 74px;height: 74px;background: url("/v5/images/uc/servicePic.png") center no-repeat;}
+.serM_wInfo .serM_li4 div p{ float: left;width: 100%; color: #7a7685; font-size: 12px}
+.serM_wInfo .serM_li5{ margin-top: 30px}
+.serM_wInfo .serM_li5 a{ width: 111px; height: 38px; text-align: center; line-height: 38px;display: inline-block;float: left}
+.serM_wInfo .serM_li5 .qYes{ background: #FF1E44; font-family: "microsoft yahei"; font-size: 18px;color: #ffffff; border-radius: 3px; margin-left: 112px}
+.serM_wInfo .serM_li5 .qYes2{ background: #FF1E44; font-family: "microsoft yahei"; font-size: 18px;color: #ffffff; border-radius: 3px; margin-left: 112px}
+.serM_wInfo .serM_li5 .qNo{color: #5069EA; font-size: 14px}
+.serM_wInfo .serM_li6 div{ float: left; width: 200px;height: 32px;border: 1px solid #B2AEBE; border-radius: 3px; overflow: hidden}
+.serM_wInfo .serM_li6 div input[type=text]{ height: 32px; line-height: 32px; text-indent: 10px; border: none; width: 160px}
+.serM_wInfo .serM_li6 div em{ display: inline-block; float: right; width: 35px;height: 32px;border-left: 1px solid #B2AEBE;cursor: pointer}
+.serM_wInfo .serM_li6 div em i{ display: inline-block; width: 13px;height: 7px; background: url("/v5/images/uc/sjbot.png") center no-repeat; margin: 13px 0 0 11px}
+.serM_wInfo .serM_li6 div .serM_M{ position: absolute;width: 164px;border: 1px solid #B2AEBE; top: 332px; left: 112px;z-index: 9999; background: #ffffff; overflow: auto;height: auto; max-height: 150px}
+.serM_wInfo .serM_li6 div .serM_M2{ position: absolute;width: 164px;border: 1px solid #B2AEBE; top: 53px; left: 102px;z-index: 9999; background: #ffffff; overflow: auto;height: auto; max-height: 150px}
+.serM_wInfo .serM_li6 div .serM_M3{ position: absolute;width: 164px;border: 1px solid #B2AEBE; top: 162px; left: 102px;z-index: 9999; background: #ffffff; overflow: auto;height: auto; max-height: 150px}
+.serM_wInfo .serM_li6 div .serM_M a{ display: inline-block; color:#443e56; height: 25px;line-height: 25px; text-indent: 10px; float: left; width: 100%}
+.serM_wInfo .serM_li6 div .serM_M a:hover{ background: #b2aebe; color: #ffffff}
+.serM_wInfo .serM_li7{ line-height: 32px}
+.serM_wInfo .serM_li7 input[type=text]{ width: 200px; height: 32px;line-height: 32px; text-indent: 10px;border: 1px solid #B2AEBE; border-radius: 3px;color: #443e56}
+.serM_M{ display: none}
+.serInfo{ overflow: hidden; width: 100%; margin-left: 20px}
+.serInfo .serviceShow{ float: left;}
+.serInfo .serviceShow .detailMain{  width: 860px; margin-top: 60px}
+.serInfo .serviceShow .sertit{ overflow: hidden; height: 31px; line-height: 31px; font-weight: bolder; color: #443e56}
+.serInfo .serviceShow .sertit em{ float: left; display: inline-block; width: 31px;height: 31px; background: url("/v5/images/uc/notice.png") center no-repeat; margin-right: 10px}
+.serInfo .serviceShow .sertit2 em{ background: url("/v5/images/uc/correct.png") center no-repeat}
+.serInfo .serviceShow .sertit3 em{ background: url("/v5/images/uc/wrong.png") center no-repeat}
+.serInfo .serviceShow .detailPub li{ margin-left: 42px; font-size: 12px; margin-top: 5px;}
+.serInfo .serviceShow .detailPub li em{ float: left; margin-top: -6px; font-size: 14px}
+.serInfo .serviceShow .indent_process{ padding-bottom: 25px;}
+.serInfo .serviceShow .indent_proLine{ border-top: 1px dashed #E5E5E5;padding-top: 25px; width: 683px; margin-left: 42px}
+.serInfo .serviceShow .indent_proLine a{ color:#5069ea;margin-top: 5px; font-size: 12px}
+.serInfo .serviceInfoWap{float: left;border-left: 1px solid #E5E5E5;}
+.serInfo .serviceInfo{ width: 205px; font-size: 12px; margin-left: 20px; margin-top: 10px}
+.serInfo .serviceInfo ul li{ margin-top: 5px; overflow: hidden; font-family: tahoma}
+.serInfo .serviceInfo ul li span{ display: inline-block; float: left; width: 60px; font-family: "宋体", songti}
+.serInfo .serviceInfo ul li .serKong{display: inline-block; width: 24px}
+.serInfo .serviceInfo ul li i{ color: #ff3355;}
+.serSym{ font-family: arial}
+.serProInfo{ overflow: hidden; width: 100%; padding-top: 20px; border-top: 1px dashed #E5E5E5;}
+.serProInfo .serProPic{ display: inline-block;width: 60px; float: left}
+.serProInfo .serProPic img{ width: 60px}
+.serProInfo .serProName{ float: left; display: inline-block; width: 135px;line-height: 14px;height: 29px; overflow: hidden; margin-left: 10px}
+.serProInfo .serProName:hover{ color: #ff3355; text-decoration: underline}
+.serProInfo p{ float: left; width: 135px; color: #b2aebe; margin-top: 15px; margin-left: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap}
+.serviceInfo .serProBot{padding-bottom: 25px}
+.indent_deny li a{ display: inline-block; width: 100px;height: 32px; line-height: 32px; text-align: center; color: #ffffff;font-size: 12px; background: #ff3355; border-radius: 3px; margin-top: 10px}
+.indent_win li a{ display: inline-block; width: 100px;height: 32px; line-height: 32px; text-align: center; color: #ffffff;font-size: 12px; background: #ff3355; border-radius: 3px; margin-top: 20px}
+.maskBg{ width: 100%; height: 100%; position: fixed; top: 0; left: 0;background: rgba(0,0,0,0.2); z-index: 99999;display: none}
+.serApply{ width: 655px; height: 490px;z-index: 100009; position: fixed; top: 50%; left: 50%; background: #ffffff; margin-left: -328px;margin-top: -245px;display: none}
+.revApply h2{ font-family: "microsoft yahei"; font-size: 20px;color: #443E56; float: left; font-weight: 100}
+.revApply .serM_em{ float: left;color: #ff3355;  display: inline-block; float: left; font-family: "microsoft yahei"; font-size: 12px; width: 4px; margin: 2px 8px 0 20px}
+.revApply{ margin: 20px 20px 40px 30px; overflow: hidden}
+.revApplyClose{ display: inline-block; width: 15px; height: 15px; float: right; cursor: pointer}
+.reApplyMain{ float: left; position: relative}
+.reApplyMain .serM_wInfo .serM_li1 div .serM_M{ left: 102px;top: 53px}
+.serSucess{ width: 327px;height: 114px;position: fixed; left: 50%; top: 50%; margin-left: -163px; margin-top: 57px; background: #ffffff;z-index: 100009; display: none}
+.serSucess div{ margin: 41px 0 42px 60px; line-height: 31px; font-family: "microsoft yahei";font-size: 20px; color: #443E56}
+.serSucess div em{ float: left; display: inline-block; width: 31px;height: 31px; background: url("/v5/images/uc/correct.png") center no-repeat; margin-right: 10px}
+/**售后记录**/
+.serafter{background: white; width: 1158px; margin: 0 auto; border: 1px solid #e5e5e5; border-top: none;border-bottom: none}
+.serafter-Main{ margin: 0 39px 0;}
+.serafter h2{ height: 18px; height: 60px ; line-height: 60px; font-size: 20px; font-weight: 100; border-bottom: 1px solid #e5e5e5}
+.serafter ul li{ padding: 20px 0; border-top: 1px dotted #E5E5E5; line-height: 23px}
+.serafter ul li div i{ font-family: tahoma}
+.serafter ul li:first-child{ border-top: none}
+.serafter ul li p{ line-height: 25px}
+/*********************************退款记录*************************************/
+.uc-flow{  display: inline; float: left; margin-bottom: 90px; margin-left: 40px; margin-right: 40px; margin-top: 0; width: 940px;font-family: "宋体", songti; color: #443e56}
+.uc-flow h1{ font-size: 18px; font-weight: 100; color: #443e56; height: 67px; line-height: 70px }
+.flowMain{ width: 938px;}
+.flowMain .flowTit{ background: #F5F5F5; height: 44px; line-height: 44px; border: 1px solid #E5E5E5; border-bottom: 0}
+.flowMain .flowTit span{ display: inline-block; float: left}
+.flowMain .flowRefund{ margin-bottom: 20px; border: 1px solid #E5E5E5}
+.flowMain .curr{ min-height: 100px; line-height: 100px; text-align: center}
+.flowMain .flowRefund .refundTit{ height: 34px; line-height: 34px; background: #F5F5F5; border-bottom: 1px solid #E5E5E5}
+.flowMain .flowRefund .refundTit span{ float: left; display: inline-block; margin-left: 20px}
+.flowMain .flowRefund .refundTit span i{ font-family: tahoma}
+.flowMain .flowRefund .refundMain{ height: 109px}
+.flowMain .flowt1{ width: 370px; text-indent: 20px}
+.flowMain .flowt2{ width: 166px}
+.flowMain .flowt3{ width: 155px}
+.flowMain .flowt4{ width: 137px}
+.flowMain .flowt5{ width: 97px}
+.flowRefund .refundMain ul{ overflow: hidden}
+.flowRefund .refundMain ul li{ float: left}
+.flowRefund .refundMain .flowt1{ overflow: hidden; text-indent: 0; margin-top: 10px}
+.flowRefund .refundMain .flowt1 .refundPic{ display: inline-block; width: 90px;height: 90px; float: left; margin-right: 10px; margin-left: 20px}
+.flowRefund .refundMain .flowt1 .refundPic img{ width: 90px;height: 90px}
+.flowRefund .refundMain .flowt1 .refundName{ float: left; width: 185px; display: inline-block; color: #443e56; margin: 5px 0; line-height: 14px}
+.flowRefund .refundMain .flowt1 .refundP { color: #b2aebe}
+.flowRefund .refundMain .flowt1 .refundName:hover{ text-decoration: underline; color: #ff3355}
+.flowRefund .refundMain .flowt1 p{ float: left; width: 230px}
+.flowRefund .refundMain .flowt1 p i{ font-family: tahoma}
+.flowRefund .refundMain .flowt2{ height: 90px;margin-top: 10px; line-height: 90px; font-weight: bolder; font-family: tahoma}
+.flowRefund .refundMain .flowt3{ height: 90px;margin-top: 10px; line-height: 90px; font-weight: bolder; color: #ff3355; font-family: tahoma}
+.flowRefund .refundMain .flowt4{ height: 90px;margin-top: 10px; line-height: 90px}
+.flowRefund .refundMain .flowt5{ height: 90px;margin-top: 10px; line-height: 90px; color: #7a7685}
+.C5069EA{ color: #5069EA}
+.C7a7685{ color: #7a7685}
+.Cb2aebe{ color: #b2aebe}
+.Cff3355{ background: #ff3355}
+.C26D38C{ background: #26D38C}
+.C6C5CE6{ background: #6C5CE6}
+.CFFB802{ background: #FFB802}
+/**订单详情**/
+.odTit{width: 1160px; height: 65px;line-height: 70px; font-size: 14px;margin: 0 auto; overflow: hidden}
+.odTit i{ float: left; margin-right: 5px;}
+.odTit a{ display: inline-block; float: left; color: #443e56; font-size: 14px; margin-right: 5px}
+.odFull{ width: 100%; background: #F5F5F5; color: #443e56; font-family: "宋体", songti}
+.odFull .odMain{ width: 1160px; background: #ffffff; margin: 0 auto; overflow: hidden; border: 1px solid #E5E5E5}
+.odMain .odContent{ margin: 30px;overflow: hidden;}
+.odContent .orderState{ width: 1098px;border: 1px solid #F7D7BE; background: #FFF8F2;}
+.odContent .orderState .orderS{ margin: 30px 0 26px 30px;overflow: hidden;}
+.odContent .orderState .orderS h2{float: left; overflow: hidden; font-size: 18px; height: 31px;line-height: 31px; font-weight: 100; font-family: "microsoft yahei"}
+.odContent .orderState .orderS h2 em{ float: left; width: 31px; height: 31px; display: inline-block; margin-right: 10px}
+.orderState .orderS .orderTishi{float: left; margin-top: -10px;}
+.orderState .orderS .orderTishi li{ overflow: hidden; margin-top: 5px;float: left; line-height: 40px;}
+.orderState .orderS .orderTishi li.count-time{width: 175px;}
+.orderState .orderS .orderTishi li em{ display: inline-block; float: left; margin-top: -5px; width: 8px; font-size: 14px}
+.orderState .orderS .orderTishi li a{ margin: 0 5px}
+.orderState .orderS .orderTishi li .receipt{ display: inline-block;padding: 4px 9px; line-height: 24px; border-radius: 2px;background: #ff3355; color: #ffffff; text-align: center}
+.odContent .orderState .logistics{ border-top: 1px solid #E5E5E5; margin-left: 71px; margin-right: 47px}
+.orderState .logistics{ overflow: hidden}
+.orderState .logistics h3{ margin: 15px 0; font-size: 14px}
+.orderState .logistics p{ margin-top: 5px}
+.orderState .logistics p span{ font-weight: bolder}
+.orderState .logistics .logInfo{ margin-top: 5px; overflow: hidden; margin-bottom: 20px}
+.orderState .logistics .logInfo .logLeft{ font-weight: bolder; float: left}
+.orderState .logistics .logInfo ul{ float: left}
+.notice{ background: url("/v5/images/uc/notice.png") center no-repeat;}
+.correct{ background: url("/v5/images/uc/correct.png") center no-repeat;}
+.wrong{ background: url("/v5/images/uc/wrong.png") center no-repeat;}
+.odContent .orderInfo{ margin-top: 20px; border-bottom: 1px dotted #E5E5E5; padding-bottom: 15px}
+.odContent .orderInfo li{ height: 30px; line-height: 30px; font-size: 14px}
+.odContent .orderInfo li span{ float: left; font-weight: bolder}
+.odContent .orderList{ overflow: hidden}
+.odContent .orderList ul{ overflow: hidden; width: 1060px; margin-top: 5px; margin-bottom: 20px}
+.odContent .orderList li{ float: left; margin-top: 20px; height: 18px; font-size: 14px}
+.odContent .orderList .ordLs1{ width: 245px}
+.odContent .orderList .ordLs2{ width: 320px}
+.odContent .orderList .ordLs3{ width: 240px}
+.odContent .orderList .ordLs4{ width: 220px}
+.odContent .orderList li span{ float: left; font-weight: bolder}
+.odContent .orderPro .orderProTit{ background: #F5F5F5; border: 1px solid #E5E5E5; overflow: hidden; height: 38px; ;line-height: 38px; border-bottom: none}
+.odContent .orderPro .orderProTit span{ display: inline-block; float: left}
+.orderPro .orPt1{ width: 140px; text-indent: 20px}
+.orderPro .orderProTit .orPt1 i{ color: #ff3355; font-family: arial}
+.orderPro .orPt2{ width: 249px}
+.orderPro .orPt3{ width: 120px}
+.orderPro .orPt4{ width: 59px; text-align: center}
+.orderPro .orPt5{ margin-left: 94px; width: 171px}
+.orderPro .orPt6{ width: 147px}
+.orderPro .orPt7{ width: 118px}
+.orderPro ul{ overflow: hidden; border: 1px solid #E5E5E5; }
+.orderPro ul li{ float: left; overflow: hidden}
+.orderPro ul .orPt1{ text-indent: 0}
+.orderPro ul .orPt1 a{ display: inline-block; width: 90px;height: 90px; margin: 20px 0 0 20px}
+.orderPro ul .orPt1 a img{ width: 90px; height: 90px}
+.orderPro ul .orPt2 a{ display: inline-block; margin-top: 30px; color: #443e56; height: 22px ;  width: 185px}
+.orderPro ul .orPt2 a:hover{ color: #ff3355; text-decoration: underline}
+.orderPro ul .orPt2 p{ color: #b2aebe}
+.orderPro ul .orPt3 s{ margin-top: 40px; display: inline-block; color: #7a7685;font-family: arial;height: 13px; line-height: 13px;float: left}
+.orderPro ul .orPt3 b{ display: block; font-family: arial;font-size: 14px; width: 100%; float: left; height: 15px; line-height: 15px }
+.orderPro ul .orPt4{ line-height: 130px; font-family: arial; font-size: 14px; color: #443e56}
+.orderPro ul .orPt5{ line-height: 130px; color: #7a7685}
+.orderPro ul .orPt6{ /*line-height: 130px; */color: #7a7685;margin-top: 55px;}
+.orderPro ul .orPt6 span{display: inline-block;}
+.orderPro ul .orPt6 .sp1{/*line-height: 130px;*/}
+.orderPro ul .orPt6 a{padding: 4px 14px; display:block;border-radius: 2px;background: #ff3355;color: #fff;margin-bottom: 10px;}
+.orderPro ul .orPt7{ line-height: 130px; font-family: arial; font-size: 14px; color: #ff3355; font-weight: bolder}
+.orderPro .orderAll{float: left; width: 1098px; height: 48px; line-height: 48px;border: 1px solid #E5E5E5; border-bottom: none; border-top:none  }
+.orderPro .orderAll:last-child{border-bottom:  1px solid #E5E5E5;}
+.orderPro .orderAll span{ display: inline-block;}
+.orderPro .orderAll .orderWay{ float: left; margin-left: 20px;}
+.orderPro .orderAll .orderPay{ float: right; margin-right: 30px;}
+.orderPro .orderAll .orderPay i{ font-family: "Microsoft Yahei"; font-size: 16px ;color: #ddd; float: right; color: #333}
+.orderPro .orderAll-1{height: 30px;}
+
+    /********************************************确认收货********************************************/
+.odContent .gradeTit{ height: 65px; line-height: 70px; font-size: 18px; font-family: "microsoft yahei"; font-weight: 100}
+.odContent .grade{ border-top: 1px solid #E5E5E5; border-bottom: 1px solid #E5E5E5; overflow: hidden; padding-bottom: 20px}
+.odContent .grade .gradePro{ width: 204px; overflow: hidden; float: left; margin-right: 50px}
+.gradePro .gradePic{ display: inline-block; width: 204px; height: 204px; float: left; margin-top: 20px}
+.gradePro .gradePic img{ width: 204px; height: 204px}
+.gradePro .gradeName{ float: left; color: #443e56; line-height: 14px;margin-top: 10px; height: 29px;overflow: hidden}
+.gradePro .gradeName:hover{ color: #ff3355; text-decoration: underline}
+.gradePro .gradeCheck{ float: left; color: #b2aebe; margin-top: 5px}
+.odContent .grade .gradeInfo{ float: left; margin-top: 20px; width: 845px}
+.odContent .grade .gradeInfo p{ font-weight: bolder}
+.odContent .grade .gradeInfo .gradeMain{ overflow: hidden; line-height: 55px}
+.odContent .grade .gradeInfo .gradeMain ul{ overflow: hidden; margin: 15px 0 20px 0; width: 245px; float: left}
+.odContent .grade .gradeInfo .gradeMain ul li{ width: 24px; height: 24px; float: left; margin-right: 20px; cursor: pointer}
+.odContent .grade .gradeInfo .star1{ background: url("/v5/images/uc/star2.png")}
+.odContent .grade .gradeInfo .star2{ background: url("/v5/images/uc/star1.png")}
+.odContent .grade .gradeInfo .gradeMessage{ margin-top: 20px; border: 1px solid #E5E5E5; display: inline-block;*display:inline;*zoom: 1; overflow: hidden; position: relative}
+.odContent .grade .gradeInfo .gradeMessage textarea{ width: 839px; height: 100px;; background: #F5F5F5;border: none; float: left; text-indent: 10px}
+.odContent .grade .gradeInfo .gradeMessage .gradeNum{ position: absolute; right: 10px ; bottom: 10px; z-index: 6; color: #b2aebe; display: inline-block; width: 45px; height: 13px; line-height: 13px; text-align: right}
+.gInvent{ width: 1100px; height: 75px; overflow: hidden; line-height: 115px}
+.gInvent .inventMain{ float: right; margin: 0 10px 0 0; width: 180px; overflow: hidden}
+.gInvent .inventMain .inventFont{ color: #7a7685; float: left; margin-right: 10px; line-height: 110px}
+.gInvent .inventMain .inventInfo{float: left}
+.gInvent .inventBtn{ width: 120px ; height: 38px; line-height: 38px; text-align: center; border-radius: 3px; color: #ffffff; font-size: 18px; float: right; background: #ff3355; font-family: "microsoft yahei"; margin-top: 35px}
+/***分享***/
+.invent-icon{ background: url("/v5/images/default/global_img2.png") center no-repeat; width: 16px; height: 16px; display: inline-block}
+.invent-icon1{ background-position: 0 0}
+.invent-icon2{ background-position: -20px 0}
+.invent-icon3{ background-position: -40px 0}
+.invent-icon4{ background-position: -80px 0}
+.invent-icon5{ background-position: -101px 0}
+.invent-icon6{ background-position: -122px 0}
+/************************************************我的收藏**********************************************/
+.favList{ overflow: hidden; font-family: "宋体", songti; color: #443e56 }
+.favList ul{ width: 1100px; overflow: hidden; margin-top: 29px}
+.favList ul li{ float: left; width: 204px;height: 282px; margin: 0 40px 30px 0; position: relative}
+.favList .favPic{ display: inline-block; width: 204px;height: 204px;border: 1px solid #ffffff; float: left; overflow: hidden}
+.favList .favPic:hover{ border: 1px solid red}
+.favList .favPic img{ width: 204px;height: 204px}
+.favList .favName{ height: 36px;; position: relative; float: left; margin-top: 6px}
+.favList .favName em{ display: inline-block; width: 17px;height: 16px; color: #ffffff; text-indent: 1px; text-align: center; border-radius: 2px; left: 0; top: 0; position: absolute; line-height: 16px}
+.favList .favName a{ width: 206px; line-height: 16px; display: inline-block; text-indent: 23px; color: #443e56}
+.favList .favName a:hover{ color: #ff3355; text-decoration: underline}
+.favList .favInfo{ width: 206px;height: 31px; line-height: 38px; overflow: hidden; float: left}
+.favList .favInfo em{ display: inline-block; width: 19px;height: 18px; background: url("/v5/images/uc/cu.png") center no-repeat; float: left; margin-top: 9px; margin-right: 10px; margin-left: 2px}
+.favList .favInfo b{ color: #ff3355; font-family: arial; float: left}
+.favList .favInfo s{ color: #b2aebe; font-family: arial; float: left; margin-left: 5px; font-weight: bolder}
+.favList .favInfo .favBtn{ display: inline-block;padding: 0 10px; height: 24px;line-height: 24px; text-align: center; background: #ff3355; color: #ffffff; border-radius: 3px; float: right; margin-top: 7px; margin-right: 1px}
+.favList .favInfo p{ height: 14px; overflow: hidden; line-height: 14px; margin-top: 14px; margin-left: 54px}
+.favList .favInfo p i{ display: inline-block; width: 14px;height: 14px; float: left; background: url("/v5/images/uc/weep.png") center no-repeat; margin-right: 10px}
+.favList .favSimi{ display: inline-block; width: 52px; height: 20px;border: 1px solid #8F9291; background: #454747;line-height: 20px ; text-align: center; border-radius: 3px; color: #ffffff; position: absolute; left: 6px;top: 6px; cursor: pointer; display: none}
+.favList .favLove{ display: inline-block; width: 20px;height: 20px;border: 1px solid #8F9291;background: #343735; border-radius: 3px; overflow: hidden;position: absolute; right: 6px; top: 6px; cursor: pointer; display: none}
+.favList .favLove i{ display: inline-block; width: 17px; height: 14px; margin-top: 3px; margin-left: 1px}
+.loveLog1{ background: url("/v5/images/uc/favlove2.png") center no-repeat}
+.loveLog2{ background: url("/v5/images/uc/favlove1.png") center no-repeat}
+.ucIndex{ width: 1020px; float: left; font-family: "宋体", songti}
+.ucIndex .ucIndex_tit{ border: 1px solid #E5E5E5; background: #ffffff; width: 1018px;height: 178px; margin-top: 30px; font-family: "宋体", songti; color: #443e56; position: relative}
+.ucIndex .ucIndex_tit .borderR{ position: absolute; right: -1px; top: 12px;width: 8px;height: 152px;background: url("/v5/images/uc/rightMenu.png") center no-repeat}
+.ucIndex .ucIndex_tit .borderT{ position: absolute; top: -1px; left: 324px}
+.ucIndex .ucIndex_tit .borderB{ position: absolute; bottom: -1px; left: 324px}
+.ucIndex .ucIndex_tit .ucIndex_per{ overflow: hidden; border-right: 1px solid #E5E5E5; width: 333px;height: 178px; float: left}
+.ucIndex .ucIndex_tit .ucIndex_per .proPic{ width: 120px;height: 120px;display: inline-block; overflow: hidden; border-radius: 50%; margin: 30px 20px 0 20px; float: left}
+.ucIndex .ucIndex_tit .ucIndex_per .proPic img{ width: 120px;height: 120px}
+.ucIndex .ucIndex_tit .ucIndex_per .proInfo{ float: left; margin-top: 51px}
+.ucIndex .ucIndex_tit .ucIndex_info{ float: left; width: 420px ; height: 178px; overflow: hidden}
+.ucIndex .ucIndex_tit .ucIndex_info ul{ overflow: hidden; margin-top: 35px; margin-left: 40px}
+.ucIndex .ucIndex_tit .ucIndex_info ul li{ float: left; width: 80px;height: 105px; margin-right: 15px; overflow: hidden}
+.ucIndex .ucIndex_tit .ucIndex_info ul li .proMain{ height: 64px}
+.ucIndex .ucIndex_tit .ucIndex_per .proName{ font-size: 18px; color: #443e56; font-family: tahoma; height: 18px;line-height: 18px; font-weight: bolder;max-width: 160px; overflow: hidden; text-overflow: ellipsis;display: inline-block}
+.ucIndex .ucIndex_tit .ucIndex_per .proSafe{ font-size: 12px; font-family: "宋体", songti;color: #443e56;line-height: 12px; height: 12px; margin-top: 15px}
+.ucIndex_per .proSafe{ overflow: hidden}
+.ucIndex_per .proSafe span{ width: 64px; display: inline-block; float: left}
+.ucIndex_per .proSafe div{ float: left}
+.ucIndex_per .proSafe div p{ float: left; display: inline-block; overflow: hidden; width: 60px; height: 12px; background: #E5E5E5}
+.ucIndex_per .proSafe div p em{ float: left; display: inline-block}
+.ucIndex_per .proSafe div i{ color: #ff3355; margin-left: 10px}
+.ucIndex_per .proSafe .pSPlan1{ width: 15px}
+.ucIndex_per .proSafe .pSPlan2{ width: 30px}
+.ucIndex_per .proSafe .pSPlan3{ width: 64px}
+.ucIndex .ucIndex_tit .ucIndex_per .proBind{ overflow: hidden; margin-top: 20px}
+.ucIndex .ucIndex_tit .ucIndex_per .proBind a{ display: inline-block; float: left; height: 19px; overflow: hidden; line-height: 20px; color: #5069ea}
+.ucIndex .ucIndex_tit .ucIndex_per .proBind em{ display: inline-block; float: left}
+.ucIndex .ucIndex_tit .ucIndex_per .proBind .proBiphone{ color: #443e56}
+.ucIndex .ucIndex_tit .ucIndex_per .proBind .proBiphone em{ margin-right: 3px}
+.ucIndex .ucIndex_tit .ucIndex_per .proBind .proBemail{ margin-left: 15px; color: #666}
+.ucIndex .ucIndex_tit .ucIndex_per .proBind .proBemail em{ margin-top: 3px; margin-right: 10px}
+.ucIndex_info ul li .proMain{ position: relative}
+.ucIndex_info ul li .proMain a{ display: inline-block; width: 64px; height: 64px; background: #26D38C; border-radius: 50%; margin-top: 1px}
+.ucIndex_info ul li .proMain a em{ margin: 17px 0 0 17px; display: inline-block}
+.ucIndex_info ul li .proMain span{ width: 66px;display: inline-block;height: 14px; text-align: center; position: absolute; top: 0; left: 17px; line-height: 14px}
+.ucIndex_info ul li .proMain i{ background: #ff3355; color: #ffffff; padding: 0 10px; line-height: 14px; height: 14px; border-radius: 12px; display: inline-block; font-family: tahoma}
+.ucIndex_info ul li .iPay{ font-size: 14px; font-family: "microsoft yahei"; color: #7a7685; height: 14px;line-height: 14px; margin-top: 23px; text-align: center; display: block;width: 64px}
+.ucIndex_info ul li .iPay:hover{ color: #ff3355}
+.ucIndex .ucIndex_tit .ucIndex_coin{ float: left; width: 194px; height: 104px; padding: 16px 0 20px 31px; background: #F5F5F5; margin-top: 20px}
+.ucIndex .ucIndex_tit .ucIndex_coin ul li{ height: 25px; line-height: 25px; overflow: hidden; font-family: tahoma}
+.ucIndex .ucIndex_tit .ucIndex_coin ul li span{ float: left; display: inline-block; width: 60px; font-family: "宋体", songti}
+.ucIndex .ucIndex_tit .ucIndex_coin ul li i{ font-family: tahoma; color: #ff3355; font-weight: bolder}
+.ucIndex .ucIndex_tit .ucIndex_coin ul li em{ display: inline-block; width: 28px; height: 13px; background: url("/v5/images/uc/new.png") center no-repeat; float: left; margin-top: 6px; margin-left: 10px}
+.ucIndex .ucIndex_tit .ucIndex_coin ul li b{ font-weight: 100; float: left}
+
+.indexIcon{ background: url("/v5/images/uc/ucIndex.png")}
+.iIcon1{ background-position: -2px -2px; width: 37px; height: 30px} /**待付款**/
+.iIcon2{ background-position: -42px -2px; width: 34px; height: 30px} /**待收货**/
+.iIcon3{ background-position: -79px -2px; width: 37px; height: 31px} /**待评价**/
+.iIcon4{ background-position: -119px -3px; width: 34px; height: 30px} /**退款/售后**/
+.iIcon5{ background-position: -163px -3px; width: 22px; height: 19px}/**已经绑定**/
+.iIcon6{ background-position: -2px -37px; width: 14px;height: 19px}/**暂未绑定**/
+.iIcon7{ background-position: -23px -37px; width: 21px;height: 16px}/**信封**/
+.iIcon8{ background-position: -49px -37px; width: 20px;height: 11px}/**下半圆**/
+.iIcon9{ background-position: -76px -37px; width: 20px;height: 11px}/**上半圆**/
+.iIcon10{ background-position: -119px -37px; width: 60px;height: 12px}/**颜色条**/
+
+.ucIndex .ucIndex_main{ overflow: hidden; margin-top: 20px}
+.ucIndex_main .ucIndex_order{ width: 758px;height: 399px; background: #ffffff; border: 1px solid #E5E5E5; float: left; margin-right: 20px}
+.ucIndex_main .ucIndex_order .ucIndex_blank{ width: 363px;height: 200px; margin: 37px 0 0 181px; background: url("/v5/images/uc/blank.png") center no-repeat}
+.ucIndex_main .ucIndex_order ul{ overflow: hidden; border-bottom: 1px dotted #E5E5E5;}
+.ucIndex_main .ucIndex_order ul:last-child{ border-bottom: none}
+.ucIndex_main .ucIndex_order ul li{ float: left;width: 170px; color: #7a7685;}
+.ucIndex_main .ucIndex_order .ucOrder1{/* width: 91px;*/ margin: 20px 0 15px}
+.ucIndex_main .ucIndex_order .ucOrder1 a{ width: 60px;height: 60px;margin-right: 10px;float: left;}
+.ucIndex_main .ucIndex_order .ucOrder1 a img{ width: 60px; height: 60px}
+.ucIndex_main .ucIndex_order .ucOrder2{ width: 29px; line-height: 92px; font-family: arial; font-size: 18px; font-weight: bolder; text-align: center}
+.ucIndex_main .ucIndex_order .ucOrder3{ width: 100px; line-height: 100px; margin:0 19px 0 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap}
+.ucIndex_main .ucIndex_order .ucOrder4{ width: 82px; overflow: hidden}
+.ucIndex_main .ucIndex_order .ucOrder4 p{ margin-top: 35px; line-height: 12px; color: #ff3355; font-weight: bolder; font-family: arial}
+.ucIndex_main .ucIndex_order .ucOrder5{ width: 160px; line-height: 100px; font-family: tahoma}
+.ucIndex_main .ucIndex_order .ucOrder6{ width: 95px; overflow: hidden;line-height: 100px}
+.ucIndex_main .ucIndex_order .ucOrder6 span{ color: #ff3355; display: inline-block;height: 12px;line-height: 12px; margin-top: 35px; float: left}
+.ucIndex_main .ucIndex_order .ucOrder6 a{ color: #5069ea; display: inline-block; margin-top: 5px; float: left; line-height: 12px}
+.ucIndex_main .ucIndex_order .ucOrder7{ width: 70px;}
+.ucIndex_order .ucOrder7 .ucO1{ margin-top: 30px}
+.ucIndex_order .ucOrder7 .ucO2{ line-height: 100px}
+.ucIndex_order .ucOrder7 .ucO1 .ck{ color: #7a7685}
+.ucIndex_order .ucOrder7 .ucO1 p a{ color: #5069EA; float: left}
+.ucIndex_order .ucOrder7 .ucO1 p a:hover{ color: #ff3355; text-decoration: underline}
+.ucIndex_order .ucOrder7 .ucO1 p i{ float: left}
+.ucIndex .ucIndex_main .ucIndex_sign{ width: 240px;height: 401px; background: #ffffff; float: left; overflow: hidden}
+.ucIndex .ucIndex_main .ucIndex_sign .ucInxex_time{ float: left; width: 240px;height: 244px}
+.ucIndex_sign .timeBg1{ background: url("/v5/images/uc/bg1.png") center no-repeat; width: 240px;height: 244px}
+.ucIndex_sign .timeBg2{ background: url("/v5/images/uc/bg2.png") center no-repeat; width: 240px;height: 244px}
+.ucIndex_sign .ucImonth{ font-family: arial; font-size: 16px; color: #ffffff;margin-top: 55px; margin-left: 80px; height: 16px; line-height: 16px;width: 77px; text-align: center}
+.ucIndex_sign .ucIday{ font-family: arial; font-size: 72px; color: #ffffff;width: 77px; margin-left: 80px; height: 72px; line-height: 72px; text-align: center}
+.ucIndex_sign .ucIweek{ width: 77px; text-align: center;margin-left: 80px}
+.ucIndex_sign .ucIweek span{ font-size: 14px; width: 68px;height: 24px;line-height: 24px; color: #ffffff; background: rgba(0,0,0,0.3);border-radius: 15px; display: inline-block; text-align: center;}
+.ucIndex_sign .ucIsign{ display: inline-block; width: 80px;height: 24px;line-height: 24px; background: #ff3355; color: #ffffff; text-align: center;border-radius: 24px; margin-top: 40px; margin-left: 140px}
+.ucIndex .ucIndex_main .ucIndex_sign .ucIndex_task{ float: left;border: 1px solid #E5E5E5; width: 238px; height: 155px}
+.ucIndex_sign .ucIndex_task .ucIndex_pub{ margin: 30px 20px 0; padding: 0; border: none}
+.ucIndex_sign .ucIndex_task .ucIndex_timeM{ width: 238px; overflow: hidden; margin-top: 15px}
+.ucIndex_sign .ucIndex_task .ucIndex_timeM ul{ overflow: hidden; margin-left: 17px; width: 300px}
+.ucIndex_sign .ucIndex_task .ucIndex_timeM ul li{ float: left; margin-right: 30px}
+.ucIndex_sign .ucIndex_task .ucIndex_timeM ul li a{ color: #7a7685}
+.ucIndex_sign .ucIndex_task .ucIndex_timeM ul li a:hover{ color: #ff3355}
+.ucIndex_sign .ucIndex_task .ucIndex_timeM ul li a em{ display: block; width: 44px;height: 44px}
+.ucIndex_sign .ucIndex_task .ucIndex_timeM ul li a p{ height: 12px; line-height: 12px;margin-top: 8px; text-align: center; font-family: microsoft yahei}
+/**赚取惠币**/
+.taskIcon{ background: url("/v5/images/score/score_con.png") center}
+.taskIcon1{ background-position: 0 0}
+.taskIcon2{ background-position: -50px 0}
+.taskIcon3{ background-position: -100px 0}
+.taskIcon4{ background-position: -150px 0}
+.taskIcon5{ background-position: -200px 0}
+.taskIcon6{ background-position: -250px 0}
+.ucIndex .ucIndex_main2{ overflow: hidden; margin-top: 20px; margin-bottom: 38px}
+.ucIndex .ucIndex_main2 .ucIndex_fav{ width: 758px; height: 258px; background: #ffffff; border: 1px solid #E5E5E5; float: left}
+.ucIndex .ucIndex_main2 .ucIndex_rec{ width: 758px; height: 258px; background: #ffffff; border: 1px solid #E5E5E5; float: left; margin-top: 20px}
+.ucIndex .ucIndex_main2 .ucIndex_not{ width: 238px; height: 538px; background: #ffffff; border: 1px solid #E5E5E5; float: right; overflow: hidden}
+.ucIndex .ucIndex_main2 .ucIndex_not .ucIndex_pub{ margin: 0 20px}
+.ucIndex .ucIndex_main2 .ucIndex_not .ucIndex_notM ul{ overflow: hidden; margin: 10px 20px 0;}
+.ucIndex .ucIndex_main2 .ucIndex_not .ucIndex_notM ul li{ float: left; overflow: hidden; height: 35px; line-height: 35px; overflow: hidden; width: 100%}
+.ucIndex .ucIndex_main2 .ucIndex_not .ucIndex_notM ul li em{ display: inline-block; float: left; font-size: 18px;color: #7a7685; font-weight: bolder;font-family: arial; margin-right: 10px;line-height: 30px}
+.ucIndex .ucIndex_main2 .ucIndex_not .ucIndex_notM ul li a{ display: inline-block; float: left; color: #7a7685}
+.ucIndex .ucIndex_main2 .ucIndex_not .ucIndex_notM ul li a:hover{ color: #ff3355; text-decoration: underline}
+.ucIndex .ucIndex_main2 .ucIndex_not .ucIndex_notM ul li i{ display: inline-block; float: right; color: #b2aebe; font-family: tahoma}
+.ucIndex .ucWap{ margin: 30px; min-height: 100px}
+.ucIndex .ucIndex_pub{ overflow: hidden; height: 18px;border-bottom: 1px solid #E5E5E5; padding-bottom: 15px}
+.ucIndex .ucIndex_pub span{ float: left; font-size: 18px;line-height: 18px;color: #443e56; font-family: microsoft yahei}
+.ucIndex .ucIndex_pub a{ float: right; color: #5069EA;}
+.ucIndex .ucIndex_pub a:hover{ color: #ff3355}
+.ucIndex .ucIndex_ul{ width: 680px; overflow: hidden; height: 182px; padding: 0 16px; margin-left: -6px; *zoom: 1; position: relative}
+.ucIndex .ucIndex_ul .carLeft{ background: url("/v5/images/score/spliimg.png"); background-position: 0 -114px; position: absolute; left: 0; top: 65px;z-index: 333; width: 20px;height: 30px; display: inline-block; cursor: pointer}
+.ucIndex .ucIndex_ul .carLeft:hover{ background-position: 0 -144px}
+.ucIndex .ucIndex_ul .carRight{ background: url("/v5/images/score/spliimg.png"); background-position: -20px -114px; position: absolute; right: 0; top: 65px; z-index: 333; width: 20px;height: 30px; display: inline-block; cursor: pointer}
+.ucIndex .ucIndex_ul .carRight:hover{ background-position: -20px -144px;}
+.ucIndex .ucIndex_ul ul{ overflow: hidden; margin-top: 20px; width: 740px}
+.ucIndex .ucIndex_ul ul li{ float: left; width: 120px;height: 162px; margin-right: 20px; overflow: hidden}
+.ucIndex .ucIndex_ul ul li .proPic{ display: inline-block; float: left; width: 120px; height: 120px}
+.ucIndex .ucIndex_ul ul li .proPic img{ width: 120px; height: 120px}
+.ucIndex .ucIndex_ul ul li .proName{ width: 120px; overflow: hidden; color: #7a7685; float: left;height: 13px; line-height: 12px;margin-top: 10px; text-overflow: ellipsis; white-space: nowrap}
+.ucIndex .ucIndex_ul ul li .proName:hover{ color: #ff3355; text-decoration: underline}
+.ucIndex .ucIndex_ul ul li p{ overflow: hidden; font-weight: bolder;font-family: arial; float: left; height: 12px;line-height: 12px; margin-top: 8px}
+.ucIndex .ucIndex_ul ul li p em{ float: left;color: #ff3355}
+.ucIndex .ucIndex_ul ul li p b{ float: left;color: #ff3355}
+.ucIndex .ucIndex_ul ul li p s{ float: left; color: #b2aebe; margin-left: 10px}
+
+.ucIndex .ucIndex_ul .ucCollect{ color: #424242; font-weight: bolder; font-size: 24px; font-family: "微软雅黑"; margin-top: 40px; text-align: center}
+.ucIndex .ucIndex_ul .ucCollect a{display: inline-block; width: 115px; height: 35px; text-align: center; background: #ff3355; color: #ffffff; line-height: 35px; font-size: 14px;border-radius: 5px}
+
+.ucIndex .ucIndex_main2 .ucIndex_not .ucIndex_pub{ margin-top: 30px}
+
+/**********************************************我的评价***********************************************/
+.comMain{ font-family: "宋体", songti; color: #7a7685}
+.comMain .headTit{}
+.comMain .headTit b{ color: #ff3355}
+.comMain .comTit{ background: #F5F5F5; width: 938px;height: 38px; border: 1px solid #E5E5E5; overflow: hidden}
+.comMain .comTit span{ float: left; color: #443e56; font-weight: bolder; line-height: 38px}
+.comMain .comTit1{ width: 560px; margin-left: 20px}
+.comMain .comTit2{ width: 232px}
+.comMain .comTit3{ width: 125px}
+.comMain .order_Mtit{ margin-top: 10px}
+.comContent .proInfo{ overflow: hidden; height: 110px}
+.comContent .proInfo ul li{ float: left; overflow: hidden}
+.comContent .proInfo ul li .proPic{ float: left; display: inline-block; margin-right: 15px; margin-top: 10px}
+.comContent .proInfo ul li .proPic img{ width: 90px;height: 90px}
+.comContent .proInfo ul li .proName{ float: left;height: 13px;line-height: 12px; margin-top: 38px}
+.comContent .proInfo ul li .proName:hover{ color: #ff3355; text-decoration: underline}
+.comContent .proInfo ul li p{ color: #b2aebe; width: 450px; float: left; height: 12px;line-height: 12px; margin-top: 10px}
+.comContent .proInfo .comTit2{ line-height: 110px; font-family: tahoma}
+.comContent .proInfo .comTit3{ line-height: 110px; overflow: hidden}
+.comContent .proInfo .comTit3 span{ float: left; color: #5069ea; cursor: pointer; height: 12px;line-height: 12px; overflow: hidden; margin-top: 48px}
+.comContent .proInfo .comTit3 span em{ display: inline-block; width: 9px;height: 6px;margin: 2px 4px 0;}
+.comContent .proInfo .comTit3 i{ float: left;margin-right: 5px; color: #B2AEBE}
+.comContent .proInfo .comTit3 .cava1{ float: left; color: #7a7685; height: 12px;line-height: 12px; margin-top: 48px}
+.comContent .proInfo .comTit3 .cava2{ line-height: 110px; color: #5069ea}
+.comContent .proInfo .comTit3 span i{ color: #5069ea; margin-right: 0}
+.comContent .proInfo .comTit3 .comTbot{ background: url("/v5/images/uc/news_06.png") center no-repeat}
+.comContent .proInfo .comTit3 .comTtop{ background: url("/v5/images/uc/news_03.png") center no-repeat}
+.comContent .proMain{ display: none; background: #F5F5F5; overflow: hidden;border-top: 1px solid #E5E5E5;}
+.comContent{ border: 1px solid #E5E5E5; border-top: none}
+.buyWord{ margin-left: 20px}
+.buyWord .buyWordTit{ height: 50px; line-height: 50px; overflow: hidden}
+.buyWord .buyWordTit .buyWT1{ float: left}
+.buyWord .buyWordTit .buyWT2{ float: left}
+.buyWord .buyWordTit .buyWT2 em{ display: inline-block; display: inline-block; width: 12px;height: 12px; background: url("/v5/images/uc/star3.png") center no-repeat; margin-top: 18px; margin-right: 4px; float: left}
+.proMain i{ color:#b2aebe; display: block; margin-top: 5px; margin-bottom: 15px; font-family:tahoma}
+
+.sellWord{ border-top: 1px dotted #E5E5E5;padding-top: 5px; margin-left: 20px}
+.sellWord p{ color: #ff3355}
+
+/***************************************************我的优惠卷***************************************/
+.couponMain{ font-family: "宋体", songti}
+.couponMain ul{ overflow: hidden; width: 1050px}
+.couponMain ul li{ float: left; margin: 20px 20px 20px 0; width: 220px;height: 163px; background-color: #F5F5F5; border-radius: 3px; text-align: right; position: relative}
+.couponMain .proName{ margin-right: 20px; float: right; width: 100%; display: block; height: 12px;line-height: 12px; margin-top: 14px; color: #ffffff; font-family: "microsoft yahei"}
+.couponMain .proPrice{ margin-right: 20px; float: right; width: 100%; display: block; margin-top: 10px; font-size: 48px; font-family: arial; color: #ffffff;height: 40px;line-height: 40px; font-weight: bolder; overflow: hidden}
+.couponMain .proPrice b{ font-size: 24px; font-family: arial; float: right; width: 18px;margin-top: 5px; font-weight: 100; text-shadow: 1px 1px 1px #ccc}
+.couponMain .proPrice i{ float: right; text-shadow: 1px 1px 1px rgba(0,0,0,0.07)}
+.couponMain .proTit{ margin-right: 20px; float: right; width: 100%; display: block; font-size: 14px; margin-top: 10px; height: 16px;line-height: 16px; color: #7a7685; font-family: arial}
+.couponMain .couTime{ float: right; width: 100%; display: block; color: #7a7685; overflow: hidden; height: 12px; line-height: 12px; margin-top: 35px; font-family: arial}
+.couponMain .couTime span{ color: #7a7685; float: left; margin-left: 10px}
+.couponMain .couTime em{ color: #7a7685; float: right; margin-right: 20px}
+.couponMain ul li .c_Icon{ position: absolute; top: 63px; left: 19px; z-index: 22}
+.coup0{ background: url("/v5/images/uc/q0.png") 0 0 no-repeat}
+.coup5{ background: url("/v5/images/uc/q5.png") 0 0 no-repeat}
+.coup10{ background: url("/v5/images/uc/q10.png") 0 0 no-repeat}
+.coup20{ background: url("/v5/images/uc/q20.png") 0 0 no-repeat}
+.coup50{ background: url("/v5/images/uc/q50.png") 0 0 no-repeat}
+.coup100{ background: url("/v5/images/uc/q100.png") 0 0 no-repeat}
+.coupIcon{ background: url("/v5/images/uc/coupIcon.png") 0 0 no-repeat; width: 38px; height: 38px}
+.cIcon1{ background-position: 0 0;}
+.cIcon2{ background-position: -51px 0;}
+.cIcon3{ background-position: -100px 0;}
+.cIcon4{ background-position: -151px 0;}
+.cIcon5{ background-position: -200px 0;}
+.cIcon6{ background-position: -251px 0;}
+.cIcon7{ background-position: -303px 0;}
+.cIcon8{ background-position: -251px 0;}
+.youhuijuan{ float: right; color: #5069ea}
+
+/**********************************************我的邀请****************************************/
+.invTask{ border-bottom: 1px solid #E5E5E5; overflow: hidden}
+.invTask h2{ font-size: 14px}
+.i-t-bg{ background: url("/v5/images/score/inventicon.png") center no-repeat}
+.i-t-bg1{ background-position: 0 0}
+.i-t-bg2{ background-position: -90px 0}
+.invent-task{overflow: hidden; margin-top: 30px; margin-bottom: 70px}
+.invent-task li{ float: left; margin-right: 70px; overflow: hidden; height: 90px;}
+.invent-task li em{ float: left; display: inline-block;width: 90px;height: 90px}
+.invent-join{width: 100px; float: left; margin-left: 18px;overflow: hidden; color: #B2AEBE;line-height: 12px}
+.invent-join b{display: block;width: 80px; height: 24px;margin-top: 10px; color: #443E56;font-size: 18px;line-height: 24px; font-weight: 100}
+.invent-join-btn{display: inline-block; width: 67px;height: 28px; background: #FF3355; line-height: 28px;color: #ffffff; text-align: center;border-radius: 2px; margin-top: 10px}
+
+.paging{display: inline-block; zoom: 1;*display:inline}
+.go-next{ margin:10px 0 60px 0}
+.go-next span{ display: inline-block; margin-bottom: 10px; margin: 0}
+.paging a{ float: left; display: inline-block; padding: 0 13px; border: 1px solid #EEEEEE; border-left: none; font-family:"Verdana"; font-size: 15px; text-align: center;line-height: 35px}
+.paging a:first-child{ border-left: 1px solid #EEEEEE;}
+.paging a.current{ background: #FF3355;color: #ffffff}
+.paging a { background: #ffffff}
+.paging a:hover{ background: #FF3355;color: #ffffff}
+
+.sWindow{ padding-right: 40px;height: 110px; line-height: 110px;position: fixed; top: 50%; left: 50%; margin-left: -175px;margin-top: -100px; z-index: 9999; background: white;display: none}
+.sWindow em{ display: inline-block; float: left; height: 31px; margin-right: 10px; width: 31px;margin-top: 40px; margin-left: 55px; color: #3F3A51}
+.sWindow p{ font-size: 20px;  float:left; color: #464356; }
+
+.currs{display: none}
+
+
+.uc_left ul li a:hover{ color: #ff3355; background: none; text-decoration: underline}
+.uc_left ul li a.curr{ font-weight: bolder}
+
+
+/**我的惠币**/
+.coin_Mtit{ line-height: 30px}
+.coin_Mtit ul li em{ top: 7px}
+
+.coin_Mtit .order_Mtit_Btn{ float: right; width: auto; color: #443E56; overflow: hidden; border: none; background: none}
+.coin_Mtit .order_Mtit_Btn b{ color: #443E56; font-size: 20px; font-family: microsoft yahei;font-weight: 100; float: left}
+.coin_Mtit .order_Mtit_Btn b i{ float: right; line-height: 24px; margin-left: 3px}
+.coin_Mtit .order_Mtit_Btn i{ color: #ff3355; font-family: thomas; float: left; line-height: 30px; margin: 0 3px}
+.coin_Mtit .order_Mtit_Btn cite{ float: left; line-height: 30px}
+.coin_Mtit .order_Mtit_Btn a{ line-height: 30px; color: #5069EA; margin-left: 5px}
+
+/**我的惠币**/
+.coin-main{ margin: 0}
+.boxhead{ border: 1px solid #E5E5E5; border-top: none}
+.coin-t1{ color: #443E56}
+
+/**我的举报**/
+.uc_right .report-p{ margin-top: 30px;margin-bottom: 20px}
+.report-tit{ border: 1px solid #E5E5E5; width: 938px}
+
+/**我的惠币**/
+.score_Mtit{ margin-top: 20px}
+.score_tab{ border: 1px solid #E5E5E5; border-top: none}
+.uc_left ul li a.curr{ font-weight: bolder}
+
+/**我的试穿**/
+.tryon{ padding-top: 25px}
+.tryon .score_Mtit{ margin-top: 25px}
+.fav-main{ margin: 0; width: 938px}
+.fav-tit{ border: 1px solid #E5E5E5; border-top: none}
+
+.fav-content{ border: 1px solid #E5E5E5; border-top: none; width: 938px}
+.fav-content ul{ margin: 0}
+.fav-content li{ padding: 10px 0; border-bottom: 1px solid #E5E5E5; margin-top: 0}
+.fav-content li:first-child{ border-top: none}
+
+.fav-pic{ width: 80px;margin-left: 20px;}
+.fav-content{ min-height: auto; border-bottom: none}
+
+.tableData{
+    background: #E5E5E5;
+    width: 100%;
+}
+
+.tableData thead {
+    background: #F5F5F5;
+    color: #443e56;
+    height: 44px;
+    line-height: 44px;
+    border: 1px solid #E5E5E5;
+    border-bottom: none;
+    margin-top: 18px;
+}
+.tableData tr {
+    background: #fff;
+}

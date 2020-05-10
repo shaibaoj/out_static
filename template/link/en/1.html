@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<title>{$SEOTITLE}</title>
+<meta name="keywords" content="{$tkey}">
+<link href="/template/101/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.8/jquery.min.js"></script>
+<script type="text/javascript">var keyStr='{$tkey}'; var to_url='{$tourl}'; var clickType='{$clickType}';var goods_url='{$goods_url}';</script>		
+</head>
+<body>
+<div id="header">
+	<div class="nbar" id="nbar" style="position: relative;">
+		<div class="forbg">
+			<div class="nav">
+				<div id="logo"><a href="#">Home</a></div>
+			</div>
+		</div>
+		<div class="forbd">&nbsp;</div>
+		<div class="forld"></div>
+	</div>
+</div>
+
+<div id="content">
+	<div class="layer layer-full">
+	<div class="tube">
+	<strong>{$tkey}</strong>
+	<div class="block blockmb clear">
+	<div id="nav-catebar" class="minibar clr" style="position: relative;">
+	<ul>
+	<li class=" first">{$tkey}Of information：</li>
+	<li><h1><i>{$SEOTITLE}</i></h1></li>
+	</ul>
+	<div style="position: absolute; height: 6px; top: auto; bottom: 0px; overflow: hidden; background-color: rgb(241, 67, 130); width: 56px; left: 72px;"></div></div>
+	<div class="nav-category">
+	<div class="ctr-tagn">
+	<div>
+	<u>Related search<i class="dn"></i>：</u>
+	{section loop=$abouts name=a}{if $abouts[a].ename neq ""}<a class="sub-cat" href="{$abouts[a].ename}" title={$abouts[a].title}><i>{$abouts[a].title}</i></a>{else}<i>{$abouts[a].title}</i>{/if}{/section}
+	</div>
+	
+	</div>
+	</div>
+	</div>
+	{if $goods neq null}
+					                    	{$goods.price}
+					                    	<img src="http://cdn.img.shaibaoj.com/pic-/{$goods.seopic}"/>
+					                    	{$goods.content}
+					                    	{foreach from=$goods_jsonData key=myId item=l}
+					                    	<dl><dt>{$l.name}</dt><dd>{$l.value}</dd></dl>
+					                    	{/foreach}
+				                    	{/if}
+	<a name="pager-dym"></a>
+	<div class="ctg-menu-list block">
+	<div class="ctg-menu-newhot l dymswitch-0">
+	<a class="dymswitch-a cur" href="javascript:;">Popularity</a>
+	<a class="dymswitch-a" href="javascript:;">Newest</a>
+	</div>
+	<div class="onlyproduct-w u-chk">{$timestamp|date_format:"%Y-%m-%d %H:%M:%S"}</div>
+	</div>
+	</div>
+	</div>
+
+
+	<div class="layer layer-full oh">
+		<div class="tube">
+			<div id="dym-area" class="block" data-spm="">
+				<div class="dymswitch-b cur" style="display: block;">
+					<div class="tmpmasn blog-pp clr" style="position:relative;height:0;overflow:hidden;margin:0;padding:0;"></div>
+					<div class="pagecont blog-pp clr" style="position: relative; width: 981px; visibility: visible;">
+{section loop=$items name=l}
+						<div class="dym sc2 co0">
+						<div class="j">
+						<div class="mbpho item-pic" style="height:200px;">
+						 {if $item_boolean}<a href="{$urlall}?goodsId={$l.goodsId}" target="_blank">{/if}
+						<img  src="{$items[l].seopic}" height="200" alt="{$items[l].title|strip_tags}" />
+						 {if $item_boolean}</a>{/if}
+						</div><div class="d"><span class="d1">{$items[l].totalNum}</span><span class="d2">>{$items[l].price}</span>
+						<span class="d3">0</span></div><div class="g">{$items[l].title|strip_tags}&nbsp;</div>
+</div>
+</div>
+{/section}
+
+{section loop=$items_pic name=l max=60}
+						<div class="dym sc2 co0">
+						<div class="j">
+						<div class="mbpho item-pic" style="height:200px;">
+						<img src="http://cdn.img.shaibaoj.com/pic-/{$l.seopic}" height="200" alt="{$l.title|strip_tags}" />
+						</div><div class="d"><span class="d1">{$l.width}_{$l.height}_{$l.size}</span><span class="d2">0</span><span class="d3">0</span></div><div class="g">{$l.title}&nbsp;</div>
+</div>
+</div>
+{/section}
+
+{section loop=$items_video name=l max=60}
+						<div class="dym sc2 co0">
+						<div class="j">
+						<div class="mbpho item-pic" style="height:200px;">
+						<img src="http://cdn.img.shaibaoj.com/pic-/{$l.seopic}" height="200" alt="{$l.title|strip_tags}" />
+						</div><div class="d"><span class="d1">{$l.volume+195}</span><span class="d2">0</span><span class="d3">0</span></div><div class="g">{$l.title|strip_tags}&nbsp;<u>{$l.description|strip_tags} {$l.star|strip_tags}</u></div>
+</div>
+</div>
+{/section}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<div class="layer layer-full">
+	<div class="tube">
+	
+	<div class="block blockmb">
+	
+	<div class="nav-category">
+	<div class="ctr-tagn">
+	<div><u>Recommend<i class="dn"></i>：</u>
+	{section loop=$links name=a}<a class="sub-cat" target="_blank" title="{$links[a].title}" href="{$links[a].ename}"><i>{$links[a].title}</i></a>{/section}
+	</div>
+	<div><u>Hot:<i class="dn"></i>：</u>
+	{section loop=$hot_links name=a}<a class="sub-cat" target="_blank" title="{$hot_links[a].title}" href="{$hot_links[a].ename}"><i>{$hot_links[a].title}</i></a>{/section}
+	</div> 
+	<div><u>Cloud recommend:<i class="dn"></i>：</u>
+	{section loop=$w_links name=a}<a class="sub-cat" target="_blank" title="{$w_links[a].title}" href="{$w_links[a].ename}"><i>{$w_links[a].title}</i></a>{/section}
+	</div> 
+	</div>
+	</div>
+	</div>
+	</div>
+	</div>
+		
+</div>
+
+<div id="footer" class="footer" style="position: static; width: auto; height: auto;">
+<div class="realfoot footcont" style="visibility: visible;">
+<div class="footct graylk">
+<div class="frdlk"><a href="SITE_URL" title="{$tkey}">{$tkey}</a> tag set | help center | about our | join us | Disclaimer|<a class="redlk"  rel="nofollow" href="javascript:void(0);" onclick="AddFavorite('{$tkey}','#')">The collection station</a></div>
+©Copyright by <u class="dib ">{$tkey}</u> 2010-2017 , all rights reserved
+</div>
+</div>
+</div>
+{$tongji}{if $keywordsType neq null}{$keywordsType.tongji}{/if}
+</body>
+</html>

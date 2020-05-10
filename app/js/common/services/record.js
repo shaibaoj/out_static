@@ -1,0 +1,1 @@
+"use strict";define(function(require){var app=require("app");app.factory("record",["http","config",function(http,config){return{updateRecordField:function(recordvalue,recordkey,params){var url=config.getAPI("updatefield");return url=url.replace("{field}",recordkey).replace("{value}",recordvalue),http(url,{method:"post",data:params})}}}])});

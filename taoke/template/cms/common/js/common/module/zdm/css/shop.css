@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* 商城导航页 */
+.shti_inner,.stype_list_a,.sgoto_mall {background:url(../images/newshop_bg.png) no-repeat;}
+
+.container {background:#fff;border:1px solid #c3d2dc;box-shadow:0 1px 3px #ccc;border-radius:3px 3px 0 0;margin-top:5px;overflow:hidden;}
+.shop_outer {padding:0 15px 0 15px;}
+.shop_title {padding:23px 0;border-bottom:1px solid #ededed;overflow:hidden;}
+.shti_inner {float:left;height:24px;width:114px;text-indent:-999em;background-position:0 -165px;overflow:hidden;}
+.stype_lists {float:left;}
+.stype_list {float:left;}
+.stype_list_a {display:block;width:96px;height:24px;margin-left:15px;text-indent:-999em;}
+.slist_a1:hover {background-position:-98px 0;}
+.slist_a2 {background-position:0 -27px;}
+.slist_a2:hover {background-position:-98px -27px;}
+.slist_a3 {background-position:0 -54px;}
+.slist_a3:hover {background-position:-98px -54px;}
+.slist_a4 {background-position:0 -82px;}
+.slist_a4:hover {background-position:-98px -82px;}
+.slist_a5 {background-position:0 -109px;}
+.slist_a5:hover {background-position:-98px -109px;}
+.slist_a6 {background-position:0 -135px;}
+.slist_a6:hover {background-position:-98px -135px;}
+.floor_title {padding:14px 0;text-indent:20px;}
+.floor_title a {font-weight:normal;font-size:20px;color:#999;}
+
+.shop_wrap {overflow:hidden;}
+.shop_lists {width:970px;}
+.hops_list {float:left;border:1px solid #e6e6e6;margin:0 20px 20px 0;width:167px;overflow:hidden;}
+.hopli_a {display:block;width:165px;height:85px;text-align:center;padding-top:15px;overflow:hidden;}
+.hopli_a:hover .shop_name {color:#999;}
+.shop_name {color:#ccc;padding-top:2px;}
+.sgoto_out {height:22px;border-top:1px solid #e6e6e6;line-height:22px;background-color:#f5f5f5;letter-spacing:1px;}
+.sgoto_coup {float:left;width:80px;text-align:center;border-right:1px solid #e6e6e6;color:#999;}
+.sgoto_coup:hover {color:#333;}
+.sgoto_mall {float:left;width:86px;text-indent:10px;color:#ff6611;overflow:hidden;background-position:-114px -198px;}
+.sgoto_mall:hover {background-color:#ff6611;background-position:66px -197px;color:#fff;}
+
+.shop_bottom {text-align:right;padding:30px 0 7px 0;}
+.shop_bottom a {color:#007bca;font-size:14px;letter-spacing:1px;}
+.shop_bottom a:hover {text-decoration:underline;}

@@ -1,0 +1,188 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>[item:title]</title>
+<meta name="keywords" content="[item:keywords]"/>
+<meta name="description" content="[item:description]"/>
+<script src="http://i.kantu.in/aHR0cDovL3dpa2kuc216ZG0uY29tL3Jlc291cmNlcy9qcy9qcXVlcnktMS4xMS4wLm1pbi5qcw==" type="text/javascript"></script>
+<link rel="stylesheet" href="http://i.kantu.in/aHR0cDovL3d3dy5zbXpkbS5jb20vcmVzb3VyY2VzL3B1YmxpYy9jc3MvbmF2QmFyLmNzcw==" type="text/css" />
+<link rel="stylesheet" href="http://i.kantu.in/aHR0cDovL3dpa2kuc216ZG0uY29tL3Jlc291cmNlcy9jc3MvaWNvbW9vbi5jc3M=" type="text/css" /> <!--<![endif]-->
+<link rel="stylesheet" href="http://i.kantu.in/aHR0cDovL3dpa2kuc216ZG0uY29tL3Jlc291cmNlcy9jb21wcmVzcy9kZXRhaWwuY3NzP3Y9MjAxNjAxMjAxMDAw" type="text/css" />
+</head>
+<body>
+<header>
+    <div class="navBarWrap">
+	<div class="navBar">
+		<nav>
+			<a href="{$urlall}">Home</a>
+			{section loop=$abouts name=a}
+				{section loop=$abouts name=a}{if $abouts[a].ename neq ""}<a class="sub-cat" href="{$abouts[a].ename}" title={$abouts[a].title}><i>{$abouts[a].title}</i></a>{else}<i>{$abouts[a].title}</i>{/if}{/section}
+			{/section}
+		</nav>
+		<div class="loginArea" id="zhiyouLoginArea"></div>
+		<div class="clear"></div>
+	</div>
+</div>
+    <!--header_wrap-->
+<div class="header_wrap box_shadow">
+    <div class="w1050">
+        <span class="logo"><a href="{$urlall}"><img src="http://i.kantu.in/aHR0cDovL3dpa2kuc216ZG0uY29tL3Jlc291cmNlcy9pbWcvbG9nb196ay5wbmc=" alt=""></a></span>
+        <form class="form_search clearfix" onsubmit="search_commit();return false;">
+            <div class="form_border border_radius_2">
+                <button type="submit" class="icon-fangdajing"><!--[if lt IE 8]>Go<![endif]--></button>
+                <input id="s" name="s" type="text" class="input_style text_search"  autocomplete="off"/>
+                <ul class="more_search" style="display:none;" id="more-search"></ul>
+            </div>
+            <div class="btn_search_box">
+                <div class="btn_search_bg border_radius_2"></div>
+                <button type="submit" class="btn_search" id="searchSubmit">search</button>
+            </div>
+        </form>
+        <div class="nav_box">
+            <a href="#">Home</a>
+            <a href="#">bike goods</a>
+            <a href="#">hai </a>
+            <a href="#"><i class="icon-zhikujiahao"></i>share goods</a>
+            <div class="tips box_shadow" id="rightTopLayer_tips">
+                <em><b></b></em>
+                <i class="icon-zhukushanchu" data-rel="4"><!--[if lt IE 8]>x<![endif]--></i>
+                <p class="title">tip</p>
+                <p>At present, in the initial stage, the data is not perfect, to recommend high-quality goods, to share the real experience.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--header_wrap end--></header>
+
+<div class="crumbs w1050">
+    current location：
+      <div class="crumbs_cate"><a href="{$urlall}">Home</a></div>
+              <span class="icon">&gt;</span>
+      <div class="crumbs_cate"><a href="{$url}">Commodity home</a></div>
+</div>
+
+<section class="w1050 clearfix">
+    <div class="left_wrap">
+        <div class="product_details_box">
+            <div class="tab_big_img"><img src="[item:picurl]"/></div>
+            <div class="product_right">
+                <div class="product_right_info">
+                    <h1 class="title">[item:title]</h1>
+                    <p class="sub_title"></p>
+                    <div class="tags"></div>
+                    <div class="meta">
+                    	[item:menu]
+                    </div>
+                </div>
+                <div class="link_box clearfix">
+                    [item:message]
+                </div>
+            </div>
+        </div>
+        <div class="tab_nav clearfix" id="tabNav">
+             <div class="title current">Commodity home</div>
+        </div>
+        <div class="tab_content">
+    <!--百科词条-->
+        <div class="zk_dictionary">
+        <h2 class="title">Encyclopedia entry</h2>
+        	<div class="imgContent">[item:content]</div>
+         </div>
+       
+    </div>    
+    </div>
+    
+	<!--right_wrap aside-->
+    <aside>
+    <div class="right_panel">
+        <div class="title">reference resources</div>
+        	<div class="side_youhui">
+	            <h2 class="title clearfix">new</h2>
+	            <ul class="youhui_list clearfix" id="youhui-list">
+	            	{section loop=$top_links name=a}
+	                 <li>
+	                       <h3>
+	                           <a href="{$a.ename}" target="_blank">
+	                               <span class="black">{$a.title}</span>
+	                           </a>
+	                       </h3>
+	                 </li>
+	                 {/section}
+	             </ul>
+	        </div>
+        	<div class="side_youhui">
+	            <h2 class="title clearfix">recommend</h2>
+	            <ul class="youhui_list clearfix" id="youhui-list">
+	            	{section loop=$links name=a}
+	                 <li>
+	                       <h3>
+	                           <a href="{$a.ename}" target="_blank">
+	                               <span class="black">{$a.title}</span>
+	                           </a>
+	                       </h3>
+	                 </li>
+	                 {/section}
+	             </ul>
+	        </div>
+            <dl class="mall_link">
+            	<dt><h2 class="title">Hot</h2></dt>
+                {section loop=$hot_links name=a}
+                <dd>
+                    <a href="{$a.ename}" target="_blank">{$a.title}<span>&gt;</span></a>
+                </dd>
+                {/section}            
+            </dl>
+            <div class="side_youhui">
+	            <h2 class="title clearfix">cloud recommend</h2>
+	            <ul class="youhui_list clearfix" id="youhui-list">
+	            	{section loop=$friend_links name=a}
+	                 <li>
+	                       <h3>
+	                           <a href="{$a.ename}" target="_blank">
+	                               <span class="black">{$a.title}</span>
+	                           </a>
+	                       </h3>
+	                 </li>
+	                 {/section}
+	             </ul>
+	        </div>
+        </div>
+</aside>
+    <!--right_wrap aside end-->
+</section>
+
+<div id="cover"></div>
+
+<!--footer-->
+<div id="makesure_cover"></div>
+<footer id="footer">
+    <div class="rightLayer" id="rightLayer">
+        <a href="javascript:void(0);" class="goTotop" id="backToTop" title="Return to top"><i class="icon-returntop"><!--[if lt IE 8]>Return to top<![endif]--></i></a>
+        <div class="tips box_shadow" id="rightLayer_tips">
+            <em><b></b></em>
+            <i class="icon-zhukushanchu" data-rel="3"><!--[if lt IE 8]>x<![endif]--></i>
+            <p class="title">tip</p>
+            <p>Click here to tell us how to use the new product.~</p>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footerTop">
+            <a href="#" target="_blank">About us</a>
+			<a href="#" target="_blank">contact us</a>
+			<a href="#">Recruitment area</a>
+			<a href="#" class="sitemap">Site map</a>
+			<a href="#">iherb</a>
+			<a href="#">Sea Amoy information</a>
+			<a href="#">Sea Amoy</a>
+        </div>
+        <div class="info">
+        	All copyright reserved sites are prohibited without written permission. log archiving<br>
+        	Copyright 2010-2016 All rights reserved. ICP Beijing No. 12048526 -2 Beijing public security by 11010602100083
+    	</div>
+    </div>
+</footer>
+{$tongji}{if $keywordsType neq null}{$keywordsType.tongji}{/if}
+{$phpHtml}
+</body>
+</html>

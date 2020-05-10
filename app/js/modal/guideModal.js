@@ -1,0 +1,1 @@
+"use strict";define(function(require){var app=require("app");app.controller("GuideModalCtrl",["$scope","$mdDialog",function($scope,$mdDialog){var vm=$scope.vm={};angular.extend(vm,{init:function(){},close:function(){sessionStorage.setItem("isOpened","isOpened"),$mdDialog.hide()},sure:function(){$mdDialog.hide()}}),vm.init()}])});

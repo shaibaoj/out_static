@@ -1,0 +1,89 @@
+
+
+.header-search .form-group input {
+    border: 2px solid #6e6568;
+}
+.header-search .form-group button {
+    background: #6e6568;
+}
+
+.header-nav {
+    background: #6e6568;
+}
+.header-nav dl {
+    background: #6e6568;
+}
+
+.header-nav .active {
+    background: #4d494b;
+}
+
+.nav-slider .slider-left {
+    background: #6e6568;
+}
+
+.list-info {
+    border-top: 3px solid #4d494b;
+}
+
+.list-item .item-explain span {
+    color: #4d494b;
+}
+.list-item .item-price span {
+    color: #4d494b;
+}
+.list-choice-first .red {
+    color: #4d494b;
+}
+.list-choice-two .option a.red {
+    color: #4d494b;
+}
+.detail-right .price-block .present-price {
+    color: #4d494b;
+}
+.detail-right .quan-block .red {
+    color: #4d494b;
+}
+.detail-right .explain-block .icon-block {
+    background: #4d494b;
+}
+.detail-right .take-quan-btn {
+    background: #4d494b;
+}
+#backTop a {
+    background: #4d494b;
+}
+.footer {
+    border-top: 1px solid #4d494b;
+}
+.footer:before {
+    background: #4d494b;
+}
+.list-item .item-foot em {
+    color: #4d494b;
+}
+
+.pagination-warp a, .pagination-warp span {
+	width:36px;
+    min-width: 26px;
+    color: #fff;
+    background: #6e6568;
+    border: 1px solid #6e6568;
+}
+.pagination-warp a.cur, .pagination-warp span {
+    background: #4d494b;
+}
+.slider-cont a {
+    color: #fff;
+}
+
+.my-juanpi .sider-bar ul li.active{background:#6e6568;}
+.f_shadow{background:#6e6568;}
+.f_shadow:hover{background:#4d494b}  
+.color-red{color: #4d494b;} 
+.my-juanpi .sider-bar ul li a:hover{color: #4d494b;}
+.toolbar .bar-con .right-show div.logined-show a .user{ color:#4d494b;}
+
+#list_malls_v .btn-1-25{background-color:#6e6568;}
+.list-mall li:hover .link-mall,.list-mall li:hover .link-shop{ border-color:#6e6568; text-decoration:none;}
+

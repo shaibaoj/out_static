@@ -1,0 +1,660 @@
+﻿.xmas{
+    position:absolute;
+    display:block;
+    width:41px;
+    height:37px;
+    cursor:pointer;
+}
+.xmas_boy{
+    top:56px;
+    left:-15px;
+    background:url(https://i.huim.com/zhuanti/1212/xmas_boy.png) no-repeat;
+}
+.xmas_girl{
+    top:49px;
+    left:-13px;
+    background:url(https://i.huim.com/zhuanti/1212/xmas_girl.png) no-repeat;
+}
+.comment_userinfo{
+    position:relative;    
+}
+.comment_userinfo .xmas_boy{
+    top:-14px;
+    left:-2px;
+}
+.comment_userinfo .xmas_girl{
+    top:-21px;
+    left:-1px;
+}
+
+/* = 选帽子
+--------------------------------------------------------------------*/
+#xmas_pop{
+    display:none;
+    width:306px;
+    height:157px;
+    padding-top:113px;
+    position:fixed;
+    top:50%;
+    left:50%;
+    margin:-163px 0 0 -153px;
+    _position:absolute;
+    _top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-250-this.offsetHeight-(parseInt(this.currentStyle.marginTop,0)||0)-(parseInt(this.currentStyle.marginBottom,0)||0)));
+    _bottom:auto;
+    z-index:10;
+    background:url(http://i.liuzhuni.com/zhuanti/1212/xmas_pop.png) no-repeat;
+    text-align:center;
+}
+#xmas_pop a img{
+    width:60px;
+    height:60px;
+    margin-top:30px;
+}
+#xmas_pop a{
+    display:inline-block;
+    position:relative;
+    float:left;
+    width:110px;
+    height:125px;
+    text-align:center;
+    margin-right:15px;
+    background-color:#fff;
+}
+#xmas_pop a:hover{
+    background-color:#fbeeec;
+}
+#xmas_pop a span{
+    display:block;
+    font-size:16px;
+    color:#5390fb;
+    padding-top:5px;
+}
+#xmas_pop .sex_gril span{
+    color:#f95c68;
+}
+#xmas_pop i{
+    position:absolute;
+    display:block;
+    width:41px;
+    height:37px;
+}
+#xmas_pop .popxmas_boy{
+   top:16px;
+   left:7px;
+   background:url(https://i.huim.com/zhuanti/1212/xmas_boy.png) no-repeat;
+}
+#xmas_pop .popxmas_girl{
+   top:9px;
+   left:7px;
+    background:url(https://i.huim.com/zhuanti/1212/xmas_girl.png) no-repeat;
+}
+#xmas_pop .sex_boy{
+   margin-left:35px;
+}
+
+
+/* 评论区
+--------------------*/
+.comment_num i,.comment_dsp,.add_face i,.com_btn,.com_reward i,.emotion_close{
+    background-image:url(https://i.huim.com/content_new/images/comment_ico.png);
+    background-repeat:no-repeat;  
+}
+.comment_area{
+    padding-top:30px;
+    position:relative;
+}
+.comment_area .comment_title{
+
+}
+.comment_title .comment_num{
+    height:40px;
+    font-size:16px;
+    font-weight:700;
+    color:#333;
+    font-family:Arial,"Microsoft YaHei"; 
+}
+.comment_title .comment_num i{
+    display:inline-block;
+    width:23px;
+    height:22px;
+    vertical-align:-6px;
+    *vertical-align:0px;
+    margin-right:5px;
+    background-position:0 0;
+}
+.comment_title .comment_num span{
+    height:40px;
+    font-size:12px;
+    font-weight:400;
+    color:#333;
+    font-family:Arial,"Microsoft YaHei"; 
+}
+.comment_title .comment_dsp{
+    display:inline-block;
+    width:96px;
+    height:22px;
+    text-align:center;
+    line-height:22px;
+    color:#fff;
+    background-position:-25px 0px;
+}
+.comment_title a.comment_dsp:hover{
+    background-position:-25px -23px;
+}
+.com_form_info{
+
+}
+.com_form_info .com_form_user{
+    width:70px;
+    text-align:center;
+}
+.com_form_user .current_pic_user{
+    width:60px;
+    height:60px;
+    margin-bottom:5px;
+}
+.com_form_user .com_login{
+    display:block;
+    width:60px;
+    height:22px;
+    margin:0 auto;
+    line-height:22px;
+    text-align:center;
+    background:#f95c68;
+    color:#fff;
+}
+.com_form_user a.com_login:hover{
+    color:#fff;
+    background:#ff707c;
+}
+.com_form_user .com_form_uname{
+    display:block;
+    word-break:keep-all;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    color:#3d3d3d;
+}
+.com_form_box{
+    width:600px;
+}
+.com_form_box .invite_login{
+    height:130px;
+    padding:10px;
+    line-height:22px;
+    font-size:14px;
+    color:#333;
+    background:#f7f7f7;
+    border:1px solid #ebebeb;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    -ms-border-radius:4px;
+    -o-border-radius:4px;
+    border-radius:4px;
+}
+.com_form_box .invite_login a{
+    font-weight:bold;
+    color:#f95c68;
+    margin:0 5px;
+}
+.com_form_box .com_textarea_area{
+
+}
+.com_form_box .com_textarea{
+    width:578px;
+    height:100px;
+    padding:10px;
+    line-height:22px;
+    font-size:14px;
+    color:#a8a8a8;
+    border:1px solid #ccc;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    -ms-border-radius:4px;
+    -o-border-radius:4px;
+    border-radius:4px;
+}
+.com_form_box .com_textarea_area .ftext{
+    color:#333;
+    border:1px solid #b8b8b8;
+}
+.com_form_box .com_add_btn{
+    padding-top:5px;
+}
+.com_add_btn .add_face{
+    float:left;
+    color:#999;
+    font-size:14px;
+}
+.com_add_btn a.add_face:hover{
+    color:#f95c68;
+}
+.com_add_btn .add_face i{
+    float:left;
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:0 5px;
+    background-position:0 -28px;
+}
+.com_add_btn .com_btn{
+    float:right;
+    display:inline-block;
+    width:80px;
+    height:30px;
+    text-align:center;
+    line-height:30px;
+    color:#fff;
+    background-position:-25px -46px;
+}
+.com_add_btn a.com_btn:hover{
+    color:#fff;
+    background-position:-25px -77px;
+}
+.com_add_btn .com_tips{
+    float:right;
+    width:340px;
+    height:30px;
+    padding-right:20px;
+    line-height:30px;
+    color:Red;
+    text-align:right;
+}
+
+.form_emotion{
+    display:-none;
+    position:absolute;
+    top:0px;
+    left:-1000px;
+    z-index:2000;
+    width:305px;
+    height:176px;
+    border:1px solid #c8c8c8;
+    background:#fff;
+    box-shadow:0 1px 1px 0 #F2F2F2;
+}
+.form_emotion .emotion_hd{
+    height: 30px;
+    line-height: 30px;
+    text-indent: 15px;
+    background: #fafafa;
+    color: #919099;
+    font-size: 14px
+}
+.form_emotion .emotion_hd .emotion_close{
+    position: absolute;
+    top:7px;
+    right:16px;
+    width:16px;
+    height:16px;
+    display:inline-block;
+    background-position:3px -52px;
+    line-height:99em;
+    overflow:hidden;
+}
+.form_emotion .emotion_hd a.emotion_close:hover {
+    background-position:3px -67px;
+}
+.emotion_list{    
+    padding:10px 15px 15px 15px;
+}
+.emotion_list li{
+    float:left;
+    height:22px;
+    width:34px;
+    overflow:hidden;
+    margin:-1px 0 0 -1px;
+    padding:8px 2px;
+    cursor:pointer;
+    text-align:center;
+    border:1px solid #e8e8e8;
+}
+/* 评论列表
+--------------------*/
+.comment_dec{
+    padding:38px 0 70px 0;
+}
+.comment_dec .comment_not{
+    font-size:16px;
+    text-align:center;
+    border-top:1px solid #f0f0f0;
+    padding:50px 0;
+}
+.comment_dec .comment_list{
+    padding:20px 0 15px 0;
+    border-top:1px solid #f0f0f0;
+}
+.comment_list .comment_userinfo{
+    width:85px;
+    text-align:center;
+}
+.comment_list .comment_userinfo .userinfo_avatar{
+    width:50px;
+    height:50px;
+    margin:0 auto;
+}
+.comment_list .comment_userinfo .level_num{
+    padding-top:8px;
+}
+.comment_list .comment_content{
+    width:570px;
+    padding-right:15px
+}
+.comment_content .top_info{
+
+}
+.comment_content .top_info span{ 
+    float:left;
+}
+.comment_content .top_info .com_floor{
+    float:right;
+    color:#b3b3b3;
+}
+.top_info .user_name{
+    margin-top:-2px;
+    font-size:14px;
+    font-weight:700;
+    color:#333;
+    font-family:Arial,"Microsoft YaHei"; 
+}
+.top_info .user_name i{
+    display:inline-block;
+    width:94px;
+    height:12px;
+    margin-right:5px;
+    background:url(https://i.huim.com/zhuanti/shengji/huim_ico.png) no-repeat;
+}
+.user_medal{ 
+    float:left; 
+    padding-left:5px;
+}
+.user_medal i{ 
+    float:left; 
+    display:inline-block; 
+    width:16px; 
+    height:16px; 
+    margin-right:3px; 
+    background:url(https://i.huim.com/content_new/images/medal_icon.png?v=201656) no-repeat;
+}
+.user_medal .medal_qd{ background-position:0 -0px;}
+.user_medal .medal_th{ background-position:0 -16px;}
+.user_medal .medal_sj{ background-position:0 -32px;}
+.user_medal .medal_gf { background-position:0 -48px;}
+.user_medal .medal_bl{ background-position:0 -64px;}
+.user_medal .medal_dsp{ background-position:0 -80px;}
+.user_medal .medal_mys{ background-position:0 -96px;}
+
+.top_info .com_time{
+    padding-left:10px;
+    color:#a8a8a8;
+    font-family:Arial;
+}
+.top_info .com_reward{
+    padding-left:10px;
+    color:#f95c68;
+}
+.top_info .com_reward i{
+    float:left;
+    display:inline-block;
+    width:16px;
+    height:14px;
+    margin-top:2px;
+    margin-right:3px;
+    background-position:0 -85px;
+}
+.comment_content .com_pub_content{
+    padding:15px 0 0 0;
+}
+.com_pub_content .com_content{
+    line-height:22px;
+    word-wrap:break-word;
+    font-size:14px;
+    color:#4a4a4a;
+}
+.com_pub_content .com_pub_btn{
+    padding-top:10px;
+}
+.com_pub_content .com_pub_btn .comment_from{
+    float:left;
+    color:#999;
+    font-size:12px;
+}
+.comment_from a{
+    color:#8a4545;
+}
+.com_pub_content .com_pub_btn ul{
+    float:right;
+}
+.com_pub_content .com_pub_btn li{
+    float:left;
+    border:1px solid #dfdfdf;
+}
+.com_pub_content .com_pub_btn .com_boli_first{
+    border-right:0;
+}
+.com_pub_btn li a{
+    display:inline-block;
+    height:22px;
+    line-height:22px;
+    padding:0 8px;
+    font-size:12px;
+    color:#a9a9ab
+}
+.com_pub_btn li a:hover{
+    color: #333;
+    background-color:#ddd;
+}
+.com_pub_btn li a.hasding{
+    color: #333;
+    background-color:#ddd;
+}
+.nsupport{
+    margin-left: 4px;
+    color: #f17272;
+    font-family: "Microsoft YaHei";
+    letter-spacing: 0px;
+}
+.comment_replay{
+    padding:20px 0 10px 0;
+}
+.comment_replay .comment_reply_textarea{
+    width:558px;
+    height:40px;
+    padding:5px;
+    color:#a8a8a8;
+    font-size:14px;
+    border:1px solid #ddd;    
+}
+.com_pub_content .comment_replay .ftext{
+    color:#333;   
+}
+.com_pub_content .comment_replay .txt_focus:focus{
+    border:1px solid #b8b8b8;
+}
+.comment_replay .com_add_btn{
+    padding-top:5px;
+}
+
+/* 原评论
+--------------------*/
+.com_pub_content .comment_cont_source{
+    margin-bottom:15px;
+}
+.com_pub_content .comment_blockquote{
+    border:1px solid #e6dac3;
+    background:#fffdfa;
+    margin-bottom:-1px;
+}
+.com_pub_content .comment_showall{
+    margin-bottom:-1px;
+    height:30px;
+    line-height:30px;
+    border:1px solid #e6dac3;
+    text-align:center;
+    background:#F7F2EB;
+    font-size:12px;
+    
+}
+.comment_cont_source .source_info{
+    position:relative;
+    margin:12px 3px 0 12px
+}
+.source_info .source_info_author{
+    font-size:12px;
+    color:#8a4545;
+    font-family:Arial,"Microsoft YaHei";
+}
+.source_info .source_info_floor{
+    position:absolute;
+    right:5px;
+    _right:30px;
+    top:0;
+    color:#999;
+}
+.comment_cont_source .source_content{
+    margin:12px 12px 0 12px;
+    line-height:22px;
+    font-size:14px;
+    color:#4a4a4a;
+    word-wrap:break-word;
+}
+.comment_cont_source .source_btn{
+    padding:5px;
+    visibility:hidden;
+}
+.comment_cont_source .source_btn .source_action{
+    float:right;
+}
+.comment_cont_source .source_btn li{
+    float:left;
+    padding-right:5px;
+}
+.comment_cont_source .source_btn li a{
+    color:#ff707c;
+}
+.comment_cont_source .source_btn li a:hover{
+    color:#fe5461;
+}
+.source_action .source_btn_replay{
+    padding-left:5px;
+}
+.comment_cont_source .comment_replay{
+    padding:5px 15px 20px 15px;
+}
+.comment_cont_source .comment_reply_textarea{
+    width:526px;
+}
+.comment_all{
+    width:570px;
+    padding:20px;
+}
+.comment_all a{
+    display:block;
+    margin-left:75px;
+    width:568px;
+    text-align:center;
+    height:34px;
+    line-height:34px;
+    color:#4c4c4c;
+    font-size:14px;
+    border:1px solid #e5e5e5;
+    background-color:#f5f5f5;  
+}
+.comment_all a:hover{
+    background-color:#ebebeb;
+}
+
+/* 评论分页
+--------------------*/
+.comment_page{
+    padding-top:10px;
+    text-align:right;
+    display:-none;
+}
+.page_area {
+	clear: both;
+	display: inline-block;
+	overflow: hidden
+}
+.page_area span,.page_area a {
+	float: left;
+	display: inline-block;
+	margin-right: 8px !important;
+	padding: 5px 10px 0 !important;
+	height: 23px;
+	border: 1px solid #e5e5e5;
+	background: #fff;
+	color: #8c8c8c;
+	text-decoration: none;
+	font-size:14px;
+	font-family:Arial;
+}
+.page_area a:hover {
+	color: #f95c68;
+	border-color:#f95c68;
+}
+a.page_next,span.page_end {
+	display: inline-block;
+	border-right: 1px solid #e5e5e5;
+	white-space: nowrap
+}
+span.page_start,span.page_end {
+	background: #fafafa;
+	color: #999
+}
+a.page_next:hover,a.page_prev:hover {
+	color: #f95c68
+}
+.page_area .page_cur {
+    border-color:#f95c68;
+	background-color: #f95c68;
+	color: #fff
+}
+.page_prev i,.page_next i{
+    margin:0 5px;
+    font-family: "SimSun";
+    font-size: 14px;
+}
+
+/* 评论成功后背景闪一闪
+--------------------*/
+@-webkit-keyframes comment-animation {
+	0% {
+		background-color:#fff5eb;
+	}	
+    10% {
+		background-color:#fff6ed;
+	}
+	20% {
+		background-color:#fff7ef;
+	}
+    30% {
+		background-color:#fff8f0;
+	}
+	40% {
+		background-color:#fff9f2;
+	}
+	50% {
+		background-color:#fffaf4;
+	}
+	60% {
+		background-color:#fffaf6;
+	}
+	70% {
+		background-color:#fffbf8;
+	}
+	80% {
+		background-color:#fffcfa;
+	}
+	90% {
+		background-color:#fffdfb;
+	}
+	100% {
+		background-color:#fffefd;
+	}
+}
+.commentactive {
+	background-color:#fff;
+	-webkit-animation: comment-animation 1.2s steps(1);
+	animation: comment-animation 1.2s steps(1)
+}

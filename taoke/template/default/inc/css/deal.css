@@ -1,0 +1,123 @@
+.inline-block-ele { display:inline-block; *display:inline; *zoom:1; vertical-align:top }
+.detail-meta { background-color:#fff; padding:30px 0 30px 30px }
+.detail-meta .side-wrapper { width:440px; margin-right:30px }
+.side-wrapper .main-img-cont { position:relative; margin-bottom:20px }
+.side-wrapper .main-img-cont img { width:440px; height:440px; border:1px solid #FFF }
+.thumb-cont-inner { position:relative; width:415px; height:80px; overflow:hidden; margin:0 auto }
+.thumb-cont-inner ul { width:420px; height:80px; font-size:0 }
+.thumb-cont-inner ul li { display:inline-block; *display:inline; *zoom:1; vertical-align:top; width:60px; height:60px; border:2px solid #eee; padding:5px; margin:0 5px; }
+.thumb-cont-inner ul li.active { border:2px solid #F60; }
+.thumb-cont-inner ul li img { width:60px; height:60px; }
+.main-wrapper { width:695px; }
+
+.main-wrapper .main-title { font-weight:400; width:670px; line-height:30px; height:30px; font-size:20px; padding-right:20px; text-overflow:ellipsis; white-space:nowrap; overflow:hidden; }
+.main-wrapper .main-title .ico { width:105px; height:20px; background: url(../images/deal/view_icon.png) no-repeat; display:inline-block; margin-right:10px; vertical-align:middle }
+.main-wrapper .main-title .ico.taobao { width:65px; background-position:-20px 0; }
+.main-wrapper .main-title .ico.tmall { background-position:-20px -20px; }
+.main-wrapper .sub-title { font-size: 13px; color: #754; width: 670px; text-overflow: ellipsis; white-space:nowrap; overflow:hidden; }
+.main-wrapper .price-info { border-radius:5px 0 0 5px; padding:5px 0 0 50px; height:70px; background:#F60; color:#fff; width:647px; line-height:1.1; position:relative }
+.main-wrapper .price-info .cell { float:left; vertical-align:top; margin:0px; margin-top:10px; padding:0px; width:120px; text-align:center; line-height:1.5; }
+.main-wrapper .price-info .cell p { margin:0; font-size:15px; }
+.main-wrapper .price-info .now-price { float:left; font-size:55px; font-family:'Helvetica Neue', Tahoma, Verdana, Arial; margin-right:60px; margin-top:2px; }
+.main-wrapper .price-info .now-price em { font-size:24px; margin-right:5px; }
+.main-wrapper .price-info .now-price .you { position:absolute; bottom:8px; right:-50px; font-size: 13px; font-style: normal; vertical-align: middle; background-color: #ffd; color: #F60; padding: 3px 7px; text-align: center; border-radius: 2em; }
+.main-wrapper .price-info p.ori-price { line-height:28px; }
+.main-wrapper .price-info p.ori-price em {font-family:'Helvetica Neue', Tahoma, Verdana, Arial; }
+.main-wrapper .price-info .ori-box { font-size:0; border-right:1px dashed #fff }
+.main-wrapper .price-info .deco-img { position:absolute; z-index:2; top:0; right:-4px; width:5px; height:85px; background: url(../images/deal/view_icon.png) no-repeat; }
+.main-wrapper .sale-attrs { border:3px solid #eee; width:660px; border-top:none }
+.main-wrapper .sale-attrs .head { font-size:14px; padding:8px 10px; margin-bottom:30px; text-align:center; color:#F60; border-bottom:1px solid #f3e9e7; background-color:#fff8f7 }
+.main-wrapper .sale-attrs .attr, .main-wrapper .sale-attrs .attr span { color:#777; font-size:14px }
+.main-wrapper .sale-attrs .attr { position:relative; height:26px; line-height:26px; padding-left:85px; margin:15px 0 15px 50px }
+.main-wrapper .attr label { position:absolute; left:0; top:0; width:65px; text-align:right; }
+.main-wrapper .attr a.quan { font-size:12px; color:#008EF0; height:22px; line-height:22px; padding:0 5px; margin-left:15px; border: 1px dashed #008EF0; text-decoration:none }
+.main-wrapper .attr a:hover.quan { color:#F60; border: 1px dashed #F60; }
+.main-wrapper .buybar { margin:35px 0 30px 135px; height:50px; }
+.main-wrapper .buybar .buy-btn, .main-wrapper .buybar .go-btn { float:left; width:150px; height:45px; line-height:45px; font-size:18px; text-decoration:none; text-align:center; margin-right:25px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; }
+.main-wrapper .buybar .buy-btn { background:#F60; color:#FFF; border:1px solid #F60; }
+.main-wrapper .buybar .go-btn { background: #f0f0f0; color: #999; border: 1px solid #ddd; }
+.main-wrapper .time-box { height:60px; border-top:1px dashed #ddd; width:90%; margin:0 auto }
+.main-wrapper .time-box .cou-box { position:relative; font-size:13px; color:#999; line-height:1.5; text-align:center; margin-top:15px; }
+.main-wrapper .time-box .cou-box span { line-height:20px; display:inline-block; margin-top:5px }
+.main-wrapper .time-box .cou-box i { width:17px; height:18px; background: url(../images/deal/view_icon.png) no-repeat; display:inline-block; vertical-align:top; margin-right:5px; }
+.main-wrapper .cou-con { display:inline-block; *display:inline; *zoom:1; font-size:14px; }
+.main-wrapper .cou-con em { font-size:18px; font-family:'Helvetica Neue', Tahoma, Verdana, Arial; margin:0 5px; color:#666; }
+.main-wrapper.start .price-info .now-price .you { color:#00923d; }
+.main-wrapper.buy .price-info .now-price .you { color:#F60; }
+.main-wrapper.end .price-info .now-price .you { color:#777; }
+.main-wrapper.start .price-info { background:#00af49; }
+.main-wrapper.buy .price-info { background:#F60; }
+.main-wrapper.end .price-info { background:#999; }
+.main-wrapper.start .price-info .deco-img { background-position: -190px 0; }
+.main-wrapper.buy .price-info .deco-img { background-position: -185px 0; }
+.main-wrapper.end .price-info .deco-img { background-position: -195px 0; }
+.main-wrapper.start .buybar .buy-btn { background:#00af49; border:1px solid #008f3c; }
+.main-wrapper.buy .buybar .buy-btn { background:#F60; border:1px solid #e55c00; }
+.main-wrapper.end .buybar .buy-btn { background:#999; border:1px solid #777; }
+
+/*导航*/
+.detail-main-wrap { margin: 20px 0; }
+.detail-main-wrap .con { padding:30px; }
+.bady-part { float:left; width:930px; font-size: 14px; background: #FFF; overflow: hidden; position: relative; }
+.bady-part .fixed { position: fixed; top: 0; margin-top: 0; }
+.bady-part .bady-tab { width:930px; height:45px; margin:0 0 10px; border-bottom:1px solid #ddd; background:#f8f8f8; z-index:99 }
+.bady-part .bady-tab li { float:left }
+.bady-part .bady-tab li a { padding: 0 40px; font-size: 16px; color: #666; text-decoration: none; display: block; border-right:1px solid #e5e5e5; border-left:1px solid #fff; height:45px; line-height: 45px; overflow:hidden }
+.bady-part .bady-tab li a:hover { color: #F60; }
+.bady-part .bady-tab li a.active { color:#F60; background:#fff; border-top:2px solid #F60; line-height: 42px; }
+.bady-part .bady-tab li a i { font-size:18px; margin-right:5px; }
+.bady-part .gobuy { position:absolute; top:0; right:-5px; }
+.bady-part .gobuy .price { color: #999; height: 45px; line-height: 45px; margin-right: 10px; }
+.bady-part .gobuy .price em { font-size: 14px; }
+.bady-part .gobuy .price .jd-current { font-size: 32px; font-family: Arial; vertical-align: -2px; }
+.bady-part .gobuy .price .fan { color: #F60; font-family: Arial; }
+.bady-part .gobuy .buy-btn { width: 150px; height: 50px; line-height: 45px; text-align: center; display: block; color: #fff; font-size: 16px; background: url(../images/deal/view_icon.png) no-repeat; text-decoration: none; }
+.bady-part .gobuy.buy .buy-btn { background-position: 0 -334px; }
+.bady-part .gobuy.start .buy-btn { background-position: 0 -388px; }
+.bady-part .gobuy.end .buy-btn { background-position: 0 -442px; }
+.bady-part .gobuy.buy .price em, .bady-part .gobuy.buy .price .jd-current { color: #F60; }
+.bady-part .gobuy.start .price em, .bady-part .gobuy.start .price .jd-current { color: #00923d; }
+.bady-part .gobuy.end .price em, .bady-part .gobuy.end .price .jd-current { color: #777; }
+
+/*商品介绍*/
+.information .item-desc { width:790px; padding:0 40px; overflow:hidden }
+.information .item-desc img { margin: 0 auto; display: inherit !important; }
+
+/*买家评论*/
+.information .com_box { padding-top:30px; }
+.information .com_box .pl-box { height: 28px; border-top: 1px solid #e8e8e8; margin: 15px 0; }
+.information .com_box .pl-box p { background: url(../images/deal/pinglun.gif) no-repeat; width: 279px; height: 27px; margin: 0 auto; text-align: center; line-height: 27px; color: #666; font-size: 14px; }
+.information .com_box li { padding: 18px 0; border-bottom: 1px dotted #f1f1f1; }
+.rate-user-grade .tm-icon { display: inline-block; vertical-align: -4px; background: url(../images/deal/tmall-vip.gif) no-repeat; margin-left: 10px; }
+.rate-user-grade .t1 { width: 18px; height: 18px; background-position: 0 0; }
+.rate-user-grade .t2 { width: 18px; height: 18px; background-position: 0 -22px; }
+.rate-user-grade .t3 { width: 18px; height: 18px; background-position: 0 -44px; }
+.rate-user-grade .vip-icon { vertical-align: middle; height: 12px; }
+.rate-user-grade .red_1 { background-position: 0 -71px; width: 12px; }
+.rate-user-grade .red_2 { background-position: 0 -88px; width: 25px; }
+.rate-user-grade .red_3 { background-position: 0 -105px; width: 38px; }
+.rate-user-grade .red_4 { background-position: 0 -121px; width: 51px; }
+.rate-user-grade .red_5 { background-position: 0 -139px; width: 64px; }
+.rate-user-grade .blue_1 { background-position: 0 -157px; width: 12px; }
+.rate-user-grade .blue_2 { background-position: 0 -171px; width: 25px; }
+.rate-user-grade .blue_3 { background-position: 0 -188px; width: 38px; }
+.rate-user-grade .blue_4 { background-position: 0 -204px; width: 51px; }
+.rate-user-grade .blue_5 { background-position: 0 -221px; width: 64px; }
+
+#container { height:400px; }
+#PricePoint { text-align:center; font-size:14px; padding:15px; }
+#PricePoint span { margin: 0 15px; color:#ddd }
+
+/*右侧热卖推荐*/
+.similar-sidebar { float:right; width:248px; border:1px solid #eaeaea; background:#fff }
+.similar-sidebar .title { font-size:16px; height:44px; line-height:44px; text-align:center; color:#999; border-top:#fff solid 1px; border-bottom:1px solid #ddd; background-color:#f8f8f8 }
+.similar-sidebar .title i { font-size:18px; margin-right:5px; }
+.sidebar-inner { padding:20px; position:relative }
+.sidebar-inner li { float:left; padding-bottom:15px; margin-bottom:20px; border-bottom:1px dashed #ddd }
+.sidebar-inner li a img { width:208px; height:208px; }
+.sidebar-inner li .item-info { padding-top:5px }
+.sidebar-inner li .item-info .item-title { height:24px; line-height:24px; font-size:14px; overflow:hidden }
+.sidebar-inner li .item-info .item-price { float:left; font-size:20px; color:#000 }
+.sidebar-inner li .item-info .item-price .yen { font-size:14px; margin-right:3px }
+.sidebar-inner li .item-info .item-fan { float:right; font-size:12px; color:#999; padding-top:3px; }
+.sidebar-inner li .item-info .item-fan em { padding:0 2px; font-size:16px; color:#F60; }

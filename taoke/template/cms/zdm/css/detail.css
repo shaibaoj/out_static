@@ -1,0 +1,316 @@
+.list-info {
+	padding: 0 0 40px;
+	background: #fff;
+	border-top: 3px solid #fd4463
+}
+
+.list-info .list-info-title {
+	margin-bottom: 10px;
+	padding: 20px 24px;
+	line-height: 24px;
+	font-size: 18px
+}
+
+.list-info .list-info-title .icon {
+	color: #ff4f6b;
+	font-size: 25px;
+	padding-right: 5px
+}
+
+.list-info .list-info-title img {
+	display: inline-block;
+	vertical-align: bottom;
+	padding-left: 10px
+}
+
+.list-info-cont {
+	padding: 0 24px
+}
+
+.list-info-cont .list-warp {
+	width: 1156px
+}
+
+.list-info-cont .list-item {
+	float: left;
+	margin: 4px 4px 0 0;
+	width: 261px;
+	height: 370px;
+	padding: 12px;
+	transition: all .3s ease
+}
+
+.list-info-cont .new.list-item .item-img:before {
+	position: absolute;
+	top: 13px;
+	right: 13px;
+	content: "";
+	display: block;
+	width: 62px;
+	height: 62px;
+	background: url(../../imgs/new.png) center center no-repeat;
+	cursor: pointer
+}
+
+.list-info-cont .list-item:hover {
+	box-shadow: 0 0 10px rgba(0, 0, 0, .4)
+}
+
+.list-info-cont .item-img {
+	position: relative;
+	margin-bottom: 10px;
+	width: 260px;
+	height: 260px;
+	overflow: hidden
+}
+
+.list-info-cont .item-img a {
+	display: block
+}
+
+.list-info-cont .item-img img {
+	width: 100%
+}
+
+.list-info-cont .see-more {
+	margin-top: 25px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 14px;
+	border: 1px solid #e4e4e4;
+	background: #fafafa
+}
+
+.list-info-cont .see-more a {
+	color: #666
+}
+
+.list-item .item-title {
+	font-size: 14px;
+	color: #333;
+	line-height: 25px
+}
+
+.list-item .item-title .icon-tmall {
+	color: #df0717
+}
+
+.list-item .item-title .icon-taobao {
+	color: #ff692f
+}
+
+.list-item .item-title .icon {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 20px;
+	padding-right: 2px
+}
+
+.list-item .item-title a {
+	color: #333
+}
+
+.list-item .item-explain {
+	line-height: 25px;
+	color: #999
+}
+
+.list-item .item-explain span {
+	color: #e06767
+}
+
+.list-item .item-price {
+	position: relative;
+	line-height: 30px;
+	padding: 6px 0;
+	font-size: 12px
+}
+
+.list-item .item-price span {
+	color: #dc0014
+}
+
+.list-item .item-price .present-price {
+	font-size: 24px;
+	font-weight: 700
+}
+
+.list-item .item-price del {
+	color: #666;
+	text-decoration: line-through
+}
+
+.list-item .item-price .receive {
+	position: absolute;
+	top: 10px;
+	right: 0;
+	width: 80px;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	border-radius: 3px;
+	background: #ff4560
+}
+
+.list-info .list-info-title {
+	font-weight: 500;
+	margin: 0
+}
+
+.list-detail {
+	padding: 0 0 65px;
+	background: #fff
+}
+
+.list-detail .detail-nav {
+	color: #999;
+	padding: 0 34px;
+	line-height: 50px
+}
+
+.list-detail .detail-nav a {
+	color: #999
+}
+
+.list-detail .detail-nav a:hover {
+	color: #e06767
+}
+
+.list-detail .detail-left {
+	width: 400px;
+	padding: 10px 54px 0 34px
+}
+
+.list-detail .detail-right {
+	margin-left: 488px;
+	padding: 10px 44px 0 0
+}
+
+.detail-left .detail-img {
+	width: 400px;
+	height: 400px;
+	overflow: hidden
+}
+
+.detail-left .detail-img img {
+	width: 100%
+}
+
+.detail-right .detail-title {
+	margin-bottom: 20px;
+	line-height: 20px;
+	font-size: 18px;
+	color: #333
+}
+
+.detail-right .detail-title .icon-tmall {
+	color: #df0717
+}
+
+.detail-right .detail-title .icon-taobao {
+	color: #ff692f
+}
+
+.detail-right .detail-title .icon {
+	font-size: 20px;
+	padding-right: 8px
+}
+
+.detail-right .price-block {
+	padding: 18px 20px;
+	color: #666;
+	background: #f6f6f8
+}
+
+.detail-right .price-block p {
+	line-height: 30px;
+	color: #666
+}
+
+.detail-right .price-block .title {
+	color: #333;
+	padding-right: 8px
+}
+
+.detail-right .price-block .text {
+	padding-right: 20px
+}
+
+.detail-right .price-block .present-price {
+	color: #e12f2f;
+	font-size: 18px
+}
+
+.detail-right .price-block .present-price em {
+	font-size: 30px;
+	font-weight: 700
+}
+
+.detail-right .price-block del {
+	padding-left: 10px;
+	text-decoration: line-through
+}
+
+.detail-right .quan-block {
+	color: #666;
+	line-height: 18px;
+	padding: 15px 0;
+	border-bottom: 1px dotted #e1e1e3
+}
+
+.detail-right .quan-block .red {
+	color: #e12f2f
+}
+
+.detail-right .quan-block .icon-tanhao {
+	color: #f3a62f
+}
+
+.detail-right .quan-block .icon {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 22px;
+	padding: 0 2px 0 34px
+}
+
+.detail-right .quan-block em {
+	padding: 0 10px
+}
+
+.detail-right .explain-block .icon-block {
+	display: inline-block;
+	vertical-align: top;
+	width: 5px;
+	height: 18px;
+	border-radius: 2px;
+	background: #f64a62;
+	margin-right: 10px
+}
+
+.detail-right .explain-block .explain-title {
+	margin-bottom: 12px;
+	line-height: 18px;
+	color: #999
+}
+
+.detail-right .explain-block p {
+	text-indent: 2em;
+	line-height: 24px;
+	color: #666
+}
+
+.detail-right .take-quan-btn {
+	display: inline-block;
+	margin-right: 20px;
+	width: 250px;
+	height: 56px;
+	line-height: 56px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: bolder;
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+	color: #fff;
+	background: #ff4560;
+	border-radius: 5px
+}

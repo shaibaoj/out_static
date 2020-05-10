@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="品牌特卖推荐" />
+<meta name="description" content="品牌特卖推荐" />
+<title>{$store_bidding_title}品牌特卖推荐-分享靠谱的购物打折促销优惠券一网打尽</title>
+<link rel="stylesheet" type="text/css" href="{$url_prefix_item.search_static_css}/template/3/comm.css"/>
+<script type="text/javascript" src="{$url_prefix_item.search_static_css}/js/lib/jquery/jquery.js"></script>
+{literal}
+<script type="text/javascript">
+$(function(){
+	$('.gs_btn').click(function(){
+		var href = $('.shoplogo').find("iframe").contents().find("a").eq(0).attr("href");
+		if (href != undefined){
+			window.open(href);
+		}
+		else{
+			/* alert('亲，你的操作过快，右击鼠标刷新或按F5，再试！'); */
+			var clickUrl = "http://search.huopinjie.com/top/index";
+			window.open(clickUrl);
+		}
+	});
+	$('.dianj').click(function(){
+		var href = $('.shoplogo').find("iframe").contents().find("a").eq(0).attr("href");
+		if (href != undefined){
+			window.open(href);
+		}
+		else{
+			/* alert('亲，你的操作过快，右击鼠标刷新或按F5，再试！'); */
+			var clickUrl = "http://search.huopinjie.com/top/index";
+			window.open(clickUrl);
+		}
+	});
+    $(".modal").fadeIn();
+    $(".close").click(function(e){
+        $(".modal").fadeOut("fast",function(){$(".modal").remove()});
+    });
+
+});
+</script>
+{/literal}
+</head>
+<body>
+    <div class="modal">
+        <div class="mask"></div>
+        <div class="hb">
+            <span class="close"></span>
+			<div class="txt close">
+                <span><a class="dianj"><font color="#FFF">2016年全网受欢迎的</font></a></span>
+                <strong><a class="dianj"><font color="#FFF100">{$store_bidding_title}旗舰店</font></a></strong>
+                <span><a class="dianj"><font color="#FFF">优惠券10-200元 限时抢购</font></a></span>
+				<a class="dianj"><strong><img src="http://img04.taobaocdn.com/imgextra/i4/648011753/TB2EPQmdXXXXXcdXpXXXXXXXXXX-648011753.gif"></strong></a>
+            </div>
+        </div>
+    </div>
+<div class="header">
+    <div class="top-header">
+				<div class="top-nav">
+						<label class="menu"> </label>
+					<ul>
+						<li class="active"><a class="dianj">商城首页<span class="home"></span></a></li>
+						<li><a class="dianj">所有宝贝<span class="us-box"></span></a></li>
+						<li><a class="dianj">热销单品<span class="port-box"></span></a></li>
+						<li><a class="dianj">品牌故事<span class="blog-box"></span></a></li>
+						<li><a class="dianj">收藏有礼<span class="tack-box"></span></a></li>
+					</ul>
+				</div>
+	</div>
+<div class="slider">
+    <div class="header-matter">
+		      		<h2><a class=dianj><span style="color:red;font-weight:bold;">{$store_bidding_title}旗舰店</span></a></h2>		      		
+		      		<label class="make"></label>
+		      		<div class="matter-we">
+		      			<a class="we-better">
+		      				<span> </span>	</a>
+                    <div class="shoplogo"><a data-type="1" biz-sellerid="{$store_bidding.user_num_id}" data-tmpl="140x190" data-tmplid="3" data-rd="2" data-style="2" data-border="1" href="#">正在为您努力加载，右击鼠标刷新或按F5</a></div>
+		      			<div class="better">
+		      				<h4>欢迎访问</h4>
+		      				<label><a class=dianj>点击领取<span style="color:red;font-weight:bold;">￥10-200元</span>优惠劵</a></label>
+		      				<p>{$store_bidding_title}旗舰店是在天猫商城开设运营的在线店铺，由天猫官方认证，100%正品保障，所有展示商品与实物完全相符，严格执行七天无理由退换服务，提供正规发票，为您呈现不一样的服务；【天猫商城】是中国线上购物的地标网站，亚洲大的综合性购物平台，已经拥有4亿多买家，10万多品牌商家，多种新型网络营销模式正在不断被开创。</p>
+							<label><a class="dianj">点击进入>>{$store_bidding_title}旗舰店</a></label>
+                            <div class="better-right"><img src="http://img03.taobaocdn.com/imgextra/i3/648011753/TB2uqV3cpXXXXasXpXXXXXXXXXX-648011753.png" /></div>
+		      			</div>
+		      			<div class="clearfix"> </div>
+		      		</div>
+</div>
+</div>
+</div>
+<div class="global-design">
+			<div class="container"> 
+				<div class="idea-get">
+				<a class="dianj"><img src="http://img03.taobaocdn.com/imgextra/i3/648011753/TB2kRB5cpXXXXXXXpXXXXXXXXXX-648011753.png" /></a>
+					<h4>品质保障</h4>	
+					<p>所有商品如实描述，全场无假货，如需要开具正规发票，品质护航，购物无忧！</p>		
+			</div>
+				<div class="idea-get">
+				<a class="dianj"><img src="http://img01.taobaocdn.com/imgextra/i1/648011753/TB2nUN3cpXXXXcqXXXXXXXXXXXX-648011753.png" /></a>
+					<h4>七天无理由退换货</h4>	
+					<p>签收商品后7天内，因主观原因不愿完成交易，可享受“7天无理由退换货”服务！</p>		
+			</div>
+				<div class="idea-get we-get-grid">
+				<a class="dianj"><img src="http://img02.taobaocdn.com/imgextra/i2/648011753/TB2qfaXcpXXXXXaXXXXXXXXXXXX-648011753.png" /></a>
+					<h4>更多特色服务</h4>	
+					<p>全程保障您的支付和商品安全，专属用户定制特色服务，严格执行售后及保修政策！</p>		
+			</div>
+				<div class="clearfix"></div>
+			</div>
+		</div><div id="footer">
+  <div class="contact"></div>
+   <div class='copyRight'>
+    	<p>
+	Copyright:@ 2008-2014 {$biddingDomain.address} | {$store_bidding_title}  版权所有 京ICP备13002908号-2
+</p>
+<p>
+	<br />
+</p>
+  </div>
+</div>
+{$taoke_code.pc}
+</body>
+</html>

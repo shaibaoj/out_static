@@ -1,0 +1,76 @@
+/* CSS Document */
+body {
+	margin:0;
+	padding:0;
+	background:#FFF2D5;
+}
+a:link {
+	color: #D92C1B;
+	;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #D92C1B;
+	;
+}
+a:hover {
+	text-decoration: none;
+}
+a:active {
+	text-decoration: none;
+}
+.top {
+	height:30px;
+	background:#333333;
+	width:100%;
+}
+.top_1 {
+	margin:auto;
+	width:1002px;
+}
+.banner {
+	height:169px;
+	background:#AE0001;
+	width:100%;
+}
+.banner1 {
+	margin:auto;
+	width:1002px;
+}
+.qjd { text-align:center;
+	font-size:48px;
+	font-family:microsoft Yahei;
+	line-height:50px;
+	font-weight:bold;
+}
+.pl {
+	height:28px;
+	margin:auto;
+	width:660px;
+}
+.zpbz {
+	height:61px;
+	margin:auto;
+	width:372px;
+}
+.anniu {
+	height:73px;
+	margin:auto;
+	width:244px;
+}
+.jxbd {
+	height:177px;
+	margin:auto;
+	width:948px;
+}
+.yqts {
+	height:51px;
+	margin:auto;
+	width:933px;
+}
+.wz {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 18px;
+}

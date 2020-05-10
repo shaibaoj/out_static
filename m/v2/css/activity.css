@@ -1,0 +1,105 @@
+.bottomMenu{ border: 1px solid #CDCDCD; border-left: 0; border-right: 0; position: fixed; left: 0; bottom: 0; width: 100%; background: white; height: 49px}
+.bottomMenu .bottom-info{ width: 100%; height: 49px; display: box;display: -moz-box;display:-webkit-box;}
+.bottomMenu div div.aas{ display: block;-webkit-box-flex: 1; -moz-box-flex: 1; box-flex:1; color: #808080}
+.bottomMenu div a.aas{ display: block;-webkit-box-flex: 1; -moz-box-flex: 1; height: 49px; box-flex:1; color: #fff}
+.bottomMenu div div.join{ color: #ffffff}
+.bottomMenu div div.buy{ color: #ffffff}
+.bottomMenu div .like{ text-align: center}
+.bottomMenu div .like em{ display: inline-block; height: 12px;margin-top: 10px}
+.bottomMenu div div.curr em{ background-position: -3px -19px}
+.bottomMenu div .join{ background: #FD994F; font-size: 18px; color: white; text-align: center; line-height: 49px}
+.bottomMenu div .buy{ background: #FD4F60; font-size: 18px; color: white; text-align: center; line-height: 49px}
+
+
+.like-collect {
+    /* padding: 0 10px; */
+    line-height: 50px;
+/*    box-shadow: 0 0 5px 0 rgba(218, 218, 218, 0.75);
+*/    background-color: #FFF;
+    font-size: 1.2rem;
+    overflow: hidden;
+    z-index: 100;
+}
+.like-collect span {
+    color: #3E3E3E;
+}
+.like-collect span i {
+    color: #FF6600;
+    font-style: normal;
+}
+.like-collect span i b {
+    margin-left: 2px;
+    font-weight: normal;
+}
+.like-collect .price i b {
+    font-size: 2rem;
+}
+.like-collect .coupon {
+    margin-left: 3px;
+    text-decoration: line-through;
+}
+
+@media screen and (max-width:350px){
+  .bottom-info .coupon-btn{
+    width:70px;
+    text-align:center;
+    padding-left:0;
+  }
+  .bottom-info .coupon-btn .coupon-btn-r{
+    display:none;
+  }
+  .bottom-info .buy-btn{
+    width:70px;
+  }
+}
+@media screen and (min-width:351px) and (max-width:480px){
+  .bottom-info .coupon-btn{
+    width:110px;
+  }
+  .bottom-info .buy-btn{
+    width:65px;
+  }
+}
+@media screen and (min-width:481px){
+  .bottom-info .coupon-btn{
+    width:120px;
+  }
+  .bottom-info .buy-btn{
+    width:120px;
+  }
+}
+.bottom-info .coupon-btn{
+  position:relative;
+  float:right;
+  height:49px;
+  line-height:49px;
+/*  margin-top:6px;*/
+  padding-right:10px;
+  text-align:left;
+  background-color: #FFF1E7;
+}
+.bottom-info .coupon-btn .coupon-btn-l{
+  color: #FF3C00;
+  padding-left: 20px;
+}
+.bottom-info .coupon-btn .coupon-btn-l i{
+  margin:0 3px;
+  font-size:18px;
+}
+.bottom-info .coupon-btn .coupon-btn-r{
+  position:absolute;
+  top:0;
+  right:5px;
+  display:block;
+  width:43px;
+  height:49px;
+  padding:4px 0;
+  line-height:20px;
+  text-align:center;
+  color:#FFF;
+  background-image:url("../images/coupon-btn.png");
+  background-position:left center;
+  background-repeat:no-repeat;
+  background-origin:padding-box;
+  background-size:100% 100%;
+}

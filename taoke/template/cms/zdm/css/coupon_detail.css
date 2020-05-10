@@ -1,0 +1,658 @@
+﻿body{
+    background:#f5f5f5;
+}
+.container{
+    background:#fff;
+
+    font-family:Arial,"Microsoft YaHei"; 
+}
+.container_inner{
+    padding-left:30px;
+    z-index:10;
+}
+.card_box,.coupon_use li i,.dowload_code,.d_btn,.only_appico{
+    background-image:url(https://i.huim.com/content_new/images/coupon_ico.png);
+    background-repeat:no-repeat;
+}
+.detial_content{
+    width:665px;
+    padding-bottom:100px;
+}
+.detial_side{
+    width:250px;
+    padding-top:15px;
+}
+
+/* 详情导航
+------------------------------------*/
+.detial_content .bread_crumbs{
+    height:32px;
+    line-height:32px;
+    padding-top:5px;
+    color:#bdbdbd;
+    border-bottom:1px dashed #f0f0f0;
+}
+.detial_content .bread_crumbs a{
+    color:#999;
+}
+.detial_content .bread_crumbs a:hover{
+    color:#f95c68;
+}
+.detial_content .bread_crumbs span.arrow {
+    font-family:"SimSun";
+    padding:0 4px;
+}
+
+/* 券详细
+------------------------------------*/
+.coupon_detail{
+    padding:22px 0;
+}
+.coupon_detail_card{
+    position:relative;
+    float:left;
+    width:304px;
+    padding-top:45px;
+    height:149px;
+    margin-right:45px;
+    border:1px solid #ebebeb;
+    
+}
+.coupon_detail_card .only_appico{
+    position:absolute;
+    top:5px;
+    left:0;
+    display:block;
+    width:114px;
+    height:28px;
+    background-position:0 -269px;
+}
+.coupon_detail_card .card_box{
+    margin:0px auto 0 auto;    
+    width:268px;
+    height:110px;
+    background-position:0 -96px;
+}
+.card_box .card_shop_logo{
+    float:left;
+    width:120px;
+    height:60px;
+    padding:22px 27px;
+}
+.card_box .card_shop_logo img{
+    width:120px;
+    height:60px;
+}
+.card_box .card_shop_sale{
+    float:left;
+    width:85px;
+    padding-top:28px;
+    color:#f95c68;
+    font-size:14px;
+    text-align:center;
+}
+.card_shop_sale font{
+    display:block;
+    height:24px;
+    line-height:24px;
+    font-size:30px;
+    color:#ff4c5b;
+    font-family:Arial;
+    font-weight:700;
+    font-style:normal;
+}
+.card_shop_sale font i{
+    position:relative;
+    top:-10px;
+    right:-2px;
+    font-size:15px;
+    color:#ff4c5b;
+    font-family:"Hiragino Sans GB","Microsoft YaHei","微软雅黑",STHeiti,"WenQuanYi Micro Hei",Dengxian,Arial,SimSun,sans-serif;
+}
+.card_shop_sale b{
+    display:inline-block;
+    height:24px;
+    line-height:24px;
+    font-size:26px;
+    color:#ff4c5b;
+    font-family:Arial;
+    font-weight:700;
+    font-style:normal;
+}
+
+.coupon_detail_par{
+    float:left;
+}
+.coupon_detail_par .detial_tit{
+    padding-bottom:10px;
+    font-weight:400;
+    font-size:18px;
+    color:#333;
+    font-family:Arial,"Microsoft YaHei"; 
+}
+.coupon_detail_par ul{
+    min-height:100px;    
+    *height:100px;
+}
+.coupon_detail_par li{
+    line-height:24px;
+    color:#666;
+}
+.coupon_detail_par li span{
+    display:inline-block;
+    width:65px;
+}
+.coupon_detail_par li font{
+    padding-right:3px;
+    color:#ff4c5b;
+    font-size:14px;
+}
+.get_active{
+    padding-top:18px;    
+}
+.get_active .getcoupon{
+    width:150px;
+    height:40px;
+    line-height:40px;  
+}
+.get_active .my_coupon{
+    margin-left:20px;
+    color:#3366cc;
+}
+.get_active .btn2{
+    display:inline-block;
+    text-align:center;
+    background-color:#bdbdbd;
+    cursor:default;
+    font-size:14px;
+    color:#fff;
+}
+.get_active .btn2:hover{
+    color:#fff;
+}
+.get_step{
+    padding-top:20px;
+    line-height:24px;
+    color:#666;
+}
+
+/* 下载app
+------------------------------------*/
+.download_area{
+    height:265px;
+    margin-top:20px;
+}
+.dowload_cot{
+    width:430px;
+    margin:0 auto;
+}
+.download_area .d_tit{
+    position:relative;
+    height:30px;
+    width:665px;
+    margin-bottom:15px;
+    text-align:center;
+    border-top:1px solid #ccc;
+}
+.download_area .d_tit span{    
+    display:block;
+    position:absolute;
+    top:-15px;
+    left:50%;
+    margin-left:-155px;
+    width:310px;
+    text-align:center;
+    height:30px;
+    line-height:30px;
+    font-size:16px;
+    color:#333;
+    background:#fff;
+}
+.download_area .dowload_code{
+    float:left;
+    width:182px;
+    height:182px;
+    background-position:-9px -316px;   
+}
+.download_area .dowload_cot span{
+    width: 80px;
+    height: 180px;
+    line-height: 180px;
+    font-size: 38px;
+    font-family: Arial;
+    color: #e0e0e0;
+    text-align: center;
+}
+.download_area .dowload_btn{
+    padding-top:20px;
+}
+.download_area .d_btn{
+    display:block;
+    width:162px;
+    height:52px;
+}
+.download_area .dowload_cot .d_btn span{
+    padding-left:48px;
+    line-height:52px;
+    font-size:14px;
+    color:#fff;
+}
+.download_area .dowload_android{
+    margin-bottom:20px;
+    background-position:0px -517px;
+}
+.download_area .dowload_ios{
+    background-position:0px -578px;
+}
+.download_area .what_btn{
+    display:inline-block;
+    margin:10px 0 0 45px;
+}
+
+
+/* 使用说明
+------------------------------------*/
+.coupon_direction{
+    border-top:1px dashed #f0f0f0;    
+}
+.detial_content .item_tit{
+    padding:15px 0 10px 25px;
+    font-size:16px;
+    font-weight:700;
+    color:#333;
+}
+.coupon_direction .direction_detail{
+    padding-left:25px;
+    line-height:28px;
+    color:#333;
+    font-size:14px;
+}
+.direction_detail img{
+    max-width:500px;
+}
+.direction_detail a{
+    color:#3366cc;
+}
+
+.coupon_direction .coupon_use{
+    margin:20px 0;
+    height:44px;
+    background:#f0f0f0;    
+}
+.coupon_use li{
+    float:left;
+    display:inline-block;
+    width:auto;
+    height:44px;
+    line-height:44px;
+    padding-left:20px;
+    font-size:14px;
+}
+.coupon_use li i{
+    float:right;
+    *float:none;
+    vertical-align:middle;
+    display:inline-block;
+    height:44px;
+    width:30px;
+    margin-left:20px;
+    background-position:0 -215px;
+}
+.coupon_use li font{
+    margin-right:5px;
+    font-size:14px;
+    color:#f95c68;
+    font-weight:700;
+    font-style:italic;
+}
+.coupon_use .use_t{
+    padding-left:30px;
+    font-size:14px;
+    color:#f95c68;
+    font-weight:700;
+}
+
+
+/* 公开券号
+------------------------------------*/
+.coupon_outer .cou_receive{
+    padding:0 0 18px 25px;
+    font-size:12px;
+    color:#333;
+}
+.coupon_outer table,.coupon_outer tr,.coupon_outer th,.coupon_outer td{
+    
+}
+.receive_table{
+    width:100%;
+    border:1px solid #ccc;
+}
+.receive_table th,.receive_table td{
+    text-align:center;
+    vertical-align:middle;
+    width:25%;
+    height:30px;
+    border:1px solid #dedede;
+}
+.receive_table th{
+    background-color:#f5f5f5;
+}
+.receive_table tr:hover{
+    background:#eee;
+}
+.receive_table td a{
+    color:#3366cc
+}
+.receive_table td a:hover{
+    text-decoration:underline;
+}
+span.arrow {
+    padding-left:2px;
+    font-family:"SimSun";
+}
+
+/* 评论分页
+--------------------*/
+.coupon_outer_page{
+    margin-right:-8px;
+    padding-top:20px;
+    text-align:right;
+    display:-none;
+}
+.page_area {
+	clear: both;
+	display: inline-block;
+	overflow: hidden
+}
+.page_area span,.page_area a {
+	float: left;
+	display: inline-block;
+	margin-right: 8px !important;
+	padding: 5px 10px 0 !important;
+	height: 23px;
+	border: 1px solid #e5e5e5;
+	background: #fff;
+	color: #8c8c8c;
+	text-decoration: none;
+	font-size:14px;
+	font-family:Arial;
+}
+.page_area a:hover {
+	color: #f95c68;
+	border-color:#f95c68;
+}
+a.page_next,span.page_end {
+	display: inline-block;
+	border-right: 1px solid #e5e5e5;
+	white-space: nowrap
+}
+span.page_start,span.page_end {
+	background: #fafafa;
+	color: #999
+}
+a.page_next:hover,a.page_prev:hover {
+	color: #f95c68
+}
+.page_area .page_cur {
+    border-color:#f95c68;
+	background-color: #f95c68;
+	color: #fff
+}
+.page_prev i,.page_next i{
+    margin:0 5px;
+    font-family: "SimSun";
+    font-size: 14px;
+}
+
+/* = 详情右侧
+--------------------------------------------------------------------*/
+.side_item{
+    margin-bottom:25px;
+}
+.side_item .side_item_tit{
+    font-size:14px;
+    font-weight:700;
+    color:#000;
+    font-family:Arial,"Microsoft YaHei"; 
+}
+.side_item .side_item_tit i{
+    display:inline-block;
+    width:4px;
+    height:16px;
+    margin-right:4px;
+    vertical-align:-3px;
+    *vertical-align:0px;
+    background:#f95c68;
+}
+.side_item .side_item_content{
+    margin-left:4px;
+    margin-right:35px;
+    padding-top:5px;
+}
+
+/* 商城介绍
+------------------------------------*/
+.shop_info .shop_logo{
+    width:120px;
+    height:60px;
+    margin:0 auto;
+}
+.dir_wrap{
+    margin:12px 0 20px 0;
+    overflow:hidden;
+    height:90px;
+}
+.shop_info .shop_dir{
+    color:#666;
+}
+.shop_info .goto_btn{
+    display:block;
+    width:208px;
+    height:28px;
+    text-align:center;
+    line-height:28px;
+    border:1px solid #f95c68;
+    font-size:14px;
+    color:#f95c68;
+}
+.shop_info .goto_btn .arrow{
+    font-weight:700;
+    vertical-align:middle;
+}
+
+.mark_line{
+    height:30px;
+    width:220px;
+    border-top:1px solid #ededed;
+}
+/* 领券动态
+------------------------------------*/
+.side_item li a:before,.side_item li a:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+.side_item li a{*zoom:1}
+.coupon_dyn_cot li a:hover .coupon_text{
+    color:#f36;
+    text-decoration:none;    
+}
+.coupon_move{
+    height:268px;
+    overflow:hidden;
+    position:relative;
+}
+.coupon_move .coupon_move_inner{
+    position:absolute;
+}
+.side_item .coupon_mall{
+    float:left;
+    width:90px;
+    height:45px;
+    margin-right:15px;
+}
+.side_item .coupon_text{
+    float:left;
+    width:85px;
+    color:#666;
+}
+.coupon_dyn_cot li{
+    padding:15px 0;
+    border-bottom:1px dashed #e6e6e6;
+}
+.coupon_dyn .coupon_mall{
+    float:left;
+    display:inline-block;
+    width:70px;
+    height:35px;
+}
+.coupon_dyn .coupon_mall img{
+    width:70px;
+    height:35px;
+}
+.coupon_dyn .coupon_text{
+    float:left;
+    display:block;
+    width:125px;
+    height:35px;
+    overflow:hidden;
+    font-size:12px;
+    overflow:hidden;
+}
+
+/* 领券成功
+------------------------------------*/
+#show_receive_pop{
+    display:block; 
+    width:460px; 
+    height:290px; 
+    margin-left:-230px; 
+    margin-top:-150px;
+}
+.receive_code{
+    padding:20px 0 0 113px;    
+}
+.receive_code li{
+    padding-bottom:5px;
+    font-size:14px;
+    color:#666;    
+}
+.receive_code li span{
+    display:inline-block;
+    padding:3px 5px;
+    min-width:180px;
+    *width:175px;
+    font-size:16px;
+    color:#333;
+    font-family:Arial;
+    background-color:#FFFCEA;
+    border:1px dashed #ccc;
+}
+.active_btn{
+    padding-top:20px;
+    height:65px;
+    text-align:center;
+}
+.active_btn .btn{
+    width:150px;
+    height:40px;
+    line-height:40px;
+    font-size:16px;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border-radius:2px;
+}
+
+.cot_foot{
+    height:40px;
+    padding:0 20px;
+    line-height:40px;
+    border-top:1px solid #f0f0f0;
+    color:#666;
+}
+.cot_foot a{
+    float:right;
+    color:#3366cc;
+}
+
+.popbox_content .cot_tit{
+    padding-top:40px;
+    font-weight:700;
+    font-size:18px;
+    color:#4c4c4c;
+    text-align:center;
+}
+.cot_tit i{
+    vertical-align:middle;
+     display:inline-block;
+     margin-right:10px;
+     width:28px;
+     height:28px;
+     background:url(https://i.huim.com/content_new/images/pop_msg_ico.png) no-repeat;
+}
+.cot_tit .result_ico1{
+    background-position:0 0;
+}
+.cot_tit .result_ico2{
+    background-position:0 -40px;
+}
+.cot_tit .result_ico3{
+    background-position:0 -80px;
+}
+
+/* 积分不足等级不够 
+------------------------------------*/
+#show_lack_pop{
+    display:block; 
+    width:520px; 
+    height:310px; 
+    margin-left:-260px; 
+    margin-top:-155px;
+}
+.lack_info{
+    padding:30px 0;
+    height:20px;
+    text-align:center; 
+}
+.lack_info a{
+    color:#3366cc;
+}
+.huim_app{
+    padding:25px 0 25px 80px;
+    background-color:#f6f6f6;
+    border-top:1px solid #f1f1f1;
+}
+.huim_app .app_recode{
+    float:left;
+    width:120px;
+    height:120px;
+    margin-right:15px;
+}
+.huim_app .app_recode img{
+    float:left;
+    width:120px;
+    height:120px;
+}
+.huim_app .app_txt{
+    float:left;    
+}
+.huim_app .jf_doubled{
+    padding:10px 0 25px 0;
+    font-size:16px;
+    color:#444;    
+}
+.huim_app .dowload_btn{
+    width:140px;
+    height:38px;
+    line-height:38px;
+}
+.huim_app .what_btn{
+    margin-left:15px;
+    color:#999;
+}
+
+/* 提醒
+------------------------------------*/
+#show_remind_pop{
+    display:block; 
+    width:520px; 
+    height:180px; 
+    margin-left:-260px; 
+    margin-top:-100px;
+}

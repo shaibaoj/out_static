@@ -1,0 +1,134 @@
+<!DOCTYPE html><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>{$SEOTITLE}</title>
+<meta name="keywords" content="{$tkey}">
+<meta name="description" content="【{$tkey}】{$SEOTITLE}">
+<script type="text/javascript">var keyStr='{$tkey}'; var to_url='{$tourl}'; var clickType='{$clickType}';var goods_url='{$goods_url}';</script>
+</head>
+<body>{$tongji}
+
+<div id="header" class="yahei">
+	<div class="header-nav">
+		<ul class="container nav-main">
+			{section loop=$abouts name=a}{if $a.ename neq ""}<a class="sub-cat" href="{$a.ename}" title={$a.title}><i>{$a.title}</i></a>{else}<i>{$a.title}</i>{/if}{/section}
+		</ul>
+	</div>
+</div>
+
+<div class="MIB_mblogbgl">
+	<div>
+		<div class="clear"></div>
+		<div id="mainleft" class="mainleft">
+			<div class="clear"></div>							
+			<div class="zkcontent">
+				{if $goods neq null}
+	                    	{$goods.price}
+	                    	<img src="http://cdn.img.shaibaoj.com/pic-/{$goods.seopic}"/>
+	                    	{foreach from=$goods_jsonData key=myId item=l}
+	                    	<dl><dt>{$l.name}</dt><dd>{$l.value}</dd></dl>
+	                    	{/foreach}
+                    	{/if}
+                    	
+                    	{if $article neq null}
+	                    	{$article.title}
+	                    	<img src="http://cdn.img.shaibaoj.com/pic-/{$goods.seopic}"/>
+							{$dataContent.data.content}
+                    	{/if}
+				{section loop=$items name=l max=36}
+				<div class="gooditem withborder">
+					<div class="imgandbtn">
+						<div class="showpic">
+						{if $configData.queryGoods eq "1"}<a href="{$urlall}?goodsId={$l.goodsId}" target="_blank">{/if}
+							<div class="imgmask" style="height:140px;width:140px;top:15px;left:10px"></div>
+							<img src="http://cdn.img.shaibaoj.com/pic-/{$l.seopic}" width="140" height="140" alt="{$l.title|strip_tags}" style="margin-left:0px;margin-top:0px;margin-bottom:0px">
+						{if $configData.queryGoods eq "1"}</a>{/if}
+						</div><!-- div.showpic -->
+						<div class="clear"></div>
+					</div>
+					<div class="iteminfoarea">
+						<h2 class="mallandname">
+							{if $configData.queryGoods eq "1"}<a href="{$urlall}?goodsId={$l.goodsId}" target="_blank">{/if}
+							{$l.title|strip_tags}
+							{if $configData.queryGoods eq "1"}</a>{/if}
+						</h2><!-- div.mallandname -->
+						<div class="clear"></div>
+						
+									
+						</div><!-- a.shortabstract -->
+						<!-- div.timeandfrom -->
+					</div><!-- div.iteminfoarea -->
+					<div class="rightlinks">
+						
+						<div class="clear"></div>
+						<div class="rightmall">
+							mall：
+						</div>
+					</div>
+				</div>
+				{/section}
+				
+				{section loop=$items_article name=l max=36}
+		<div class="dym sc2 co0">
+		<div class="j">
+		<div class="mbpho item-pic" style="height:200px;">
+						{if $configData.queryArticle eq "1"}<a href="{$urlall}?articleId={$l.articleId}" target="_blank">{/if}
+						<img  src="http://cdn.img.shaibaoj.com/pic-/{$l.seopic}" height="200" alt="{$l.title|strip_tags}" />
+						{if $configData.queryArticle eq "1"}</a>{/if}
+						</div><div class="d"></div><div class="g">【{$tkey}】{$l.title|strip_tags}&nbsp;</div>
+</div>
+</div>
+{/section}
+								
+							</div>
+							<div class="clear"></div>
+							<a class="feednotify" id="loading" style="background-color: rgb(231, 246, 231);display:none" href="javascript:void(0)">
+				<div class="loading loading-26 feed-loading"></div>
+			</a>
+		</div>
+		<div id="mainright" class="mainright">
+			<div class="clear"></div>
+			<div id="notfix" style="display: block;">
+				<div class="areatitleright">
+					<span class="blockstart"></span>
+					<span class="areatitleword">Top9</span>
+				</div>
+				<div class="clear"></div>
+				<div class="newhot">
+								{section loop=$top_links name=a}
+								
+					
+					<div class="newhotitem">
+						<span class="newhotdot dot1"></span>
+						<a class="sub-cat" target="_blank" title="{$a.title}" href="{$a.ename}"><i>{$a.title}</i></a>
+					</div>
+					<div class="clear"></div>
+					
+								
+								{/section}
+					
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="clearit"></div>
+<div id="footer">
+	
+<div class="copyright">
+	<div class="copyright-inner">
+		<p class="copyright-url">
+			{section loop=$links name=a}<a class="sub-cat" target="_blank" title="{$a.title}" href="{$a.ename}"><i>{$a.title}</i></a>{/section}
+			{section loop=$hot_links name=a}<a class="sub-cat" target="_blank" title="{$a.title}" href="{$a.ename}"><i>{$a.title}</i></a>{/section}
+			{section loop=$friend_links name=a}<a class="sub-cat" target="_blank" title="{$a.title}" href="{$a.ename}"><i>{$a.title}</i></a>{/section}
+		</p>
+		<div class="copyright-info">
+			<p><span>Copyright © 2011-2015</span><span>{$tkey}</span></p>
+		</div>
+	</div>
+</div>
+</div>
+<!--/底部-->
+{if $keywordsType neq null}{$keywordsType.tongji}{/if}
+{$tongji}
+</body>
+</html>

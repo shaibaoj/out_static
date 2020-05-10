@@ -1,0 +1,123 @@
+.pager {
+    text-align: center;
+}
+.pager * {
+    text-decoration: none;
+}
+.pager .pre-page {
+    display: inline-block;
+    position: relative;
+    /* display: block; */
+    padding: 0.5em 1em;
+    text-decoration: none;
+    line-height: 1.2;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    font-size: 1.0rem;
+}
+.pager .pre-page:hover {
+    background: #0e90d2;
+    border: medium none;
+    color: #fff;
+    font-weight: bold;
+}
+.pager .next-page {
+    display: inline-block;
+       position: relative;
+    /* display: block; */
+    padding: 0.5em 1em;
+    text-decoration: none;
+    line-height: 1.2;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    font-size: 1.0rem;
+}
+.pager .next-page:hover {
+    background: #0e90d2;
+    border: medium none;
+    color: #fff;
+    font-weight: bold;
+}
+.pager .item {
+	display: inline-block;
+    position: relative;
+    /* display: block; */
+    padding: 0.5em 1em;
+    text-decoration: none;
+    line-height: 1.2;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    font-size: 1.0rem;
+}
+.pager .item:hover {
+    background: #0e90d2;
+    border: medium none;
+    color: #fff;
+    font-weight: bold;
+}
+.pager .cur {
+    background: #0e90d2;
+    border: medium none;
+    color: #fff;
+    font-weight: bold;
+    cursor: default;
+}
+.pager .disabled {
+    color: #bbbbbb;
+    font-weight: normal;
+    cursor: default;
+}
+.pager .disabled:hover {
+    background: #FFFFFF;
+    border: medium none;
+    color: #bbbbbb;
+    font-weight: normal;
+}
+.pager .more {
+    cursor: default;
+}
+.pager .more:hover {
+    background: #FFFFFF;
+    border: medium none;
+    color: #919191;
+    font-weight: bold;
+}
+
+.layui-layer-iframe{
+  margin-top:-25px !important;
+}
+.layui-layer-iframe .layui-layer-content{
+  padding-top:53px !important;
+  overflow:visible !important;
+  background-color:#F8F8F8 !important;
+}
+.mask-tips{
+  position:absolute;
+  width:80% !important;
+  height:auto;
+  background-color:rgba(255,102,0,.7) !important;
+  background-size:100%;
+  border-radius:20px !important;
+}
+.mask-tips img.wechat-bg{
+  width:100%;
+  height:auto;
+  vertical-align:middle;
+}
+.mask-tips img.wechat-arrow{
+  position:absolute;
+  top:-125px;
+  right:-10%;
+}
+.mask-tips .layui-layer-content{
+  overflow:visible !important;
+}

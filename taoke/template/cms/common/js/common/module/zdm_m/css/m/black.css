@@ -1,0 +1,68 @@
+
+.main-title {
+    background: #222;
+}
+
+.goods-list .goods-item a.img .coupon-wrapper,
+.goods-list2 .goods-item a.img .coupon-wrapper  {
+    background-color: #222;
+}
+
+.ads-list .goods-item a.img .coupon-wrapper {
+    background-color: #222;
+}
+.tuwen-tkl .pic-detail span.pic-detail-btn-span {
+    color: #222;
+}
+
+.order-nav ul li.cur a {
+    color: #222;
+}
+
+#show-top-menu .menu-content .up-menu {
+    border: #222 1px solid;
+    color: #222;
+}
+
+.order-nav ul li.cur {
+    border-bottom: 1px solid #222;
+    color: #222;
+}
+
+/* .fq-amoy,
+.fq-amoy:hover,
+.fq-amoy:focus,
+.fq-amoy:active {
+	color: white;
+	background: #208d4e;
+}
+
+.fq-browser,
+.fq-browser:hover,
+.fq-browser:focus {
+	background: #27AE60;
+} */
+
+.fix-yun-goods-wrap {
+    background:#222;
+    color: #fff;
+}
+
+.activate-show .activate-btn {
+    background: #222;
+}
+
+.register-container .register-box .am-form .am-btn-secondary {
+	background-color: #222;
+	border-color: #222;
+}
+.login-container .login-box .am-form .am-btn-secondary {
+	background: #222;
+	border-color: #222;
+}
+.login-container .login-box .am-form .am-form-group label i {
+	color: #222
+}
+.login-container .login-box .am-form .am-form-group {
+	border-bottom: 2px #222 solid;
+}

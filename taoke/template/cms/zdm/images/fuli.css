@@ -1,0 +1,379 @@
+@charset "utf-8";
+body{
+    min-width:1122px;
+    background-color:#f5f5f5;
+}
+/* font */
+@font-face {font-family: "iconfont";
+  src: url('./font/iconfont.eot?t=148732134922594'); /* IE9*/
+  src: url('./font/iconfont.eot?t=148723134292594#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('./font/iconfont.woff?t=14873134291225941') format('woff'), /* chrome, firefox */
+  url('./font/iconfont.ttf?t=148731349222594') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('./font/iconfont.svg?t=148731349222594#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:12px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.fl_box{
+    width:1122px;
+    margin:0 auto;
+    overflow:hidden;
+    line-height:1;
+    color:#3c3c3c;
+}
+.fl_box a{
+    color:#3c3c3c;
+}
+.common_top{
+    margin:30px 0 16px;
+}
+/* 获取 */
+.fl_todo{
+    width:1122px;
+    margin:0 auto;
+    overflow:hidden;
+    padding-bottom:22px;
+    background-color:#fff;
+}
+.fl_todo h3{
+    padding:25px 0 23px 13px;
+    font-size:20px;
+    color:#333;
+    font-weight:normal;
+}
+.icons{
+    display:inline-block;
+    vertical-align:middle;
+    background-image:url(https://i.huim.com/content_new/images/fuli_ico.png);
+    background-repeat: no-repeat;
+}
+.icons_score{
+    width:27px;
+    height:28px;
+    background-position:0 0;
+}
+.icons_pulish{
+    width:27px;
+    height:33px;
+    background-position:0 -37px;
+}
+.icons_mys{
+    width:33px;
+    height:33px;
+    background-position:0 -79px;
+}
+.todo_box{
+    float:left;
+    width:240px;
+    padding:9px 25px 13px 15px;
+    border-right:1px solid #ebebeb;
+}
+.todo_title{
+    padding-left:6px;
+    color:#333;
+    font-size:18px;
+}
+.todo_box .icons,.todo_title{
+    vertical-align:middle;
+}
+.todo_box p{
+    margin-top:24px;
+    line-height:2;
+    color:#707070;
+    height:80px;
+    overflow:hidden;
+}
+.todo_box a{
+    color:#a5a5a5;
+}
+.todo_box a:hover{
+    color:#3366cc;
+}
+.todo_box .more{
+    text-align:right;
+}
+.qrcode_box{
+    float:left;
+    width:278px;
+    margin:-40px auto 0;
+    text-align:center;
+}
+.qrcode{
+    width:150px;
+    height:150px;
+    margin-bottom:15px;
+    background-position:0 -258px;
+}
+.qrcode_box .download{
+    margin-bottom:9px;
+    font-size:14px;
+    color:#707070;
+}
+.qrcode_box .join{
+    font-size:18px;
+}
+/* 0元抽 */
+.icons_lyc{
+    width:29px;
+    height:27px;
+    background-position:0 -123px;
+}
+.common_top{
+    margin:30px 0 16px;
+}
+.common_top_title span{
+    margin-left:5px;
+    vertical-align:middle;
+    font-size:24px;
+}
+.common_other{
+    margin-top:10px;
+}
+.common_other span{
+    margin-right:13px;
+    font-size:14px;
+}
+.lyc ul{
+    width:1142px;
+}
+.lyc li{
+    float:left;
+    position:relative;
+    width:360px;
+    background-color:#fff;
+    margin-right:20px; 
+}
+.lyc_pic{
+    width:100%;
+    height:283px;
+} 
+.lyc_num{
+    margin:15px 0;
+    padding-left:22px;
+    font-size:16px;
+}
+.lyc_info{
+    font-size:14px;
+    padding:0 9px 19px 22px;
+    color:#a5a5a5;
+}
+.icons_show{
+    width:21px;
+    height:21px;
+    margin-left:5px;
+    background-position:0 -230px;
+}
+.lyc_qrcode_box{
+    display:none;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    text-align:center;
+    color:#fff;
+    background-color:rgba(0,0,0,0.8);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#8f000000);
+}
+.lyc_qrcode_box p{
+    margin:50px 0 30px;
+    font-weight:700;
+    font-size:18px;
+}
+.icons_qrcode{
+    width:200px;
+    height:200px;
+    margin:0 auto;
+    background-position:0 -418px;
+}
+/* 优惠券 */
+.icons_coupon{
+    width:26px;
+    height:26px;
+    background-position:0 -158px;
+}
+.coupon{
+    width:840px;
+    background-color:#fff;
+}
+.coupon ul{
+    padding:20px 0 0 20px;
+}
+.coupon li{
+    float:left;
+    position:relative;
+    width:185px;
+    height:210px;
+    padding:0 20px 22px 0;  
+    text-align:center;
+}
+.coupon li a{
+    display:inline-block;
+}
+.coupon li img{
+    width:100px;
+    height:50px;
+    margin:22px auto 0;
+}
+.coupon .coupon_info{
+    margin:20px 0 10px;
+    font-size:16px;
+}
+.coupon .coupon_info p{
+    margin-top:8px;
+    font-size:32px;
+    color:#ff4c5b;
+    font-family:Arial;
+    font-weight:700;
+}
+.coupon .coupon_info i{
+    position:relative;
+    top:-8px;
+    right:-2px;
+    font-size:18px;
+    color:#ff4c5b;
+    font-weight:normal;
+}
+.coupon .get_btn{
+    position:absolute;
+    left:0;
+    bottom:22px;
+    width:100%;
+    height:39px;
+    text-align:center;
+    line-height:39px;
+    font-size:14px;
+    color:#8a4545;
+}
+.coupon a{
+    width:100%;
+    height:100%;
+    background-image:url(https://i.huim.com/content_new/images/fuli_quan.png);
+    background-repeat: no-repeat;
+}
+.coupon a:hover{
+    color:#3c3c3c;
+    background-position:-194px 0;
+}
+.coupon a:hover .get_btn{
+    color:#fff;
+}
+/* 积分换礼 */
+.exchange_box{
+    margin-bottom:30px;
+}
+.icons_exchange{
+    width:29px;
+    height:29px;
+    background-position:0 -194px;
+}
+.exchange{
+    width:840px;
+    background-color:#fff;
+}
+.exchange a{
+    display:block;
+    border:1px solid #ebebeb;
+}
+.exchange ul{
+    padding:20px 0 0 20px;
+}
+.exchange li{
+    float:left;
+    width:250px;
+    padding:0 21px 19px 0;
+}
+.exchange li img{
+    width:100%;
+    height:250px;
+}
+.exchange_title{
+    margin-bottom:10px;
+    line-height:20px;
+    font-size:16px;
+}
+.exchange_info{
+    padding:12px 12px 15px 12px;
+}
+.exchange_score{
+    margin-bottom:20px;
+    color:#707070;
+}
+.exchange_info .combtn_b{
+    display:block;
+    margin:0 auto;
+    width:120px;
+}
+.exchange a:hover{
+    color:inherit;
+}
+/* 领券动态 */
+.move_box{
+    position:relative;
+    overflow:hidden;
+}
+.coupon_move{
+    height:441px;
+}
+.exchange_move{
+    height:768px;
+}
+.common_move{
+    width:226px;
+    padding:20px 20px 0 20px;
+    background-color:#fff;
+}
+.common_move h3{
+    margin-bottom:5px;
+    padding-left:8px;
+    border-left:3px solid #f54e54;
+    font-size:16px;
+    line-height:18px;
+    font-weight:normal;
+}
+.common_move a{
+    display:block;
+}
+.coupon_move_list,.exchange_move_list{
+    position:absolute;
+    width:100%;
+    left:0;
+    right:0;
+}
+.coupon_move_list li{
+    padding:13px 8px 20px 0;
+    border-bottom:1px dashed #ebebeb;
+}
+.coupon_move_list img{
+    width:80px;
+    height:40px;
+    margin-right:10px;
+}
+.common_move img{
+    vertical-align:middle;
+    margin-right:10px;
+}
+.common_move .coupon_text{
+    width:125px;
+    height:38px;
+    display:inline-block;
+    vertical-align:middle;
+    line-height:19px;
+    overflow:hidden;
+    font-size:12px;
+}
+.common_move a:hover{
+    color:#3366cc;
+}
+/* 兑换动态 */
+.exchange_move_list li{
+    padding:8px 0 8px 0;
+}
+.exchange_move_list img{
+    width:80px;
+    height:80px;
+}

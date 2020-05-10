@@ -1,0 +1,376 @@
+﻿body{
+    background:#f5f5f5;
+}
+.title span,.publish_btn{
+    background-image:url(https://i.huim.com/content_new/images/publish_ico.png);
+    background-repeat:no-repeat;
+}
+.container{
+    font-family:Arial,"Microsoft YaHei";
+}
+.publish_head{    
+    margin-bottom:20px;
+    background-color:#fff;
+    font-family:Arial,"Microsoft YaHei","微软雅黑"; 
+}
+.publish_head .filter_area{
+    width:715px;
+    padding-left:30px;
+    padding-top:40px;
+}
+.filter_area .title{
+    padding:20px 0;
+}
+.filter_area .title span{
+    display:inline-block;
+    width:90px;
+    height:21px;
+    background-position:0 -280px;
+    text-indent:-99em;
+    overflow:hidden;
+}
+.filter_area .filter_item{
+   margin-bottom:20px;
+}
+.filter_item .filter_item_name{
+    float:left;
+    line-height:22px;
+    font-size:12px;
+    font-weight:700;
+    color:#666;
+}
+.filter_item_box{
+    float:left;
+    width:650px;
+}
+.filter_item li{
+    float:left;
+    margin-bottom:10px;
+}
+.filter_item li a{
+    display:inline-block;
+    height:22px;
+    line-height:22px;
+    padding:0 10px;
+    font-size:12px;
+    color:#8a4545;
+    word-break:keep-all;
+    white-space:nowrap;
+}
+.filter_item li a:hover{
+    color:#f95c68;
+}
+.filter_item li.cur_list a,.filter_item li.cur_list a:hover{
+    background:#f95c68;
+    color:#fff;
+}
+.publish_head .put_area{
+    height:160px;
+    width:303px;
+    margin:15px 0;
+    border-left:1px dotted #e6e6e6;
+    text-align:center;
+}
+.total_exp_num{
+    padding:10px 0 20px 32px;
+}
+.total_exp_num .total_num_tip{
+    float:left;
+    padding:0 2px;
+    height:26px;
+    line-height:26px;
+    font-size:14px;
+    *font-size:13px;
+    color:#888;
+}
+.total_exp_box{
+    display:inline-block;
+    height:26px;
+    float:left;
+}
+.digital_container {
+    display:inline-block;
+    _display:inline;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+    border-radius: 2px;
+}
+.digital_container span {
+    float:left;
+    width:14px;
+    height:24px;    
+    line-height:24px;
+    display:inline-block;
+    margin-right:1px;
+    border:1px solid #e5e0e0;
+    text-align:center;
+    font-size:18px;
+    font-family:Arial;
+    color:#666;
+}
+.put_area .put_btn{
+    text-align:center;
+}
+.publish_btn{
+    display:block;
+    margin:0 auto 20px auto;
+    width:170px;
+    height:42px;
+    line-height:42px;
+    color:#fff;
+    font-size:16px;
+    text-align:left;
+    text-indent:65px;
+    background-position:0 0;
+}
+.publish_btn:hover{
+    color:#fff;
+    background-position:0 -52px;
+}
+.link_tip a{
+    display:inline-block;
+    width:78px;
+    height:23px;
+    text-align:center;
+    line-height:24px;
+    border:1px solid #999;
+}
+.link_tip .daren_btn{
+    margin-right:10px;
+}
+
+
+/* 全民爆料
+--------------------*/
+.publish_box{
+    width:1020px;
+}
+.publish_box li{
+    position:relative;
+    float:left;
+    width:214px;
+    padding:15px;
+    margin-right:8px;
+    margin-bottom:10px;
+    background:#fff;
+    -moz-transition:box-shadow .5s;
+    -webkit-transition:box-shadow .5s;
+    -o-transition:box-shadow .5s;
+}
+.publish_box li:hover{
+    box-shadow: 0 0 8px #aaa;
+}
+.bao_grid .grid_pic{
+    position:relative;
+    width:214px;
+    height:214px;    
+}
+.bao_grid .grid_pic img{
+    width:214px;
+    height:214px;
+}
+.bao_grid .grid_pic .list_soldout{  
+    position:absolute;
+    display:inline-block;
+    z-index:6;
+    top:50%;
+    left:50%;
+    width:120px;
+    height:120px;
+    margin:-60px 0 0 -60px;
+    background:url(https://i.huim.com/content_new/images/soldout_ico.png) no-repeat;
+}
+
+/*首页二维码*/
+.grid_pic a.qrcode_btn{
+    display:block;
+    width:30px;
+    height:30px;
+    position:absolute;
+    left:0;
+    bottom:0;
+    z-index:7;
+}
+
+.grid_pic .qrcode_btn i{
+    display:inline-block;
+    width:30px;
+    height:30px;
+    background:#fff url(https://i.huim.com/content_new/images/qrcode_ico.png) no-repeat 0 4px;
+}
+
+.grid_pic .qrcode_btn .qrcode_txt{
+    float:left;
+    padding-left:5px;
+    color:#fff;
+    font-size: 15px;
+    font-family: Arial,"Microsoft YaHei";
+    display:inline-block;
+    line-height:40px;    
+}
+.grid_pic a.qrcode_btn .qrcode_box{
+    display:none;
+    position:absolute;
+    top:-185px;
+    left:0px;
+    width:215px;
+    height:207px;
+    padding-top:8px;
+    background:#fff;
+    border:1px solid #e8e6f0;
+    cursor:default;    
+}
+.grid_pic a.qrcode_btn .qrcode_box em{
+    display:block;
+    position:absolute;
+    bottom:-15px;
+    right:0px;
+    width:102px;
+    height:15px;
+    background-image:url(https://i.huim.com/content_new/images/qrcode_ico.png);
+    background-position:45px -67px;
+    background-repeat:no-repeat;
+}
+.grid_pic a.qrcode_btn .qrcode_box img{
+    display:block;
+    height:175px;
+    width:175px;
+    margin:0 auto;
+}
+.grid_pic a.qrcode_btn .qrcode_box font{
+    display:block;
+    text-align:center;
+    padding-top:5px;
+    color:#757380;
+    font-size:12px;
+}
+
+.bao_grid .grid_tit{
+    padding-top:10px;
+}
+.bao_grid .grid_tit a{
+    display:block;
+    height:30px;
+    _width:214px;
+    line-height:32px;
+    overflow:hidden;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size:14px;
+    color:#333;
+    font-weight:400;
+}
+.bao_grid .grid_tit a:hover{
+    color:#f95c68;
+}
+.bao_grid .grid_price{
+    width:214px;  
+}
+.bao_grid .price_current{
+    display:block;
+    height:30px;
+    overflow:hidden;
+    word-break:keep-all;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.bao_grid .price_current a{
+    font-size:18px;
+    color:#f95c68;
+}
+.bao_grid .pub_time{
+    float:left;
+    margin:15px 0 20px 0;
+    display:inline-block;
+    color:#999;    
+}
+.bao_grid .author_name{
+    float:right;
+    margin: 15px 0 20px 0;
+    display:inline-block;
+    width: 92px;
+    text-align:right;
+    word-break:keep-all;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    color: #999;
+}
+.bao_grid .grid_page{
+    padding-bottom:5px;
+}
+.bao_grid .grid_mall_tag{
+    display:inline-block;
+    float:left;
+    height:20px;
+    line-height:20px;
+    padding:0 10px;
+    border:1px solid #ccc;
+    color:#b3b3b3;
+    max-width: 80px;
+    overflow: hidden;
+}
+.bao_grid a.grid_mall_tag:hover{
+    border:1px solid #f95c68;
+    color:#f95c68;
+}
+.bao_grid .grid_buy_btn{
+    position:relative;
+    float:right;
+    display:block;
+    width:100px;
+    height:28px;
+    margin-top:-4px;
+    line-height:28px;
+    text-align:center;
+    background:#f95c68;
+    font-size:14px;
+    color:#fff;
+    cursor:pointer;
+}
+.bao_grid a.grid_buy_btn:hover{    
+    background:#ff6b77;
+    color:#fff;
+}
+
+/* 白菜达人榜单 */
+#bl_daren_pop{
+    display:none; 
+    width:520px; 
+    height:550px; 
+    margin-left:-260px; 
+    margin-top:-280px; 
+    border:1px solid #ccc;
+}
+#bl_daren_pop .daren_tit{
+    display:block;
+    height:80px;
+    margin:12px 0 16px 0;
+    background:url(https://i.huim.com/content_new/images/publish_daren_tit.png) no-repeat 50% 50%;
+}
+#bl_daren_pop .daren_box{
+    border:1px solid #ffaab1;
+    height: 400px;
+    width: 500px;
+    margin: 0 10px;
+    overflow: auto;
+}
+#bl_daren_pop .daren_box li{
+    float: left;
+    width: 130px;
+    height: 28px;
+    line-height: 28px;
+    overflow: hidden;
+    padding-left: 20px;
+    color: #666;
+    font-size:14px;   
+}
+#bl_daren_pop .daren_review{
+    text-align:center;    
+}
+#bl_daren_pop .daren_review a{
+    display:inline-block;
+    padding-top:8px;
+    color:#f95c68;
+}

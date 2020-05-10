@@ -1,0 +1,26 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.youdanhui.shengduoduo",
+            "sha256_cert_fingerprints": [
+                "1D:E1:CA:D5:E7:68:3E:26:CA:23:69:A0:72:36:26:D6:76:8C:59:D5:E2:5F:82:90:A4:A3:88:C6:04:F9:F9:A1"
+            ]
+        }
+    },
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.youdanhui.hui2200",
+            "sha256_cert_fingerprints": [
+                "29:D8:DB:C7:A0:17:D8:58:1B:5B:AB:08:33:E4:09:B0:EB:00:9B:83:BD:D8:5E:54:0B:FF:51:87:20:11:65:EC"
+            ]
+        }
+    }
+]

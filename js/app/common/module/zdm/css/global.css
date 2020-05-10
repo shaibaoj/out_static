@@ -1,0 +1,53 @@
+﻿html,body,div,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0}
+body,button,input,select,textarea{font:12px/1.5 Arial,"Microsoft YaHei","微软雅黑"}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+address,cite,dfn,em,var,i{font-style:normal}
+ul,ol,dl,li{list-style:none}
+fieldset,img{border:0}
+textarea{resize:vertical}
+small{font-size:85.7%}
+label{cursor:pointer}
+button,input,select,textarea{font-size:100%}
+img{border:0 none;width:auto\9;height:auto;max-width:100%;vertical-align:top;-ms-interpolation-mode:bicubic}
+iframe{display:block}
+input{outline-style:none}
+table{border-collapse:collapse;border-spacing:0}
+th{text-align:inherit}
+a{color:#5e5e5e;text-decoration:none}
+a:hover{color:#f36;text-decoration:none}
+:focus{outline:0 none}
+body{color:#666;height:100%;min-width:1000px}
+.cf:before,.cf:after{visibility:hidden;display:block;font-size:0;content:" ";clear:both;height:0}
+.cf{*zoom:1}
+.fhide{display:none}
+.fl,.fleft{float:left}
+.fr,.fright{float:right}
+.fonthide{overflow:hidden;text-indent:-999em}
+.hide{display:none}
+.element-hide{position:absolute;left:-9999em;height:1px;width:1px;overflow:hidden}
+.grid_auto{ margin:0 auto; width:1000px;}
+.com_ell{overflow:hidden;text-overflow: ellipsis;white-space:nowrap;}
+/* 颜色 */
+.container .color_red{color:#f54e54;}
+.container .color_green{color:#20b243;}
+.container .color_blue{color:#3366cc;}
+.container .color_blue:hover{text-decoration:underline;color:#3366cc;}
+/* 按钮 */
+.container .combtn_s{display:inline-block;width:46px;height:24px;font-size:12px;line-height:24px;text-align:center;border-radius:3px;}
+.container .combtn_n{display:inline-block;width:70px;height:28px;font-size:12px;line-height:28px;text-align:center;border-radius:3px;}
+.container .combtn_b{display:inline-block;width:100px;height:36px;font-size:14px;line-height:36px;text-align:center;border-radius:3px;}
+.container .combtn_bb{display:inline-block;width:130px;height:40px;font-size:14px;line-height:40px;text-align:center;border-radius:3px;}
+.container .combtn_red{color:#fff;background-color:#f54e54;}
+.container .combtn_red:hover{background-color:#f7656a;color:#fff;}
+.combtn_red.waiting,.combtn_red.waiting:hover{background-color:#ffbdbf;}
+.container .combtn_white{color:#f54e54;background-color:#fff;border:1px solid #ff7f84;}
+.container .combtn_white:hover{background-color:#fff0f0;color:#f54e54;}
+.combtn_white.waiting,.combtn_white.waiting:hover{background-color:#fff2f2;color:#ffa3a6;border:1px solid #ffd9da;}
+.container .combtn_gray{color:#333;background-color:#f5f5f5;border:1px solid #ddd;}
+.container .combtn_gray:hover{background-color:#fafafa;color:#333;}
+.combtn_gray.waiting,.combtn_gray.waiting:hover{background-color:#fafafa;color:#b8b8b8;border:1px solid #e5e5e5;}
+/* 输入框 */
+.cominput{width:180px;box-sizing:border-box;-webkit-box-sizing:border-box;vertical-align:middle;border-radius:4px;height:36px;;line-height:36px;border:1px solid #d1d1d1;padding:0 6px;color:#a5a5a5;webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;}
+.comlabel{display:inline-block;margin-right:10px;color:#707070;vertical-align:middle;}
+.cominput:focus{border-color:#4d4d4d;}
+.comselect{height:36px;line-height:36px;padding:0 6px;border:1px solid #d1d1d1;border-radius:4px;}

@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$SEOTITLE}</title>
+<meta name="description" content="【{$tkey}】{$SEOTITLE}"/> 
+<script type="text/javascript">var keyStr='{$tkey}'; var to_url='{$tourl}'; var clickType='{$clickType}';var goods_url='{$goods_url}';</script>	
+{literal}
+<style type="text/css">
+<!--
+body{ background-color:#E7E7E7; font-family:"微软雅黑"; font-size:14px;}
+h1{font-size:16px;}
+.bar { width:993px; height:40px; background-color:#FFFFFF; border:1px #CCCCCC solid; margin-left:auto; margin-right:auto; line-height:40px; padding:5px;}
+.box{ width:1003px;margin-left:auto; margin-right:auto; margin-top:20px;}
+.boxl{ width:680px; float:left; background-color:#FFFFFF; border:1px #CCCCCC solid;}
+.boxr{ width:303px; float:right}
+.title{ height:60px; border-bottom:#CCCCCC 1px dotted; margin:10px; text-align:center; line-height:60px;}
+.content{margin:10px;font-size:12px;}
+.site{border:1px #CCCCCC solid;background-color:#F6F6F6; padding:10px;}
+.sitec{border:1px #CCCCCC solid;background-color:#ffffff; padding:10px; margin-top:5px;font-size:12px;}
+.sitet{border:1px #CCCCCC solid;background-color:#F6F6F6; padding:10px; margin-top:20px;}
+.bt{height:60px; border-top:#CCCCCC 1px dotted; margin:10px;}
+.prvpage{ border:1px #CCCCCC solid; padding:5px; width:200px; float:left; margin-top:20px; margin-left:80px; text-align:center;}
+.nextpage{border:1px #CCCCCC solid; padding:5px; width:200px; float:left;margin-top:20px; margin-left:80px;text-align:center;}
+li{ list-style:none; padding:0px; margin:0px; line-height:25px; border-bottom:#CCCCCC 1px dotted;}
+a{ color:#666666; text-decoration:none;}
+a:hover{ color:#666666; text-decoration:underline;}
+img{width:400px;}
+-->
+</style>
+{/literal}
+</head>
+
+<body>{$tongji}
+
+<div class="bar">
+{section loop=$abouts name=a}
+				<div class="p-single"><a class="sub-cat" target="_blank" title="{$a.title}" href="{$a.ename}"><i>{$a.title}</i></a></div>{/section}
+</div>
+<div class="box">
+<div class="boxl">
+<div class="title"><h1>{$SEOTITLE}</h1></div>
+<div class="content">
+ {section loop=$items name=l max=60}
+     <li>
+        <div class="con ">
+          <div class="similar-num tip1"></div>
+          {if $configData.queryGoods eq "1"}<a href="{$urlall}?goodsId={$l.goodsId}" class="img">{/if}
+				<img src="http://cdn.img.shaibaoj.com/pic-/{$l.seopic}" alt="{$l.title|strip_tags}" >
+		  {if $configData.queryGoods eq "1"}</a>{/if}
+          {$l.title}
+          <span class="similar-price">{$l.price}</span>
+          <span class="similar-score">{$l.volume+120}</span>
+        </div>
+      </li>
+	  {/section}
+	{section loop=$items_article name=l max=60}
+     <li>
+        <div class="con ">
+          <div class="similar-num tip1"></div>
+          {if $configData.queryArticle eq "1"}<a href="{$urlall}?articleId={$l.articleId}" class="img">{/if}
+				<img src="http://cdn.img.shaibaoj.com/pic-/{$l.seopic}" alt="{$l.title|strip_tags}" >
+		  {if $configData.queryArticle eq "1"}</a>{/if}
+          {$l.title}
+        </div>
+      </li>
+	  {/section}  
+	{section loop=$items_pic name=l max=60}
+     <li>
+        <div class="con ">
+          <div class="similar-num tip1"></div>
+				<img src="http://cdn.img.shaibaoj.com/pic-/{$l.seopic}" alt="{$l.title|strip_tags}" >
+          {$l.title}
+          <span class="similar-price">{$l.width}_{$l.height}_{$l.size}</span>
+          <span class="similar-score">{$l.size}分</span>
+        </div>
+      </li>
+	  {/section}
+
+</div>
+<div class="bt">{section loop=$hot_links name=a}
+				<div class="p-single"><a class="sub-cat" target="_blank" title="{$a.title}" href="{$a.ename}"><i>{$a.title}</i></a></div>{/section}</div>
+</div>
+<div class="boxr">
+<div class="site">relation</div>
+<div class="sitec">
+{section loop=$top_links name=a}<li><a href="{$a.ename}">{$a.title}</a></li>{/section}
+			{section loop=$links name=a}<li><a href="{$a.ename}">{$a.title}</a></li>{/section}
+</div>
+<div class="sitet">other</div>
+<div class="sitec">
+{section loop=$friend_links name=a}<li><a href="{$a.ename}">{$a.title}</a></li>{/section}
+</div>
+</div>
+</div>
+</body>
+</html>
