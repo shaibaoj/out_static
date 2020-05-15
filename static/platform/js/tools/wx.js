@@ -1,4 +1,4 @@
-var defaultImg = "//staticcdn.haopintui.net/static/platform/images/web/tools/img.png"; //默认图片
+var defaultImg = "https://cdn.jsdelivr.net/gh/shaibaoj/out_static/static/platform/images/web/tools/img.png"; //默认图片
 var vmToolEx = new Vue({
     el: "#vmToolEx",
     data: {
