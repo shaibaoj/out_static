@@ -1,1 +1,0 @@
-"use strict";define(function(require){var app=require("app");app.controller("metroMainUICtrl",["$rootScope","$state","$scope","$window",function($rootScope,$state,$scope,$window){var vm=$scope.vm;vm.metroSlideIndex=0,angular.extend(vm,{metroSlideChange:function(index){vm.metroSlideIndex=index},floor:function(num){return Math.floor(num/7)}})}])});

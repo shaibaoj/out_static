@@ -1,1 +1,0 @@
-"use strict";define(function(require){var app=require("app");app.controller("content.form.guide",["$scope","$mdDialog","$state",function($scope,$mdDialog,$state){var vm=$scope.vm={};angular.extend(vm,{sure:function(){$mdDialog.hide(),$state.go("mainLayout.contentmodel")}})}])});

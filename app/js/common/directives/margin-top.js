@@ -1,1 +1,0 @@
-"use strict";define(function(require){var app=require("app");app.directive("marginTop",function(){return{scope:{},restrict:"A",link:function($scope,iElm,iAttrs,controller){$scope.$on("openClick",function($event,data){iElm.find(".ngscroll-content-container").css({"margin-top":0})})}}})});

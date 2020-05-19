@@ -1,1 +1,0 @@
-"use strict";define(function(require){var app=require("app");require("common/modal/modal-header"),require("common/modal/modal-footer"),app.controller("AddThirdForm",["$scope","$mdDialog",function($scope,$mdDialog){var vm=$scope.vm={};angular.extend(vm,{close:function(){$mdDialog.cancel()}})}])});
