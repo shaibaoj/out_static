@@ -303,9 +303,16 @@ var vmToolEx = new Vue({
                 content = content.replace(/\{在售价\}/g, parseFloat(self.oItemData.itemInfo.price.price));
                 content = content.replace(/\{券后价\}/g, '<span>'+parseFloat(self.oItemData.itemInfo.price.buy_price)+'</span>');
                 content = content.replace(/\{推荐语\}/g, self.oItemData.strDesc);
-                content = content.replace(/\{介绍\}/g, self.oItemData.strDesc);
+                // content = content.replace(/\{介绍\}/g, self.oItemData.strDesc);
                 content = content.replace(/\{券额\}/g, '<span>'+parseFloat(self.oItemData.itemInfo.coupon.coupon_money)+'</span>');
                 content = content.replace(/\{图片\}/g, '');
+            }
+
+            if(value.token!=''||value.link!=''){
+                content = content.replace(/\{介绍\}/g, self.oItemData.strDesc);
+            }
+            else{
+                content = content.replace(/\{介绍\}/g, '文案');
             }
 
             content = content.replace(/\{淘口令\}/g, '<span>'+value.token+'</span>');
