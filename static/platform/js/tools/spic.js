@@ -586,10 +586,10 @@ var vmToolEx = new Vue({
 						layer.msg(c.message, {
 							icon: 1
 						});
-						if ("" != b.picList) {
+						if ("" != b.pList) {
 							a.goodsImg.mainImgs = [];
-							for (var e = 0; e < b.picList.length; e++) {
-								a.goodsImg.mainImgs[e] = b.picList[e];
+							for (var e = 0; e < b.pList.length; e++) {
+								a.goodsImg.mainImgs[e] = b.pList[e];
 							}
 						} else {
 							a.goodsImg.mainImgs = ["", "", ""];
