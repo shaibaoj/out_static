@@ -10,7 +10,7 @@ var vmminxCommonData = {
                 self.navTo(item.action.path, item.action.params)
             } else if (item.action.actionh5 === 'load_action') {
                 self.loadAction(item.action)
-            } else if (item.action.actionh5 === 'open_web') {
+            } else if (item.action.actionh5 === 'web') {
                 self.openWeb(item.action)
             } else if (item.action.actionh5 === 'copy') {
                 self.openWeb(item.action)
