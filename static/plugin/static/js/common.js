@@ -1565,7 +1565,7 @@ var vmpluginmin = new Vue({
 });
 
 // var link = document.createElement("link");
-// link.href = 'https://static.haopintui.net/out_static/out/css/common.css';
+// link.href = 'https://shaibaoj.gitee.io/out_cdn/css/common.css';
 // link.type = "text/css";
 // link.rel = "stylesheet";
 // document.getElementsByTagName("head")[0].appendChild(link);
