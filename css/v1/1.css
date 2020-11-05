@@ -1,0 +1,419 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	list-style-type: none;
+	_background-attachment: fixed;
+	_background-image: url(about:blank);
+}
+
+img {
+	border: 0px;
+}
+
+#header {
+	width: 100%;
+	height: 65px;
+	background: #40658a;
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	_position: absolute;
+	_top: expression(documentElement.scrollTop + "px");
+}
+
+#header_1100 {
+	width: 900px;
+	margin: auto;
+	height: 100%;
+}
+
+#logo {
+	color: white;
+	font-size: 28px;
+	font-weight: bold;
+	float: left;
+	line-height: 65px;
+	margin-right: 20px;
+}
+
+#nav {
+	float: left;
+	line-height: 24px;
+	margin-top: 18px;
+}
+
+#nav ul li {
+	overflow: hidden;
+	float: left;
+	margin-left: 10px;
+	color: white;
+	text-align: center;
+	background: #6f93b6;
+}
+
+#nav ul li:hover {
+	background: #93b1cf;
+}
+
+#nav ul li a {
+	padding: 2px 18px;
+	display: block;
+	color: white;
+	font-size: 14px;
+	text-decoration: none;
+}
+
+#nav ul li a:hover {
+	_text-decoration: underline;
+}
+
+#banner {
+	width: 960px;
+	margin: auto;
+	padding-top: 60px;
+}
+
+#popTips {
+	width: 230px;
+	height: 90px;
+	position: absolute;
+	display: none;
+	padding: 1px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	z-index: 9;
+}
+
+#popTips_arrow {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	bottom: -40px;
+	left: 105px;
+}
+
+#popTips_arrow * {
+	display: block;
+	border-width: 10px;
+	position: absolute;
+	border-style: solid dashed dashed dashed;
+	font-size: 0;
+	line-height: 0;
+}
+
+#popTips_arrow em {
+	border-color: #bbb transparent transparent;
+}
+
+#popTips_arrow span {
+	border-color: #FFF transparent transparent;
+	top: -1px;
+}
+
+#popTips_content {
+	padding: 10px 0 0 15px;
+	line-height: 20px;
+	color: #333;
+}
+
+#popTips_content p {
+	margin-top: 7px;
+	line-height: 26px;
+}
+
+#body {
+	width: 905px;
+	margin: auto;
+}
+
+.btt {
+	float: left;
+	margin-top: 50px;
+	margin-bottom: 15px;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-indent: 18px;
+	letter-spacing: 2px;
+	color: #fff;
+	font-family: 微软雅黑;
+}
+
+.btt span {
+	float: left;
+	font-size: 25px;
+	padding-top: 80px;
+	margin-top: -80px;
+}
+
+.layout {
+	float: left;
+	width: 900px;
+	height: 254px;
+	margin: 20px auto 0;
+}
+
+.layout_left {
+	float: left;
+	padding: 32px 30px 0 40px;
+}
+
+.layout_right {
+	margin-top: 35px;
+	float: left;
+}
+
+.shopbox {
+	width: 140px;
+	height: 190px;
+	position: relative;
+}
+
+.layout_left .shopPic {
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	cursor: pointer;
+}
+
+.layout_left .shopText {
+	width: 120px;
+	height: 15px;
+	position: absolute;
+	top: 137px;
+	left: 10px;
+	cursor: pointer;
+}
+
+.hotsale {
+	width: 87px;
+	height: 25px;
+}
+
+.productbox {
+	margin-top: 16px;
+	width: 628px;
+	height: 100px;
+	position: relative;
+}
+
+.layout_right .proPic {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	cursor: pointer;
+}
+
+.layout_right .proText1 {
+	width: 270px;
+	height: 16px;
+	position: absolute;
+	top: 10px;
+	left: 100px;
+	cursor: pointer;
+}
+
+.layout_right .proText2 {
+	width: 125px;
+	height: 16px;
+	position: absolute;
+	top: 30px;
+	left: 100px;
+	cursor: pointer;
+}
+
+.btnbox {
+	width: 630px;
+	margin-top: 18px;
+	height: 25px;
+	margin-left: 2px;
+	float: left;
+}
+
+.btn1, .btn2 {
+	width: 85px;
+	height: 25px;
+	color: #fff;
+	line-height: 25px;
+	text-align: center;
+	float: left;
+	text-decoration: none;
+}
+
+.btn1 {
+	margin-right: 10px;
+}
+
+.btn1:hover, .btn2:hover {
+	text-decoration: underline;
+}
+
+.btn_huodong {
+	float: right;
+	display: none;
+}
+
+.bcsm_text {
+	line-height: 30px;
+	color: #333;
+	float: left;
+}
+
+.bcsm_text span {
+	font-weight: bold;
+	font-size: 14px;
+	color: red;
+}
+
+.bcsm_text a {
+	color: blue;
+}
+
+.bcsm_text a:hover {
+	color: red;
+}
+
+.bcsm_pic {
+	width: 255px;
+	height: 90px;
+	background: url(/uploads/taoke/dktmall.png) -65px -51px;
+	float: right;
+}
+
+.bcsm_pic a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.layout2 {
+	float: left;
+}
+
+.layout2 ul li {
+	margin-top: 30px;
+	margin-bottom: 10px;
+	width: 450px;
+	float: left;
+	border: 1px dotted #d9d9d9;
+	padding: 18px 0;
+}
+
+.layout2 ul li:hover {
+	background-color: #f3f3f3;
+}
+
+.layout2_shop {
+	width: 140px;
+	height: 190px;
+	margin-left: 15px;
+	float: left;
+	border: 1px solid #d9d9d9;
+	position: relative;
+}
+
+.layout2_shop .shopPic {
+	width: 120px;
+	height: 120px;
+	cursor: pointer;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.layout2_shop .shopText {
+	width: 120px;
+	height: 15px;
+	cursor: pointer;
+	position: absolute;
+	top: 137px;
+	left: 10px;
+}
+
+.layout2_details {
+	float: left;
+	width: 255px;
+	margin-top: 18px;
+	margin-left: 18px;
+}
+
+.layout2_brand {
+	overflow: hidden;
+	height: 34px;
+	background: #eee;
+	line-height: 34px;
+}
+
+.layout2_brand p {
+	padding: 0 3px;
+	font-weight: bold;
+	color: #e90000;
+	font-size: 25px;
+	text-indent: 4px;
+}
+
+.layout2_brand p span {
+	font-size: 30px;
+}
+
+.layout2_intro {
+	margin-top: 18px;
+	text-indent: 6px;
+}
+
+.layout2_intro p {
+	margin-top: 15px;
+	width: 252px;
+	overflow: hidden;
+	height: 15px;
+	line-height: 15px;
+}
+
+.layout2_intro p b {
+	font-weight: bold;
+	color: #555;
+}
+
+.layout2_intro p span {
+	font-weight: bold;
+	color: red;
+}
+
+.layout2_intro p a {
+	color: #999;
+}
+
+.layout2_intro p a:hover {
+	color: red;
+}
+
+.wenhao {
+	width: 18px;
+	height: 18px;
+	background: url(/uploads/taoke/wenhao.png) no-repeat;
+	position: absolute;
+	margin-top: -10px;
+	cursor: pointer;
+	z-index: 9;
+}
+
+#footer {
+	width: 870px;
+	height: 70px;
+	margin: auto;
+	color: #999;
+	line-height: 22px;
+	padding-top: 25px;
+	clear: both;
+}
+
+#footer span {
+	font-family: Arial;
+}
