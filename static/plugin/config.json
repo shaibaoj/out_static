@@ -1,0 +1,18 @@
+[
+	{
+		"type": "date",
+		"url": "2020010623"
+	},
+	{
+		"type": "js",
+		"url": "https://cdn.jsdelivr.net/gh/shaibaoj/out_static/static/js/common.js"
+	},
+	{
+		"type": "css",
+		"url": "https://static.haopintui.net/out_static/out/css/common.css"
+	},
+	{
+		"type": "css",
+		"url": "https://static.haopintui.net/out_static/out/css/layer.css"
+	}
+]
