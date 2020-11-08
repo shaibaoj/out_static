@@ -59,7 +59,6 @@ var vmminxAppData = {
             ajaxPost(URLPrefix.baseUrl + $this.app_url, {}, function (result) {
                 if (result.code == 0 && result.data.detail) {
                     $this.app.detail = result.data.detail;
-                    $this.show = 1;
 
                     var androidUrl = result.data.detail.android_url;
                     var iosUrl = result.data.detail.ios_url;
@@ -71,13 +70,13 @@ var vmminxAppData = {
                 }
             });
         },
-        showApp() {
+        showApp: function () {
             this.app.show = true;
         },
-        hideApp() {
+        hideApp: function () {
             this.app.show = false;
         },
-        downloads_url() {
+        downloads_url: function () {
             var $this = this;
             if (mobileUtil.isIOS && mobileUtil.isWeixin) {
                 location.href = $this.app.jump_url;
@@ -87,7 +86,7 @@ var vmminxAppData = {
                 location.href = $this.app.jump_url;
             }
         },
-        appCopyContent() {
+        appCopyContent: function () {
             var $this = this;
             var clipboard = new ClipboardJS('.appCopy', {
                 target: function () {
@@ -102,7 +101,7 @@ var vmminxAppData = {
                 clipboard.destroy();
                 $this.app.btnText = '复制成功';
                 $this.app.copyStatus = true;
-                setTimeout(() => {
+                setTimeout(function () {
                     $this.app.btnText = '一键复制';
                     $this.app.copyStatus = false;
                 }, 2000);
@@ -114,7 +113,7 @@ var vmminxAppData = {
                 $this.app.btnText = '复制失败';
             });
         },
-        get_downloads() {
+        get_downloads: function () {
             var $this = this;
             ajaxPost(URLPrefix.baseUrl + "/app.app.downloads", {}, function (result) {
                 if (result.info.status == 0) {
@@ -125,7 +124,7 @@ var vmminxAppData = {
                 }
             });
         },
-        hideNotice() {
+        hideNotice: function () {
             this.app.notice = !this.app.notice;
         },
     }
@@ -267,6 +266,88 @@ Vue.component('component-app-dialog', {
         '</div>'
 });
 
+
+Vue.component('component-buys', {
+    data: function () {
+        return {
+
+        }
+    },
+    methods: {
+    },
+    template:
+        '<div class="buyWrap">' +
+        '<div class="buyBox" style="animation: 100s linear 0s infinite normal none running scrollItps;">' +
+        '<div class="buyItem">恭喜用户<i>*</i>领取了商品</div>' +
+        '</div>' +
+        '</div>'
+});
+
+
+Vue.component('component-share-dialog', {
+    props: ['share'],
+    data: function () {
+        return {
+            btnText: '一键复制淘口令',
+            copyStatus: false,
+        }
+    },
+    mounted: function () {
+    },
+    methods: {
+        hideShow() {
+            this.$emit("hide-share");
+        },
+        shareCopyContent() {
+            var $this = this;
+            var clipboard = new ClipboardJS('.box-share-copy', {
+                target: function () {
+                    return document.querySelector('.box-share-content');
+                }
+            });
+            clipboard.on('success', function (e) {
+                layer.msg('复制成功', {
+                    time: 1500
+                });
+                e.clearSelection();
+                clipboard.destroy();
+                $this.btnText = '复制成功';
+                $this.copyStatus = true;
+                setTimeout(() => {
+                    $this.btnText = '一键复制淘口令';
+                    $this.copyStatus = false;
+                }, 2000);
+            });
+            clipboard.on('error', function (e) {
+                layer.msg('由于您的浏览器不兼容或当前网速较慢，复制失败，请手动复制或更换主流浏览器！', {
+                    icon: 2
+                });
+                $this.btnText = '复制失败';
+            });
+        },
+    },
+    template:
+        '<div class="share-box dialog-box">' +
+        '<div class="box-mask" @click="hideShow"></div>' +
+        '<div class="box-content">' +
+        '<div class="box-title">温情提示</div>' +
+        '<div class="box-main">' +
+        '<div class="box-share-content">' +
+        '<div class="box-share-message">{{share.content}}</div>' +
+        '<div class="box-share-notice">' +
+        '长按选择&gt;<span>拷贝</span>' +
+        '</div>' +
+        '</div>' +
+        '<div :class="[\'box-btn\',\'box-share-copy\',copyStatus?\'status-success\':\'\']"' +
+        ':data-clipboard-text="share.content" @click="shareCopyContent">' +
+        '{{btnText}}</div>' +
+        '<div class="notice-one">' +
+        '复制成功后，分享给好友即可领取!' +
+        '</div>' +
+        '</div>' +
+        '</div>' +
+        '</div>'
+});
 
 
 Vue.component('component-banner', {
