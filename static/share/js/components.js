@@ -133,220 +133,220 @@ var vmminxAppData = {
 
 
 Vue.component('component-app', {
-    props: ['app'],
-    data: function () {
-        return {
-        }
+  props: ['app'],
+  data: function () {
+    return {
+    }
+  },
+  mounted: function () {
+  },
+  methods: {
+    showApp: function () {
+      this.$emit("show-app");
     },
-    mounted: function () {
-    },
-    methods: {
-        showApp: function () {
-            this.$emit("show-app");
-        },
-    },
-    template:
-        '<div class="app-download">' +
-        '<div class= "app-icon">' +
-        '<img v-if="app.detail.icon_url != \'\'" :src="app.detail.icon_url">' +
-        '</div>' +
-        '<div class="app-content">' +
-        '<div class="app-title">{{ app.detail.name }}</div>' +
-        '<div class="app-desc">{{ app.detail.description }}</div>' +
-        '</div>' +
-        '<div class="app-download-buttons" @click="showApp" >' +
-        '<p class="app-download-botton">' +
-        '<span>下载APP</span>' +
-        '</p>' +
-        '</div >' +
-        '</div > '
+  },
+  template:
+    '<div class="app-download">' +
+    '<div class= "app-icon">' +
+    '<img v-if="app.detail.icon_url != \'\'" :src="app.detail.icon_url">' +
+    '</div>' +
+    '<div class="app-content">' +
+    '<div class="app-title">{{ app.detail.name }}</div>' +
+    '<div class="app-desc">{{ app.detail.description }}</div>' +
+    '</div>' +
+    '<div class="app-download-buttons" @click="showApp" >' +
+    '<p class="app-download-botton">' +
+    '<span>下载APP</span>' +
+    '</p>' +
+    '</div >' +
+    '</div > '
 });
 
 
 Vue.component('component-app-bar', {
-    props: ['app'],
-    data: function () {
-        return {
+  props: ['app'],
+  data: function () {
+    return {
 
-        }
+    }
+  },
+  methods: {
+    showApp: function () {
+      this.$emit("show-app");
     },
-    methods: {
-        showApp: function () {
-            this.$emit("show-app");
-        },
-    },
-    template:
-        '<div class="app-bar">' +
-        '<div class="app-bar-content">' +
-        '<div class="app-title">{{ app.detail.name }}</div>' +
-        '<div class="app-desc">{{ app.detail.description }}</div>' +
-        '</div>' +
-        '<div class="app-download-buttons" @click="showApp">' +
-        '<p class="app-download-botton">' +
-        '<span>下载APP</span>' +
-        '</p>' +
-        '</div>' +
-        '</div>'
+  },
+  template:
+    '<div class="app-bar">' +
+    '<div class="app-bar-content">' +
+    '<div class="app-title">{{ app.detail.name }}</div>' +
+    '<div class="app-desc">{{ app.detail.description }}</div>' +
+    '</div>' +
+    '<div class="app-download-buttons" @click="showApp">' +
+    '<p class="app-download-botton">' +
+    '<span>下载APP</span>' +
+    '</p>' +
+    '</div>' +
+    '</div>'
 });
 
 Vue.component('component-app-dialog', {
-    props: ['app'],
-    data: function () {
-        return {
+  props: ['app'],
+  data: function () {
+    return {
+    }
+  },
+  mounted: function () {
+  },
+  methods: {
+    hideApp () {
+      this.$emit("hide-app");
+    },
+    downloads_url () {
+      var $this = this;
+      if (mobileUtil.isIOS && mobileUtil.isWeixin) {
+        location.href = $this.app.jump_url;
+      } else if (mobileUtil.isAndroid && mobileUtil.isWeixin && $this.app.jump_url.indexOf("app.qq.com") <= 0) {
+        $this.app.notice = true;
+      } else {
+        location.href = $this.app.jump_url;
+      }
+    },
+    appCopyContent () {
+      var $this = this;
+      var clipboard = new ClipboardJS('.appCopy', {
+        target: function () {
+          return document.querySelector('.shareapp-code');
         }
+      });
+      clipboard.on('success', function (e) {
+        layer.msg('复制成功', {
+          time: 1500
+        });
+        e.clearSelection();
+        clipboard.destroy();
+        $this.app.btnText = '复制成功';
+        $this.app.copyStatus = true;
+        setTimeout(() => {
+          $this.app.btnText = '一键复制';
+          $this.app.copyStatus = false;
+        }, 2000);
+      });
+      clipboard.on('error', function (e) {
+        layer.msg('由于您的浏览器不兼容或当前网速较慢，复制失败，请手动复制或更换主流浏览器！', {
+          icon: 2
+        });
+        $this.app.btnText = '复制失败';
+      });
     },
-    mounted: function () {
-    },
-    methods: {
-        hideApp() {
-            this.$emit("hide-app");
-        },
-        downloads_url() {
-            var $this = this;
-            if (mobileUtil.isIOS && mobileUtil.isWeixin) {
-                location.href = $this.app.jump_url;
-            } else if (mobileUtil.isAndroid && mobileUtil.isWeixin && $this.app.jump_url.indexOf("app.qq.com") <= 0) {
-                $this.app.notice = true;
-            } else {
-                location.href = $this.app.jump_url;
-            }
-        },
-        appCopyContent() {
-            var $this = this;
-            var clipboard = new ClipboardJS('.appCopy', {
-                target: function () {
-                    return document.querySelector('.shareapp-code');
-                }
-            });
-            clipboard.on('success', function (e) {
-                layer.msg('复制成功', {
-                    time: 1500
-                });
-                e.clearSelection();
-                clipboard.destroy();
-                $this.app.btnText = '复制成功';
-                $this.app.copyStatus = true;
-                setTimeout(() => {
-                    $this.app.btnText = '一键复制';
-                    $this.app.copyStatus = false;
-                }, 2000);
-            });
-            clipboard.on('error', function (e) {
-                layer.msg('由于您的浏览器不兼容或当前网速较慢，复制失败，请手动复制或更换主流浏览器！', {
-                    icon: 2
-                });
-                $this.app.btnText = '复制失败';
-            });
-        },
-    },
-    template:
-        '<div class="app-box dialog-box">' +
-        '<div class="box-mask" @click="hideApp"></div>' +
-        '<div class="box-content">' +
-        '<div class="box-title">恭喜您</div>' +
-        '<div class="box-content">' +
-        '<p class="box-text">先复制邀请码</p>' +
-        '<div class="box-invite-code">' +
-        '<div class="copyBut flex-box">' +
-        '<p class="flex-two">邀请码：' +
-        ' <span class="shareapp-code">{{app.detail.invite_code}}</span>' +
-        '</p>' +
-        '<a :data-clipboard-text="app.detail.invite_code" href="javascript:;"' +
-        'class="flex-one appCopy" @click="appCopyContent">复制' +
-        '</a>' +
-        '</div>' +
-        '</div>' +
-        '<p class="box-text">再打开app，点击每日福利，即可领取福利商品</p>' +
-        '<div class="box-btn animation-btn" @click="downloads_url">立即打开APP，领取福利</div>' +
-        '<marquee direction="up" scrollamount="1" class="marquee">' +
-        '<span>186****1198 刚刚领取了商品</span>' +
-        '</marquee>' +
-        '</div>' +
-        '</div>' +
-        '</div>'
+  },
+  template:
+    '<div class="app-box dialog-box">' +
+    '<div class="box-mask" @click="hideApp"></div>' +
+    '<div class="box-content">' +
+    '<div class="box-title">恭喜您</div>' +
+    '<div class="box-content">' +
+    '<p class="box-text">先复制邀请码</p>' +
+    '<div class="box-invite-code">' +
+    '<div class="copyBut flex-box">' +
+    '<p class="flex-two">邀请码：' +
+    ' <span class="shareapp-code">{{app.detail.invite_code}}</span>' +
+    '</p>' +
+    '<a :data-clipboard-text="app.detail.invite_code" href="javascript:;"' +
+    'class="flex-one appCopy" @click="appCopyContent">复制' +
+    '</a>' +
+    '</div>' +
+    '</div>' +
+    '<p class="box-text">再打开app，点击领取福利金，即可领取福利商品</p>' +
+    '<div class="box-btn animation-btn" @click="downloads_url">立即打开APP，领取福利</div>' +
+    '<marquee direction="up" scrollamount="1" class="marquee">' +
+    '<span>186****1198 刚刚领取了商品</span>' +
+    '</marquee>' +
+    '</div>' +
+    '</div>' +
+    '</div>'
 });
 
 
 Vue.component('component-buys', {
-    data: function () {
-        return {
+  data: function () {
+    return {
 
-        }
-    },
-    methods: {
-    },
-    template:
-        '<div class="buyWrap">' +
-        '<div class="buyBox" style="animation: 100s linear 0s infinite normal none running scrollItps;">' +
-        '<div class="buyItem">恭喜用户<i>*</i>领取了商品</div>' +
-        '</div>' +
-        '</div>'
+    }
+  },
+  methods: {
+  },
+  template:
+    '<div class="buyWrap">' +
+    '<div class="buyBox" style="animation: 100s linear 0s infinite normal none running scrollItps;">' +
+    '<div class="buyItem">恭喜用户<i>*</i>领取了商品</div>' +
+    '</div>' +
+    '</div>'
 });
 
 
 Vue.component('component-share-dialog', {
-    props: ['share'],
-    data: function () {
-        return {
-            btnText: '一键复制淘口令',
-            copyStatus: false,
+  props: ['share'],
+  data: function () {
+    return {
+      btnText: '一键复制淘口令',
+      copyStatus: false,
+    }
+  },
+  mounted: function () {
+  },
+  methods: {
+    hideShow () {
+      this.$emit("hide-share");
+    },
+    shareCopyContent () {
+      var $this = this;
+      var clipboard = new ClipboardJS('.box-share-copy', {
+        target: function () {
+          return document.querySelector('.box-share-content');
         }
+      });
+      clipboard.on('success', function (e) {
+        layer.msg('复制成功', {
+          time: 1500
+        });
+        e.clearSelection();
+        clipboard.destroy();
+        $this.btnText = '复制成功';
+        $this.copyStatus = true;
+        setTimeout(() => {
+          $this.btnText = '一键复制淘口令';
+          $this.copyStatus = false;
+        }, 2000);
+      });
+      clipboard.on('error', function (e) {
+        layer.msg('由于您的浏览器不兼容或当前网速较慢，复制失败，请手动复制或更换主流浏览器！', {
+          icon: 2
+        });
+        $this.btnText = '复制失败';
+      });
     },
-    mounted: function () {
-    },
-    methods: {
-        hideShow() {
-            this.$emit("hide-share");
-        },
-        shareCopyContent() {
-            var $this = this;
-            var clipboard = new ClipboardJS('.box-share-copy', {
-                target: function () {
-                    return document.querySelector('.box-share-content');
-                }
-            });
-            clipboard.on('success', function (e) {
-                layer.msg('复制成功', {
-                    time: 1500
-                });
-                e.clearSelection();
-                clipboard.destroy();
-                $this.btnText = '复制成功';
-                $this.copyStatus = true;
-                setTimeout(() => {
-                    $this.btnText = '一键复制淘口令';
-                    $this.copyStatus = false;
-                }, 2000);
-            });
-            clipboard.on('error', function (e) {
-                layer.msg('由于您的浏览器不兼容或当前网速较慢，复制失败，请手动复制或更换主流浏览器！', {
-                    icon: 2
-                });
-                $this.btnText = '复制失败';
-            });
-        },
-    },
-    template:
-        '<div class="share-box dialog-box">' +
-        '<div class="box-mask" @click="hideShow"></div>' +
-        '<div class="box-content">' +
-        '<div class="box-title">温情提示</div>' +
-        '<div class="box-main">' +
-        '<div class="box-share-content">' +
-        '<div class="box-share-message">{{share.content}}</div>' +
-        '<div class="box-share-notice">' +
-        '长按选择&gt;<span>拷贝</span>' +
-        '</div>' +
-        '</div>' +
-        '<div :class="[\'box-btn\',\'box-share-copy\',copyStatus?\'status-success\':\'\']"' +
-        ':data-clipboard-text="share.content" @click="shareCopyContent">' +
-        '{{btnText}}</div>' +
-        '<div class="notice-one">' +
-        '复制成功后，分享给好友即可领取!' +
-        '</div>' +
-        '</div>' +
-        '</div>' +
-        '</div>'
+  },
+  template:
+    '<div class="share-box dialog-box">' +
+    '<div class="box-mask" @click="hideShow"></div>' +
+    '<div class="box-content">' +
+    '<div class="box-title">温情提示</div>' +
+    '<div class="box-main">' +
+    '<div class="box-share-content">' +
+    '<div class="box-share-message">{{share.content}}</div>' +
+    '<div class="box-share-notice">' +
+    '长按选择&gt;<span>拷贝</span>' +
+    '</div>' +
+    '</div>' +
+    '<div :class="[\'box-btn\',\'box-share-copy\',copyStatus?\'status-success\':\'\']"' +
+    ':data-clipboard-text="share.content" @click="shareCopyContent">' +
+    '{{btnText}}</div>' +
+    '<div class="notice-one">' +
+    '复制成功后，分享给好友即可领取!' +
+    '</div>' +
+    '</div>' +
+    '</div>' +
+    '</div>'
 });
 
 
