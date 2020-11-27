@@ -578,7 +578,7 @@ var vmToolEx = new Vue({
 					id: d,
 				}, function (c) {
 					layer.closeAll();
-					if (0 == c.info.status) {
+					if (0 == c.code) {
 						a.goodsId = d;
 						var b = c.data.item.goods;
 
@@ -625,7 +625,7 @@ var vmToolEx = new Vue({
 						// 	a.goodsImg.marketImgs = ["", "", ""];
 						// }
 						a.$forceUpdate()
-					} else 100 == c.info.status ? loginFun() : layer.alert(c.info.status_err, {
+					} else 100 == c.code ? loginFun() : layer.alert(c.message, {
 						icon: 2
 					})
 				}, function () {

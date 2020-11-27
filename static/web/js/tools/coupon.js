@@ -39,8 +39,8 @@ var vmToolEx = new Vue({
                 content: self.isAdd,
             }, function (data) {
                 layer.closeAll();
-                if (data.info.status == 0) {
-                    layer.msg(data.info.status_err, {
+                if (data.code == 0) {
+                    layer.msg(data.message, {
                         icon: 1,
                         time: 1500,
                         shade: 0.1,
@@ -59,7 +59,7 @@ var vmToolEx = new Vue({
                     };
                 } 
                 else {
-                    layer.msg(data.info.status_err, {
+                    layer.msg(data.message, {
                         icon: 2,
                         time: 1500,
                         shade: 0.1,

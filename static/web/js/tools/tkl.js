@@ -127,7 +127,7 @@ var vmToolEx = new Vue({
                 analysis_taoword_type: number,
             }, function (data) {
                 layer.closeAll();
-                if (data.info.status == 0) {
+                if (data.code == 0) {
                     $this.dataUrL.UrlAdd = data.short_url;
 
                     if(data.data.goods.click.tao_token){
@@ -164,14 +164,14 @@ var vmToolEx = new Vue({
                         $this.oItemData.wholeShow = true;
                     }
                 } 
-                else if (data.status == 100) {
+                else if (data.code == 100) {
                     loginFun();
                 }
                 else if(data.code == -1){
                     $this.publicPopup('.js-setWeChat');
                 } 
                 else {
-                    layer.msg(data.info.status_err, {
+                    layer.msg(data.message, {
                         icon: 2,
                         time: 1500,
                         shade: 0.1,
@@ -221,7 +221,7 @@ var vmToolEx = new Vue({
         ajaxset: function () {   //微信QQ文案模板接口
             var self = this;
             ajaxPost("/api/common/stat/get_setting_info", {}, function (res) {
-                if (res.info.status == 0) {
+                if (res.code == 0) {
                     var setDATA = res.data.setting_data;
 
                     self.oSetting.weixin.default = setDATA.content_default;
