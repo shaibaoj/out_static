@@ -949,7 +949,7 @@ Vue.component('hpt-coupon', {
                         $this.toolsData.api = res.data.api;
                     }
                     if($this.toolsData.api && $this.toolsData.goods){
-                        var pic_url = 'https://imgcdn.youdanhui.com/imgcdn/'+$.md5(''+$this.toolsData.goods.goods.pic_url)+'.jpg?src='+encodeURIComponent($this.toolsData.goods.goods.pic_url);
+                        var pic_url = 'https://img.istyle.live/imgcdn/'+$.md5(''+$this.toolsData.goods.goods.pic_url)+'.jpg?src='+encodeURIComponent($this.toolsData.goods.goods.pic_url);
                         
                         var content = $this.toolsData.template.replace(/\{标题\}/g, $this.toolsData.goods.goods.title);
                         content = content.replace(/\{短标题\}/g, $this.toolsData.goods.goods.title);
@@ -1067,14 +1067,14 @@ Vue.component('hpt-coupon', {
         },
         picUrl: function picUrl() {
             if(this.goods && this.goods.goods){
-                return 'https://imgcdn.youdanhui.com/imgcdn/'+$.md5(''+this.goods.goods.pic_url)+'.jpg?src='+encodeURIComponent(this.goods.goods.pic_url);
+                return 'https://img.istyle.live/imgcdn/'+$.md5(''+this.goods.goods.pic_url)+'.jpg?src='+encodeURIComponent(this.goods.goods.pic_url);
             }else{
                 return '';
             }
         },
         transformPreview: function transformPreview() {
             if(this.goods && this.goods.goods){
-                return 'https://imgcdn.youdanhui.com/imgcdn/'+$.md5(''+this.goods.goods.p_list[this.transformData.picIndex])+'.jpg?src='+encodeURIComponent(this.goods.goods.p_list[this.transformData.picIndex]);
+                return 'https://img.istyle.live/imgcdn/'+$.md5(''+this.goods.goods.p_list[this.transformData.picIndex])+'.jpg?src='+encodeURIComponent(this.goods.goods.p_list[this.transformData.picIndex]);
             }else{
                 return '';
             }
@@ -1326,7 +1326,7 @@ Vue.component('hpt-coupon-min', {
         },
         picUrl: function picUrl() {
             if(this.goods && this.goods.goods){
-                return 'https://imgcdn.youdanhui.com/imgcdn/'+$.md5(''+this.goods.goods.pic_url)+'.jpg?src='+encodeURIComponent(this.goods.goods.pic_url);
+                return 'https://img.istyle.live/imgcdn/'+$.md5(''+this.goods.goods.pic_url)+'.jpg?src='+encodeURIComponent(this.goods.goods.pic_url);
             }else{
                 return '';
             }
