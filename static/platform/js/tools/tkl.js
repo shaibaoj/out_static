@@ -206,10 +206,10 @@ var vmToolEx = new Vue({
             this.oSetting.weixin.pid = item.pid;
             this.oSetting.weixin.pidName = item.pid_name;
             this.oSetting.weixin.relation_id = item.relation_id;
-            this.oSetting.weixin.id = item.user_pid_id;
+            this.oSetting.weixin.id = item.id;
             this.oSetting.weixin.show = false;
 
-            this.setUserPid(item.user_pid_id,'wx');
+            this.setUserPid(item.id,'wx');
 
             this.publicClose();
             layer.msg('设置成功！', {
@@ -234,12 +234,12 @@ var vmToolEx = new Vue({
                     //处理pid
                     self.oSetting.pidArr = res.data.items;
                     res.data.items.forEach(function (item, index) {
-                        if(item.user_pid_id==self.oSetting.weixin.id){
+                        if(item.id==self.oSetting.weixin.id){
                             self.oSetting.weixin.pid = item.pid;
                             self.oSetting.weixin.pidName = item.pid_name;
                             self.oSetting.weixin.relation_id = item.relation_id;
                         }
-                        else if(item.user_pid_id==self.oSetting.other.id){
+                        else if(item.id==self.oSetting.other.id){
                             self.oSetting.other.pid = item.pid;
                             self.oSetting.other.pidName = item.pid_name;
                             self.oSetting.other.relation_id = item.relation_id;
