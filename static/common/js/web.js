@@ -1,188 +1,3 @@
-// Vue.use(VueStorage, {
-//     namespace: 'pro__', // key prefix
-//     name: 'ls', // name variable Vue.[ls] or this.[$ls],
-//     storage: 'local', // storage name session, local, memory
-// });
-
-// web_config['token'] = Vue.ls.get('member_token')
-
-function parseParams (data) {
-    try {
-        var tempArr = [];
-        for (var i in data) {
-            var key = encodeURIComponent(i);
-            var value = encodeURIComponent(data[i]);
-            tempArr.push(key + '=' + value);
-        }
-        return tempArr.join('&');
-    } catch (err) {
-        return '';
-    }
-}
-
-function getUrlSearch (url, name) {
-    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-    var r = url.slice(url.indexOf('?') + 1).match(reg);
-    if (r != null) {
-        try {
-            return decodeURIComponent(r[2]);
-        } catch (_e) {
-            return null;
-        }
-    }
-    return null;
-}
-
-var vmTestInput = {
-    isPhoneNo: function (phone) {
-        var pattern = '/^1[3456789]\d{9}$/';
-        return pattern.test(phone);
-    },
-    isNumber: function (number) {
-        var pattern = '/^[0-9]*$/';
-        return pattern.test(number);
-    },
-    isQQ: function (qq) {
-        var pattern = '/^[1-9][0-9]{4,14}/';
-        return pattern.test(qq);
-    },
-};
-
-var page = function (str, content) {
-    if (!content) content = '';
-    setTimeout(function () {
-        window.location.href = str + '.html' + content;
-    }, 50);
-
-};
-var pageAll = function (str) {
-    setTimeout(function () {
-        window.open(str);
-    }, 50);
-};
-
-function Request (name) {
-    var str = location.href;
-    if (str.indexOf(name) != -1) {
-        var num = str.indexOf(name);
-        str = str.substring(num + name.length + 1);
-        return str;
-    }
-}
-
-var config = {
-    _url: "",
-    urls: "/",
-    isHTTP: function () {
-        var HTTPurl = window.location.protocol;
-        return HTTPurl.substring(0, HTTPurl.length - 1);
-    },
-    getUrl: function (str) {
-        var reg = new RegExp("(https?|ftp|file|http)://[-A-Za-z0-9+&@@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@@#/%=~_|]", "ig");
-        var r = str.match(reg)
-        if (r != null) return r;
-        return null;
-    },
-    getVideoUrl: function (str) {  //匹配视频地址
-        var reg = new RegExp("(https?|ftp|file|http)://[-A-Za-z0-9+&@@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@@#/%=~_|]+.mp4", "ig");
-        var r = str.match(reg)
-        if (r != null) return r;
-        return null;
-    },
-    ImgSizeFun: function (Arr, strArr) {
-        for (var i = 0; i < strArr.length; i++) {
-            Arr[i] = strArr[i] + config.ImgSize;
-        }
-        return Arr;
-    }
-};
-
-var ajaxGet = function (url, data, successfun, errorfun) {
-    var temp_errorfun = function (xhr, type) { };
-    if (errorfun) {
-        temp_errorfun = errorfun;
-    }
-    $.ajax({
-        type: 'GET',
-        url: url.indexOf('http') === 0 ? url : web_config['api_url'] + url,
-        data: Object.assign(data, {
-            hpt_times: web_config['hpt_times'],
-            hpt_sign: web_config['hpt_sign'],
-            member_token: web_config['token'],
-        }),
-        dataType: 'json',
-        timeout: 30000,
-        success: successfun,
-        error: temp_errorfun,
-        xhrFields: {
-            withCredentials: true
-        },
-    });
-};
-
-var ajaxPost = function (url, data, successfun, errorfun) {
-    var temp_errorfun = function (xhr, type) { };
-    if (errorfun) {
-        temp_errorfun = errorfun;
-    }
-    $.ajax({
-        type: 'POST',
-        url: url.indexOf('http') === 0 ? url : web_config['api_url'] + url,
-        data: Object.assign(data, {
-            hpt_times: web_config['hpt_times'],
-            hpt_sign: web_config['hpt_sign'],
-            member_token: web_config['token'],
-        }),
-        dataType: 'json',
-        timeout: 30000,
-        success: successfun,
-        error: temp_errorfun,
-        xhrFields: {
-            withCredentials: true
-        },
-    });
-};
-
-var ajaxGetJsonp = function (url, data, successfun, errorfun) {  //jsonp跨域请求
-    var temp_errorfun = function (xhr, type) {
-    };
-    if (errorfun) {
-        temp_errorfun = errorfun;
-    }
-    $.ajax({
-        type: 'GET',
-        url: url,
-        data: data,
-        dataType: 'jsonp',
-        timeout: 30000,
-        success: successfun,
-        error: temp_errorfun,
-        xhrFields: {
-            withCredentials: true
-        },
-    });
-};
-
-window.mobileUtil = (function (win, doc) {
-    var UA = navigator.userAgent,
-        isAndroid = /android|adr|linux/gi.test(UA),
-        isIOS = /iphone|ipod|ipad/gi.test(UA) && !isAndroid,
-        isBlackBerry = /BlackBerry/i.test(UA),
-        isWindowPhone = /IEMobile/i.test(UA),
-        isWeiBo = /WeiBo/gi.test(UA),
-        isMobile = isAndroid || isIOS || isBlackBerry || isWindowPhone,
-        isAlipay = /Alipay/gi.test(UA);
-    return {
-        isAndroid: isAndroid,
-        isIOS: isIOS,
-        isMobile: isMobile,
-        isWeixin: /MicroMessenger/gi.test(UA),
-        isQQ: / QQ/gi.test(UA),
-        isPC: !isMobile,
-        isWeiBo: isWeiBo,
-        isAlipay: isAlipay
-    };
-})(window, document);
 
 
 $(function () {
@@ -2634,3 +2449,189 @@ $(function () {
 
 });
 
+
+// Vue.use(VueStorage, {
+//     namespace: 'pro__', // key prefix
+//     name: 'ls', // name variable Vue.[ls] or this.[$ls],
+//     storage: 'local', // storage name session, local, memory
+// });
+
+// web_config['token'] = Vue.ls.get('member_token')
+
+function parseParams (data) {
+    try {
+        var tempArr = [];
+        for (var i in data) {
+            var key = encodeURIComponent(i);
+            var value = encodeURIComponent(data[i]);
+            tempArr.push(key + '=' + value);
+        }
+        return tempArr.join('&');
+    } catch (err) {
+        return '';
+    }
+}
+
+function getUrlSearch (url, name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = url.slice(url.indexOf('?') + 1).match(reg);
+    if (r != null) {
+        try {
+            return decodeURIComponent(r[2]);
+        } catch (_e) {
+            return null;
+        }
+    }
+    return null;
+}
+
+var vmTestInput = {
+    isPhoneNo: function (phone) {
+        var pattern = '/^1[3456789]\d{9}$/';
+        return pattern.test(phone);
+    },
+    isNumber: function (number) {
+        var pattern = '/^[0-9]*$/';
+        return pattern.test(number);
+    },
+    isQQ: function (qq) {
+        var pattern = '/^[1-9][0-9]{4,14}/';
+        return pattern.test(qq);
+    },
+};
+
+var page = function (str, content) {
+    if (!content) content = '';
+    setTimeout(function () {
+        window.location.href = str + '.html' + content;
+    }, 50);
+
+};
+var pageAll = function (str) {
+    setTimeout(function () {
+        window.open(str);
+    }, 50);
+};
+
+function Request (name) {
+    var str = location.href;
+    if (str.indexOf(name) != -1) {
+        var num = str.indexOf(name);
+        str = str.substring(num + name.length + 1);
+        return str;
+    }
+}
+
+var config = {
+    _url: "",
+    urls: "/",
+    isHTTP: function () {
+        var HTTPurl = window.location.protocol;
+        return HTTPurl.substring(0, HTTPurl.length - 1);
+    },
+    getUrl: function (str) {
+        var reg = new RegExp("(https?|ftp|file|http)://[-A-Za-z0-9+&@@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@@#/%=~_|]", "ig");
+        var r = str.match(reg)
+        if (r != null) return r;
+        return null;
+    },
+    getVideoUrl: function (str) {  //匹配视频地址
+        var reg = new RegExp("(https?|ftp|file|http)://[-A-Za-z0-9+&@@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@@#/%=~_|]+.mp4", "ig");
+        var r = str.match(reg)
+        if (r != null) return r;
+        return null;
+    },
+    ImgSizeFun: function (Arr, strArr) {
+        for (var i = 0; i < strArr.length; i++) {
+            Arr[i] = strArr[i] + config.ImgSize;
+        }
+        return Arr;
+    }
+};
+
+var ajaxGet = function (url, data, successfun, errorfun) {
+    var temp_errorfun = function (xhr, type) { };
+    if (errorfun) {
+        temp_errorfun = errorfun;
+    }
+    $.ajax({
+        type: 'GET',
+        url: url.indexOf('http') === 0 ? url : web_config['api_url'] + url,
+        data: Object.assign(data, {
+            hpt_times: web_config['hpt_times'],
+            hpt_sign: web_config['hpt_sign'],
+            member_token: web_config['token'],
+        }),
+        dataType: 'json',
+        timeout: 30000,
+        success: successfun,
+        error: temp_errorfun,
+        xhrFields: {
+            withCredentials: true
+        },
+    });
+};
+
+var ajaxPost = function (url, data, successfun, errorfun) {
+    var temp_errorfun = function (xhr, type) { };
+    if (errorfun) {
+        temp_errorfun = errorfun;
+    }
+    $.ajax({
+        type: 'POST',
+        url: url.indexOf('http') === 0 ? url : web_config['api_url'] + url,
+        data: Object.assign(data, {
+            hpt_times: web_config['hpt_times'],
+            hpt_sign: web_config['hpt_sign'],
+            member_token: web_config['token'],
+        }),
+        dataType: 'json',
+        timeout: 30000,
+        success: successfun,
+        error: temp_errorfun,
+        xhrFields: {
+            withCredentials: true
+        },
+    });
+};
+
+var ajaxGetJsonp = function (url, data, successfun, errorfun) {  //jsonp跨域请求
+    var temp_errorfun = function (xhr, type) {
+    };
+    if (errorfun) {
+        temp_errorfun = errorfun;
+    }
+    $.ajax({
+        type: 'GET',
+        url: url,
+        data: data,
+        dataType: 'jsonp',
+        timeout: 30000,
+        success: successfun,
+        error: temp_errorfun,
+        xhrFields: {
+            withCredentials: true
+        },
+    });
+};
+
+window.mobileUtil = (function (win, doc) {
+    var UA = navigator.userAgent,
+        isAndroid = /android|adr|linux/gi.test(UA),
+        isIOS = /iphone|ipod|ipad/gi.test(UA) && !isAndroid,
+        isBlackBerry = /BlackBerry/i.test(UA),
+        isWindowPhone = /IEMobile/i.test(UA),
+        isWeiBo = /WeiBo/gi.test(UA),
+        isMobile = isAndroid || isIOS || isBlackBerry || isWindowPhone,
+        isAlipay = /Alipay/gi.test(UA);
+    return {
+        isAndroid: isAndroid,
+        isIOS: isIOS,
+        isMobile: isMobile,
+        isWeixin: /MicroMessenger/gi.test(UA),
+        isQQ: / QQ/gi.test(UA),
+        isPC: !isMobile,
+        isWeiBo: isWeiBo,
+        isAlipay: isAlipay
+    };
+})(window, document);
