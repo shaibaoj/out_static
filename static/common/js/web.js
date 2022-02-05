@@ -1533,12 +1533,12 @@ var vmdetails = {
             }
         },
         copyImg: function (item) {
-            return 'https://img.istyle.live/imgcdn/' + $.md5(item) + '.jpg?src=' + encodeURIComponent(item);
+            return 'https://img.marsnews.work/imgcdn/' + $.md5(item) + '.jpg?src=' + encodeURIComponent(item);
         }
     },
     methods: {
         copyImg: function (picUrl) {
-            return 'https://img.istyle.live/imgcdn/' + $.md5(picUrl) + '.jpg?src=' + encodeURIComponent(picUrl);
+            return 'https://img.marsnews.work/imgcdn/' + $.md5(picUrl) + '.jpg?src=' + encodeURIComponent(picUrl);
         },
         ajaxInfo: function () {
             var self = this;
