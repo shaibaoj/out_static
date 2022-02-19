@@ -59,14 +59,6 @@ $(function () {
         });
     });
 
-    //   $(".goods", $(".goods-views")).each(function(){
-    //     let $this = $(this);
-    //     let obj = JSON.parse($this.attr('data-item'));
-
-    //     // $('.goodsimg-link',$this).wrap('<a title="" rel="nofollow" target="_blank" href="'+obj['link']+'"></a>');
-    //     // $('.buy-btn',$this).wrap('<a title="" rel="nofollow" target="_blank" href="'+obj['url_buy']+'"></a>');
-    //   });
-
     //延迟加载图片
     $("img.lazy", $(".goods-views")).lazyload({ effect: "fadeIn" });
 
@@ -2450,13 +2442,6 @@ $(function () {
 });
 
 
-// Vue.use(VueStorage, {
-//     namespace: 'pro__', // key prefix
-//     name: 'ls', // name variable Vue.[ls] or this.[$ls],
-//     storage: 'local', // storage name session, local, memory
-// });
-
-// web_config['token'] = Vue.ls.get('member_token')
 
 function parseParams (data) {
     try {
