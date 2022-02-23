@@ -2507,6 +2507,17 @@ function Request (name) {
     }
 }
 
+/**
+ * 将对象转成 a=1&b=2的形式
+ * @param obj 对象
+ */
+ function obj2String(obj, arr = [], idx = 0) {
+    for (let item in obj) {
+      arr[idx++] = [item, obj[item]]
+    }
+    return new URLSearchParams(arr).toString()
+  }
+
 var config = {
     _url: "",
     urls: "/",
@@ -2539,22 +2550,47 @@ var ajaxGet = function (url, data, successfun, errorfun) {
     if (errorfun) {
         temp_errorfun = errorfun;
     }
-    $.ajax({
-        type: 'GET',
-        url: url.indexOf('http') === 0 ? url : web_config['api_url'] + url,
-        data: Object.assign(data, {
-            hpt_times: web_config['hpt_times'],
-            hpt_sign: web_config['hpt_sign'],
-            member_token: web_config['token'],
-        }),
-        dataType: 'json',
-        timeout: 30000,
-        success: successfun,
-        error: temp_errorfun,
-        xhrFields: {
-            withCredentials: true
-        },
-    });
+
+    const searchStr = obj2String(Object.assign(data, {
+        hpt_times: web_config['hpt_times'],
+        hpt_sign: web_config['hpt_sign'],
+        member_token: web_config['token'],
+    }))
+
+    fetch(url.indexOf('http') === 0 ? url : web_config['api_url'] + url +'?' + searchStr, {
+        method: "GET",
+        // headers: {
+        //     "Content-Type": "application/json",
+        //     Accept: "application/json",
+        // },
+        // body: JSON.stringify(Object.assign(data, {
+        //     hpt_times: web_config['hpt_times'],
+        //     hpt_sign: web_config['hpt_sign'],
+        //     member_token: web_config['token'],
+        // })),
+    })
+    .then(response => response.json())
+        .then(successfun)
+        .catch((xhr, type) => {
+            errorfun(xhr, type)
+        });
+
+    // $.ajax({
+    //     type: 'GET',
+    //     url: url.indexOf('http') === 0 ? url : web_config['api_url'] + url,
+    //     data: Object.assign(data, {
+    //         hpt_times: web_config['hpt_times'],
+    //         hpt_sign: web_config['hpt_sign'],
+    //         member_token: web_config['token'],
+    //     }),
+    //     dataType: 'json',
+    //     timeout: 30000,
+    //     success: successfun,
+    //     error: temp_errorfun,
+    //     xhrFields: {
+    //         withCredentials: true
+    //     },
+    // });
 };
 
 var ajaxPost = function (url, data, successfun, errorfun) {
@@ -2562,22 +2598,40 @@ var ajaxPost = function (url, data, successfun, errorfun) {
     if (errorfun) {
         temp_errorfun = errorfun;
     }
-    $.ajax({
-        type: 'POST',
-        url: url.indexOf('http') === 0 ? url : web_config['api_url'] + url,
-        data: Object.assign(data, {
+    fetch(url.indexOf('http') === 0 ? url : web_config['api_url'] + url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+        },
+        body: JSON.stringify(Object.assign(data, {
             hpt_times: web_config['hpt_times'],
             hpt_sign: web_config['hpt_sign'],
             member_token: web_config['token'],
-        }),
-        dataType: 'json',
-        timeout: 30000,
-        success: successfun,
-        error: temp_errorfun,
-        xhrFields: {
-            withCredentials: true
-        },
-    });
+        })),
+    })
+    .then(response => response.json())
+        .then(successfun)
+        .catch((xhr, type) => {
+            errorfun(xhr, type)
+        });
+
+    // $.ajax({
+    //     type: 'POST',
+    //     url: url.indexOf('http') === 0 ? url : web_config['api_url'] + url,
+    //     data: Object.assign(data, {
+    //         hpt_times: web_config['hpt_times'],
+    //         hpt_sign: web_config['hpt_sign'],
+    //         member_token: web_config['token'],
+    //     }),
+    //     dataType: 'json',
+    //     timeout: 30000,
+    //     success: successfun,
+    //     error: temp_errorfun,
+    //     xhrFields: {
+    //         withCredentials: true
+    //     },
+    // });
 };
 
 var ajaxGetJsonp = function (url, data, successfun, errorfun) {  //jsonp跨域请求
