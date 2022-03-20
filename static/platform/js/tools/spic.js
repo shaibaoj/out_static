@@ -115,11 +115,11 @@ var vmToolEx = new Vue({
 		}],
 		roundTipsC: "",
 		oblongTips: [{
-			imgurl: URLPrefix.static_url + "/static/platform/images/web/tools/chang1.png",
+			imgurl: web_config['static_url'] + "/static/platform/images/web/tools/chang1.png",
 		}, {
-			imgurl: URLPrefix.static_url + "/static/platform/images/web/tools/chang2.png"
+			imgurl: web_config['static_url'] + "/static/platform/images/web/tools/chang2.png"
 		}, {
-			imgurl: URLPrefix.static_url + "/static/platform/images/web/tools/chang3.png"
+			imgurl: web_config['static_url'] + "/static/platform/images/web/tools/chang3.png"
 		}],
 		oblongTipsC: "",
 		curRoundTips: -1,
@@ -220,11 +220,11 @@ var vmToolEx = new Vue({
 			}],
 			upImg: [],
 			swpierImg: [
-				URLPrefix.static_url + "/static/platform/images/web/tools/Tsps1.png",
-				URLPrefix.static_url + "/static/platform/images/web/tools/Tsps2.png",
-				URLPrefix.static_url + "/static/platform/images/web/tools/Tsps3.png",
+				web_config['static_url'] + "/static/platform/images/web/tools/Tsps1.png",
+				web_config['static_url'] + "/static/platform/images/web/tools/Tsps2.png",
+				web_config['static_url'] + "/static/platform/images/web/tools/Tsps3.png",
 			],
-			defineSwpierImg: URLPrefix.static_url + "/static/platform/images/web/tools/Tsps1.png",
+			defineSwpierImg: web_config['static_url'] + "/static/platform/images/web/tools/Tsps1.png",
 			clickRecord: 0
 		},
 		fontFamilyList: [{
@@ -409,8 +409,8 @@ var vmToolEx = new Vue({
 			FieryDefineName: "缤纷_单列",
 			FieryDefineclass: "FieryBg0",
 			FieryIsStyleShow: !1,
-			FieryswpierImg: [URLPrefix.static_url + "/static/platform/images/web/tools/TspFierySwiper0.png"],
-			FierydefineSwpierImg: URLPrefix.static_url + "/static/platform/images/web/tools/TspFierySwiper0.png",
+			FieryswpierImg: [web_config['static_url'] + "/static/platform/images/web/tools/TspFierySwiper0.png"],
+			FierydefineSwpierImg: web_config['static_url'] + "/static/platform/images/web/tools/TspFierySwiper0.png",
 			FieryclickRecord: 0
 		}
 	},
@@ -898,8 +898,8 @@ var vmToolEx = new Vue({
 				img1.src = this.objSpike.swpierImg[0],
 				img2.src = this.objSpike.swpierImg[1],
 				img3.src = this.objSpike.swpierImg[2],
-				img4.src = URLPrefix.static_url + "/static/platform/images/web/tools/Tsp1.png",
-				img5.src = URLPrefix.static_url + "/static/platform/images/web/tools/Tsp2.png";
+				img4.src = web_config['static_url'] + "/static/platform/images/web/tools/Tsp1.png",
+				img5.src = web_config['static_url'] + "/static/platform/images/web/tools/Tsp2.png";
 		}
 		if (this.tbUrl != '') {
 			this.getGoodsImgs(true);
