@@ -3,7 +3,7 @@ var vmToolEx = new Vue({
     data: {
         oCommon: {
             tianmao: 'https://detail.tmall.com/item.htm',
-            adminPidlink: '/user/info/pid',
+            adminPidlink: '/app/user/info/pid',
             adminLoginlink: '/public/login',
         },
         dataUrL: {

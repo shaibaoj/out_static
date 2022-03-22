@@ -6,8 +6,8 @@ var vmToolEx = new Vue({
         },
         oCommon: {
             tianmao: 'https://detail.tmall.com/item.htm',
-            adminPidlink: '/user/info/pid',
-            adminLoginlink: '/public/login',
+            adminPidlink: '/app/user/info/pid',
+            adminLoginlink: '/app/public/login',
         },
         oItemData: {  //基本数据接口
             itemInfo: {}, //商品数据
