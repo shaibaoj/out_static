@@ -2572,7 +2572,7 @@ var ajaxGet = function (url, data, successfun, errorfun) {
     .then(response => response.json())
         .then(successfun)
         .catch((xhr, type) => {
-            errorfun(xhr, type)
+            temp_errorfun(xhr, type)
         });
 
     // $.ajax({
@@ -2613,7 +2613,7 @@ var ajaxPost = function (url, data, successfun, errorfun) {
     .then(response => response.json())
         .then(successfun)
         .catch((xhr, type) => {
-            errorfun(xhr, type)
+            temp_errorfun(xhr, type)
         });
 
     // $.ajax({
