@@ -316,230 +316,240 @@ document.addEventListener('alpine:init', () => {
 
 document.addEventListener('alpine:init', () => {
     Alpine.data('detail', () => ({
-        setting:{
-            nav: 1,
+        oCommon: {
+            id: web_config['item_id'],
+            tianmao: 'https://detail.tmall.com/item.htm',
+            loadingImg: web_config['static_url'] + "/static/platform/images/web/common/loading.png",
+            adminPidlink: '/app/user/info/pid',
+            adminLoginlink: '/app/public/login',
+            comloginState: false,
         },
-        // oPublic: {
-        //     reportImg: '',
-        //     loadingImg: web_config['static_url'] + "/static/platform/images/web/common/loading.png",
-        //     loadingShow: false, //是否显示加载(加载动画)
-        //     wholeShow: false, //数据加载完显示(全局)
+        setting:{
+            showContent:false,
+            copyStatus:0,
+            copyBtnText:'一键复制',
+            nav: 1,
 
-        //     setTimeoutClear: '', //定时器(是否显示商品加载)
-        //     setTime: 300,
+            modalWeixin:false,
+            modalQQ:false,
+            modalPid:true,
+            modalWenan:false,
+        },
+        pid:{
+            name: "",
+            pid: "",
+            items:[],
+            weixinId:0,
+            qqId:0,
+        },
+        oPublic: {
+            reportImg: '',
+            loadingShow: false, //是否显示加载(加载动画)
+            wholeShow: false, //数据加载完显示(全局)
 
-        //     isDatanull: false, //商品数据为空的时候
-        //     offsetTop: ''
-        // },
-        // publicList: { //商品列表数据
-        //     productList: [], //列表数据
+            setTimeoutClear: '', //定时器(是否显示商品加载)
+            setTime: 300,
 
-        //     pageNumber: 1, //页数
-        //     pageInput: 1, //跳到第几页
-        //     count: '', //总的页数
-        // },
-        // oHidePopup: {
-        //     hideOnLineLin: false, //在线转链
-        //     hideEchartCheck: false, //成交量
-        // },
-        // oToken: {
-        //     token: '',
-        //     tokenTime: '',
-        //     tokenBoolean: false
-        // },
-        // oCommon: {
-        //     id: web_config['item_id'],
-        //     tianmao: 'https://detail.tmall.com/item.htm',
-        //     adminPidlink: '/app/user/info/pid',
-        //     adminLoginlink: '/app/public/login',
-        //     comloginState: false,
-        // },
-        // oItemData: {  //基本数据接口
-        //     itemInfo: {}, //商品数据
-        //     picIndex: 1,
-        //     sellerId: '', //用户id,
-        //     itemId: '',
-        //     taobaoImage: [],  //推广长图和主图
+            isDatanull: false, //商品数据为空的时候
+            offsetTop: ''
+        },
+        publicList: { //商品列表数据
+            productList: [], //列表数据
 
-        //     strWeixinArr: [], //存放选中的图片 默认推广长图
-        //     strFriendsArr: [],  //朋友圈推广选择图片
-        //     strPosterArr: [], //长图
+            pageNumber: 1, //页数
+            pageInput: 1, //跳到第几页
+            count: '', //总的页数
+        },
+        oHidePopup: {
+            hideOnLineLin: false, //在线转链
+            hideEchartCheck: false, //成交量
+        },
+        oItemData: {  //基本数据接口
+            itemInfo: {
+                goods: {},
+                coupon: {},
+                price: {},
+            }, //商品数据
+            picIndex: 1,
+            sellerId: '', //用户id,
+            itemId: '',
+            taobaoImage: [],  //推广长图和主图
 
-        //     videoImg: '',  //实拍视频图片
-        //     videoLink: '', //实拍视频连接
-        //     imgArr: [],  //实拍图片
+            strWeixinArr: [], //存放选中的图片 默认推广长图
+            strFriendsArr: [],  //朋友圈推广选择图片
+            strPosterArr: [], //长图
 
-        //     videoHide: true,
-        //     strShorttitle: "", //短标题
-        //     strDesc: "", //推荐语
+            videoImg: '',  //实拍视频图片
+            videoLink: '', //实拍视频连接
+            imgArr: [],  //实拍图片
 
-        //     swiperIndex: 0,  //第几个轮播图
+            videoHide: true,
+            strShorttitle: "", //短标题
+            strDesc: "", //推荐语
 
-        //     friendsIndex: 0,  //朋友圈文案第几个
-        //     wholeShow: false,
+            swiperIndex: 0,  //第几个轮播图
 
-        //     material_id: 0,
-        //     material_info: [],
-        // },
-        // taobaoComment: { //淘宝评论图接口
-        //     taobaoDataArr: [],
-        //     taobaoPage: 1,
-        //     taobaoCount: '', //条数
-        //     taobaoCountSign: 0, //条数--滚动记录
-        //     loadmsg: true,
-        //     taobaoLabel: [],
-        // },
-        // oHistory: {  //历史数据接口
-        //     IndexShow: 0,
-        //     descRecommend: '', //文案
-        //     salesRecord: '', //历史跑单记录
+            friendsIndex: 0,  //朋友圈文案第几个
+            wholeShow: false,
 
-        //     shorttitleRecommend: "",  //更多短标题
-        //     shorttitleShow: false, //更多短标题布尔值
-        //     descRecommendShow: false, //更多推荐语布尔值
-        // },
-        // oSetting: {  //微信QQ文案模板接口s
-        //     pidArr: [],
-        //     allPidNull: false, //true表示不为空有pid
+            material_id: 0,
+            material_info: [],
+        },
+        taobaoComment: { //淘宝评论图接口
+            taobaoDataArr: [],
+            taobaoPage: 1,
+            taobaoCount: '', //条数
+            taobaoCountSign: 0, //条数--滚动记录
+            loadmsg: true,
+            taobaoLabel: [],
+        },
+        oHistory: {  //历史数据接口
+            IndexShow: 0,
+            descRecommend: '', //文案
+            salesRecord: '', //历史跑单记录
 
-        //     navId: 1,
-        //     templateType: 1,
-        //     qq: {
-        //         default: '',
-        //         brand: '',
-        //         custom: '',
-        //         token: "{淘口令}",
-        //         link: '{二合一短链接}',
-        //         url: '{二合一长链接}',
-        //         status: 0,
-        //         id: 0,
-        //         pid: '',
-        //         pidName: '',
-        //         relation_id: null,
-        //         show: false,
-        //     },
-        //     weixin: {
-        //         default: '',
-        //         brand: '',
-        //         custom: '',
-        //         token: "{淘口令}",
-        //         link: '{二合一短链接}',
-        //         url: '{二合一长链接}',
-        //         status: 0,
-        //         qrcode: '',
-        //         id: 0,
-        //         pid: '',
-        //         pidName: '',
-        //         relation_id: null,
-        //         show: false,
-        //         linkChecked: false,
-        //         qrcodeChecked: false,
-        //     },
-        //     other: {
-        //         id: 0,
-        //         pid: '',
-        //         pidName: '',
-        //         relation_id: null,
-        //     },
-        //     friend: {
-        //         qrcodeView: true,
-        //     },
-        //     poster: {
-        //         picUrl1: '',
-        //         picUrl2: '',
-        //     },
-        //     comwxqqnav: [
-        //         // {
-        //         //     number: 0,
-        //         //     name: "修改推广文案",
-        //         //     bool: true,
-        //         // },
-        //         {
-        //             number: 0,
-        //             name: "修改微信文案",
-        //             bool: true,
-        //         },
-        //         {
-        //             number: 1,
-        //             name: "修改QQ文案",
-        //             bool: true,
-        //         },
-        //     ],
-        //     wxqqIndex: 0,
-        //     listArrWx: [
-        //         { name: "短标题", },
-        //         { name: "介绍", },
-        //         { name: "店铺类型", },
-        //         { name: "原价", },
-        //         { name: "券后价", },
-        //         { name: "销量", },
-        //         { name: "佣金比例", },
-        //         { name: "领券链接", },
-        //         { name: "券满", },
-        //         { name: "券额", },
-        //         { name: "优惠券剩余数量", },
-        //         { name: "优惠券有效限期", },
-        //         { name: "二合一长链接", },
-        //         { name: "二合一短链接", },
-        //         { name: "淘口令", },
-        //     ],
-        //     listArrQq: [
-        //         { name: "短标题", },
-        //         { name: "介绍", },
-        //         { name: "店铺类型", },
-        //         { name: "原价", },
-        //         { name: "券后价", },
-        //         { name: "销量", },
-        //         { name: "佣金比例", },
-        //         { name: "领券链接", },
-        //         { name: "券满", },
-        //         { name: "券额", },
-        //         { name: "优惠券剩余数量", },
-        //         { name: "优惠券有效限期", },
-        //         { name: "二合一长链接", },
-        //         { name: "二合一短链接", },
-        //         { name: "淘口令", },
-        //     ],
-        // },
-        // oVideo: {  //视频控件
-        //     playBool: false,  //是否播放
-        //     videooIndex: -1,   //选中了第几个视频
+            shorttitleRecommend: "",  //更多短标题
+            shorttitleShow: false, //更多短标题布尔值
+            descRecommendShow: false, //更多推荐语布尔值
+        },
+        oSetting: {  //微信QQ文案模板接口s
+            pidArr: [],
+            allPidNull: false, //true表示不为空有pid
 
-        //     pLink: ' 0',  //播放进度条
-        //     oVoice: true,  //是否关闭声音  true为关闭声音 false为有声
+            navId: 1,
+            templateType: 1,
+            qq: {
+                default: '',
+                brand: '',
+                custom: '',
+                token: "{淘口令}",
+                link: '{二合一短链接}',
+                url: '{二合一长链接}',
+                status: 0,
+                id: 0,
+                pid: '',
+                pidName: '',
+                relation_id: null,
+                show: false,
+            },
+            weixin: {
+                default: '',
+                brand: '',
+                custom: '',
+                token: "{淘口令}",
+                link: '{二合一短链接}',
+                url: '{二合一长链接}',
+                status: 0,
+                // qrcode: '',
+                qrcode: web_config['static_url'] + "/static/platform/images/web/detail/detail_default_qrimg.png",
+                id: 0,
+                pid: '',
+                pidName: '',
+                relation_id: null,
+                show: false,
+                linkChecked: false,
+                qrcodeChecked: false,
+            },
+            other: {
+                id: 0,
+                pid: '',
+                pidName: '',
+                relation_id: null,
+            },
+            friend: {
+                qrcodeView: true,
+            },
+            poster: {
+                picUrl1: '',
+                picUrl2: '',
+            },
+            comwxqqnav: [
+                {
+                    number: 0,
+                    name: "修改微信文案",
+                    bool: true,
+                },
+                {
+                    number: 1,
+                    name: "修改QQ文案",
+                    bool: true,
+                },
+            ],
+            wxqqIndex: 0,
+            listArrWx: [
+                { name: "短标题", },
+                { name: "介绍", },
+                { name: "店铺类型", },
+                { name: "原价", },
+                { name: "券后价", },
+                { name: "销量", },
+                { name: "佣金比例", },
+                { name: "领券链接", },
+                { name: "券满", },
+                { name: "券额", },
+                { name: "优惠券剩余数量", },
+                { name: "优惠券有效限期", },
+                { name: "二合一长链接", },
+                { name: "二合一短链接", },
+                { name: "淘口令", },
+            ],
+            listArrQq: [
+                { name: "短标题", },
+                { name: "介绍", },
+                { name: "店铺类型", },
+                { name: "原价", },
+                { name: "券后价", },
+                { name: "销量", },
+                { name: "佣金比例", },
+                { name: "领券链接", },
+                { name: "券满", },
+                { name: "券额", },
+                { name: "优惠券剩余数量", },
+                { name: "优惠券有效限期", },
+                { name: "二合一长链接", },
+                { name: "二合一短链接", },
+                { name: "淘口令", },
+            ],
+        },
+        oVideo: {  //视频控件
+            playBool: false,  //是否播放
+            videooIndex: -1,   //选中了第几个视频
 
-        //     videoData: [],
+            pLink: ' 0',  //播放进度条
+            oVoice: true,  //是否关闭声音  true为关闭声音 false为有声
 
-        //     oTime: 0,
+            videoData: [],
 
-        //     videoitemId: '',  //视频id
+            oTime: 0,
 
-        //     IndexSave: '',
+            videoitemId: '',  //视频id
 
-        //     loadIcon: false,    //是否有加载效果
-        //     videosetClear: '',
-        //     videooneIcon: false
-        // },
-        // dataTime: {  //倒计时
-        //     itemType: 0, //0 正常单子 1快抢 2快抢中 3预告单
-        //     endtime: '',
-        //     hours: '00',
-        //     Minutes: '00',
-        //     Seconds: '00',
-        //     oClearInterval: '',
-        //     countBoll: true,
-        // },
-        // oEchartToday: { //日销量Tab块 走势图
-        //     check_hour: '',
-        //     sale: [],
-        //     saletime: [],
-        //     tabShow: 0,
-        //     historyprice: [],
-        //     historyMinprice: '',  //历史最低价
-        //     historytime: []
-        // },
+            IndexSave: '',
+
+            loadIcon: false,    //是否有加载效果
+            videosetClear: '',
+            videooneIcon: false
+        },
+        dataTime: {  //倒计时
+            itemType: 0, //0 正常单子 1快抢 2快抢中 3预告单
+            endtime: '',
+            hours: '00',
+            Minutes: '00',
+            Seconds: '00',
+            oClearInterval: '',
+            countBoll: true,
+        },
+        oEchartToday: { //日销量Tab块 走势图
+            check_hour: '',
+            sale: [],
+            saletime: [],
+            tabShow: 0,
+            historyprice: [],
+            historyMinprice: '',  //历史最低价
+            historytime: []
+        },
         copyImg(picUrl) {
-            return 'https://img.marsnews.work/imgcdn/' + $.md5(picUrl) + '.jpg?src=' + encodeURIComponent(picUrl);
+            return 'https://img.marsnews.work/imgcdn/' + MD5(picUrl) + '.jpg?src=' + encodeURIComponent(picUrl);
         },
         ajaxInfo() {
             var self = this;
@@ -551,10 +561,10 @@ document.addEventListener('alpine:init', () => {
                     self.oItemData.sellerId = self.oItemData.itemInfo.goods.user_num_id;
                     self.oItemData.itemId = self.oItemData.itemInfo.goods.num_iid;
 
-                    var taobaoArr = self.oItemData.itemInfo.goods.p_list;
+                    var taobaoArr = self.oItemData.itemInfo.goods.pic_urls;
                     if (taobaoArr) {
-                        for (var i = 0; i < taobaoArr.length; i++) {
-                            self.oItemData.taobaoImage.push(taobaoArr[i])
+                        for (const element of taobaoArr) {
+                            self.oItemData.taobaoImage.push(element)
                         }
                     }
                     // self.oItemData.taobaoImage.push(self.oItemData.itemInfo.itempic_copy);
@@ -602,14 +612,10 @@ document.addEventListener('alpine:init', () => {
                         // self.ajaxVideo();
                     });
                 } else {
-                    layer.msg(data.message, {
-                        shade: 0.4,
-                        shadeClose: true,
-                    });
+                    console.log(data.message)
                 }
-            }, function () {
-
-            })
+            });
+            this.queryPid();
         },
         ajaxhistory() { //历史数据
             var self = this;
@@ -768,18 +774,11 @@ document.addEventListener('alpine:init', () => {
                 // container: document.querySelector(copyClass),
             });
             clipboard.on('success', function (e) {
-                layer.msg('复制成功！', {
-                    shade: 0.4,
-                    time: 1500,
-                    shadeClose: true,
-                });
                 e.clearSelection();
                 clipboard.destroy();
             });
             clipboard.on('error', function (e) {
-                layer.msg('由于您的浏览器不兼容或当前网速较慢，复制失败，请手动复制或更换主流浏览器！', {
-                    icon: 2
-                });
+                console.log('由于您的浏览器不兼容或当前网速较慢，复制失败，请手动复制或更换主流浏览器！')
             });
         },
         seeVideo(url) {  //淘宝评论视频
@@ -789,24 +788,13 @@ document.addEventListener('alpine:init', () => {
                 '<source src=' + url + ' type="video/ogg">' +
                 '<source src=' + url + ' type="video/webm">' +
                 '</video>';
-            layer.open({
-                type: 1,
-                title: '视频',
-                shadeClose: true,
-                shade: 0.4,
-                area: ['560px', ''],
-                content: video
-            });
         },
         seetcomment() {  //淘宝评论-调起
             if (this.taobaoComment.taobaoCount > 0) {
                 this.ajaxRatelabel();
                 this.taobaoscroll();
             } else {
-                layer.msg('没有评论哦', {
-                    shadeClose: true,
-                    shade: 0.4,
-                });
+                console.log('没有评论哦')
             }
         },
         ajaxComment(callback) {  //淘宝评论接口
@@ -816,7 +804,6 @@ document.addEventListener('alpine:init', () => {
                 pageno: self.taobaoComment.taobaoPage,
                 pagesize: 10,
             }, function (data) {
-                layer.closeAll('loading');
                 if (data.data.content.status == '1') {
                     self.taobaoComment.taobaoDataArr = self.taobaoComment.taobaoDataArr.concat(data.data.content.data);
                     self.taobaoComment.taobaoCountSign = data.data.content.count;
@@ -853,28 +840,19 @@ document.addEventListener('alpine:init', () => {
         ajaxRatelabel() {  //淘宝评论--标签
             var self = this;
             var link = "https://rate.tmall.com/listTagClouds.htm?itemId=" + self.oItemData.itemId + "&isAll=true&isInner=true&t=1570446988539&groupId=&_ksTS=1570446988540_680";
-            layer.load(2, { shade: 0.1 });
             ajaxGetJsonp(link, {},
                 function (data) {
-                    layer.closeAll('loading');
                     if (data.tags.tagClouds) {
                         self.taobaoComment.taobaoLabel = data.tags.tagClouds;
                     }
-                    self.publicPopup('.jspopup-taobao');
-                },
-                function () {
-                    self.publicPopup('.jspopup-taobao');
-                    layer.closeAll('loading');
                 }
             )
         },
         ajaxGetVideo() {  //获取实拍视频
             var self = this;
             var videolink = "https://h5api.m.taobao.com/h5/mtop.taobao.detail.getdetail/6.0/?jsv=2.4.8&appKey=12574478&t=1554712612690&sign=59ff83eeadc620f65b072a198f4cf178&api=mtop.taobao.detail.getdetail&v=6.0&dataType=jsonp&ttid=2017%40taobao_h5_6.6.0&AntiCreep=true&type=jsonp&data=%7B%22itemNumId%22%3A%22" + self.oItemData.itemId + "%22%7D";
-            layer.load(2, { shade: 0.1 });
             ajaxGetJsonp(videolink, {},
                 function (data) {
-                    layer.closeAll('loading');
                     var arr = [], val = '', arr_theVideos = [], len_theVideos = 0;
                     if (data.data.apiStack) {
                         var apiStack = data.data.apiStack, len_apiStack = apiStack.length;
@@ -888,13 +866,13 @@ document.addEventListener('alpine:init', () => {
                                     arr.unshift(arr_theVideos[l]);
                                 }
                             } else {
-                                layer.msg('没有商品视频哦!');
+                                console.log('没有商品视频哦')
                                 self.oItemData.videoHide = false;
                                 return;
                             }
                         }
                         if (arr.length <= 0) {
-                            layer.msg('没有商品视频哦!');
+                            console.log('没有商品视频哦')
                             self.oItemData.videoHide = false;
                             return;
                         }
@@ -905,23 +883,16 @@ document.addEventListener('alpine:init', () => {
                             }
                         })
                     } else {
-                        layer.alert("点击立即跳转到淘宝去拉动滑动条或登录才能获取到实拍视频哦", {
-                            icon: 2,
-                            btn: '立即跳转'
-                        }, function (index) {
-                            pageAll(data.data.url);
-                            layer.close(index);
-                        });
+                        console.log('点击立即跳转到淘宝去拉动滑动条或登录才能获取到实拍视频哦')
+                        pageAll(data.data.url);
                     }
 
-                },
-                function () {
-                    layer.closeAll('loading');
                 })
         },
         loginFun() { //跳到登录页面去
             var url = encodeURIComponent(encodeURIComponent(window.location.href));
             var strurl = this.oCommon.adminLoginlink + '?returnurl=' + url;
+            w
         },
         picBtn() {  //跳到合成图片去
             var strurl = '/tools/spic?shopUrl=https://item.taobao.com/item.htm?id=' + this.oItemData.itemId;
@@ -1048,8 +1019,6 @@ document.addEventListener('alpine:init', () => {
                 } else {
                     self.oSetting.allPidNull = false;
                 }
-            }, function () {
-
             })
         },
         filtersContent(value) { //微信QQ文案模板--截取
@@ -1061,6 +1030,9 @@ document.addEventListener('alpine:init', () => {
             }
             else if (self.oSetting.templateType == 3) {
                 content = value.custom;
+            }
+            if(content==null){
+                content = '';
             }
 
             content = content.replace(/\{标题\}/g, self.oItemData.strShorttitle);
@@ -1092,11 +1064,7 @@ document.addEventListener('alpine:init', () => {
             content = content.replace(/\{二合一淘口令\}/g, '<span>' + value.token + '</span>');
             return content;
         },
-        reviseWxBtn(sign) {  ////微信QQ弹窗模板 -点击弹出
-            this.publicPopup('.jspopup-wxqq');
-        },
         shutBtn() {  //微信QQ弹窗模板-关闭弹窗
-            this.publicClose();
             this.wxqqnavReset();
         },
         wxqqnavReset() { ////微信QQ弹窗模板-重置
@@ -1169,32 +1137,19 @@ document.addEventListener('alpine:init', () => {
                 Text = document.getElementById("textareaQq").innerHTML;
             }
             if (Text == '') {
-                layer.msg('模板不能为空', {
-                    shadeClose: true,
-                    shade: 0.4,
-                });
                 return;
             }
-            layer.load(2);
+
             ajaxPost("/api/user/info/template/updateItem", {
                 share_set: number,
                 set_content: Text
             }, function (data) {
-                layer.closeAll();
                 if (data.status == '1') {
-                    layer.msg(data.message, {
-                        shadeClose: true,
-                        shade: 0.4,
-                    }, function () {
-                        self.publicClose();
-                        self.wxqqnavReset();
-                    });
+                    console.log(data.message)
+                    self.wxqqnavReset();
                     self.ajaxset();
                 } else {
-                    layer.msg(data.message, {
-                        shadeClose: true,
-                        shade: 0.4,
-                    });
+                    console.log(data.message)
                     self.wxqqnavReset();
                 }
                 if (number == 1) {
@@ -1204,11 +1159,6 @@ document.addEventListener('alpine:init', () => {
                     self.oSetting.qq.custom = Text
                 }
             }, function () {
-                layer.closeAll();
-                layer.msg('网络错误', {
-                    shadeClose: true,
-                    shade: 0.4,
-                });
                 self.wxqqnavReset();
             })
         },
@@ -1226,20 +1176,13 @@ document.addEventListener('alpine:init', () => {
                 this.oSetting.weixin.relation_id = item.relation_id;
                 this.oSetting.weixin.id = item.id;
                 this.oSetting.weixin.show = false;
-                this.publicClose();
             } else {
                 this.oSetting.qq.pid = item.pid;
                 this.oSetting.qq.pidName = item.pid_name;
                 this.oSetting.qq.relation_id = item.relation_id;
                 this.oSetting.qq.id = item.id;
                 this.oSetting.qq.show = false;
-                this.publicClose();
             }
-            layer.msg('设置成功！', {
-                shadeClose: true,
-                shade: 0.4,
-                time: 2000
-            });
         },
         taobaoTokenBtn(number, clickClass, copyClass) { //淘口令和转二合一
             var self = this;
@@ -1319,21 +1262,11 @@ document.addEventListener('alpine:init', () => {
                     }
                     if (number == 0) {
                         self.oSetting.weixin.status = 2;
-                        layer.msg('生成成功', {
-                            shade: 0.4,
-                            time: 1000
-                        }, function () {
-                            document.querySelector(clickClass).click();
-                        });
+                        document.querySelector(clickClass).click();
                     }
                     else if (number == 1) {
                         self.oSetting.qq.status = 2;
-                        layer.msg('生成成功', {
-                            shade: 0.4,
-                            time: 1000
-                        }, function () {
-                            document.querySelector(clickClass).click();
-                        });
+                        document.querySelector(clickClass).click();
                     }
                     else if (number == 2) {
                         self.oSetting.weixin.status = 2;
@@ -1351,40 +1284,21 @@ document.addEventListener('alpine:init', () => {
                         });
                     }
                 } else {
-                    layer.msg(data.message, {
-                        shadeClose: true,
-                        shade: 0.2,
-                    })
+                    console.log(data.message)
                 }
             }, function () {
-                layer.msg('网络错误，请重新检查网络！', {
-                    shadeClose: true,
-                    shade: 0.4,
-                });
+                console.log('网络错误，请重新检查网络！')
             })
         },
         PidFun() { //跳到设置Pid页面去
             var self = this;
-            layer.alert("未设置pid,请前往个人中心设置pid!", {
-                icon: 2,
-                btn: '立即前往'
-            }, function (index) {
-                pageAll(self.oCommon.adminPidlink);
-                layer.close(index);
-            });
+            console.log('未设置pid,请前往个人中心设置pid!')
+            pageAll(self.oCommon.adminPidlink);
         },
         friendsBtn(number) {
             this.oItemData.friendsIndex += number;
         },
         seeImg(url) { //双击预览图片
-            layer.open({
-                type: 1,
-                title: false,
-                closeBtn: 0,
-                area: '300px',
-                shadeClose: true,
-                content: '<div><img class="viewPic" src="' + url + '"></div>'
-            });
         },
         videoPlayBtn(index) {  //视频 - 播放
             var self = this;
@@ -1436,10 +1350,6 @@ document.addEventListener('alpine:init', () => {
             this.oDyvideo.videoExtend = false;
         },
         videomoveinIcon(name, event) { //商品图标鼠标移入
-            layer.tips(name, $(event.target), {
-                time: 0,
-                tips: [1, '#553cf7'],
-            });
         },
         setTemplateType(id) {
             this.oSetting.templateType = id;
@@ -1482,8 +1392,63 @@ document.addEventListener('alpine:init', () => {
             };
             d.src = picUrl
         },
-        ComremoveLayerTips: function () { //商品图标鼠标移入
+        copyContent(copyBtn){
+            var $this = this;
+            var clipboardBtn = new ClipboardJS(copyBtn, {
+                target: function(trigger) {
+                    return trigger.nextElementSibling;
+                },
+            });
 
+            clipboardBtn.on('success', function (e) {
+                e.clearSelection();
+                clipboardBtn.destroy();
+                $this.setting.copyStatus = 2;
+                $this.setting.copyBtnText = "复制成功";
+                console.log($this.setting.copyBtnText)
+                setTimeout(() => {
+                    $this.setting.copyStatus = 0;
+                    $this.setting.copyBtnText = "一键复制";
+                }, 2000);
+            });
+            clipboardBtn.on('error', function (e) {
+                $this.setting.copyStatus = 1;
+                $this.setting.copyBtnText = "复制失败";
+                setTimeout(() => {
+                    $this.setting.copyStatus = 0;
+                    $this.setting.copyBtnText = "一键复制";
+                }, 2000);
+            });
+        },
+        addPid() {
+            var $this = this;
+            ajaxPost("/api/user/market/resource/update", {
+                name: $this.pid.name,
+                pid: $this.pid.pid,
+                type:'pid',
+            }, function () {
+                $this.queryPid()
+            })
+        },
+        queryPid() { 
+            var $this = this;
+            ajaxPost("/api/user/market/resource/list", {
+                type:'pid',
+            }, function (data) {
+                if(data.data && data.data.items){
+                    $this.pid.items = data.data.items;
+                    $this.pid.name = '';
+                    $this.pid.pid='';
+                }
+            })
+        },
+        delPid(id) { 
+            var $this = this;
+            ajaxPost("/api/user/market/resource/delete", {
+                id: id,
+            }, function () {
+                $this.queryPid()
+            })
         },
     }));
 });
