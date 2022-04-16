@@ -115,7 +115,6 @@ var ajaxGet = function (url, data, successfun, errorfun) {
 
     fetch(url.indexOf('http') === 0 ? url : web_config['api_url'] + url + '?' + searchStr, {
         method: "GET",
-        mode: 'cors',
         // headers: {
         //     "Content-Type": "application/json",
         //     Accept: "application/json",
@@ -155,24 +154,48 @@ var ajaxPost = function (url, data, successfun, errorfun) {
     if (errorfun) {
         temp_errorfun = errorfun;
     }
+
+    const searchStr = obj2String(Object.assign(data, {
+        hpt_times: web_config['hpt_times'],
+        hpt_sign: web_config['hpt_sign'],
+        hpt_token: web_config['token'],
+    }))
+
     fetch(url.indexOf('http') === 0 ? url : web_config['api_url'] + url, {
         method: "POST",
-        mode: 'cors',
         headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
+            // "Content-Type": "application/json",
+            // Accept: "application/json",
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
         },
-        body: JSON.stringify(Object.assign(data, {
-            hpt_times: web_config['hpt_times'],
-            hpt_sign: web_config['hpt_sign'],
-            hpt_token: web_config['token'],
-        })),
+        body:searchStr,
+        // body: JSON.stringify(Object.assign(data, {
+        //     hpt_times: web_config['hpt_times'],
+        //     hpt_sign: web_config['hpt_sign'],
+        //     hpt_token: web_config['token'],
+        // })),
     })
         .then(response => response.json())
         .then(successfun)
         .catch((xhr, type) => {
             temp_errorfun(xhr, type)
         });
+
+    
+    // axios({
+    //     method: 'post',
+    //     url: url.indexOf('http') === 0 ? url : web_config['api_url'] + url,
+    //     data: Object.assign(data, {
+    //         hpt_times: web_config['hpt_times'],
+    //         hpt_sign: web_config['hpt_sign'],
+    //         hpt_token: web_config['token'],
+    //     })
+    // })
+    // .then(response => response.json())
+    // .then(successfun)
+    //     .catch((error) => {
+    //         temp_errorfun(error)
+    //     });
 };
 
 var ajaxGetJsonp = function (url, data, successfun, errorfun) {  //jsonp跨域请求
