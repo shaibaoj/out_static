@@ -115,6 +115,7 @@ var ajaxGet = function (url, data, successfun, errorfun) {
 
     fetch(url.indexOf('http') === 0 ? url : web_config['api_url'] + url + '?' + searchStr, {
         method: "GET",
+        mode: 'cors',
         // headers: {
         //     "Content-Type": "application/json",
         //     Accept: "application/json",
@@ -156,10 +157,11 @@ var ajaxPost = function (url, data, successfun, errorfun) {
     }
     fetch(url.indexOf('http') === 0 ? url : web_config['api_url'] + url, {
         method: "POST",
-        // headers: {
-        //     "Content-Type": "application/json",
-        //     Accept: "application/json",
-        // },
+        mode: 'cors',
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+        },
         body: JSON.stringify(Object.assign(data, {
             hpt_times: web_config['hpt_times'],
             hpt_sign: web_config['hpt_sign'],
