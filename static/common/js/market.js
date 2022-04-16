@@ -67,12 +67,12 @@ function Request (name) {
  * 将对象转成 a=1&b=2的形式
  * @param obj 对象
  */
- function obj2String(obj, arr = [], idx = 0) {
+function obj2String (obj, arr = [], idx = 0) {
     for (let item in obj) {
-      arr[idx++] = [item, obj[item]]
+        arr[idx++] = [item, obj[item]]
     }
     return new URLSearchParams(arr).toString()
-  }
+}
 
 var config = {
     _url: "",
@@ -113,7 +113,7 @@ var ajaxGet = function (url, data, successfun, errorfun) {
         hpt_token: web_config['token'],
     }))
 
-    fetch(url.indexOf('http') === 0 ? url : web_config['api_url'] + url +'?' + searchStr, {
+    fetch(url.indexOf('http') === 0 ? url : web_config['api_url'] + url + '?' + searchStr, {
         method: "GET",
         // headers: {
         //     "Content-Type": "application/json",
@@ -125,7 +125,7 @@ var ajaxGet = function (url, data, successfun, errorfun) {
         //     hpt_token: web_config['token'],
         // })),
     })
-    .then(response => response.json())
+        .then(response => response.json())
         .then(successfun)
         .catch((xhr, type) => {
             temp_errorfun(xhr, type)
@@ -166,28 +166,11 @@ var ajaxPost = function (url, data, successfun, errorfun) {
             hpt_token: web_config['token'],
         })),
     })
-    .then(response => response.json())
+        .then(response => response.json())
         .then(successfun)
         .catch((xhr, type) => {
             temp_errorfun(xhr, type)
         });
-
-    // $.ajax({
-    //     type: 'POST',
-    //     url: url.indexOf('http') === 0 ? url : web_config['api_url'] + url,
-    //     data: Object.assign(data, {
-    //         hpt_times: web_config['hpt_times'],
-    //         hpt_sign: web_config['hpt_sign'],
-    //         hpt_token: web_config['token'],
-    //     }),
-    //     dataType: 'json',
-    //     timeout: 30000,
-    //     success: successfun,
-    //     error: temp_errorfun,
-    //     xhrFields: {
-    //         withCredentials: true
-    //     },
-    // });
 };
 
 var ajaxGetJsonp = function (url, data, successfun, errorfun) {  //jsonp跨域请求
@@ -319,28 +302,18 @@ document.addEventListener('alpine:init', () => {
         oCommon: {
             id: web_config['item_id'],
             tianmao: 'https://detail.tmall.com/item.htm',
-            loadingImg: web_config['static_url'] + "/static/platform/images/web/common/loading.png",
+            loadingImg: web_config['static_url'] + "/static/common/images/web/common/loading.png",
             adminPidlink: '/app/user/info/pid',
             adminLoginlink: '/app/public/login',
-            comloginState: false,
         },
-        setting:{
-            showContent:false,
-            copyStatus:0,
-            copyBtnText:'一键复制',
-            nav: 1,
-
-            modalWeixin:false,
-            modalQQ:false,
-            modalPid:true,
-            modalWenan:false,
+        setting: {
         },
-        pid:{
+        pid: {
             name: "",
             pid: "",
-            items:[],
-            weixinId:0,
-            qqId:0,
+            items: [],
+            weixinId: 0,
+            qqId: 0,
         },
         oPublic: {
             reportImg: '',
@@ -367,6 +340,7 @@ document.addEventListener('alpine:init', () => {
         oItemData: {  //基本数据接口
             itemInfo: {
                 goods: {},
+                store: {},
                 coupon: {},
                 price: {},
             }, //商品数据
@@ -413,11 +387,17 @@ document.addEventListener('alpine:init', () => {
             descRecommendShow: false, //更多推荐语布尔值
         },
         oSetting: {  //微信QQ文案模板接口s
-            pidArr: [],
-            allPidNull: false, //true表示不为空有pid
+            modalWeixin: false,
+            modalQQ: false,
+            modalPid: false,
+            modalWenan: false,
 
-            navId: 1,
+            showContent: false,
+            copyStatus: 0,
+            copyBtnText: '一键复制',
+            nav: 1,
             templateType: 1,
+
             qq: {
                 default: '',
                 brand: '',
@@ -440,8 +420,7 @@ document.addEventListener('alpine:init', () => {
                 link: '{二合一短链接}',
                 url: '{二合一长链接}',
                 status: 0,
-                // qrcode: '',
-                qrcode: web_config['static_url'] + "/static/platform/images/web/detail/detail_default_qrimg.png",
+                qrcode: web_config['static_url'] + "/static/common/images/web/detail/detail_default_qrimg.png",
                 id: 0,
                 pid: '',
                 pidName: '',
@@ -548,10 +527,10 @@ document.addEventListener('alpine:init', () => {
             historyMinprice: '',  //历史最低价
             historytime: []
         },
-        copyImg(picUrl) {
+        copyImg (picUrl) {
             return 'https://img.marsnews.work/imgcdn/' + MD5(picUrl) + '.jpg?src=' + encodeURIComponent(picUrl);
         },
-        ajaxInfo() {
+        ajaxInfo () {
             var self = this;
             ajaxPost("/api/common/goods/view", {
                 id: self.oCommon.id
@@ -617,7 +596,7 @@ document.addEventListener('alpine:init', () => {
             });
             this.queryPid();
         },
-        ajaxhistory() { //历史数据
+        ajaxhistory () { //历史数据
             var self = this;
             ajaxPost("/api/common/goods/history", {
                 num_iid: self.oItemData.itemId
@@ -639,7 +618,7 @@ document.addEventListener('alpine:init', () => {
                 }
             })
         },
-        echartOption(oTime, oSales, str) { //走势图
+        echartOption (oTime, oSales, str) { //走势图
             var dom = document.getElementById("echartToday");
             var myChart = echarts.init(dom);
             var option = {
@@ -694,7 +673,7 @@ document.addEventListener('alpine:init', () => {
                 myChart.setOption(option, true);
             }, 50)
         },
-        tabBtn(index) { //切换图标
+        tabBtn (index) { //切换图标
             var self = this;
             switch (index) {
                 case 0:
@@ -708,7 +687,7 @@ document.addEventListener('alpine:init', () => {
             }
             this.oEchartToday.tabShow = index;
         },
-        ajaxTodaySales() { //走势图
+        ajaxTodaySales () { //走势图
             var self = this;
             ajaxPost("/api/common/goods/get_today_sales", {
                 num_iid: self.oItemData.itemId
@@ -723,7 +702,7 @@ document.addEventListener('alpine:init', () => {
                 }
             })
         },
-        countDown(endtime) { //倒计时方法
+        countDown (endtime) { //倒计时方法
             var self = this;
             var formatNumber = function (n) {
                 n = n.toString();
@@ -744,13 +723,13 @@ document.addEventListener('alpine:init', () => {
                 clearInterval(self.dataTime.oClearInterval);
             }
         },
-        FunCountDown() {  //倒计时 -函数
+        FunCountDown () {  //倒计时 -函数
             var self = this;
             self.dataTime.oClearInterval = setInterval(function () {
                 var time = self.countDown(self.dataTime.endtime);
             }, 1000);
         },
-        ajaxVideo() {  //视频 --数据接口
+        ajaxVideo () {  //视频 --数据接口
             var self = this;
             ajaxPost("/api/common/goods/trill_video_list", {
                 num_iid: self.oItemData.itemId,
@@ -762,26 +741,46 @@ document.addEventListener('alpine:init', () => {
                 }
             })
         },
-        adderImg(event) { //显示图片
+        adderImg (event) { //显示图片
         },
-        adderImg1(event) { //显示图片
+        adderImg1 (event) { //显示图片
         },
-        copyBtn(clickClass, copyClass) { //复制公共方法
+        copyBtn (clickClass, copyClass) { //复制公共方法
             var clipboard = new ClipboardJS(clickClass, {
-                target() {
+                target () {
                     return document.querySelector(copyClass);
                 },
-                // container: document.querySelector(copyClass),
             });
             clipboard.on('success', function (e) {
+                console.log('复制成功');
                 e.clearSelection();
                 clipboard.destroy();
             });
             clipboard.on('error', function (e) {
                 console.log('由于您的浏览器不兼容或当前网速较慢，复制失败，请手动复制或更换主流浏览器！')
             });
+
+            // clipboard.on('success', function (e) {
+            //     e.clearSelection();
+            //     clipboard.destroy();
+            //     $this.oSetting.copyStatus = 2;
+            //     $this.oSetting.copyBtnText = "复制成功";
+            //     console.log($this.oSetting.copyBtnText)
+            //     setTimeout(() => {
+            //         $this.oSetting.copyStatus = 0;
+            //         $this.oSetting.copyBtnText = "一键复制";
+            //     }, 2000);
+            // });
+            // clipboard.on('error', function (e) {
+            //     $this.oSetting.copyStatus = 1;
+            //     $this.oSetting.copyBtnText = "复制失败";
+            //     setTimeout(() => {
+            //         $this.oSetting.copyStatus = 0;
+            //         $this.oSetting.copyBtnText = "一键复制";
+            //     }, 2000);
+            // });
         },
-        seeVideo(url) {  //淘宝评论视频
+        seeVideo (url) {  //淘宝评论视频
             var video =
                 '<video class="comvideo" preload="auto" webkit-playsinline="true" playsinline="true" controls autoplay>' +
                 '<source src=' + url + ' type="video/mp4">' +
@@ -789,7 +788,7 @@ document.addEventListener('alpine:init', () => {
                 '<source src=' + url + ' type="video/webm">' +
                 '</video>';
         },
-        seetcomment() {  //淘宝评论-调起
+        seetcomment () {  //淘宝评论-调起
             if (this.taobaoComment.taobaoCount > 0) {
                 this.ajaxRatelabel();
                 this.taobaoscroll();
@@ -797,7 +796,7 @@ document.addEventListener('alpine:init', () => {
                 console.log('没有评论哦')
             }
         },
-        ajaxComment(callback) {  //淘宝评论接口
+        ajaxComment (callback) {  //淘宝评论接口
             var self = this;
             ajaxPost("/api/common/goods/get_ratelist", {
                 num_iid: self.oItemData.itemId,
@@ -821,7 +820,7 @@ document.addEventListener('alpine:init', () => {
                 }
             })
         },
-        taobaoscroll() {  //淘宝评论--滚动加载
+        taobaoscroll () {  //淘宝评论--滚动加载
             var self = this;
             var nScrollHight = 0;
             var nScrollTop = 0;
@@ -837,7 +836,7 @@ document.addEventListener('alpine:init', () => {
                 }
             });
         },
-        ajaxRatelabel() {  //淘宝评论--标签
+        ajaxRatelabel () {  //淘宝评论--标签
             var self = this;
             var link = "https://rate.tmall.com/listTagClouds.htm?itemId=" + self.oItemData.itemId + "&isAll=true&isInner=true&t=1570446988539&groupId=&_ksTS=1570446988540_680";
             ajaxGetJsonp(link, {},
@@ -848,7 +847,7 @@ document.addEventListener('alpine:init', () => {
                 }
             )
         },
-        ajaxGetVideo() {  //获取实拍视频
+        ajaxGetVideo () {  //获取实拍视频
             var self = this;
             var videolink = "https://h5api.m.taobao.com/h5/mtop.taobao.detail.getdetail/6.0/?jsv=2.4.8&appKey=12574478&t=1554712612690&sign=59ff83eeadc620f65b072a198f4cf178&api=mtop.taobao.detail.getdetail&v=6.0&dataType=jsonp&ttid=2017%40taobao_h5_6.6.0&AntiCreep=true&type=jsonp&data=%7B%22itemNumId%22%3A%22" + self.oItemData.itemId + "%22%7D";
             ajaxGetJsonp(videolink, {},
@@ -889,32 +888,32 @@ document.addEventListener('alpine:init', () => {
 
                 })
         },
-        loginFun() { //跳到登录页面去
+        loginFun () { //跳到登录页面去
             var url = encodeURIComponent(encodeURIComponent(window.location.href));
             var strurl = this.oCommon.adminLoginlink + '?returnurl=' + url;
             w
         },
-        picBtn() {  //跳到合成图片去
+        picBtn () {  //跳到合成图片去
             var strurl = '/tools/spic?shopUrl=https://item.taobao.com/item.htm?id=' + this.oItemData.itemId;
             pageAll(strurl);
         },
-        tljBtn() {  //跳到合成图片去
+        tljBtn () {  //跳到合成图片去
             var strurl = '/app/user/market/tlj?href=https://item.taobao.com/item.htm?id=' + this.oItemData.itemId;
             pageAll(strurl);
         },
-        wxBtn() {  //跳到合成图片去
+        wxBtn () {  //跳到合成图片去
             var strurl = '/tools/wx?href=https://item.taobao.com/item.htm?id=' + this.oItemData.itemId;
             pageAll(strurl);
         },
-        shorttitleBtn(item) { //短标题文案
+        shorttitleBtn (item) { //短标题文案
             this.oItemData.strShorttitle = item;
             this.oHistory.shorttitleShow = false
         },
-        descRecommendBtn(item) { //推荐语文案
+        descRecommendBtn (item) { //推荐语文案
             this.oItemData.strDesc = item;
             this.oHistory.descRecommendShow = false
         },
-        choiceBtn(type, item, index) { //实拍图选择
+        choiceBtn (type, item, index) { //实拍图选择
             if (type == 1) {
                 if (this.oItemData.strWeixinArr.length == 0) {
                     this.oItemData.strWeixinArr.push(item);
@@ -949,7 +948,7 @@ document.addEventListener('alpine:init', () => {
                 this.oSetting.friend.qrcodeView = !this.oSetting.friend.qrcodeView;
             }
         },
-        ajaxset() {   //微信QQ文案模板接口
+        ajaxset () {   //微信QQ文案模板接口
             var self = this;
             ajaxPost("/api/common/stat/get_setting_info", {}, function (res) {
                 if (res.code == 0) {
@@ -961,67 +960,60 @@ document.addEventListener('alpine:init', () => {
 
                     self.oSetting.weixin.default = setDATA.content_default;
                     self.oSetting.weixin.brand = setDATA.content_default;
-                    self.oSetting.weixin.custom = setDATA.content;
+                    self.oSetting.weixin.custom = setDATA.content_weixin;
 
-                    self.oSetting.weixin.id = res.data.weixin_pid_id;
-                    self.oSetting.qq.id = res.data.qq_pid_id;
-                    self.oSetting.other.id = res.data.other_pid_id;
+                    self.oSetting.weixin.id = res.data.weixin_id;
+                    self.oSetting.qq.id = res.data.qq_id;
+                    self.oSetting.other.id = res.data.other_id;
 
                     //处理pid
-                    self.oSetting.pidArr = res.data.items;
+                    self.pid.items = res.data.items;
                     res.data.items.forEach(function (item, index) {
                         if (item.id == self.oSetting.weixin.id) {
                             self.oSetting.weixin.pid = item.pid;
-                            self.oSetting.weixin.pidName = item.pid_name;
+                            self.oSetting.weixin.pidName = item.name;
                             self.oSetting.weixin.relation_id = item.relation_id;
                         }
                         else if (item.id == self.oSetting.qq.id) {
                             self.oSetting.qq.pid = item.pid;
-                            self.oSetting.qq.pidName = item.pid_name;
+                            self.oSetting.qq.pidName = item.name;
                             self.oSetting.qq.relation_id = item.relation_id;
                         }
                         else if (item.id == self.oSetting.other.id) {
                             self.oSetting.other.pid = item.pid;
-                            self.oSetting.other.pidName = item.pid_name;
+                            self.oSetting.other.pidName = item.name;
                             self.oSetting.other.relation_id = item.relation_id;
                         }
                     });
+
                     if (self.oSetting.weixin.id == 0 && self.oSetting.qq.id > 0) {
                         self.oSetting.weixin.id = self.oSetting.qq.id
                         self.oSetting.weixin.pid = self.oSetting.qq.pid
-                        self.oSetting.weixin.pidName = self.oSetting.qq.pid_name;
+                        self.oSetting.weixin.pidName = self.oSetting.qq.pidName;
                         self.oSetting.weixin.relation_id = self.oSetting.qq.relation_id;
                     }
                     if (self.oSetting.qq.id == 0 && self.oSetting.weixin.id > 0) {
                         self.oSetting.qq.id = self.oSetting.weixin.id
                         self.oSetting.qq.pid = self.oSetting.weixin.pid
-                        self.oSetting.qq.pidName = self.oSetting.weixin.pid_name;
+                        self.oSetting.qq.pidName = self.oSetting.weixin.pidName;
                         self.oSetting.qq.relation_id = self.oSetting.weixin.relation_id;
                     }
 
                     if (self.oSetting.qq.id == 0 && self.oSetting.weixin.id == 0 && self.oSetting.other.id > 0) {
                         self.oSetting.qq.id = self.oSetting.other.id
                         self.oSetting.qq.pid = self.oSetting.other.pid
-                        self.oSetting.qq.pidName = self.oSetting.other.pid_name;
+                        self.oSetting.qq.pidName = self.oSetting.other.pidName;
                         self.oSetting.qq.relation_id = self.oSetting.other.relation_id;
 
                         self.oSetting.weixin.id = self.oSetting.other.id
                         self.oSetting.weixin.pid = self.oSetting.other.pid
-                        self.oSetting.weixin.pidName = self.oSetting.other.pid_name;
+                        self.oSetting.weixin.pidName = self.oSetting.other.pidName;
                         self.oSetting.weixin.relation_id = self.oSetting.other.relation_id;
                     }
-
-                    if (self.oSetting.qq.id == 0 && self.oSetting.weixin.id == 0 && self.oSetting.other.id == 0) {
-                        self.oSetting.allPidNull = false;
-                    } else {
-                        self.oSetting.allPidNull = true;
-                    }
-                } else {
-                    self.oSetting.allPidNull = false;
                 }
             })
         },
-        filtersContent(value) { //微信QQ文案模板--截取
+        filtersContent (value) { //微信QQ文案模板--截取
             var self = this;
 
             var content = value.default;
@@ -1031,20 +1023,20 @@ document.addEventListener('alpine:init', () => {
             else if (self.oSetting.templateType == 3) {
                 content = value.custom;
             }
-            if(content==null){
+            if (content == null) {
                 content = '';
             }
 
             content = content.replace(/\{标题\}/g, self.oItemData.strShorttitle);
             content = content.replace(/\{短标题\}/g, self.oItemData.strShorttitle);
-            if(self.oItemData.itemInfo && self.oItemData.itemInfo.price && self.oItemData.itemInfo.price.price){
+            if (self.oItemData.itemInfo && self.oItemData.itemInfo.price && self.oItemData.itemInfo.price.price) {
                 content = content.replace(/\{在售价\}/g, parseFloat(self.oItemData.itemInfo.price.price));
                 content = content.replace(/\{券后价\}/g, '<span>' + parseFloat(self.oItemData.itemInfo.price.buy_price) + '</span>');
             }
             content = content.replace(/\{推荐语\}/g, self.oItemData.strDesc);
             // content = content.replace(/\{介绍\}/g, self.oItemData.strDesc);
 
-            if(self.oItemData.itemInfo && self.oItemData.itemInfo.coupon && self.oItemData.itemInfo.price.coupon_money){
+            if (self.oItemData.itemInfo && self.oItemData.itemInfo.coupon && self.oItemData.itemInfo.price.coupon_money) {
                 content = content.replace(/\{券额\}/g, '<span>' + parseFloat(self.oItemData.itemInfo.coupon.coupon_money) + '</span>');
             }
             content = content.replace(/\{图片\}/g, '');
@@ -1064,15 +1056,15 @@ document.addEventListener('alpine:init', () => {
             content = content.replace(/\{二合一淘口令\}/g, '<span>' + value.token + '</span>');
             return content;
         },
-        shutBtn() {  //微信QQ弹窗模板-关闭弹窗
+        shutBtn () {  //微信QQ弹窗模板-关闭弹窗
             this.wxqqnavReset();
         },
-        wxqqnavReset() { ////微信QQ弹窗模板-重置
+        wxqqnavReset () { ////微信QQ弹窗模板-重置
             this.oSetting.wxqqIndex = 0;
             this.oSetting.comwxqqnav[0].bool = true;
             this.oSetting.comwxqqnav[1].bool = true;
         },
-        popupwxqqBtn(number) {  ////微信QQ弹窗模板-切换按钮  
+        popupwxqqBtn (number) {  ////微信QQ弹窗模板-切换按钮  
             if (number == 0 || number == 1) {
                 if (web_config['token'] == '') {
                     this.loginFun();
@@ -1083,7 +1075,7 @@ document.addEventListener('alpine:init', () => {
                 this.oSetting.wxqqIndex = number;
             }
         },
-        customizedAdd(item, sign) {  //微信QQ弹窗模板 -- 添加标签
+        customizedAdd (item, sign) {  //微信QQ弹窗模板 -- 添加标签
             if (sign == 'wx') {
                 document.getElementById('textareaWx').focus();
                 this.insertAtCaret('{' + item.name + '}');
@@ -1092,7 +1084,7 @@ document.addEventListener('alpine:init', () => {
                 this.insertAtCaret('{' + item.name + '}');
             }
         },
-        insertAtCaret(html) {  //微信QQ弹窗模板 -- 写入标签
+        insertAtCaret (html) {  //微信QQ弹窗模板 -- 写入标签
             var sel, range;
             if (window.getSelection) {
                 // IE9 and non-IE
@@ -1121,14 +1113,14 @@ document.addEventListener('alpine:init', () => {
                 document.selection.createRange().pasteHTML(html);
             }
         },
-        templateDefault(sign) { //微信QQ弹窗模板 -- 恢复默认模板
+        templateDefault (sign) { //微信QQ弹窗模板 -- 恢复默认模板
             if (sign == 'wx') {
                 document.getElementById("textareaWx").innerHTML = this.oSetting.weixin.default;
             } else {
                 document.getElementById("textareaQq").innerHTML = this.oSetting.qq.default;
             }
         },
-        saveTemplateBtn(number, sign) { //微信QQ弹窗模板 -- 保存模板
+        saveTemplateBtn (number, sign) { //微信QQ弹窗模板 -- 保存模板
             var self = this;
             var Text = "";
             if (sign == 'wx') {
@@ -1162,14 +1154,14 @@ document.addEventListener('alpine:init', () => {
                 self.wxqqnavReset();
             })
         },
-        templateCelarBtn(sign) { //微信QQ弹窗模板 -- 清空
+        templateCelarBtn (sign) { //微信QQ弹窗模板 -- 清空
             if (sign == 'wx') {
                 document.getElementById("textareaWx").innerHTML = "";
             } else {
                 document.getElementById("textareaQq").innerHTML = "";
             }
         },
-        setPidBtn(item, sign) { //pid -- 保存PID设置
+        setPidBtn (item, sign) { //pid -- 保存PID设置
             if (sign == 'wx') {
                 this.oSetting.weixin.pid = item.pid;
                 this.oSetting.weixin.pidName = item.pid_name;
@@ -1184,20 +1176,17 @@ document.addEventListener('alpine:init', () => {
                 this.oSetting.qq.show = false;
             }
         },
-        taobaoTokenBtn(number, clickClass, copyClass) { //淘口令和转二合一
+        taobaoTokenBtn (number, clickClass, copyClass) { //淘口令和转二合一
             var self = this;
-            if (web_config['token'] == '') {
-                self.loginFun();
-                return;
-            }
-            if (!self.oSetting.allPidNull) {
-                self.PidFun();
-                return;
-            }
+
             var relationid, pid;
-            switch (number) { //0微信 1qq 2朋友圈 3长图
-                case 0:
+            switch (number) { //0 微信 1 qq 2朋友圈 3长图
                 case 1:
+                    relationid = self.oSetting.qq.relation_id;
+                    pid = self.oSetting.qq.pid;
+                    self.oSetting.qq.status = 1;
+                    break;
+                case 0:
                 case 2:
                     relationid = self.oSetting.weixin.relation_id;
                     pid = self.oSetting.weixin.pid;
@@ -1225,6 +1214,7 @@ document.addEventListener('alpine:init', () => {
                     return;
                 }
             }
+
             ajaxPost("/api/common/goods/transform", {
                 type: number,
                 activity_id: self.oItemData.itemInfo.coupon.activity_id,
@@ -1260,6 +1250,7 @@ document.addEventListener('alpine:init', () => {
                             self.oSetting.weixin.qrcode = data.data.goods.click.qrcode;
                         }
                     }
+
                     if (number == 0) {
                         self.oSetting.weixin.status = 2;
                         document.querySelector(clickClass).click();
@@ -1290,17 +1281,17 @@ document.addEventListener('alpine:init', () => {
                 console.log('网络错误，请重新检查网络！')
             })
         },
-        PidFun() { //跳到设置Pid页面去
+        PidFun () { //跳到设置Pid页面去
             var self = this;
             console.log('未设置pid,请前往个人中心设置pid!')
             pageAll(self.oCommon.adminPidlink);
         },
-        friendsBtn(number) {
+        friendsBtn (number) {
             this.oItemData.friendsIndex += number;
         },
-        seeImg(url) { //双击预览图片
+        seeImg (url) { //双击预览图片
         },
-        videoPlayBtn(index) {  //视频 - 播放
+        videoPlayBtn (index) {  //视频 - 播放
             var self = this;
             self.oVideo.videooIndex = index;
             setTimeout(function () {
@@ -1331,7 +1322,7 @@ document.addEventListener('alpine:init', () => {
                 }
             }, 100)
         },
-        videostopBtn() {  //暂停
+        videostopBtn () {  //暂停
             var self = this;
             this.$refs.myVideo[0].pause();
             this.$refs.myVideo[0].addEventListener('pause', function () {
@@ -1339,22 +1330,22 @@ document.addEventListener('alpine:init', () => {
                 self.oVideo.loadIcon = false;
             });
         },
-        videoEnd() {  //播放结束
+        videoEnd () {  //播放结束
             var self = this;
             self.$refs.myVideo[0].addEventListener("ended", function () {
                 self.$refs.myVideo[0].pause();
                 self.oVideo.playBool = false;
             });
         },
-        videoExtendBtn() {
+        videoExtendBtn () {
             this.oDyvideo.videoExtend = false;
         },
-        videomoveinIcon(name, event) { //商品图标鼠标移入
+        videomoveinIcon (name, event) { //商品图标鼠标移入
         },
-        setTemplateType(id) {
+        setTemplateType (id) {
             this.oSetting.templateType = id;
         },
-        unitePic(copyClass, copyImgClass, callback) {
+        unitePic (copyClass, copyImgClass, callback) {
             html2canvas(document.querySelector(copyClass), {
                 allowTaint: false,
                 useCORS: true,
@@ -1372,10 +1363,10 @@ document.addEventListener('alpine:init', () => {
                 });
             })
         },
-        downImgMake(picUrl) {
+        downImgMake (picUrl) {
             this.downloadIamge(picUrl, Math.round(1E3 * Math.random()))
         },
-        downloadIamge(picUrl, b) {
+        downloadIamge (picUrl, b) {
             var d = new Image;
             d.setAttribute("crossOrigin", "anonymous");
             d.onload = function () {
@@ -1392,10 +1383,10 @@ document.addEventListener('alpine:init', () => {
             };
             d.src = picUrl
         },
-        copyContent(copyBtn){
+        copyContent (copyBtn) {
             var $this = this;
             var clipboardBtn = new ClipboardJS(copyBtn, {
-                target: function(trigger) {
+                target: function (trigger) {
                     return trigger.nextElementSibling;
                 },
             });
@@ -1403,46 +1394,46 @@ document.addEventListener('alpine:init', () => {
             clipboardBtn.on('success', function (e) {
                 e.clearSelection();
                 clipboardBtn.destroy();
-                $this.setting.copyStatus = 2;
-                $this.setting.copyBtnText = "复制成功";
-                console.log($this.setting.copyBtnText)
+                $this.oSetting.copyStatus = 2;
+                $this.oSetting.copyBtnText = "复制成功";
+                console.log($this.oSetting.copyBtnText)
                 setTimeout(() => {
-                    $this.setting.copyStatus = 0;
-                    $this.setting.copyBtnText = "一键复制";
+                    $this.oSetting.copyStatus = 0;
+                    $this.oSetting.copyBtnText = "一键复制";
                 }, 2000);
             });
             clipboardBtn.on('error', function (e) {
-                $this.setting.copyStatus = 1;
-                $this.setting.copyBtnText = "复制失败";
+                $this.oSetting.copyStatus = 1;
+                $this.oSetting.copyBtnText = "复制失败";
                 setTimeout(() => {
-                    $this.setting.copyStatus = 0;
-                    $this.setting.copyBtnText = "一键复制";
+                    $this.oSetting.copyStatus = 0;
+                    $this.oSetting.copyBtnText = "一键复制";
                 }, 2000);
             });
         },
-        addPid() {
+        addPid () {
             var $this = this;
             ajaxPost("/api/user/market/resource/update", {
                 name: $this.pid.name,
                 pid: $this.pid.pid,
-                type:'pid',
+                type: 'pid',
             }, function () {
                 $this.queryPid()
             })
         },
-        queryPid() { 
+        queryPid () {
             var $this = this;
             ajaxPost("/api/user/market/resource/list", {
-                type:'pid',
+                type: 'pid',
             }, function (data) {
-                if(data.data && data.data.items){
+                if (data.data && data.data.items) {
                     $this.pid.items = data.data.items;
                     $this.pid.name = '';
-                    $this.pid.pid='';
+                    $this.pid.pid = '';
                 }
             })
         },
-        delPid(id) { 
+        delPid (id) {
             var $this = this;
             ajaxPost("/api/user/market/resource/delete", {
                 id: id,
