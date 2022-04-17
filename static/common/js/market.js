@@ -331,8 +331,6 @@ document.addEventListener('alpine:init', () => {
             adminPidlink: '/app/user/info/pid',
             adminLoginlink: '/app/public/login',
         },
-        setting: {
-        },
         pid: {
             name: "",
             pid: "",
@@ -357,10 +355,6 @@ document.addEventListener('alpine:init', () => {
             pageNumber: 1, //页数
             pageInput: 1, //跳到第几页
             count: '', //总的页数
-        },
-        oHidePopup: {
-            hideOnLineLin: false, //在线转链
-            hideEchartCheck: false, //成交量
         },
         oItemData: {  //基本数据接口
             itemInfo: {
@@ -993,48 +987,7 @@ document.addEventListener('alpine:init', () => {
 
                     //处理pid
                     self.pid.items = res.data.items;
-                    res.data.items.forEach(function (item, index) {
-                        if (item.id == self.oSetting.weixin.id) {
-                            self.oSetting.weixin.pid = item.pid;
-                            self.oSetting.weixin.pidName = item.name;
-                            self.oSetting.weixin.relation_id = item.relation_id;
-                        }
-                        else if (item.id == self.oSetting.qq.id) {
-                            self.oSetting.qq.pid = item.pid;
-                            self.oSetting.qq.pidName = item.name;
-                            self.oSetting.qq.relation_id = item.relation_id;
-                        }
-                        else if (item.id == self.oSetting.other.id) {
-                            self.oSetting.other.pid = item.pid;
-                            self.oSetting.other.pidName = item.name;
-                            self.oSetting.other.relation_id = item.relation_id;
-                        }
-                    });
-
-                    if (self.oSetting.weixin.id == 0 && self.oSetting.qq.id > 0) {
-                        self.oSetting.weixin.id = self.oSetting.qq.id
-                        self.oSetting.weixin.pid = self.oSetting.qq.pid
-                        self.oSetting.weixin.pidName = self.oSetting.qq.pidName;
-                        self.oSetting.weixin.relation_id = self.oSetting.qq.relation_id;
-                    }
-                    if (self.oSetting.qq.id == 0 && self.oSetting.weixin.id > 0) {
-                        self.oSetting.qq.id = self.oSetting.weixin.id
-                        self.oSetting.qq.pid = self.oSetting.weixin.pid
-                        self.oSetting.qq.pidName = self.oSetting.weixin.pidName;
-                        self.oSetting.qq.relation_id = self.oSetting.weixin.relation_id;
-                    }
-
-                    if (self.oSetting.qq.id == 0 && self.oSetting.weixin.id == 0 && self.oSetting.other.id > 0) {
-                        self.oSetting.qq.id = self.oSetting.other.id
-                        self.oSetting.qq.pid = self.oSetting.other.pid
-                        self.oSetting.qq.pidName = self.oSetting.other.pidName;
-                        self.oSetting.qq.relation_id = self.oSetting.other.relation_id;
-
-                        self.oSetting.weixin.id = self.oSetting.other.id
-                        self.oSetting.weixin.pid = self.oSetting.other.pid
-                        self.oSetting.weixin.pidName = self.oSetting.other.pidName;
-                        self.oSetting.weixin.relation_id = self.oSetting.other.relation_id;
-                    }
+                    self.setValPid()
                 }
             })
         },
@@ -1466,5 +1419,70 @@ document.addEventListener('alpine:init', () => {
                 $this.queryPid()
             })
         },
+        selPid (number,id) {
+            var data = {};
+            if(number ==1){
+                data = Object.assign(data, {
+                    weixin_id: id,
+                })
+                this.oSetting.weixin.show = false
+                this.oSetting.weixin.id = id
+                this.setValPid()
+            }
+            else if(number ==2){
+                data = Object.assign(data, {
+                    qq_id: id,
+                })
+                this.oSetting.qq.show = false
+                this.oSetting.qq.id = id
+                this.setValPid()
+            }
+            ajaxPost("/api/user/user/pid/update", data, function () {})
+        },
+        setValPid(){
+            var self = this
+            self.pid.items.forEach(function (item, index) {
+                if (item.id == self.oSetting.weixin.id) {
+                    self.oSetting.weixin.pid = item.pid;
+                    self.oSetting.weixin.pidName = item.name;
+                    self.oSetting.weixin.relation_id = item.relation_id;
+                }
+                else if (item.id == self.oSetting.qq.id) {
+                    self.oSetting.qq.pid = item.pid;
+                    self.oSetting.qq.pidName = item.name;
+                    self.oSetting.qq.relation_id = item.relation_id;
+                }
+                else if (item.id == self.oSetting.other.id) {
+                    self.oSetting.other.pid = item.pid;
+                    self.oSetting.other.pidName = item.name;
+                    self.oSetting.other.relation_id = item.relation_id;
+                }
+            });
+
+            if (self.oSetting.weixin.id == 0 && self.oSetting.qq.id > 0) {
+                self.oSetting.weixin.id = self.oSetting.qq.id
+                self.oSetting.weixin.pid = self.oSetting.qq.pid
+                self.oSetting.weixin.pidName = self.oSetting.qq.pidName;
+                self.oSetting.weixin.relation_id = self.oSetting.qq.relation_id;
+            }
+            if (self.oSetting.qq.id == 0 && self.oSetting.weixin.id > 0) {
+                self.oSetting.qq.id = self.oSetting.weixin.id
+                self.oSetting.qq.pid = self.oSetting.weixin.pid
+                self.oSetting.qq.pidName = self.oSetting.weixin.pidName;
+                self.oSetting.qq.relation_id = self.oSetting.weixin.relation_id;
+            }
+
+            if (self.oSetting.qq.id == 0 && self.oSetting.weixin.id == 0 && self.oSetting.other.id > 0) {
+                self.oSetting.qq.id = self.oSetting.other.id
+                self.oSetting.qq.pid = self.oSetting.other.pid
+                self.oSetting.qq.pidName = self.oSetting.other.pidName;
+                self.oSetting.qq.relation_id = self.oSetting.other.relation_id;
+
+                self.oSetting.weixin.id = self.oSetting.other.id
+                self.oSetting.weixin.pid = self.oSetting.other.pid
+                self.oSetting.weixin.pidName = self.oSetting.other.pidName;
+                self.oSetting.weixin.relation_id = self.oSetting.other.relation_id;
+            }
+        }
     }));
 });
