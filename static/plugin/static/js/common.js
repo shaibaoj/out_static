@@ -17,8 +17,6 @@ var URLPrefix = {
 URLPrefix.times = new Date().getTime();
 URLPrefix.url_sign = $.md5("" + URLPrefix.times);
 
-// URLPrefix.token = Vue.ls.get('member_token')
-
 function parseParams(data) {
     try {
         var tempArr = [];
@@ -232,8 +230,8 @@ config._url = window.location.href;
 config.addPlugin();
 config.addPluginMin();
 
-
-var tools_commission = '\
+var tools_commission =
+  '\
 <div class="tier">\
     <div style="">\
         <div class="drop">\
@@ -255,14 +253,14 @@ var tools_commission = '\
                         <!---->\
                         <tr v-for="(item,index) in campaignItems">\
                             <td>\
-                            <a v-if="goods && goods.goods" :href="\'http://pub.alimama.com/promo/search/index.htm?queryType=2&amp;q=https%3A%2F%2Fdetail.tmall.com%2Fitem.htm%3Fid%3D\'+goods.goods.num_iid" target="_blank">{{item.campaign_type_name}}</a>\
+                            <a v-if="goods && goods.goods" :href="\'http://pub.alimama.com/promo/search/index.htm?queryType=2&amp;q=https%3A%2F%2Fdetail.tmall.com%2Fitem.htm%3Fid%3D\'+goods.goods.item_id" target="_blank">{{item.campaign_type_name}}</a>\
                             </td>\
                             <td>{{item.commission_rate}}%</td>\
                             <td><span class="simp-8">{{item.campaign_name}}</span></td>\
                             <td>否</td>\
                             <td></td>\
                             <td>\
-                            <a v-if="goods && goods.goods" :href="\'http://pub.alimama.com/promo/search/index.htm?queryType=2&amp;q=https%3A%2F%2Fdetail.tmall.com%2Fitem.htm%3Fid%3D\'+goods.goods.num_iid" target="_blank">详情</a>\
+                            <a v-if="goods && goods.goods" :href="\'http://pub.alimama.com/promo/search/index.htm?queryType=2&amp;q=https%3A%2F%2Fdetail.tmall.com%2Fitem.htm%3Fid%3D\'+goods.goods.item_id" target="_blank">详情</a>\
                             </td>\
                             <!---->\
                             <!---->\
@@ -287,7 +285,8 @@ var tools_commission = '\
 </div>\
 ';
 
-var tools_coupon = '\
+var tools_coupon =
+  '\
 <div class="tier">\
     <div>\
         <div class="drop">\
@@ -306,14 +305,14 @@ var tools_coupon = '\
                     <tbody>\
                         <tr v-for="(item,index) in coupons">\
                             <td><a\
-                            :href="\'https://uland.taobao.com/quan/detail?sellerId=\'+goods.goods.user_num_id+\'&amp;activityId=\'+item.activity_id"\
+                            :href="\'https://uland.taobao.com/quan/detail?sellerId=\'+goods.goods.seller_id+\'&amp;activityId=\'+item.activity_id"\
                                     target="_blank">满{{item.condition}}减 {{item.money}}</a><i title="联盟券，放心使用"\
                                     class="qing-icon-1"></i></td>\
                             <td>{{item.start_date}} ~ {{item.end_date}}</td>\
                             <td>{{item.applied_count}} / {{item.total_count}}</td>\
                             <td><a :href="\'https://www.haopintui.net/quan/\'+goods.goods.id" target="_blank">转链</a></td>\
-                            <td><a class="copy-coupon" href="javascript:;" @click="copyText(\'.copy-coupon\',\'https://uland.taobao.com/quan/detail?sellerId=\'+goods.goods.user_num_id+\'&amp;activityId=\'+item.activity_id)">复制</a></td>\
-                            <td><a href="javascript:;" @click="couponDraw(\'https://uland.taobao.com/quan/detail?sellerId=\'+goods.goods.user_num_id+\'&amp;activityId=\'+item.activity_id,500,400)">领券</a></td>\
+                            <td><a class="copy-coupon" href="javascript:;" @click="copyText(\'.copy-coupon\',\'https://uland.taobao.com/quan/detail?sellerId=\'+goods.goods.seller_id+\'&amp;activityId=\'+item.activity_id)">复制</a></td>\
+                            <td><a href="javascript:;" @click="couponDraw(\'https://uland.taobao.com/quan/detail?sellerId=\'+goods.goods.seller_id+\'&amp;activityId=\'+item.activity_id,500,400)">领券</a></td>\
                             <!---->\
                         </tr>\
                         <tr v-if="goodsCoupon">\
@@ -358,7 +357,8 @@ var tools_coupon = '\
 </div>\
 ';
 
-var tools_volume = '\
+var tools_volume =
+  '\
 <div class="tier-special">\
     <div class="drop">\
         <p>月支出佣金：<span>5576.32元</span></p>\
@@ -434,7 +434,8 @@ var tools_volume = '\
 </div>\
 ';
 
-var tools_wenan = '\
+var tools_wenan =
+  '\
 <div class="tier">\
     <div class="akey-copy">\
         <div class="akey-copy-content"><b></b>\
@@ -444,9 +445,9 @@ var tools_wenan = '\
                 <p v-if="goods && goods.price">【原价】{{goods.price.price}}</p>\
                 <p v-if="goods && goods.price">【到手价】{{goods.price.buy_price}}</p>\
                 <p  v-if="goods && goods.goods && goods.coupon" class="akey-copy-content-coupon-url">领券:\
-                    https://uland.taobao.com/quan/detail?sellerId={{goods.goods.user_num_id}}&amp;activityId={{goods.coupon.activity_id}}\
+                    https://uland.taobao.com/quan/detail?sellerId={{goods.goods.seller_id}}&amp;activityId={{goods.coupon.activity_id}}\
                 </p>\
-                <p v-if="goods && goods.goods">下单: https://detail.tmall.com/item.htm?id={{goods.goods.num_iid}}</p>\
+                <p v-if="goods && goods.goods">下单: https://detail.tmall.com/item.htm?id={{goods.goods.item_id}}</p>\
                 <p v-if="goods && goods.goods">已抢 {{goods.goods.volume_str}}+ 件，到手好价，需要的可以去看看！</p>\
             </div>\
         </div>\
@@ -454,7 +455,8 @@ var tools_wenan = '\
     </div>\
     ';
 
-var tools_shop = '\
+var tools_shop =
+  '\
     <div class="tier">\
     <div style="">\
         <div class="store">\
@@ -482,7 +484,7 @@ var tools_shop = '\
                     <!---->\
                 </li>\
                 <li class="info" v-if="goods && goods.goods" >\
-                    <p>登录无效？访问可能受限，点此<a :href="\'http://pub.alimama.com/myunion.htm?#!/promo/self/shop_detail?userNumberId=\'+goods.goods.user_num_id"\
+                    <p>登录无效？访问可能受限，点此<a :href="\'http://pub.alimama.com/myunion.htm?#!/promo/self/shop_detail?userNumberId=\'+goods.goods.seller_id"\
                             target="_blank" style="color: rgb(57, 156, 255);">解除限制</a></p>\
                 </li>\
             </ul>\
@@ -491,7 +493,8 @@ var tools_shop = '\
 </div>\
 ';
 
-var tools_platform = '\
+var tools_platform =
+  '\
 <div class="tier">\
     <div class="plats">\
         <ul>\
@@ -531,7 +534,8 @@ var tools_platform = '\
 </div>\
 ';
 
-var tools_transform = '\
+var tools_transform =
+  '\
 <div class="tools_transform hide">\
     <div class="spin">\
         <div class="l-box">\
@@ -598,7 +602,8 @@ var tools_transform = '\
 </div>\
 ';
 
-var tools_tools = '\
+var tools_tools =
+  '\
 <div class="chain hide">\
     <div class="setting qing-clear">\
         <p>设置话术模板：</p>\
@@ -654,50 +659,54 @@ http://uland.taobao.com/coupon/edetail?activityId=xxxxxxx" class="link" v-model=
 </div>\
 ';
 
-var tools_tools_result = '\
+var tools_tools_result =
+  '\
 <div class="chain-result hide">\
-    <div class="address"><span>链接地址：</span><input class="tools-input-token" v-if="toolsData.goods && toolsData.goods.click" type="text" v-model="toolsData.goods.click.tao_token"><a href="javascript:;" class="tools-a-token" @click="copyBtn(\'.tools-a-token\',\'.tools-input-token\')">复制</a></div>\
+    <div class="address"><span>链接地址：</span><input class="tools-input-token" v-if="toolsData.goods && toolsData.goods.click" type="text" v-model="toolsData.goods.click.password_token"><a href="javascript:;" class="tools-a-token" @click="copyBtn(\'.tools-a-token\',\'.tools-input-token\')">复制</a></div>\
     <div class="password"><span>淘口令：</span><input class="tools-input-url" v-if="toolsData.goods && toolsData.goods.click" type="text" v-model="toolsData.goods.click.short_url"><a href="javascript:;" class="tools-a-url" @click="copyBtn(\'.tools-a-url\',\'.tools-input-url\')">复制</a></div>\
     <div contenteditable="true" id="qing-chain-content" class="content" v-html="toolsData.content"></div>\
     <a href="javascript:;" class="tools-copy" @click="copyBtn(\'.tools-copy\',\'#qing-chain-content\')">复制</a>\
 </div>\
 ';
 
-var tools_login = '\
+var tools_login =
+  '\
 <div class="hpt-login hide">\
 <p>请登录后并刷新页面</p> <a href="https://www.haopintui.net/check_login" @click="openHptLogin" target="_blank">先检查登陆</a>\
 </div>\
 ';
 
-Vue.component('hpt-coupon', {
-    props: ['value', 'goods', 'id', 'campaignItems'],
-    data: function () {
-        return {
-            query: {
-                coupons: false,
-            },
-            coupons: [],
-            goodsCoupon: null,
-            shopInfo: null,
-            trends: 0,
-            pidList: [],
-            transformData: {
-                picIndex: 0,
-                transformIndex: 0,
-                pidView: false,
-                pidIndex: 0,
-                shortLink: '{二合一链接}',
-                token: '{淘口令}',
-            },
-            toolsData: {
-                defaultTemplate: '\
+Vue.component("hpt-coupon", {
+  props: ["value", "goods", "id", "campaignItems"],
+  data: function () {
+    return {
+      query: {
+        coupons: false,
+      },
+      coupons: [],
+      goodsCoupon: null,
+      shopInfo: null,
+      trends: 0,
+      pidList: [],
+      transformData: {
+        picIndex: 0,
+        transformIndex: 0,
+        pidView: false,
+        pidIndex: 0,
+        shortLink: "{二合一链接}",
+        token: "{淘口令}",
+      },
+      toolsData: {
+        defaultTemplate:
+          "\
 {短标题}\r\n\
 券后【{券后价}元】包邮秒杀\r\n\
 --------------------------------------\r\n\
 {介绍}\r\n\
 --------------------------------------\r\n\
-领券下单链接: {二合一短链接},或者复制这段描述{淘口令}，打开☞手机淘◇寳☜即可领券购买！',
-                template: '\
+领券下单链接: {二合一短链接},或者复制这段描述{淘口令}，打开☞手机淘◇寳☜即可领券购买！",
+        template:
+          "\
 {短标题} \r\n\
 券后【{券后价}元】包邮秒杀 \r\n\
 领券下单: {二合一短链接} \r\n\
@@ -705,668 +714,859 @@ Vue.component('hpt-coupon', {
 {介绍} \r\n\
 --------------------------------------\r\n\
 本群专享优惠！已抢{销量}件！\r\n\
-下单方式：复制这段描述{淘口令}，打开☞手机淘◇寳☜即可领券购买！',
-                goods: null,
-                api: null,
-                layerOpenIndex: 0,
-                content: '',
-                contentCopy: '',
+下单方式：复制这段描述{淘口令}，打开☞手机淘◇寳☜即可领券购买！",
+        goods: null,
+        api: null,
+        layerOpenIndex: 0,
+        content: "",
+        contentCopy: "",
+      },
+    };
+  },
+  mounted: function () {
+    this.init();
+  },
+  methods: {
+    init: function () {
+      this.query_shop();
+      this.query_pidList();
+      this.initTemplate();
+    },
+    query_coupons: function () {
+      var $this = this;
+      if ($this.goods && $this.goods.goods) {
+        ajaxPost(
+          "",
+          {
+            action: "coupon",
+            id: this.goods.goods.item_id,
+          },
+          function (res) {
+            if (res.data && res.data.items) {
+              $this.coupons = res.data.items;
             }
+            if (res.data && res.data.goods_coupon) {
+              $this.goodsCoupon = res.data.goods_coupon;
+            }
+          }
+        );
+      }
+    },
+    query_shop: function () {
+      var $this = this;
+      if ($this.goods && $this.goods.goods && !this.shopInfo) {
+        chrome.extension.sendMessage(
+          {
+            greeting: "getAjax",
+            url:
+              "https://pub.alimama.com/shopdetail/shopinfo.json?oriMemberId=" +
+              this.goods.goods.seller_id +
+              "&t=1578739654063&pvid=53_171.43.249.195_1466_1578739653470&_tb_token_=" +
+              config.cookies.token +
+              "&_input_charset=utf-8",
+          },
+          function (response) {
+            if (response && response.content) {
+              var data = JSON.parse(response.content);
+              if (data && data.data && data.data.card.jsonData) {
+                $this.shopInfo = {
+                  weixin:
+                    data.data.card.jsonData["微信"] != null
+                      ? data.data.card.jsonData["微信"]
+                      : "",
+                  qq:
+                    data.data.card.jsonData["QQ"] != null
+                      ? data.data.card.jsonData["QQ"]
+                      : "",
+                  wangwang:
+                    data.data.card.jsonData["旺旺"] != null
+                      ? data.data.card.jsonData["旺旺"]
+                      : "",
+                };
+              }
+            }
+          }
+        );
+      }
+    },
+    query_pidList: function () {
+      var $this = this;
+      if (config.cookies.token) {
+        var url =
+          "https://pub.alimama.com/common/adzone/adzoneManage.json?tab=3&toPage=1&perPageSize=40&gcid=8&t=1578815409408&_tb_token_=" +
+          config.cookies.token +
+          "&_input_charset=utf-8";
+        chrome.extension.sendMessage(
+          { greeting: "getAjax", url: url },
+          function (response) {
+            if (response && response.content) {
+              var data = JSON.parse(response.content);
+              if (data && data.data && data.data.pagelist) {
+                var pidList = [];
+                for (var i = 0; i < data.data.pagelist.length; i++) {
+                  var pidItem = data.data.pagelist[i];
+                  pidList.push({
+                    name: pidItem["name"],
+                    pid: pidItem["adzonePid"],
+                    adzoneid: pidItem["adzoneid"],
+                    siteid: pidItem["siteid"],
+                    memberid: pidItem["memberid"],
+                  });
+                }
+                $this.pidList = pidList;
+              }
+            }
+          }
+        );
+      } else {
+      }
+    },
+    couponDraw: function (url, width, height) {
+      layer.open({
+        type: 2,
+        area: [width + "px", height + "px"],
+        fixed: false, //不固定
+        shadeClose: true,
+        maxmin: true,
+        content: url,
+      });
+    },
+    changTrends: function (trends) {
+      $this = this;
+      $this.trends = trends;
+    },
+    transform: function () {
+      layer.open({
+        type: 1,
+        title: false,
+        // closeBtn: 0,
+        area: ["auto"],
+        skin: "layui-layer-nobg", //没有背景色
+        shadeClose: true,
+        content: $(".tools_transform"),
+        zIndex: 99900,
+      });
+    },
+    tools: function () {
+      this.toolsData.api = null;
+      this.toolsData.goods = null;
+      this.toolsData.layerOpenIndex = layer.open({
+        type: 1,
+        title: false,
+        // closeBtn: 0,
+        area: ["auto"],
+        skin: "layui-layer-nobg", //没有背景色
+        shadeClose: true,
+        content: $(".chain"),
+      });
+    },
+    copyBtn: function (clickClass, copyClass) {
+      //复制公共方法
+      var self = this;
+      var clipboard = new ClipboardJS(clickClass, {
+        target: function () {
+          return document.querySelector(copyClass);
+        },
+      });
+      clipboard.on("success", function (e) {
+        layer.msg("复制成功！", {
+          shade: 0.4,
+          time: 1500,
+          shadeClose: true,
+          zIndex: 100000000000,
+        });
+        e.clearSelection();
+        clipboard.destroy();
+      });
+      clipboard.on("error", function (e) {
+        layer.msg(
+          "由于您的浏览器不兼容或当前网速较慢，复制失败，请手动复制或更换主流浏览器！",
+          {
+            icon: 2,
+            zIndex: 100000000000,
+          }
+        );
+      });
+    },
+    copyText: function (clickClass, content) {
+      var clipboard = new ClipboardJS(clickClass, {
+        text: function () {
+          return content;
+        },
+      });
+      clipboard.on("success", function () {
+        layer.msg("复制成功！", {
+          shade: 0.4,
+          time: 1500,
+          shadeClose: true,
+          zIndex: 100000000000,
+        });
+        clipboard.destroy();
+      });
+      clipboard.on("error", function () {
+        layer.msg(
+          "由于您的浏览器不兼容或当前网速较慢，复制失败，请手动复制或更换主流浏览器！",
+          {
+            icon: 2,
+            zIndex: 100000000000,
+          }
+        );
+      });
+    },
+    changePic: function (picIndex) {
+      $this = this;
+      $this.transformData.picIndex = picIndex;
+    },
+    changePid: function (pidIndex) {
+      $this = this;
+      $this.transformData.pidIndex = pidIndex;
+      $this.transformData.pidView = false;
+    },
+    changeTransform: function (transformIndex) {
+      $this = this;
+      $this.transformData.transformIndex = transformIndex;
+    },
+    selectPid: function () {
+      this.transformData.pidView = !this.transformData.pidView;
+    },
+    transformUrl: function () {
+      var $this = this;
+      var pid = "";
+      if (this.pidList && this.pidList.length > this.transformData.pidIndex) {
+        pid = this.pidList[this.transformData.pidIndex]["pid"];
+      }
+      if (pid && pid != "") {
+        ajaxPost(
+          "",
+          {
+            action: "item",
+            method: "transform",
+            item_id: this.goods.goods.item_id,
+            platform_type: this.goods.goods.platform_type,
+            pid: pid,
+          },
+          function (res) {
+            if (res.data && res.data.api && res.data.api.password_token) {
+              $this.transformData.token = res.data.api.password_token;
+            }
+            if (res.data && res.data.api && res.data.api.short_url) {
+              $this.transformData.shortLink = res.data.api.short_url;
+            }
+            if (res.code > 0) {
+              if (res.code == 100) {
+                $this.openLogin();
+              } else {
+                layer.msg(res.message, {
+                  shade: 0.4,
+                  time: 1500,
+                  shadeClose: true,
+                  zIndex: 100000000000,
+                });
+              }
+            }
+          }
+        );
+      } else {
+        layer.msg("请选择广告位", {
+          shade: 0.4,
+          time: 1500,
+          shadeClose: true,
+          zIndex: 100000000000,
+        });
+      }
+    },
+    transformCopy: function () {
+      this.copyBtn(".copy-transform", "#qing-spin-copy");
+    },
+    transformContent: function () {
+      var $this = this;
+      var pid = "";
+      if (this.pidList && this.pidList.length > this.transformData.pidIndex) {
+        pid = this.pidList[this.transformData.pidIndex]["pid"];
+      }
+      if (pid && pid != "") {
+        ajaxPost(
+          "",
+          {
+            action: "item",
+            method: "tools",
+            template: this.toolsData.template,
+            content: this.toolsData.contentCopy,
+            pid: pid,
+          },
+          function (res) {
+            if (res.data && res.data.goods && res.data.goods.goods) {
+              $this.toolsData.goods = res.data.goods;
+            }
+            if (res.data && res.data.api && res.data.api.password_token) {
+              $this.toolsData.api = res.data.api;
+            }
+            if ($this.toolsData.api && $this.toolsData.goods) {
+              var pic_url =
+                "https://img.marsnews.work/imgcdn/" +
+                $.md5("" + $this.toolsData.goods.goods.pic_url) +
+                ".jpg?src=" +
+                encodeURIComponent($this.toolsData.goods.goods.pic_url);
+
+              var content = $this.toolsData.template.replace(
+                /\{标题\}/g,
+                $this.toolsData.goods.goods.title
+              );
+              content = content.replace(
+                /\{短标题\}/g,
+                $this.toolsData.goods.goods.title
+              );
+              content = content.replace(
+                /\{在售价\}/g,
+                parseFloat($this.toolsData.goods.price.price)
+              );
+              content = content.replace(
+                /\{券后价\}/g,
+                parseFloat($this.toolsData.goods.price.buy_price)
+              );
+              content = content.replace(
+                /\{推荐语\}/g,
+                $this.toolsData.goods.goods.comment
+              );
+              content = content.replace(
+                /\{介绍\}/g,
+                $this.toolsData.goods.goods.comment
+              );
+              content = content.replace(
+                /\{券额\}/g,
+                parseFloat($this.toolsData.goods.coupon.coupon_money)
+              );
+              content = content.replace(
+                /\{图片\}/g,
+                '<img src="' + pic_url + '" width="115" height="115">'
+              );
+              content = content.replace(
+                /\{淘口令\}/g,
+                $this.toolsData.goods.click.password_token
+              );
+              content = content.replace(
+                /\{二合一\}/g,
+                $this.toolsData.goods.click.short_url
+              );
+              content = content.replace(
+                /\{二合一长链接\}/g,
+                $this.toolsData.goods.click.url
+              );
+              content = content.replace(
+                /\{二合一短链接\}/g,
+                $this.toolsData.goods.click.short_url
+              );
+              content = content.replace(
+                /\{二合一淘点金短链接\}/g,
+                $this.toolsData.goods.click.short_url
+              );
+              content = content.replace(
+                /\{二合一淘口令\}/g,
+                $this.toolsData.goods.click.password_token
+              );
+              content = content.replace(
+                /\{店铺类型\}/g,
+                $this.toolsData.goods.goods.user_type_name
+              );
+              content = content.replace(
+                /\{原价\}/g,
+                $this.toolsData.goods.price.price
+              );
+              content = content.replace(
+                /\{销量\}/g,
+                $this.toolsData.goods.goods.volume
+              );
+              content = content.replace(
+                /\{佣金比例\}/g,
+                $this.toolsData.goods.click.commission_rate
+              );
+              content = content.replace(
+                /\{领券链接\}/g,
+                $this.toolsData.goods.click.short_url
+              );
+              content = content.replace(
+                /\{券满\}/g,
+                $this.toolsData.goods.coupon.condition
+              );
+              content = content.replace(
+                /\{优惠券剩余数量\}/g,
+                $this.toolsData.goods.coupon.Token
+              );
+              content = content.replace(
+                /\{优惠券有效限期\}/g,
+                $this.toolsData.goods.coupon.endTime
+              );
+              $this.toolsData.content = content;
+
+              layer.close($this.toolsData.layerOpenIndex);
+              layer.open({
+                type: 1,
+                title: false,
+                // closeBtn: 0,
+                area: ["auto"],
+                skin: "layui-layer-nobg", //没有背景色
+                shadeClose: true,
+                content: $(".chain-result"),
+              });
+            } else {
+              if (res.message && res.code > 0) {
+                layer.msg(res.message, {
+                  shade: 0.4,
+                  time: 1500,
+                  shadeClose: true,
+                  zIndex: 100000000000,
+                });
+              }
+            }
+          }
+        );
+      } else {
+        layer.msg("请选择广告位", {
+          shade: 0.4,
+          time: 1500,
+          shadeClose: true,
+          zIndex: 100000000000,
+        });
+      }
+    },
+    openAlimama: function () {
+      layer.confirm(
+        "您是否已经成功登录淘宝联盟？",
+        {
+          icon: 3,
+          btn: ["是", "否"],
+          zIndex: 100000000001,
+        },
+        function () {
+          window.location.reload();
         }
+      );
     },
-    mounted: function () {
-        this.init();
+    insert: function (myValue) {
+      var myField = document.getElementById("content_tools");
+      var content = "";
+      if (myField.selectionStart || myField.selectionStart === 0) {
+        var startPos = myField.selectionStart;
+        var endPos = myField.selectionEnd;
+        content =
+          myField.value.substring(0, startPos) +
+          myValue +
+          myField.value.substring(endPos, myField.value.length);
+        myField.focus();
+        myField.setSelectionRange(
+          endPos + myValue.length,
+          endPos + myValue.length
+        );
+      } else {
+        content += myValue;
+      }
+      this.toolsData.template = content;
     },
-    methods: {
-        init: function () {
-            this.query_shop();
-            this.query_pidList();
-            this.initTemplate();
-        },
-        query_coupons: function () {
-            var $this = this;
-            if ($this.goods && $this.goods.goods) {
-                ajaxPost("", {
-                    action: 'coupon',
-                    id: this.goods.goods.num_iid,
-                }, function (res) {
-                    if (res.data && res.data.items) {
-                        $this.coupons = res.data.items;
-                    }
-                    if (res.data && res.data.goods_coupon) {
-                        $this.goodsCoupon = res.data.goods_coupon;
-                    }
-                })
-            }
-        },
-        query_shop: function () {
-            var $this = this;
-            if ($this.goods && $this.goods.goods && !this.shopInfo) {
-                chrome.extension.sendMessage({ greeting: "getAjax", url: 'https://pub.alimama.com/shopdetail/shopinfo.json?oriMemberId=' + this.goods.goods.user_num_id + '&t=1578739654063&pvid=53_171.43.249.195_1466_1578739653470&_tb_token_=' + config.cookies.token + '&_input_charset=utf-8' }, function (response) {
-                    if (response && response.content) {
-                        var data = JSON.parse(response.content);
-                        if (data && data.data && data.data.card.jsonData) {
-                            $this.shopInfo = {
-                                weixin: data.data.card.jsonData['微信'] != null ? data.data.card.jsonData['微信'] : '',
-                                qq: data.data.card.jsonData['QQ'] != null ? data.data.card.jsonData['QQ'] : '',
-                                wangwang: data.data.card.jsonData['旺旺'] != null ? data.data.card.jsonData['旺旺'] : '',
-                            };
-                        }
-                    }
-                });
-            }
-        },
-        query_pidList: function () {
-            var $this = this;
-            if (config.cookies.token) {
-                var url = 'https://pub.alimama.com/common/adzone/adzoneManage.json?tab=3&toPage=1&perPageSize=40&gcid=8&t=1578815409408&_tb_token_=' + config.cookies.token + '&_input_charset=utf-8';
-                chrome.extension.sendMessage({ greeting: "getAjax", url: url }, function (response) {
-                    if (response && response.content) {
-                        var data = JSON.parse(response.content);
-                        if (data && data.data && data.data.pagelist) {
-                            var pidList = [];
-                            for (var i = 0; i < data.data.pagelist.length; i++) {
-                                var pidItem = data.data.pagelist[i];
-                                pidList.push({
-                                    name: pidItem['name'],
-                                    pid: pidItem['adzonePid'],
-                                    adzoneid: pidItem['adzoneid'],
-                                    siteid: pidItem['siteid'],
-                                    memberid: pidItem['memberid'],
-                                });
-                            }
-                            $this.pidList = pidList;
-                        }
-                    }
-                });
-            } else {
-
-            }
-        },
-        couponDraw: function (url, width, height) {
-            layer.open({
-                type: 2,
-                area: [width + 'px', height + 'px'],
-                fixed: false, //不固定
-                shadeClose: true,
-                maxmin: true,
-                content: url
-            });
-        },
-        changTrends: function (trends) {
-            $this = this;
-            $this.trends = trends;
-        },
-        transform: function () {
-            layer.open({
-                type: 1,
-                title: false,
-                // closeBtn: 0,
-                area: ['auto'],
-                skin: 'layui-layer-nobg', //没有背景色
-                shadeClose: true,
-                content: $('.tools_transform'),
-                zIndex: 99900
-            });
-        },
-        tools: function () {
-            this.toolsData.api = null;
-            this.toolsData.goods = null;
-            this.toolsData.layerOpenIndex = layer.open({
-                type: 1,
-                title: false,
-                // closeBtn: 0,
-                area: ['auto'],
-                skin: 'layui-layer-nobg', //没有背景色
-                shadeClose: true,
-                content: $('.chain')
-            });
-        },
-        copyBtn: function (clickClass, copyClass) { //复制公共方法
-            var self = this;
-            var clipboard = new ClipboardJS(clickClass, {
-                target: function () {
-                    return document.querySelector(copyClass);
-                }
-            });
-            clipboard.on('success', function (e) {
-                layer.msg('复制成功！', {
-                    shade: 0.4,
-                    time: 1500,
-                    shadeClose: true,
-                    zIndex: 100000000000
-                });
-                e.clearSelection();
-                clipboard.destroy();
-            });
-            clipboard.on('error', function (e) {
-                layer.msg('由于您的浏览器不兼容或当前网速较慢，复制失败，请手动复制或更换主流浏览器！', {
-                    icon: 2,
-                    zIndex: 100000000000
-                });
-            });
-        },
-        copyText: function (clickClass, content) {
-            var clipboard = new ClipboardJS(clickClass, {
-                text: function () {
-                    return content;
-                }
-            });
-            clipboard.on('success', function () {
-                layer.msg('复制成功！', {
-                    shade: 0.4,
-                    time: 1500,
-                    shadeClose: true,
-                    zIndex: 100000000000
-                });
-                clipboard.destroy();
-            });
-            clipboard.on('error', function () {
-                layer.msg('由于您的浏览器不兼容或当前网速较慢，复制失败，请手动复制或更换主流浏览器！', {
-                    icon: 2,
-                    zIndex: 100000000000
-                });
-            });
-        },
-        changePic: function (picIndex) {
-            $this = this;
-            $this.transformData.picIndex = picIndex;
-        },
-        changePid: function (pidIndex) {
-            $this = this;
-            $this.transformData.pidIndex = pidIndex;
-            $this.transformData.pidView = false;
-        },
-        changeTransform: function (transformIndex) {
-            $this = this;
-            $this.transformData.transformIndex = transformIndex;
-        },
-        selectPid: function () {
-            this.transformData.pidView = !this.transformData.pidView;
-        },
-        transformUrl: function () {
-            var $this = this;
-            var pid = '';
-            if (this.pidList && this.pidList.length > this.transformData.pidIndex) {
-                pid = this.pidList[this.transformData.pidIndex]['pid'];
-            }
-            if (pid && pid != '') {
-                ajaxPost("", {
-                    action: 'item',
-                    method: 'transform',
-                    num_iid: this.goods.goods.num_iid,
-                    pid: pid,
-                }, function (res) {
-                    if (res.data && res.data.api && res.data.api.tao_token) {
-                        $this.transformData.token = res.data.api.tao_token;
-                    }
-                    if (res.data && res.data.api && res.data.api.short_url) {
-                        $this.transformData.shortLink = res.data.api.short_url;
-                    }
-                    if (res.code > 0) {
-                        if (res.code == 100) {
-                            $this.openLogin();
-                        } else {
-                            layer.msg(res.message, {
-                                shade: 0.4,
-                                time: 1500,
-                                shadeClose: true,
-                                zIndex: 100000000000
-                            });
-                        }
-                    }
-                })
-            } else {
-                layer.msg('请选择广告位', {
-                    shade: 0.4,
-                    time: 1500,
-                    shadeClose: true,
-                    zIndex: 100000000000
-                });
-            }
-        },
-        transformCopy: function () {
-            this.copyBtn('.copy-transform', '#qing-spin-copy');
-        },
-        transformContent: function () {
-            var $this = this;
-            var pid = '';
-            if (this.pidList && this.pidList.length > this.transformData.pidIndex) {
-                pid = this.pidList[this.transformData.pidIndex]['pid'];
-            }
-            if (pid && pid != '') {
-                ajaxPost("", {
-                    action: 'item',
-                    method: 'tools',
-                    template: this.toolsData.template,
-                    content: this.toolsData.contentCopy,
-                    pid: pid,
-                }, function (res) {
-                    if (res.data && res.data.goods && res.data.goods.goods) {
-                        $this.toolsData.goods = res.data.goods;
-                    }
-                    if (res.data && res.data.api && res.data.api.tao_token) {
-                        $this.toolsData.api = res.data.api;
-                    }
-                    if ($this.toolsData.api && $this.toolsData.goods) {
-                        var pic_url = 'https://img.marsnews.work/imgcdn/' + $.md5('' + $this.toolsData.goods.goods.pic_url) + '.jpg?src=' + encodeURIComponent($this.toolsData.goods.goods.pic_url);
-
-                        var content = $this.toolsData.template.replace(/\{标题\}/g, $this.toolsData.goods.goods.title);
-                        content = content.replace(/\{短标题\}/g, $this.toolsData.goods.goods.title);
-                        content = content.replace(/\{在售价\}/g, parseFloat($this.toolsData.goods.price.price));
-                        content = content.replace(/\{券后价\}/g, parseFloat($this.toolsData.goods.price.buy_price));
-                        content = content.replace(/\{推荐语\}/g, $this.toolsData.goods.goods.comment);
-                        content = content.replace(/\{介绍\}/g, $this.toolsData.goods.goods.comment);
-                        content = content.replace(/\{券额\}/g, parseFloat($this.toolsData.goods.coupon.coupon_money));
-                        content = content.replace(/\{图片\}/g, '<img src="' + pic_url + '" width="115" height="115">');
-                        content = content.replace(/\{淘口令\}/g, $this.toolsData.goods.click.tao_token);
-                        content = content.replace(/\{二合一\}/g, $this.toolsData.goods.click.short_url);
-                        content = content.replace(/\{二合一长链接\}/g, $this.toolsData.goods.click.url);
-                        content = content.replace(/\{二合一短链接\}/g, $this.toolsData.goods.click.short_url);
-                        content = content.replace(/\{二合一淘点金短链接\}/g, $this.toolsData.goods.click.short_url);
-                        content = content.replace(/\{二合一淘口令\}/g, $this.toolsData.goods.click.tao_token);
-                        content = content.replace(/\{店铺类型\}/g, $this.toolsData.goods.goods.user_type_name);
-                        content = content.replace(/\{原价\}/g, $this.toolsData.goods.price.price);
-                        content = content.replace(/\{销量\}/g, $this.toolsData.goods.goods.volume);
-                        content = content.replace(/\{佣金比例\}/g, $this.toolsData.goods.click.commission_rate);
-                        content = content.replace(/\{领券链接\}/g, $this.toolsData.goods.click.short_url);
-                        content = content.replace(/\{券满\}/g, $this.toolsData.goods.coupon.condition);
-                        content = content.replace(/\{优惠券剩余数量\}/g, $this.toolsData.goods.coupon.Token);
-                        content = content.replace(/\{优惠券有效限期\}/g, $this.toolsData.goods.coupon.endTime);
-                        $this.toolsData.content = content;
-
-                        layer.close($this.toolsData.layerOpenIndex);
-                        layer.open({
-                            type: 1,
-                            title: false,
-                            // closeBtn: 0,
-                            area: ['auto'],
-                            skin: 'layui-layer-nobg', //没有背景色
-                            shadeClose: true,
-                            content: $('.chain-result')
-                        });
-                    } else {
-                        if (res.message && res.code > 0) {
-                            layer.msg(res.message, {
-                                shade: 0.4,
-                                time: 1500,
-                                shadeClose: true,
-                                zIndex: 100000000000
-                            });
-                        }
-                    }
-                })
-            } else {
-                layer.msg('请选择广告位', {
-                    shade: 0.4,
-                    time: 1500,
-                    shadeClose: true,
-                    zIndex: 100000000000
-                });
-            }
-        },
-        openAlimama: function () {
-            layer.confirm('您是否已经成功登录淘宝联盟？', {
-                icon: 3,
-                btn: ['是', '否'],
-                zIndex: 100000000001
-            }, function () {
-                window.location.reload();
-            });
-        },
-        insert: function (myValue) {
-            var myField = document.getElementById('content_tools')
-            var content = ''
-            if (myField.selectionStart || myField.selectionStart === 0) {
-                var startPos = myField.selectionStart
-                var endPos = myField.selectionEnd
-                content = myField.value.substring(0, startPos) + myValue + myField.value.substring(endPos, myField.value.length)
-                myField.focus()
-                myField.setSelectionRange(endPos + myValue.length, endPos + myValue.length)
-            } else {
-                content += myValue
-            }
-            this.toolsData.template = content;
-        },
-        saveTemplate: function () {
-            chrome.storage.local.set({ 'template': this.toolsData.template }, function () { });
-        },
-        initTemplate: function () {
-            chrome.storage.local.get('template', function (result) {
-                if (result['template'] && result['template'] != '') {
-                    this.toolsData.template = result['template'];
-                }
-            });
-        },
-        restTemplate: function () {
-            this.toolsData.template = this.toolsData.defaultTemplate;
-        },
-        clearTemplate: function () {
-            this.toolsData.template = '';
-        },
-        openLogin: function () {
-            layer.open({
-                type: 1,
-                title: false,
-                // closeBtn: 0,
-                area: ['auto'],
-                skin: 'layui-layer-nobg', //没有背景色
-                shadeClose: false,
-                shade: 0,
-                content: $('.hpt-login'),
-                zIndex: 100000000009
-            });
-        },
-        openHptLogin: function () {
-
+    saveTemplate: function () {
+      chrome.storage.local.set(
+        { template: this.toolsData.template },
+        function () {}
+      );
+    },
+    initTemplate: function () {
+      chrome.storage.local.get("template", function (result) {
+        if (result["template"] && result["template"] != "") {
+          this.toolsData.template = result["template"];
         }
+      });
     },
-    computed: {
-        alimamaUrl: function alimamaUrl () {
-            return 'https://pub.alimama.com/promo/search/index.htm?fn=search&q=' + encodeURIComponent(window.location.href);
-        },
-        picUrl: function picUrl () {
-            if (this.goods && this.goods.goods) {
-                return 'https://img.marsnews.work/imgcdn/' + $.md5('' + this.goods.goods.pic_url) + '.jpg?src=' + encodeURIComponent(this.goods.goods.pic_url);
-            } else {
-                return '';
-            }
-        },
-        transformPreview: function transformPreview () {
-            if (this.goods && this.goods.goods) {
-                return 'https://img.marsnews.work/imgcdn/' + $.md5('' + this.goods.goods.p_list[this.transformData.picIndex]) + '.jpg?src=' + encodeURIComponent(this.goods.goods.p_list[this.transformData.picIndex]);
-            } else {
-                return '';
-            }
-        },
-        transformPid: function transformPid () {
-            if (this.pidList && this.pidList.length > this.transformData.pidIndex) {
-                return this.pidList[this.transformData.pidIndex]['name'] + ":" + this.pidList[this.transformData.pidIndex]['pid'];
-            } else {
-                return '';
-            }
-        },
+    restTemplate: function () {
+      this.toolsData.template = this.toolsData.defaultTemplate;
     },
-    template: '<ul class="l">' +
-        '<li><a href="https://www.haopintui.net" target="_blank" class="logo"></a>' +
-        tools_transform +
-        tools_login +
-        '</li>' +
-        '<li :class="[value == 1?\'hide\':\'\']">' +
-        '<div class="sign-2"><a href="javascript:;" class="bulk"><i class="icon i-1"></i>最高佣金\
+    clearTemplate: function () {
+      this.toolsData.template = "";
+    },
+    openLogin: function () {
+      layer.open({
+        type: 1,
+        title: false,
+        // closeBtn: 0,
+        area: ["auto"],
+        skin: "layui-layer-nobg", //没有背景色
+        shadeClose: false,
+        shade: 0,
+        content: $(".hpt-login"),
+        zIndex: 100000000009,
+      });
+    },
+    openHptLogin: function () {},
+  },
+  computed: {
+    alimamaUrl: function alimamaUrl() {
+      return (
+        "https://pub.alimama.com/promo/search/index.htm?fn=search&q=" +
+        encodeURIComponent(window.location.href)
+      );
+    },
+    picUrl: function picUrl() {
+      if (this.goods && this.goods.goods) {
+        return (
+          "https://img.marsnews.work/imgcdn/" +
+          $.md5("" + this.goods.goods.pic_url) +
+          ".jpg?src=" +
+          encodeURIComponent(this.goods.goods.pic_url)
+        );
+      } else {
+        return "";
+      }
+    },
+    transformPreview: function transformPreview() {
+      if (this.goods && this.goods.goods) {
+        return (
+          "https://img.marsnews.work/imgcdn/" +
+          $.md5("" + this.goods.goods.p_list[this.transformData.picIndex]) +
+          ".jpg?src=" +
+          encodeURIComponent(
+            this.goods.goods.p_list[this.transformData.picIndex]
+          )
+        );
+      } else {
+        return "";
+      }
+    },
+    transformPid: function transformPid() {
+      if (this.pidList && this.pidList.length > this.transformData.pidIndex) {
+        return (
+          this.pidList[this.transformData.pidIndex]["name"] +
+          ":" +
+          this.pidList[this.transformData.pidIndex]["pid"]
+        );
+      } else {
+        return "";
+      }
+    },
+  },
+  template:
+    '<ul class="l">' +
+    '<li><a href="https://www.haopintui.net" target="_blank" class="logo"></a>' +
+    tools_transform +
+    tools_login +
+    "</li>" +
+    "<li :class=\"[value == 1?'hide':'']\">" +
+    '<div class="sign-2"><a href="javascript:;" class="bulk"><i class="icon i-1"></i>最高佣金\
         <span v-if="goods && goods.click">{{goods.click.commission_rate}}%</span>\
         <span v-else>暂无</span>\
-        </a></div>'+
-        tools_commission +
-        '</li>' +
-        '<li :class="[value == 1?\'hide\':\'\']">' +
-        '<div class="sign-2"><a @mouseover="query_coupons()" href="javascript:;" class="bulk"><i class="icon i-2"></i>优惠券\
+        </a></div>' +
+    tools_commission +
+    "</li>" +
+    "<li :class=\"[value == 1?'hide':'']\">" +
+    '<div class="sign-2"><a @mouseover="query_coupons()" href="javascript:;" class="bulk"><i class="icon i-2"></i>优惠券\
         <span v-if="goods && goods.coupon">{{goods.coupon.coupon_money}}元</span>\
         <span v-else>暂无</span>\
-        </a></div>'+
-        tools_coupon +
-        '</li>' +
-        '<li :class="[value == 1?\'hide\':\'\']">' +
-        '<div class="sign-special">' +
-        '<a href="javascript:;" class="bulk"><i class="icon i-3"></i>月推广\
+        </a></div>' +
+    tools_coupon +
+    "</li>" +
+    "<li :class=\"[value == 1?'hide':'']\">" +
+    '<div class="sign-special">' +
+    '<a href="javascript:;" class="bulk"><i class="icon i-3"></i>月推广\
         <span v-if="goods && goods.goods">{{goods.goods.volume}}件</span>\
         <span v-else>暂无</span>\
-        </a>'+
-        tools_volume +
-        '</div>' +
-        '</li>' +
-        '<li  :class="[value == 1?\'hide\':\'\']" style="border-right: none;">' +
-        '\
+        </a>' +
+    tools_volume +
+    "</div>" +
+    "</li>" +
+    "<li  :class=\"[value == 1?'hide':'']\" style=\"border-right: none;\">" +
+    '\
         <a v-if="goods && goods.goods" :href="\'https://www.haopintui.net/quan/\'+goods.goods.id" target="_blank" class="elink">高效转链</a>\
         <a v-else href="javascript:void(0)" class="elink">高效转链</a>\
-        '+
-        '</li>' +
-        '<li :class="[value == 1?\'hide\':\'\']">' +
-        '<a href="javascript:;" @click="transform" class="spin">超级推广</a>' +
-        '</li>' +
-        '<li :class="[value == 1?\'hide\':\'\']">' +
-        '<div class="sign-3 backgreen"><a :href="alimamaUrl" target="_blank">联盟转链</a> <!----></div>' +
-        '</li>' +
-        '<li :class="[value == 1?\'hide\':\'\']">' +
-        '<div class="sign-3 backgreen"><a class="copywri" @click="copyBtn(\'.copywri\',\'#akey-copy-content-copy\')">导购文案</a> <!----></div>' +
-        tools_wenan +
-        '</li>' +
-        '<li :class="[value == 1?\'hide\':\'\']">' +
-        '<div class="sign-3"><a @click="tools()" href="javascript:;">转二合一</a> <!----></div>' +
-        tools_tools +
-        tools_tools_result +
-        '</li>' +
-        '<li :class="[value == 1?\'hide\':\'\']">' +
-        '<div class="sign-3">\
+        ' +
+    "</li>" +
+    "<li :class=\"[value == 1?'hide':'']\">" +
+    '<a href="javascript:;" @click="transform" class="spin">超级推广</a>' +
+    "</li>" +
+    "<li :class=\"[value == 1?'hide':'']\">" +
+    '<div class="sign-3 backgreen"><a :href="alimamaUrl" target="_blank">联盟转链</a> <!----></div>' +
+    "</li>" +
+    "<li :class=\"[value == 1?'hide':'']\">" +
+    '<div class="sign-3 backgreen"><a class="copywri" @click="copyBtn(\'.copywri\',\'#akey-copy-content-copy\')">导购文案</a> <!----></div>' +
+    tools_wenan +
+    "</li>" +
+    "<li :class=\"[value == 1?'hide':'']\">" +
+    '<div class="sign-3"><a @click="tools()" href="javascript:;">转二合一</a> <!----></div>' +
+    tools_tools +
+    tools_tools_result +
+    "</li>" +
+    "<li :class=\"[value == 1?'hide':'']\">" +
+    '<div class="sign-3">\
         <a v-if="shopInfo && shopInfo.qq" class="special" href="javascript:;">有店铺信息</a> \
         <a v-else href="javascript:;">店铺信息</a> \
-        <!----></div>'+
-        tools_shop +
-        '</li>' +
-        '<li :class="[value == 1?\'hide\':\'\']">' +
-        '<div class="sign-3"><a href="https://www.haopintui.net/user/apply/business" target="_blank">放单</a> <!----></div>' +
-        tools_platform +
-        '</li>' +
-        '</ul>'
+        <!----></div>' +
+    tools_shop +
+    "</li>" +
+    "<li :class=\"[value == 1?'hide':'']\">" +
+    '<div class="sign-3"><a href="https://www.haopintui.net/user/apply/business" target="_blank">放单</a> <!----></div>' +
+    tools_platform +
+    "</li>" +
+    "</ul>",
 });
 
-
-Vue.component('hpt-coupon-min', {
-    props: ['value', 'goods', 'id', 'campaignItems'],
-    data: function () {
-        return {
-            query: {
-                coupons: false,
-            },
-            coupons: [],
-            goodsCoupon: null,
-            shopInfo: null,
-            trends: 0,
-            pidList: [],
-        }
+Vue.component("hpt-coupon-min", {
+  props: ["value", "goods", "id", "campaignItems"],
+  data: function () {
+    return {
+      query: {
+        coupons: false,
+      },
+      coupons: [],
+      goodsCoupon: null,
+      shopInfo: null,
+      trends: 0,
+      pidList: [],
+    };
+  },
+  mounted: function () {
+    this.init();
+  },
+  methods: {
+    init: function () {
+      this.query_shop();
+      this.query_pidList();
     },
-    mounted: function () {
-        this.init();
+    query_coupons: function () {
+      var $this = this;
+      if ($this.goods && $this.goods.goods) {
+        ajaxPost(
+          "",
+          {
+            action: "coupon",
+            id: this.goods.goods.item_id,
+          },
+          function (res) {
+            if (res.data && res.data.items) {
+              $this.coupons = res.data.items;
+            }
+            if (res.data && res.data.goods_coupon) {
+              $this.goodsCoupon = res.data.goods_coupon;
+            }
+          }
+        );
+      }
     },
-    methods: {
-        init: function () {
-            this.query_shop();
-            this.query_pidList();
-        },
-        query_coupons: function () {
-            var $this = this;
-            if ($this.goods && $this.goods.goods) {
-                ajaxPost("", {
-                    action: 'coupon',
-                    id: this.goods.goods.num_iid,
-                }, function (res) {
-                    if (res.data && res.data.items) {
-                        $this.coupons = res.data.items;
-                    }
-                    if (res.data && res.data.goods_coupon) {
-                        $this.goodsCoupon = res.data.goods_coupon;
-                    }
-                })
+    query_shop: function () {
+      var $this = this;
+      if ($this.goods && $this.goods.goods && !this.shopInfo) {
+        chrome.extension.sendMessage(
+          {
+            greeting: "getAjax",
+            url:
+              "https://pub.alimama.com/shopdetail/shopinfo.json?oriMemberId=" +
+              this.goods.goods.seller_id +
+              "&t=1578739654063&pvid=53_171.43.249.195_1466_1578739653470&_tb_token_=" +
+              config.cookies.token +
+              "&_input_charset=utf-8",
+          },
+          function (response) {
+            if (response && response.content) {
+              var data = JSON.parse(response.content);
+              if (data && data.data && data.data.card.jsonData) {
+                $this.shopInfo = {
+                  weixin:
+                    data.data.card.jsonData["微信"] != null
+                      ? data.data.card.jsonData["微信"]
+                      : "",
+                  qq:
+                    data.data.card.jsonData["QQ"] != null
+                      ? data.data.card.jsonData["QQ"]
+                      : "",
+                  wangwang:
+                    data.data.card.jsonData["旺旺"] != null
+                      ? data.data.card.jsonData["旺旺"]
+                      : "",
+                };
+              }
             }
-        },
-        query_shop: function () {
-            var $this = this;
-            if ($this.goods && $this.goods.goods && !this.shopInfo) {
-                chrome.extension.sendMessage({ greeting: "getAjax", url: 'https://pub.alimama.com/shopdetail/shopinfo.json?oriMemberId=' + this.goods.goods.user_num_id + '&t=1578739654063&pvid=53_171.43.249.195_1466_1578739653470&_tb_token_=' + config.cookies.token + '&_input_charset=utf-8' }, function (response) {
-                    if (response && response.content) {
-                        var data = JSON.parse(response.content);
-                        if (data && data.data && data.data.card.jsonData) {
-                            $this.shopInfo = {
-                                weixin: data.data.card.jsonData['微信'] != null ? data.data.card.jsonData['微信'] : '',
-                                qq: data.data.card.jsonData['QQ'] != null ? data.data.card.jsonData['QQ'] : '',
-                                wangwang: data.data.card.jsonData['旺旺'] != null ? data.data.card.jsonData['旺旺'] : '',
-                            };
-                        }
-                    }
-                });
-            }
-        },
-        query_pidList: function () {
-            var $this = this;
-            if (config.cookies.token) {
-                var url = 'https://pub.alimama.com/common/adzone/adzoneManage.json?tab=3&toPage=1&perPageSize=40&gcid=8&t=1578815409408&_tb_token_=' + config.cookies.token + '&_input_charset=utf-8';
-                chrome.extension.sendMessage({ greeting: "getAjax", url: url }, function (response) {
-                    if (response && response.content) {
-                        var data = JSON.parse(response.content);
-                        if (data && data.data && data.data.pagelist) {
-                            var pidList = [];
-                            for (var i = 0; i < data.data.pagelist.length; i++) {
-                                var pidItem = data.data.pagelist[i];
-                                pidList.push({
-                                    name: pidItem['name'],
-                                    pid: pidItem['adzonePid'],
-                                    adzoneid: pidItem['adzoneid'],
-                                    siteid: pidItem['siteid'],
-                                    memberid: pidItem['memberid'],
-                                });
-                            }
-                        }
-                    }
-                });
-            } else {
-
-            }
-        },
-        couponDraw: function (url, width, height) {
-            layer.open({
-                type: 2,
-                area: [width + 'px', height + 'px'],
-                fixed: false, //不固定
-                shadeClose: true,
-                maxmin: true,
-                content: url
-            });
-        },
-        changTrends: function (trends) {
-            $this = this;
-            $this.trends = trends;
-        },
-        transform: function () {
-            layer.open({
-                type: 1,
-                title: false,
-                // closeBtn: 0,
-                area: ['auto'],
-                skin: 'layui-layer-nobg', //没有背景色
-                shadeClose: true,
-                content: $('.tools_transform')
-            });
-        },
-        tools: function () {
-            layer.open({
-                type: 1,
-                title: false,
-                // closeBtn: 0,
-                area: ['auto'],
-                skin: 'layui-layer-nobg', //没有背景色
-                shadeClose: true,
-                content: $('.chain')
-            });
-        },
-        copyBtn: function (clickClass, copyClass) { //复制公共方法
-            var self = this;
-            var clipboard = new ClipboardJS(clickClass, {
-                target: function () {
-                    return document.querySelector(copyClass);
+          }
+        );
+      }
+    },
+    query_pidList: function () {
+      var $this = this;
+      if (config.cookies.token) {
+        var url =
+          "https://pub.alimama.com/common/adzone/adzoneManage.json?tab=3&toPage=1&perPageSize=40&gcid=8&t=1578815409408&_tb_token_=" +
+          config.cookies.token +
+          "&_input_charset=utf-8";
+        chrome.extension.sendMessage(
+          { greeting: "getAjax", url: url },
+          function (response) {
+            if (response && response.content) {
+              var data = JSON.parse(response.content);
+              if (data && data.data && data.data.pagelist) {
+                var pidList = [];
+                for (var i = 0; i < data.data.pagelist.length; i++) {
+                  var pidItem = data.data.pagelist[i];
+                  pidList.push({
+                    name: pidItem["name"],
+                    pid: pidItem["adzonePid"],
+                    adzoneid: pidItem["adzoneid"],
+                    siteid: pidItem["siteid"],
+                    memberid: pidItem["memberid"],
+                  });
                 }
-            });
-            clipboard.on('success', function (e) {
-                layer.msg('复制成功！', {
-                    shade: 0.4,
-                    time: 1500,
-                    shadeClose: true,
-                });
-                e.clearSelection();
-                clipboard.destroy();
-            });
-            clipboard.on('error', function (e) {
-                layer.msg('由于您的浏览器不兼容或当前网速较慢，复制失败，请手动复制或更换主流浏览器！', {
-                    icon: 2
-                });
-            });
-        },
-        copyAllBtn: function () { //一键复制
-            var clipboard_all = new ClipboardJS('.copy_all', {
-                target: function (trigger) {
-                    return document.querySelector('.all_article');
-                }
-            });
-            clipboard_all.on('success', function (e) {
-                $('#all_article').html('');
-                layer.msg('复制成功！', {
-                    icon: 1,
-                    tiem: 2000
-                });
-                e.clearSelection();
-                // clipboard.destroy();
-                // console.log(e);
-            });
-            clipboard_all.on('error', function (e) {
-                $('#all_article').html('');
-                layer.msg('由于您的浏览器不兼容或当前网速较慢，复制失败，请手动复制或更换主流浏览器！', {
-                    icon: 2
-                });
-            });
-            var all_content = '';
-            $(".fq-copy").each(function () {
-                content = $(this).attr('datatips');
-                all_content = all_content + content + '<br/>';
-            });
-            $('#all_article').html(all_content);
-        },
-    },
-    computed: {
-        alimamaUrl: function alimamaUrl () {
-            return 'https://pub.alimama.com/promo/search/index.htm?fn=search&q=' + encodeURIComponent(window.location.href);
-        },
-        picUrl: function picUrl () {
-            if (this.goods && this.goods.goods) {
-                return 'https://img.marsnews.work/imgcdn/' + $.md5('' + this.goods.goods.pic_url) + '.jpg?src=' + encodeURIComponent(this.goods.goods.pic_url);
-            } else {
-                return '';
+              }
             }
-        },
+          }
+        );
+      } else {
+      }
     },
-    template: '<ul class="l">' +
-        '<li><a href="https://www.haopintui.net" target="_blank" class="logo"></a></li>' +
-        '<li :class="[value == 1?\'hide\':\'\']">' +
-        '<div class="sign-2"><a href="javascript:;" class="bulk"><i class="icon i-1"></i>佣金\
+    couponDraw: function (url, width, height) {
+      layer.open({
+        type: 2,
+        area: [width + "px", height + "px"],
+        fixed: false, //不固定
+        shadeClose: true,
+        maxmin: true,
+        content: url,
+      });
+    },
+    changTrends: function (trends) {
+      $this = this;
+      $this.trends = trends;
+    },
+    transform: function () {
+      layer.open({
+        type: 1,
+        title: false,
+        // closeBtn: 0,
+        area: ["auto"],
+        skin: "layui-layer-nobg", //没有背景色
+        shadeClose: true,
+        content: $(".tools_transform"),
+      });
+    },
+    tools: function () {
+      layer.open({
+        type: 1,
+        title: false,
+        // closeBtn: 0,
+        area: ["auto"],
+        skin: "layui-layer-nobg", //没有背景色
+        shadeClose: true,
+        content: $(".chain"),
+      });
+    },
+    copyBtn: function (clickClass, copyClass) {
+      //复制公共方法
+      var self = this;
+      var clipboard = new ClipboardJS(clickClass, {
+        target: function () {
+          return document.querySelector(copyClass);
+        },
+      });
+      clipboard.on("success", function (e) {
+        layer.msg("复制成功！", {
+          shade: 0.4,
+          time: 1500,
+          shadeClose: true,
+        });
+        e.clearSelection();
+        clipboard.destroy();
+      });
+      clipboard.on("error", function (e) {
+        layer.msg(
+          "由于您的浏览器不兼容或当前网速较慢，复制失败，请手动复制或更换主流浏览器！",
+          {
+            icon: 2,
+          }
+        );
+      });
+    },
+    copyAllBtn: function () {
+      //一键复制
+      var clipboard_all = new ClipboardJS(".copy_all", {
+        target: function (trigger) {
+          return document.querySelector(".all_article");
+        },
+      });
+      clipboard_all.on("success", function (e) {
+        $("#all_article").html("");
+        layer.msg("复制成功！", {
+          icon: 1,
+          tiem: 2000,
+        });
+        e.clearSelection();
+        // clipboard.destroy();
+        // console.log(e);
+      });
+      clipboard_all.on("error", function (e) {
+        $("#all_article").html("");
+        layer.msg(
+          "由于您的浏览器不兼容或当前网速较慢，复制失败，请手动复制或更换主流浏览器！",
+          {
+            icon: 2,
+          }
+        );
+      });
+      var all_content = "";
+      $(".fq-copy").each(function () {
+        content = $(this).attr("datatips");
+        all_content = all_content + content + "<br/>";
+      });
+      $("#all_article").html(all_content);
+    },
+  },
+  computed: {
+    alimamaUrl: function alimamaUrl() {
+      return (
+        "https://pub.alimama.com/promo/search/index.htm?fn=search&q=" +
+        encodeURIComponent(window.location.href)
+      );
+    },
+    picUrl: function picUrl() {
+      if (this.goods && this.goods.goods) {
+        return (
+          "https://img.marsnews.work/imgcdn/" +
+          $.md5("" + this.goods.goods.pic_url) +
+          ".jpg?src=" +
+          encodeURIComponent(this.goods.goods.pic_url)
+        );
+      } else {
+        return "";
+      }
+    },
+  },
+  template:
+    '<ul class="l">' +
+    '<li><a href="https://www.haopintui.net" target="_blank" class="logo"></a></li>' +
+    "<li :class=\"[value == 1?'hide':'']\">" +
+    '<div class="sign-2"><a href="javascript:;" class="bulk"><i class="icon i-1"></i>佣金\
         <span v-if="goods && goods.click">{{goods.click.commission_rate}}%</span>\
         <span v-else>暂无</span>\
-        </a></div>'+
-        tools_commission +
-        '</li>' +
-        '<li :class="[value == 1?\'hide\':\'\']">' +
-        '<div class="sign-2"><a @mouseover="query_coupons()" href="javascript:;" class="bulk"><i class="icon i-2"></i>券\
+        </a></div>' +
+    tools_commission +
+    "</li>" +
+    "<li :class=\"[value == 1?'hide':'']\">" +
+    '<div class="sign-2"><a @mouseover="query_coupons()" href="javascript:;" class="bulk"><i class="icon i-2"></i>券\
         <span v-if="goods && goods.coupon">{{goods.coupon.coupon_money}}元</span>\
         <span v-else>暂无</span>\
-        </a></div>'+
-        tools_coupon +
-        '</li>' +
-        '<li :class="[value == 1?\'hide\':\'\']">' +
-        '<div class="sign-special">' +
-        '<a href="javascript:;" class="bulk"><i class="icon i-3"></i>推广\
+        </a></div>' +
+    tools_coupon +
+    "</li>" +
+    "<li :class=\"[value == 1?'hide':'']\">" +
+    '<div class="sign-special">' +
+    '<a href="javascript:;" class="bulk"><i class="icon i-3"></i>推广\
         <span v-if="goods && goods.goods">{{goods.goods.volume}}件</span>\
         <span v-else>暂无</span>\
-        </a>'+
-        tools_volume +
-        '</div>' +
-        '</li>' +
-        '<li  :class="[value == 1?\'hide\':\'\']" style="border-right: none;">' +
-        '\
+        </a>' +
+    tools_volume +
+    "</div>" +
+    "</li>" +
+    "<li  :class=\"[value == 1?'hide':'']\" style=\"border-right: none;\">" +
+    '\
         <a v-if="goods && goods.goods" :href="\'https://www.haopintui.net/quan/\'+goods.goods.id" target="_blank" class="elink">高效转链</a>\
         <a v-else href="javascript:void(0)" class="elink">高效转链</a>\
-        '+
-        '</li>' +
-        '<li :class="[value == 1?\'hide\':\'\']">' +
-        '<a href="javascript:;" @click="transform" class="spin">超级推广</a>' +
-        '</li>' +
-        '</ul>'
+        ' +
+    "</li>" +
+    "<li :class=\"[value == 1?'hide':'']\">" +
+    '<a href="javascript:;" @click="transform" class="spin">超级推广</a>' +
+    "</li>" +
+    "</ul>",
 });
 
 
