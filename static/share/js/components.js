@@ -1,133 +1,146 @@
-
 var vmminxCommonData = {
-    methods: {
-        navToPage: function (path) {
-            window.location.href = path;
+  methods: {
+    navToPage: function (path) {
+      window.location.href = path;
+    },
+    navAction: function (item) {
+      var self = this;
+      if (item.action.path) {
+        self.navTo(item.action.path, item.action.params);
+      } else if (item.action.action === "load_action") {
+        self.loadAction(item.action);
+      } else if (item.action.action === "web") {
+        self.openWeb(item.action);
+      } else if (item.action.action === "copy") {
+        self.openWeb(item.action);
+      }
+    },
+    loadAction: function (action) {
+      var self = this;
+      var options = {};
+      options = Object.assign(options, action.params);
+      ajaxPost(
+        "/cms/load/view",
+        options,
+        function (res) {
+          if (res.info.status == 0) {
+            self.navAction(res.data.item);
+          }
         },
-        navAction: function (item) {
-            var self = this;
-            if (item.action.path) {
-                self.navTo(item.action.path, item.action.params)
-            } else if (item.action.actionh5 === 'load_action') {
-                self.loadAction(item.action)
-            } else if (item.action.actionh5 === 'web') {
-                self.openWeb(item.action)
-            } else if (item.action.actionh5 === 'copy') {
-                self.openWeb(item.action)
-            }
-        },
-        loadAction: function (action) {
-            var self = this;
-            var options = {}
-            options = Object.assign(options, action.params)
-            ajaxPost("/cms/load/view", options, function (res) {
-                if (res.info.status == 0) {
-                    self.navAction(res.data.item)
-                }
-            }, function () { })
-        },
-        openWeb: function (action) {
-            window.location.href = action.params.webUrl;
-        },
-        navTo: function (path, params) {
-            var paramsUrl = parseParams(params);
-            window.location.href = path + '?' + paramsUrl;
-        },
-        toNav: function (item) {
-            this.navAction(item)
-        },
-    }
+        function () {}
+      );
+    },
+    openWeb: function (action) {
+      window.location.href = action.params.webUrl;
+    },
+    navTo: function (path, params) {
+      var paramsUrl = parseParams(params);
+      window.location.href = path + "?" + paramsUrl;
+    },
+    toNav: function (item) {
+      this.navAction(item);
+    },
+  },
 };
 
-
 var vmminxAppData = {
-    data: {
-        app_url: '/app.app.view',
-        app: {
-            detail: {},
-            jump_url: '',
-            downloads: 0,
-            notice: false,
-            show: false,
-            btnText: '一键复制',
-            copyStatus: false
-        }
+  data: {
+    app_url: "/app.app.view",
+    app: {
+      detail: {},
+      jump_url: "",
+      downloads: 0,
+      notice: false,
+      show: false,
+      btnText: "一键复制",
+      copyStatus: false,
     },
-    methods: {
-        queryApp: function () {
-            var $this = this;
-            ajaxPost(URLPrefix.baseUrl + $this.app_url, {}, function (result) {
-                if (result.code == 0 && result.data.detail) {
-                    $this.app.detail = result.data.detail;
+  },
+  methods: {
+    queryApp: function () {
+      var $this = this;
+      ajaxPost(URLPrefix.baseUrl + $this.app_url, {}, function (result) {
+        if (result.code == 0 && result.data.detail) {
+          $this.app.detail = result.data.detail;
 
-                    var androidUrl = result.data.detail.android_url;
-                    var iosUrl = result.data.detail.ios_url;
-                    if (URLPrefix.ua.match(/iphone/i) == "iphone" || URLPrefix.ua.match(/ipad/i) == "ipad") {
-                        $this.app.jump_url = iosUrl;
-                    } else {
-                        $this.app.jump_url = androidUrl;
-                    }
-                }
-            });
+          var androidUrl = result.data.detail.android_url;
+          var iosUrl = result.data.detail.ios_url;
+          if (
+            URLPrefix.ua.match(/iphone/i) == "iphone" ||
+            URLPrefix.ua.match(/ipad/i) == "ipad"
+          ) {
+            $this.app.jump_url = iosUrl;
+          } else {
+            $this.app.jump_url = androidUrl;
+          }
+        }
+      });
+    },
+    showApp: function () {
+      this.app.show = true;
+    },
+    hideApp: function () {
+      this.app.show = false;
+    },
+    downloads_url: function () {
+      var $this = this;
+      if (mobileUtil.isIOS && mobileUtil.isWeixin) {
+        location.href = $this.app.jump_url;
+      } else if (
+        mobileUtil.isAndroid &&
+        mobileUtil.isWeixin &&
+        $this.app.jump_url.indexOf("app.qq.com") <= 0
+      ) {
+        $this.app.notice = true;
+      } else {
+        location.href = $this.app.jump_url;
+      }
+    },
+    appCopyContent: function () {
+      var $this = this;
+      var clipboard = new ClipboardJS(".appCopy", {
+        target: function () {
+          return document.querySelector(".shareapp-code");
         },
-        showApp: function () {
-            this.app.show = true;
-        },
-        hideApp: function () {
-            this.app.show = false;
-        },
-        downloads_url: function () {
-            var $this = this;
-            if (mobileUtil.isIOS && mobileUtil.isWeixin) {
-                location.href = $this.app.jump_url;
-            } else if (mobileUtil.isAndroid && mobileUtil.isWeixin && $this.app.jump_url.indexOf("app.qq.com") <= 0) {
-                $this.app.notice = true;
-            } else {
-                location.href = $this.app.jump_url;
-            }
-        },
-        appCopyContent: function () {
-            var $this = this;
-            var clipboard = new ClipboardJS('.appCopy', {
-                target: function () {
-                    return document.querySelector('.shareapp-code');
-                }
-            });
-            clipboard.on('success', function (e) {
-                layer.msg('复制成功', {
-                    time: 1500
-                });
-                e.clearSelection();
-                clipboard.destroy();
-                $this.app.btnText = '复制成功';
-                $this.app.copyStatus = true;
-                setTimeout(function () {
-                    $this.app.btnText = '一键复制';
-                    $this.app.copyStatus = false;
-                }, 2000);
-            });
-            clipboard.on('error', function (e) {
-                layer.msg('由于您的浏览器不兼容或当前网速较慢，复制失败，请手动复制或更换主流浏览器！', {
-                    icon: 2
-                });
-                $this.app.btnText = '复制失败';
-            });
-        },
-        get_downloads: function () {
-            var $this = this;
-            ajaxPost(URLPrefix.baseUrl + "/app.app.downloads", {}, function (result) {
-                if (result.info.status == 0) {
-                    $this.app.downloads = result.data.downloads;
-                    setTimeout(function () {
-                        $this.get_downloads();
-                    }, 1000);
-                }
-            });
-        },
-        hideNotice: function () {
-            this.app.notice = !this.app.notice;
-        },
-    }
+      });
+      clipboard.on("success", function (e) {
+        layer.msg("复制成功", {
+          time: 1500,
+        });
+        e.clearSelection();
+        clipboard.destroy();
+        $this.app.btnText = "复制成功";
+        $this.app.copyStatus = true;
+        setTimeout(function () {
+          $this.app.btnText = "一键复制";
+          $this.app.copyStatus = false;
+        }, 2000);
+      });
+      clipboard.on("error", function (e) {
+        layer.msg(
+          "由于您的浏览器不兼容或当前网速较慢，复制失败，请手动复制或更换主流浏览器！",
+          {
+            icon: 2,
+          }
+        );
+        $this.app.btnText = "复制失败";
+      });
+    },
+    get_downloads: function () {
+      var $this = this;
+      ajaxPost(URLPrefix.baseUrl + "/app.app.downloads", {}, function (result) {
+        if (result.info.status == 0) {
+          $this.app.downloads = result.data.downloads;
+          setTimeout(function () {
+            $this.get_downloads();
+          }, 1000);
+        }
+      });
+    },
+    hideNotice: function () {
+      this.app.notice = !this.app.notice;
+    },
+  },
 };
 
 
