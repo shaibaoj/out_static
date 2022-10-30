@@ -318,7 +318,7 @@ var tools_coupon =
                         <tr v-if="goodsCoupon">\
                             <!---->\
                             <td><a :href="\'https://www.haopintui.net/quan/\'+goods.goods.id"\
-                                target="_blank">满{{goodsCoupon.coupon_condition}}减 {{goodsCoupon.coupon_money}}</a><i title="联盟券，放心使用"\
+                                target="_blank">满{{goodsCoupon.condition}}减 {{goodsCoupon.money}}</a><i title="联盟券，放心使用"\
                                 class="qing-icon-1"></i></td>\
                             <td>{{goodsCoupon.start_date}} ~ {{goodsCoupon.end_date}}</td>\
                             <td>100000 / 100000</td>\
@@ -546,7 +546,7 @@ var tools_transform =
                     <p>最高佣金</p>\
                 </div>\
                 <div class="campaign">\
-                    <h6 v-if="goods && goods.coupon">满{{goods.coupon.coupon_condition}}减 {{goods.coupon.coupon_money}}</h6>\
+                    <h6 v-if="goods && goods.coupon">满{{goods.coupon.condition}}减 {{goods.coupon.money}}</h6>\
                     <p>优惠券</p>\
                 </div>\
             </div>\
@@ -1034,7 +1034,7 @@ Vue.component("hpt-coupon", {
               );
               content = content.replace(
                 /\{券额\}/g,
-                parseFloat($this.toolsData.goods.coupon.coupon_money)
+                parseFloat($this.toolsData.goods.coupon.money)
               );
               content = content.replace(
                 /\{图片\}/g,
@@ -1256,7 +1256,7 @@ Vue.component("hpt-coupon", {
     "</li>" +
     "<li :class=\"[value == 1?'hide':'']\">" +
     '<div class="sign-2"><a @mouseover="query_coupons()" href="javascript:;" class="bulk"><i class="icon i-2"></i>优惠券\
-        <span v-if="goods && goods.coupon">{{goods.coupon.coupon_money}}元</span>\
+        <span v-if="goods && goods.coupon">{{goods.coupon.money}}元</span>\
         <span v-else>暂无</span>\
         </a></div>' +
     tools_coupon +
@@ -1543,7 +1543,7 @@ Vue.component("hpt-coupon-min", {
     "</li>" +
     "<li :class=\"[value == 1?'hide':'']\">" +
     '<div class="sign-2"><a @mouseover="query_coupons()" href="javascript:;" class="bulk"><i class="icon i-2"></i>券\
-        <span v-if="goods && goods.coupon">{{goods.coupon.coupon_money}}元</span>\
+        <span v-if="goods && goods.coupon">{{goods.coupon.money}}元</span>\
         <span v-else>暂无</span>\
         </a></div>' +
     tools_coupon +
