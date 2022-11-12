@@ -31,7 +31,7 @@ var vmminxCommonData = {
       );
     },
     openWeb: function (action) {
-      window.location.href = action.params.webUrl;
+      window.location.href = action.params.web_url;
     },
     navTo: function (path, params) {
       var paramsUrl = parseParams(params);
