@@ -620,9 +620,9 @@ var tools_tools =
             <li><a href="javascript:;" @click="insert(\'{券额}\')">{券额}</a></li>\
             <li><a href="javascript:;" @click="insert(\'{优惠券剩余数量}\')">{优惠券剩余数量}</a></li>\
             <li><a href="javascript:;" @click="insert(\'{优惠券有效限期}\')">{优惠券有效限期}</a></li>\
-            <li><a href="javascript:;" @click="insert(\'{二合一长链接}\')">{二合一长链接}</a></li>\
-            <li><a href="javascript:;" @click="insert(\'{二合一短链接}\')">{二合一短链接}</a></li>\
-            <li><a href="javascript:;" @click="insert(\'{淘口令}\')">{淘口令}</a></li>\
+            <li><a href="javascript:;" @click="insert(\'{长链接}\')">{长链接}</a></li>\
+            <li><a href="javascript:;" @click="insert(\'{短链接}\')">{短链接}</a></li>\
+            <li><a href="javascript:;" @click="insert(\'{口令}\')">{口令}</a></li>\
         </ul>\
     </div>\
     <p class="tips">请勿在文案中输入￥，会和淘口令冲突。\
@@ -694,7 +694,7 @@ Vue.component("hpt-coupon", {
         pidView: false,
         pidIndex: 0,
         shortLink: "{二合一链接}",
-        token: "{淘口令}",
+        token: "{口令}",
       },
       toolsData: {
         defaultTemplate:
@@ -704,17 +704,17 @@ Vue.component("hpt-coupon", {
 --------------------------------------\r\n\
 {介绍}\r\n\
 --------------------------------------\r\n\
-领券下单链接: {二合一短链接},或者复制这段描述{淘口令}，打开☞手机淘◇寳☜即可领券购买！",
+领券下单链接: {短链接},或者复制这段描述{口令}，打开☞手机淘◇寳☜即可领券购买！",
         template:
           "\
 {短标题} \r\n\
 券后【{券后价}元】包邮秒杀 \r\n\
-领券下单: {二合一短链接} \r\n\
+领券下单: {短链接} \r\n\
 --------------------------------------\r\n\
 {介绍} \r\n\
 --------------------------------------\r\n\
 本群专享优惠！已抢{销量}件！\r\n\
-下单方式：复制这段描述{淘口令}，打开☞手机淘◇寳☜即可领券购买！",
+下单方式：复制这段描述{口令}，打开☞手机淘◇寳☜即可领券购买！",
         goods: null,
         api: null,
         layerOpenIndex: 0,
