@@ -1625,143 +1625,157 @@ Vue.component('hpt-set', {
     '</ul>'
 });
 
-
-
-Vue.component('hpt-tools', {
-    data: function () {
-        return {
-            pluginStatus:0,
-            queryInit:false,
-            goods:{},
-            campaignItems:[],
+Vue.component("hpt-tools", {
+  data: function () {
+    return {
+      pluginStatus: 0,
+      queryInit: false,
+      goods: {},
+      campaignItems: [],
+    };
+  },
+  mounted: function () {
+    this.init();
+  },
+  methods: {
+    init: function () {
+      var $this = this;
+      chrome.storage.local.get("plugin_status", function (result) {
+        if (result["plugin_status"] == 1) {
+          $this.pluginStatus = 1;
+        } else {
+          $this.pluginStatus = 0;
         }
+      });
+      this.query_goods();
+      this.query_tb_cookies();
+      this.query_hpt_token();
     },
-    mounted: function () {
-        this.init();
-    },
-    methods: {
-        init: function(){
-            var $this = this;
-            chrome.storage.local.get('plugin_status', function (result) {
-                if(result['plugin_status'] == 1){
-                    $this.pluginStatus = 1;
-                }else{
-                    $this.pluginStatus = 0;
-                }
-            });
-            this.query_goods();
-            this.query_tb_cookies();
-            this.query_hpt_token();
+    query_goods: function () {
+      var $this = this;
+      ajaxPost(
+        "",
+        {
+          action: "url",
+          url: config._url,
         },
-        query_goods:function(){
-            var $this = this;
-            ajaxPost("", {
-                action:'url',
-                url:config._url,
-            }, function(res) {
-                if(res.data && res.data.campaignItems){
-                    $this.campaignItems = res.data.campaignItems;
-                    eventBus.$emit("campaignItems", $this.campaignItems);
-                }
-                if(res.data && res.data.goods){
-                    config.goods = res.data.goods;
-                    config.showPlugin();
-                    $this.goods = res.data.goods;
-                    eventBus.$emit("goods", $this.goods);
-                }
-                $this.queryInit = true;
-                eventBus.$emit("queryInit", $this.queryInit);
-            })
-        },
-        query_tb_cookies: function(){
-            chrome.extension.sendMessage({greeting: "cookies", data:{url: "https://pub.alimama.com/manage/overview/index.htm?spm=", name: "_tb_token_"}},function(response){
-                if(response && response.token){
-                    config.cookies.token = response.token;
-                }
-            });
-        },
-        query_hpt_token: function(){
-            chrome.extension.sendMessage({greeting: "getAjax", url:'https://www.haopintui.net/api/info'},function(response){
-                if(response && response.content){
-                    var data = JSON.parse(response.content);
-                    if(data && data.data && data.data.user_token && data.data.user_token != ''){
-                        URLPrefix.token = data.data.user_token;
-                    }
-                }
-            });
-        },
-        toggleTools: function(status){
-            var $this = this;
-            chrome.storage.local.get('plugin_status', function (result) {
-                var pluginStatus = 0;
-                if(result['plugin_status'] == 1){
-                    pluginStatus = 0;
-                }else{
-                    pluginStatus = 1;
-                }
-                $this.toggleStatus(pluginStatus);
-            });
-        },
-        toggleStatus: function(pluginStatus){
-            var $this = this;
-            chrome.storage.local.set({ 'plugin_status': pluginStatus }, function () {
-                console.log('保存成功');
-                config.initPlugin();
-                $this.init();
-            });
+        function (res) {
+          if (res.data && res.data.campaignItems) {
+            $this.campaignItems = res.data.campaignItems;
+            eventBus.$emit("campaignItems", $this.campaignItems);
+          }
+          if (res.data && res.data.goods) {
+            config.goods = res.data.goods;
+            config.showPlugin();
+            $this.goods = res.data.goods;
+            eventBus.$emit("goods", $this.goods);
+          }
+          $this.queryInit = true;
+          eventBus.$emit("queryInit", $this.queryInit);
         }
+      );
     },
-    template:
-    '<div class="plugin-tools" v-if="queryInit">'+
-        '<hpt-coupon v-model="pluginStatus" :goods="goods" :campaignItems="campaignItems"  @queryHptToken="query_hpt_token"></hpt-coupon>'+
-        '<hpt-set v-model="pluginStatus" :goods="goods" @toggleTools="toggleTools"></hpt-set>'+
-    '</div>'
+    query_tb_cookies: function () {
+      chrome.extension.sendMessage(
+        {
+          greeting: "cookies",
+          data: {
+            url: "https://pub.alimama.com/manage/overview/index.htm?spm=",
+            name: "_tb_token_",
+          },
+        },
+        function (response) {
+          if (response && response.token) {
+            config.cookies.token = response.token;
+          }
+        }
+      );
+    },
+    query_hpt_token: function () {
+      chrome.extension.sendMessage(
+        { greeting: "getAjax", url: "https://www.haopintui.net/api/info" },
+        function (response) {
+          if (response && response.content) {
+            var data = JSON.parse(response.content);
+            if (data && data.data && data.data.token && data.data.token != "") {
+              URLPrefix.token = data.data.token;
+            }
+          }
+        }
+      );
+    },
+    toggleTools: function (status) {
+      var $this = this;
+      chrome.storage.local.get("plugin_status", function (result) {
+        var pluginStatus = 0;
+        if (result["plugin_status"] == 1) {
+          pluginStatus = 0;
+        } else {
+          pluginStatus = 1;
+        }
+        $this.toggleStatus(pluginStatus);
+      });
+    },
+    toggleStatus: function (pluginStatus) {
+      var $this = this;
+      chrome.storage.local.set({ plugin_status: pluginStatus }, function () {
+        console.log("保存成功");
+        config.initPlugin();
+        $this.init();
+      });
+    },
+  },
+  template:
+    '<div class="plugin-tools" v-if="queryInit">' +
+    '<hpt-coupon v-model="pluginStatus" :goods="goods" :campaignItems="campaignItems"  @queryHptToken="query_hpt_token"></hpt-coupon>' +
+    '<hpt-set v-model="pluginStatus" :goods="goods" @toggleTools="toggleTools"></hpt-set>' +
+    "</div>",
 });
 
-Vue.component('hpt-tools-min', {
-    data: function () {
-        return {
-            queryInit:false,
-            goods:{},
-            campaignItems:[],
-        }
+Vue.component("hpt-tools-min", {
+  data: function () {
+    return {
+      queryInit: false,
+      goods: {},
+      campaignItems: [],
+    };
+  },
+  mounted: function () {
+    this.init();
+  },
+  methods: {
+    init: function () {
+      $this = this;
+      eventBus.$on("queryInit", function (val) {
+        $this.queryInit = val;
+      });
+      eventBus.$on("goods", function (val) {
+        $this.goods = val;
+        config.showPluginMin();
+      });
+      eventBus.$on("campaignItems", function (val) {
+        $this.campaignItems = val;
+      });
     },
-    mounted: function () {
-        this.init();
-    },
-    methods: {
-        init: function(){
-            $this = this;
-            eventBus.$on('queryInit', function(val) {
-                $this.queryInit = val;
-            })
-            eventBus.$on('goods', function(val) {　 
-                $this.goods = val;
-                config.showPluginMin();
-            })
-            eventBus.$on('campaignItems', function(val) {　 
-                $this.campaignItems = val;
-            })
-        }
-    },
-    template:
-    '<div class="plugin-tools plugin-tools-min" v-if="queryInit">'+
-        '<hpt-coupon-min :goods="goods" :campaignItems="campaignItems"></hpt-coupon-min>'+
-    '</div>'
+  },
+  template:
+    '<div class="plugin-tools plugin-tools-min" v-if="queryInit">' +
+    '<hpt-coupon-min :goods="goods" :campaignItems="campaignItems"></hpt-coupon-min>' +
+    "</div>",
 });
 
 var vmplugin = new Vue({
-    el: "#hpt-plugin",
-    data:{},
-    mounted: function() {},
-    methods:{}
+  el: "#hpt-plugin",
+  data: {},
+  mounted: function () {},
+  methods: {},
 });
 
 var vmpluginmin = new Vue({
-    el: "#hpt-plugin-min",
-    data:{},
-    mounted: function() {},
-    methods:{}
+  el: "#hpt-plugin-min",
+  data: {},
+  mounted: function () {},
+  methods: {},
 });
 
 // var link = document.createElement("link");
@@ -1774,4 +1788,3 @@ var vmpluginmin = new Vue({
 // menu.type="text/javascript";
 // menu.src="https://cdn.jsdelivr.net/gh/shaibaoj/out_static/static/js/layer.js?p="+new Date().getTime();
 // document.body.appendChild(menu);
-
