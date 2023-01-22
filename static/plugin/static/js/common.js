@@ -447,7 +447,7 @@ var tools_wenan =
                 <p  v-if="goods && goods.goods && goods.coupon" class="akey-copy-content-coupon-url">领券:\
                     https://uland.taobao.com/quan/detail?sellerId={{goods.goods.seller_id}}&amp;activityId={{goods.coupon.activity_id}}\
                 </p>\
-                <p v-if="goods && goods.goods">下单: https://detail.tmall.com/item.htm?id={{goods.goods.item_id}}</p>\
+                <p v-if="goods && goods.goods">下单: {{goods.goods.item_url}}</p>\
                 <p v-if="goods && goods.goods">已抢 {{goods.goods.volume_str}}+ 件，到手好价，需要的可以去看看！</p>\
             </div>\
         </div>\
@@ -633,7 +633,7 @@ var tools_tools =
     <textarea class="word" v-model="toolsData.template" id="content_tools"></textarea>\
     <p class="tips">必须输入相匹配的优惠券和商品，否则打不开。不支持淘宝外部短链接。</p>\
     <textarea placeholder="你可以输入优惠券地址和商品普通地址（只输入商品地址会自动匹配默认券，无券则转链失败）\
-https://detail.tmall.com/item.htm?id=xxxxxx\
+xxxxxx\
 https://market.m.taobao.com/apps/aliyx/coupon/detail.html?wh_weex=true&amp;sellerId=xxxxxx&amp;activityId=xxxxxx\
 或者别人的二合一链接（网址不带“?e=”的）\
 http://uland.taobao.com/coupon/edetail?activityId=xxxxxxx" class="link" v-model="toolsData.contentCopy"></textarea>\
