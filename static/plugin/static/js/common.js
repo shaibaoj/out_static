@@ -1779,7 +1779,7 @@ var vmpluginmin = new Vue({
 });
 
 // var link = document.createElement("link");
-// link.href = 'https://shaibaoj.gitee.io/out_cdn/css/common.css';
+// link.href = 'https://static.youdanhui.com/out/static/plugin/css/common.css';
 // link.type = "text/css";
 // link.rel = "stylesheet";
 // document.getElementsByTagName("head")[0].appendChild(link);
