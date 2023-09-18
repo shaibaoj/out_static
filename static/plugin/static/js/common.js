@@ -1003,7 +1003,7 @@ Vue.component("hpt-coupon", {
             }
             if ($this.toolsData.api && $this.toolsData.goods) {
               var pic_url =
-                "https://img.marsnews.work/imgcdn/" +
+                "https://img.youdanhui.com/imgcdn/" +
                 $.md5("" + $this.toolsData.goods.goods.pic_url) +
                 ".jpg?src=" +
                 encodeURIComponent($this.toolsData.goods.goods.pic_url);
@@ -1206,7 +1206,7 @@ Vue.component("hpt-coupon", {
     picUrl: function picUrl() {
       if (this.goods && this.goods.goods) {
         return (
-          "https://img.marsnews.work/imgcdn/" +
+          "https://img.youdanhui.com/imgcdn/" +
           $.md5("" + this.goods.goods.pic_url) +
           ".jpg?src=" +
           encodeURIComponent(this.goods.goods.pic_url)
@@ -1218,7 +1218,7 @@ Vue.component("hpt-coupon", {
     transformPreview: function transformPreview() {
       if (this.goods && this.goods.goods) {
         return (
-          "https://img.marsnews.work/imgcdn/" +
+          "https://img.youdanhui.com/imgcdn/" +
           $.md5("" + this.goods.goods.p_list[this.transformData.picIndex]) +
           ".jpg?src=" +
           encodeURIComponent(
@@ -1521,7 +1521,7 @@ Vue.component("hpt-coupon-min", {
     picUrl: function picUrl() {
       if (this.goods && this.goods.goods) {
         return (
-          "https://img.marsnews.work/imgcdn/" +
+          "https://img.youdanhui.com/imgcdn/" +
           $.md5("" + this.goods.goods.pic_url) +
           ".jpg?src=" +
           encodeURIComponent(this.goods.goods.pic_url)
